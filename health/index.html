@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HABAKUK BODY // Operational OS v26</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #13161e;
+      --surface2: #1a1e2a;
+      --border: #252a38;
+      --accent: #e8ff4a;
+      --accent2: #4affb4;
+      --accent3: #ff6b4a;
+      --accent4: #4a9fff;
+      --text: #e8eaf0;
+      --muted: #6b7280;
+      --done-text: #4affb4;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      padding: 32px 24px;
+    }
+
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .header-left h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--accent);
+    }
+
+    .header-left p {
+      color: var(--muted);
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .target-badge {
+      background: var(--accent);
+      color: #0d0f14;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 2px;
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .full { grid-column: 1 / -1; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 20px;
+    }
+
+    .card-title {
+      font-size: 10px;
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-title .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .card-title .dot.green { background: var(--accent2); }
+    .card-title .dot.orange { background: var(--accent3); }
+    .card-title .dot.blue { background: var(--accent4); }
+
+    .role-name {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .role-meta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .role-pill {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 2px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .role-pill.highlight {
+      border-color: var(--accent2);
+      color: var(--accent2);
+    }
+
+    .tier { margin-bottom: 16px; }
+
+    .tier-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 3px 8px;
+      border-radius: 2px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .tier-now .tier-label { background: #2a3a1a; color: var(--accent); }
+    .tier-next .tier-label { background: #1a2a3a; color: var(--accent4); }
+
+    .task-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .task-item:last-child { border-bottom: none; }
+
+    .task-item:hover {
+      background: var(--surface2);
+      margin: 0 -20px;
+      padding: 10px 20px;
+    }
+
+    .checkbox {
+      width: 16px;
+      height: 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 2px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .task-item.done .checkbox {
+      background: var(--done-text);
+      border-color: var(--done-text);
+    }
+
+    .task-item.done .checkbox::after {
+      content: '✓';
+      font-size: 10px;
+      color: #0d0f14;
+      font-weight: 700;
+    }
+
+    .task-item.done .task-text {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+
+    .task-text {
+      font-size: 13px;
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .task-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      padding: 2px 6px;
+      border-radius: 2px;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .tag-green { background: #1a2a1a; color: var(--accent2); }
+    .tag-blue { background: #1a1a2a; color: var(--accent4); }
+    .tag-orange { background: #2a1a1a; color: var(--accent3); }
+
+    .big-num {
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .big-num-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .streak-days {
+      display: flex;
+      gap: 4px;
+      margin-top: 12px;
+    }
+
+    .streak-day {
+      width: 20px;
+      height: 20px;
+      border-radius: 2px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .streak-day.active {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .salary-bar { margin-bottom: 16px; }
+
+    .salary-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .salary-label strong { color: var(--text); }
+
+    .bar-track {
+      height: 6px;
+      background: var(--surface2);
+      border-radius: 1px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 1px;
+      transition: width 0.4s ease;
+    }
+
+    .bar-fill.green { background: var(--accent2); }
+    .bar-fill.yellow { background: var(--accent); }
+    .bar-fill.blue { background: var(--accent4); }
+
+    .architecture-box {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent4);
+      padding: 12px 16px;
+      margin-top: 12px;
+      border-radius: 2px;
+    }
+
+    .architecture-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--accent4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .architecture-flow {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--text);
+    }
+
+    .day-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .day-row:last-child { border-bottom: none; }
+
+    .day-name {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      width: 35px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .day-action {
+      font-size: 13px;
+      flex: 1;
+      line-height: 1.5;
+    }
+
+    .day-type {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      color: var(--accent);
+      text-transform: uppercase;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .metric-input-wrap {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      align-items: center;
+    }
+
+    .metric-input {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 10px;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      width: 110px;
+      border-radius: 2px;
+    }
+
+    .metric-btn {
+      background: var(--accent);
+      color: #0d0f14;
+      border: none;
+      padding: 6px 12px;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 700px) {
+      .grid { grid-template-columns: 1fr; }
+      .full { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-left">
+      <h1>HABAKUK BODY</h1>
+      <p>PVS // PERSONAL VISION SYSTEM v26 &mdash; ATHLETIC RECOMP ENGINE</p>
+    </div>
+    <div class="target-badge">MALE 5'9 // 88KG &rarr; 78KG LEAN BASELINE</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title"><span class="dot"></span>ACTIVE PHYSICAL MANDATE</div>
+      <div class="role-name">Athletic Density & Body Recomposition</div>
+      <p style="color: var(--muted); font-size: 13px; line-height: 1.5; margin-bottom: 12px;">
+        Prioritizing mechanical tension with home bodyweight and backpack resistance. Fat loss is managed passively via a non-negotiable protein floor and sustainable baseline movement.
+      </p>
+      <div class="role-meta">
+        <div class="role-pill highlight">Profile: 30yo / 5'9" / ~88kg</div>
+        <div class="role-pill">Protein Floor: 150g+</div>
+        <div class="role-pill">Target: ~2,050 kcal</div>
+      </div>
+      
+      <div class="architecture-box">
+        <div class="architecture-title">// The Daily Micro-Standard</div>
+        <div class="architecture-flow">
+          150g Protein &rarr; 2,050 kcal Cap &rarr; 5k+ Steps &rarr; 2.5L Water
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot green"></span>CONSISTENCY MOMENTUM</div>
+      <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+          <div class="big-num" id="streak-count">0</div>
+          <div class="big-num-label">DAY PROTOCOL STREAK</div>
+        </div>
+        <div style="text-align: right; font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted);">
+          Target: 28-Day Consistency<br><span style="color: var(--accent2);">Recomp Loop Active</span>
+        </div>
+      </div>
+      <div class="streak-days" id="streak-grid"></div>
+      <div style="margin-top: 18px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 10px;">
+        <strong style="color: var(--text);">Standard:</strong> Complete all 4 daily execution items to tick today's block.
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title"><span class="dot"></span>DAILY PROTOCOL QUEUE</div>
+      
+      <div class="tier tier-now">
+        <div class="tier-label">TODAY // EXECUTION STACK</div>
+        <div class="task-item" onclick="toggle(this)" data-task-id="fit_protein">
+          <div class="checkbox"></div>
+          <div class="task-text">Protein Floor Locked (&ge;150g total)</div>
+          <div class="task-tag tag-green">NUTRITION</div>
+        </div>
+        <div class="task-item" onclick="toggle(this)" data-task-id="fit_deficit">
+          <div class="checkbox"></div>
+          <div class="task-text">Calorie Cap Met (~2,050 kcal / Afternoon snack boxed to 150 kcal)</div>
+          <div class="task-tag tag-green">NUTRITION</div>
+        </div>
+        <div class="task-item" onclick="toggle(this)" data-task-id="fit_water">
+          <div class="checkbox"></div>
+          <div class="task-text">Hydration Base: 2.5L logged</div>
+          <div class="task-tag tag-blue">HYDRATION</div>
+        </div>
+        <div class="task-item" onclick="toggle(this)" data-task-id="fit_steps">
+          <div class="checkbox"></div>
+          <div class="task-text">Movement Floor: 5,000+ steps logged</div>
+          <div class="task-tag tag-orange">ACTIVITY</div>
+        </div>
+      </div>
+
+      <div class="tier tier-next">
+        <div class="tier-label">SUNDAY CHECKPOINT</div>
+        <div class="task-item" onclick="toggle(this)" data-task-id="fit_weighin">
+          <div class="checkbox"></div>
+          <div class="task-text">Weigh-in & Check Progressive Overload on Lifts</div>
+          <div class="task-tag tag-blue">METRICS</div>
+        </div>
+        <div class="metric-input-wrap">
+          <input type="number" step="0.1" class="metric-input" id="currentWeightInput" placeholder="kg (e.g. 87.5)">
+          <button class="metric-btn" onclick="saveWeight()">LOG WEIGHT</button>
+          <span id="weightLogStatus" style="font-family:'Space Mono', monospace; font-size:11px; color:var(--muted);"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PURE BODYWEIGHT & BACKPACK WORKOUT BOX -->
+    <div class="card">
+      <div class="card-title"><span class="dot blue"></span>HOME & BODYWEIGHT A/B CADENCE</div>
+
+      <div class="day-row">
+        <div class="day-name">MON</div>
+        <div class="day-action">
+          <strong>Workout A (Push & Quad):</strong><br>
+          • Tempo Goblet Squats (Backpack): 3x12-15 (3s eccentric)<br>
+          • Push-Ups (Floor / Incline): 3x10-12<br>
+          • Bulgarian Split Squats (Foot on chair): 3x8-10/leg<br>
+          • Backpack Single-Arm Rows: 3x10-12/arm<br>
+          • Plank to Shoulder Taps: 3x45s
+        </div>
+        <div class="day-type">LIFT A</div>
+      </div>
+      
+      <div class="day-row">
+        <div class="day-name">WED</div>
+        <div class="day-action">
+          <strong>Workout B (Hinge & Pull):</strong><br>
+          • Backpack Romanian Deadlifts: 3x12-15 (Hamstring tension)<br>
+          • Pike Push-Ups (Shoulder press angle): 3x8-10<br>
+          • Single-Leg Glute Bridges: 3x12/leg<br>
+          • Backpack Bicep Curl to Press: 3x10-12<br>
+          • Deadbugs / Hollow Body Hold: 3x45s
+        </div>
+        <div class="day-type">LIFT B</div>
+      </div>
+
+      <div class="day-row">
+        <div class="day-name">FRI</div>
+        <div class="day-action">
+          <strong>Workout A (Push & Quad):</strong><br>
+          • Tempo Goblet Squats: 3x12-15 (3s eccentric)<br>
+          • Push-Ups (Progress to weighted bag): 3x10-12<br>
+          • Bulgarian Split Squats: 3x8-10/leg<br>
+          • Backpack Single-Arm Rows: 3x10-12/arm<br>
+          • Backpack Suitcase Carry: 3x60s (Grip & Obliques)
+        </div>
+        <div class="day-type">LIFT A</div>
+      </div>
+
+      <div class="day-row">
+        <div class="day-name">T/T/S</div>
+        <div class="day-action">
+          <strong>Active Recovery:</strong> Casual 20–30m walk (5k step floor) + 5m shoulder/hip mobility.
+        </div>
+        <div class="day-type" style="color: var(--muted);">RECOVERY</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card full">
+    <div class="card-title"><span class="dot orange"></span>RECOMP PROGRESSION TRAJECTORY (88.0KG &rarr; 78.0KG)</div>
+    <div class="grid" style="margin-bottom: 0;">
+      <div>
+        <div class="salary-bar">
+          <div class="salary-label"><span>Phase 1: 88.0kg &rarr; 85.5kg (Habit Lock & Initial Drop)</span><strong id="p1-label">Pending</strong></div>
+          <div class="bar-track"><div class="bar-fill green" id="p1-bar" style="width: 0%;"></div></div>
+        </div>
+        <div class="salary-bar">
+          <div class="salary-label"><span>Phase 2: 85.5kg &rarr; 82.0kg (Visible Upper Body Definition)</span><strong id="p2-label">Pending</strong></div>
+          <div class="bar-track"><div class="bar-fill yellow" id="p2-bar" style="width: 0%;"></div></div>
+        </div>
+        <div class="salary-bar">
+          <div class="salary-label"><span>Phase 3: 82.0kg &rarr; 78.0kg (Lean Recomp Baseline)</span><strong id="p3-label">Pending</strong></div>
+          <div class="bar-track"><div class="bar-fill blue" id="p3-bar" style="width: 0%;"></div></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-family: 'Space Mono', monospace; font-size: 11px; line-height: 1.5; color: var(--muted); background: var(--surface2); padding: 12px; border-radius: 4px; border: 1px solid var(--border);">
+Current Weight Logged: <strong id="dispCurrentWeight" style="color:var(--accent);">-- kg</strong>
+Baseline Starting: 88.0 kg | Target: 78.0 kg (-10.0 kg total)
+Primary Metric: Weekly Sunday weigh-in + progressive tempo/weight on lifts.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const STORAGE_PREFIX = 'habakuk_body_';
+    const START_WEIGHT = 88.0;
+    const GOAL_WEIGHT = 78.0;
+
+    function toggle(element) {
+      element.classList.toggle('done');
+      saveTaskState();
+    }
+
+    function saveTaskState() {
+      const tasks = document.querySelectorAll('.task-item');
+      const state = {};
+      tasks.forEach((task) => {
+        const id = task.getAttribute('data-task-id');
+        if (id) {
+          state[id] = task.classList.contains('done');
+        }
+      });
+      localStorage.setItem(STORAGE_PREFIX + 'tasks', JSON.stringify(state));
+    }
+
+    function loadTaskState() {
+      const saved = localStorage.getItem(STORAGE_PREFIX + 'tasks');
+      if (saved) {
+        try {
+          const state = JSON.parse(saved);
+          document.querySelectorAll('.task-item').forEach((task) => {
+            const id = task.getAttribute('data-task-id');
+            if (id && state.hasOwnProperty(id)) {
+              if (state[id]) {
+                task.classList.add('done');
+              } else {
+                task.classList.remove('done');
+              }
+            }
+          });
+        } catch (e) {
+          console.error("Failed to load task state", e);
+        }
+      }
+    }
+
+    function renderStreak() {
+      const container = document.getElementById('streak-grid');
+      container.innerHTML = '';
+      const totalDays = 28;
+      const currentStreak = parseInt(localStorage.getItem(STORAGE_PREFIX + 'streak_count') || '0');
+      
+      for (let i = 1; i <= totalDays; i++) {
+        const box = document.createElement('div');
+        box.className = 'streak-day' + (i <= currentStreak ? ' active' : '');
+        box.title = 'Day ' + i;
+        box.onclick = function() {
+          this.classList.toggle('active');
+          updateStreakCount();
+        };
+        container.appendChild(box);
+      }
+    }
+
+    function updateStreakCount() {
+      const activeBoxes = document.querySelectorAll('.streak-day.active').length;
+      document.getElementById('streak-count').innerText = activeBoxes;
+      localStorage.setItem(STORAGE_PREFIX + 'streak_count', activeBoxes);
+    }
+
+    function saveWeight() {
+      const val = parseFloat(document.getElementById('currentWeightInput').value);
+      if (!val || isNaN(val)) return;
+      localStorage.setItem(STORAGE_PREFIX + 'latest_weight', val);
+      document.getElementById('currentWeightInput').value = '';
+      document.getElementById('weightLogStatus').innerText = '✓ Saved';
+      setTimeout(() => document.getElementById('weightLogStatus').innerText = '', 2000);
+      updateWeightBars();
+    }
+
+    function updateWeightBars() {
+      const w = parseFloat(localStorage.getItem(STORAGE_PREFIX + 'latest_weight')) || START_WEIGHT;
+      document.getElementById('dispCurrentWeight').innerText = w.toFixed(1) + ' kg';
+      
+      const totalLost = Math.max(0, START_WEIGHT - w);
+      
+      // Phase 1 (0 to 2.5kg lost)
+      const p1Lost = Math.min(Math.max(totalLost, 0), 2.5);
+      const p1Pct = (p1Lost / 2.5) * 100;
+      document.getElementById('p1-bar').style.width = p1Pct + '%';
+      document.getElementById('p1-label').innerText = p1Pct >= 100 ? 'COMPLETED' : p1Pct.toFixed(0) + '%';
+
+      // Phase 2 (2.5kg to 6.0kg lost)
+      const p2Lost = Math.min(Math.max(totalLost - 2.5, 0), 3.5);
+      const p2Pct = (p2Lost / 3.5) * 100;
+      document.getElementById('p2-bar').style.width = p2Pct + '%';
+      document.getElementById('p2-label').innerText = p2Pct >= 100 ? 'COMPLETED' : p2Pct.toFixed(0) + '%';
+
+      // Phase 3 (6.0kg to 10.0kg lost)
+      const p3Lost = Math.min(Math.max(totalLost - 6.0, 0), 4.0);
+      const p3Pct = (p3Lost / 4.0) * 100;
+      document.getElementById('p3-bar').style.width = p3Pct + '%';
+      document.getElementById('p3-label').innerText = p3Pct >= 100 ? 'COMPLETED' : p3Pct.toFixed(0) + '%';
+    }
+
+    function initOS() {
+      loadTaskState();
+      renderStreak();
+      const savedStreak = localStorage.getItem(STORAGE_PREFIX + 'streak_count');
+      if (savedStreak) {
+        document.getElementById('streak-count').innerText = savedStreak;
+      }
+      updateWeightBars();
+    }
+
+    window.onload = initOS;
+  </script>
+</body>
+</html>

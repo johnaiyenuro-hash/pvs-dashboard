@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HABAKUK TWO TWO // Operational OS v28</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #13161e;
+      --surface2: #1a1e2a;
+      --border: #252a38;
+      --accent: #e8ff4a;
+      --accent2: #4affb4;
+      --accent3: #ff6b4a;
+      --accent4: #4a9fff;
+      --text: #e8eaf0;
+      --muted: #6b7280;
+      --done: #2a3a2a;
+      --done-text: #4affb4;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      padding: 32px 24px;
+    }
+
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .header-left h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--accent);
+    }
+
+    .header-left p {
+      color: var(--muted);
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .target-badge {
+      background: var(--accent);
+      color: #0d0f14;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 2px;
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .full { grid-column: 1 / -1; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 20px;
+    }
+
+    .card-title {
+      font-size: 10px;
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-title .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .card-title .dot.green { background: var(--accent2); }
+    .card-title .dot.orange { background: var(--accent3); }
+    .card-title .dot.blue { background: var(--accent4); }
+
+    .role-name {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .role-meta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .role-pill {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 2px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .role-pill.highlight {
+      border-color: var(--accent2);
+      color: var(--accent2);
+    }
+
+    .tier { margin-bottom: 16px; }
+
+    .tier-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 3px 8px;
+      border-radius: 2px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .tier-now .tier-label { background: #2a3a1a; color: var(--accent); }
+    .tier-next .tier-label { background: #1a2a3a; color: var(--accent4); }
+    .tier-later .tier-label { background: #2a1a2a; color: var(--accent3); }
+
+    .task-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .task-item:last-child { border-bottom: none; }
+
+    .task-item:hover {
+      background: var(--surface2);
+      margin: 0 -20px;
+      padding: 10px 20px;
+    }
+
+    .checkbox {
+      width: 16px;
+      height: 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 2px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .task-item.done .checkbox {
+      background: var(--done-text);
+      border-color: var(--done-text);
+    }
+
+    .task-item.done .checkbox::after {
+      content: '✓';
+      font-size: 10px;
+      color: #0d0f14;
+      font-weight: 700;
+    }
+
+    .task-item.done .task-text {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+
+    .task-text {
+      font-size: 14px;
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .task-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      padding: 2px 6px;
+      border-radius: 2px;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .tag-5 { background: #1a2a1a; color: var(--accent2); }
+    .tag-20 { background: #1a1a2a; color: var(--accent4); }
+    .tag-60 { background: #2a1a1a; color: var(--accent3); }
+
+    .day-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .day-row:last-child { border-bottom: none; }
+
+    .day-name {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      width: 50px;
+      flex-shrink: 0;
+    }
+
+    .day-action {
+      font-size: 13px;
+      flex: 1;
+      line-height: 1.4;
+    }
+
+    .day-type {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      color: var(--accent);
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    .rule-item {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+
+    .rule-item:last-child { border-bottom: none; }
+
+    .rule-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+      line-height: 1;
+      width: 28px;
+    }
+
+    .rule-text {
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .rule-sub {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 3px;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .parked-item {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .parked-item:last-child { border-bottom: none; }
+    .parked-item span { font-size: 9px; color: #3a3e4a; }
+
+    .salary-bar { margin-bottom: 16px; }
+
+    .salary-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .salary-label strong { color: var(--text); }
+
+    .bar-track {
+      height: 6px;
+      background: var(--surface2);
+      border-radius: 1px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 1px;
+      transition: width 1s ease;
+    }
+
+    .bar-fill.green { background: var(--accent2); }
+    .bar-fill.yellow { background: var(--accent); }
+    .bar-fill.orange { background: var(--accent3); }
+    .bar-fill.blue { background: var(--accent4); }
+
+    .next-action {
+      background: var(--surface2);
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin-top: 16px;
+    }
+
+    .next-action-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .next-action-text {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .big-num {
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .big-num-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .streak-days {
+      display: flex;
+      gap: 4px;
+      margin-top: 12px;
+    }
+
+    .streak-day {
+      width: 20px;
+      height: 20px;
+      border-radius: 2px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .streak-day.active {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .streak-day:hover {
+      border-color: var(--accent);
+    }
+
+    .ascii-chart {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      line-height: 1.4;
+      color: var(--muted);
+      background: var(--surface2);
+      padding: 12px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      overflow-x: auto;
+      white-space: pre;
+      margin-top: 12px;
+    }
+
+    .architecture-box {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent4);
+      padding: 12px 16px;
+      margin-top: 12px;
+      border-radius: 2px;
+    }
+
+    .architecture-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--accent4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .architecture-flow {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--text);
+    }
+
+    .portfolio-header {
+      background: linear-gradient(135deg, #1a2a1a 0%, #1a1e2a 100%);
+      border: 1px solid var(--accent2);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .portfolio-header h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--accent2);
+    }
+
+    .portfolio-header p {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .portfolio-badge {
+      background: var(--accent2);
+      color: #0d0f14;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 2px;
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+    }
+
+    .case-study-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .case-study-row:last-child { border-bottom: none; }
+
+    .cs-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 2px;
+      background: #1a2a1a;
+      color: var(--accent2);
+      flex-shrink: 0;
+    }
+
+    .cs-title { flex: 1; line-height: 1.4; }
+
+    /* Master Cost Table Styling */
+    .cost-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 14px;
+    }
+
+    .cost-table th {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      text-align: left;
+      padding: 8px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface2);
+    }
+
+    .cost-table td {
+      padding: 9px 8px;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.4;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .cost-table tr:last-child td { border-bottom: none; }
+    .cost-table tr.total-row {
+      background: rgba(74, 255, 180, 0.05);
+      font-weight: 700;
+    }
+    .cost-table tr.total-row td {
+      border-top: 1px solid var(--accent2);
+      border-bottom: 1px solid var(--accent2);
+      color: var(--text);
+    }
+
+    @media (max-width: 700px) {
+      .grid { grid-template-columns: 1fr; }
+      .full { grid-column: 1; }
+      .cost-table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-left">
+      <h1>HABAKUK TWO TWO</h1>
+      <p>PVS // PERSONAL VISION SYSTEM v28 &mdash; SOLUTIONS ARCHITECTURE ENGINE</p>
+    </div>
+    <div class="target-badge">DDM &rarr; SOLUTIONS ARCHITECT</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title"><span class="dot"></span>ACTIVE ROLE & MANDATE</div>
+      <div class="role-name">John Aiyenuro</div>
+      <p style="color: var(--muted); font-size: 13px; line-height: 1.5; margin-bottom: 12px;">
+        Digital Delivery Manager bridging traditional architecture domain knowledge with cloud-based ecosystem automation, ISO 19650 governance, and enterprise data validation.
+      </p>
+      <div class="role-meta">
+        <div class="role-pill highlight">Glider DDM (Live)</div>
+        <div class="role-pill">Target: Solutions Architect</div>
+        <div class="role-pill">£85k–£110k+ ConTech</div>
+      </div>
+      <div class="next-action">
+        <div class="next-action-label">ACTIVE OPERATIONAL FOCUS</div>
+        <div class="next-action-text">Complete Oracle Aconex Associate modules while architecting event-driven QA validation pipelines.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot green"></span>HABIT & STUDY MOMENTUM</div>
+      <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+          <div class="big-num" id="streak-count">19</div>
+          <div class="big-num-label">DAY ACTIVE STREAK</div>
+        </div>
+        <div style="text-align: right; font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted);">
+          Target: 28-Day Consistency<br><span style="color: var(--accent2);">PBA Loop Active</span>
+        </div>
+      </div>
+      <div class="streak-days" id="streak-grid"></div>
+      <div style="margin-top: 18px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 10px;">
+        <strong style="color: var(--text);">Daily Micro-Standard:</strong> 20m Spanish Fluency + 30m ConTech Data Stack (Excel / SQL / REST APIs).
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title"><span class="dot"></span>TOOLING & CERTIFICATION QUEUE</div>
+      
+      <div class="tier tier-now">
+        <div class="tier-label">NOW // ACTIVE STACK</div>
+        <div class="task-item done" onclick="toggle(this)" data-task-id="revizto_l1">
+          <div class="checkbox"></div>
+          <div class="task-text">Revizto Academy Level 1 Certification</div>
+          <div class="task-tag tag-5">DONE // LINKEDIN</div>
+        </div>
+        <div class="task-item done" onclick="toggle(this)" data-task-id="revizto_l2">
+          <div class="checkbox"></div>
+          <div class="task-text">Revizto Live Delivery: Expert Level 2 (Clash & Search Sets)</div>
+          <div class="task-tag tag-5">DONE // LIVE</div>
+        </div>
+        <div class="task-item done" onclick="toggle(this)" data-task-id="asana_foundations">
+          <div class="checkbox"></div>
+          <div class="task-text">Asana Foundations Skill Badge</div>
+          <div class="task-tag tag-5">DONE</div>
+        </div>
+        <div class="task-item" onclick="toggle(this)" data-task-id="aconex_cert">
+          <div class="checkbox"></div>
+          <div class="task-text">Oracle Aconex: Associate &rarr; Specialist Modules</div>
+          <div class="task-tag tag-20">NOW // FOCUS</div>
+        </div>
+      </div>
+
+      <div class="tier tier-next">
+        <div class="tier-label">NEXT // THE DATA & MIDDLEWARE BRIDGE</div>
+        <div class="task-item" onclick="toggle(this)" data-task-id="asana_workflow">
+          <div class="checkbox"></div>
+          <div class="task-text">Asana Workflow Specialist Certificate</div>
+          <div class="task-tag tag-20">NEXT</div>
+        </div>
+        <div class="task-item" onclick="toggle(this)" data-task-id="excel_adv">
+          <div class="checkbox"></div>
+          <div class="task-text">Advanced Excel: Power Query & Relational Data Models (Macquarie)</div>
+          <div class="task-tag tag-20">NEXT</div>
+        </div>
+        <div class="task-item" onclick="toggle(this)" data-task-id="postman_rest">
+          <div class="checkbox"></div>
+          <div class="task-text">Postman & REST APIs (Inspecting CDE / BCF JSON Payloads)</div>
+          <div class="task-tag tag-20">NEXT</div>
+        </div>
+        <div class="task-item" onclick="toggle(this)" data-task-id="solibri_qa">
+          <div class="checkbox"></div>
+          <div class="task-text">Solibri: IFC Rule Checking & Information Takeoff (ITO)</div>
+          <div class="task-tag tag-60">NEXT</div>
+        </div>
+        <div class="task-item" onclick="toggle(this)" data-task-id="plannerly_l3">
+          <div class="checkbox"></div>
+          <div class="task-text">Plannerly Level 3: Information Management & EIR/BEP</div>
+          <div class="task-tag tag-60">NEXT</div>
+        </div>
+      </div>
+
+      <div class="tier tier-later">
+        <div class="tier-label">LATER // SOLUTIONS ARCHITECTURE STACK</div>
+        <div class="parked-item">Azure Integration Services (Logic Apps & Functions) <span>MONTH 6+</span></div>
+        <div class="parked-item">SQL & Relational Databases (PostgreSQL for Asset Metadata) <span>MONTH 6+</span></div>
+        <div class="parked-item">Python / Pandas (Programmatic IFC / BCF Parsing) <span>MONTH 12+</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot blue"></span>SYSTEM ARCHITECTURE & INTEGRATION VISION</div>
+      
+      <div class="architecture-box">
+        <div class="architecture-title">// Proposed Automated Pipeline</div>
+        <div class="architecture-flow">
+          Aconex (CDE Upload) &rarr; Azure Logic Apps &rarr; Solibri/Revizto QA Audit &rarr; SharePoint (Reports) &rarr; Asana (Status Orchestration)
+        </div>
+      </div>
+
+      <div class="day-row" style="margin-top: 14px;">
+        <div class="day-name">M0-12</div>
+        <div class="day-action"><strong>Stabilize & Bridge:</strong> Deliver live projects (Aconex/Revizto); learn Postman, SQL basics, and Power Query data modeling.</div>
+        <div class="day-type">ACTIVE</div>
+      </div>
+      
+      <div class="day-row">
+        <div class="day-name">M12-24</div>
+        <div class="day-action"><strong>Integrate & Automate:</strong> Deploy Azure Logic Apps/Functions; parse IFC/BCF via Python; publish automated QA metrics.</div>
+        <div class="day-type">QUEUED</div>
+      </div>
+
+      <div class="day-row">
+        <div class="day-name">M24-60</div>
+        <div class="day-action"><strong>Enterprise Strategy:</strong> ConTech Solutions Architect governing multi-platform digital twins and cloud data exchanges.</div>
+        <div class="day-type">TARGET</div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <div class="card-title" style="margin-bottom: 12px;"><span class="dot orange"></span>ANTI-PROCRASTINATION RULES</div>
+        <div class="rule-item"><div class="rule-num">01</div><div class="rule-text">Never leave a session without writing one specific next action.<span class="rule-sub">// future-you must not have to decide</span></div></div>
+        <div class="rule-item"><div class="rule-num">02</div><div class="rule-text">The 2-minute start. Commit only to opening the tool.<span class="rule-sub">// starting beats stopping every time</span></div></div>
+        <div class="rule-item"><div class="rule-num">03</div><div class="rule-text">Learn it &rarr; use it within 7 days OR write/post about it.<span class="rule-sub">// every lesson must ship</span></div></div>
+        <div class="rule-item"><div class="rule-num">04</div><div class="rule-text">Track streaks not hours. Did something today? Yes/no.<span class="rule-sub">// consistency beats intensity</span></div></div>
+        <div class="rule-item"><div class="rule-num">05</div><div class="rule-text">Max 2 active skills. Everything else is in the parking lot.<span class="rule-sub">// permission to ignore parked stacks</span></div></div>
+        <div class="rule-item"><div class="rule-num">06</div><div class="rule-text">If thinking "what to learn" &mdash; check this page.<span class="rule-sub">// decision is already made</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card full" style="margin-bottom: 20px;">
+    <div class="card-title"><span class="dot orange"></span>CAREER TRAJECTORY: SOLUTIONS ARCHITECT ROADMAP</div>
+    <div class="grid" style="margin-bottom: 0;">
+      <div>
+        <div class="salary-bar">
+          <div class="salary-label"><span>Colony Architects / Part 2 Assistant</span><strong>£27k–£35k</strong></div>
+          <div class="bar-track"><div class="bar-fill green" style="width: 30%;"></div></div>
+        </div>
+        <div class="salary-bar">
+          <div class="salary-label"><span>✓ Glider DDM (Current Baseline)</span><strong>£35k–£37k</strong></div>
+          <div class="bar-track"><div class="bar-fill yellow" style="width: 42%;"></div></div>
+        </div>
+        <div class="salary-bar">
+          <div class="salary-label"><span>Year 3 Target: ConTech Solutions Architect</span><strong>£85k–£95k</strong></div>
+          <div class="bar-track"><div class="bar-fill blue" style="width: 78%;"></div></div>
+        </div>
+        <div class="salary-bar">
+          <div class="salary-label"><span style="color: var(--accent2);">Year 10 Target: Enterprise Architect / Director</span><strong style="color: var(--accent2);">£120k–£160k+</strong></div>
+          <div class="bar-track"><div class="bar-fill green" style="width: 100%;"></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="ascii-chart">^ Salary (£)
+|                                               /--- [10-Yr: Enterprise Architect / Director £120k-£160k+]
+|                                              /
+|                                /------------/  <-- [3-Yr: Solutions Architect £85k-£95k]
+|                               /
+|                 /------------/  <-- [Senior DDM / Information Specialist £55k-£65k]
+|                /
+|   £35k--£37k (Glider DDM Baseline)
++------------------------------------------------------------------------------------------------------> Time
+    Month 0      Month 12     Month 24     Year 3       Year 5       Year 7       Year 10</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="portfolio-header">
+    <div>
+      <h2>ENTERPRISE SYSTEMS & CASE STUDY PORTFOLIO</h2>
+      <p>STAR-STRUCTURED EVIDENCE & ARCHITECTURAL HIGHLIGHTS</p>
+    </div>
+    <div class="portfolio-badge">SOLUTIONS ARCHITECT TRACK</div>
+  </div>
+
+  <div class="card full" style="margin-bottom: 20px;">
+    <div class="case-study-row">
+      <div class="cs-num">CS 01</div>
+      <div class="cs-title">
+        <strong>Automated Metadata & CDE Governance (Colony & ACC):</strong> Implemented ISO 19650 compliant revision approval gates and metadata verification for Stage 4+ packages.
+      </div>
+    </div>
+    <div class="case-study-row">
+      <div class="cs-num">CS 02</div>
+      <div class="cs-title">
+        <strong>Interoperability & Data Translation:</strong> Built multi-format bridge pipelines (Revit &rarr; AutoCAD / REFX / IFC) mitigating design-phase model corruption.
+      </div>
+    </div>
+    <div class="case-study-row">
+      <div class="cs-num">CS 03</div>
+      <div class="cs-title">
+        <strong>Automated Clash Detection & Issue Tracking:</strong> Deployed Revizto Level 2 clash automation matrices, cutting manual inspection cycles across multi-disciplinary consultant models.
+      </div>
+    </div>
+    <div class="case-study-row">
+      <div class="cs-num">CS 04</div>
+      <div class="cs-title">
+        <strong>Ecosystem Integration Architecture (Proposed):</strong> Architected an automated event-driven compliance engine connecting Aconex, Solibri, SharePoint, and Asana via Azure middleware.
+      </div>
+    </div>
+  </div>
+
+  <!-- INTEGRATED MASTER DNV SECTION -->
+  <div class="portfolio-header" style="background: linear-gradient(135deg, #1a1a2a 0%, #1a2a1a 100%); border-color: var(--accent4);">
+    <div>
+      <h2 style="color: var(--accent4);">📋 SPANISH DIGITAL NOMAD VISA (DNV) MASTER CHECKLIST & COST BREAKDOWN</h2>
+      <p>// Route: In-Spain Electronic Filing via Digital Certificate (UGE-CE) &bull; Grants Initial 3-Year Permit (vs 1-Yr via London Consulate)[cite: 1]</p>
+    </div>
+    <div class="portfolio-badge" style="background: var(--accent4);">TARGET: Q4 2026</div>
+  </div>
+
+  <div class="grid">
+    <!-- Phase 1 -->
+    <div class="card">
+      <div class="card-title"><span class="dot green"></span>Phase 1: Financial & Employment Qualification Gate[cite: 1]</div>
+      <div class="task-item done" onclick="toggle(this)" data-task-id="dnv_solo_financial">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Solo Financial Threshold Met:</strong> Statutory req: €2,849/mo gross (€34,188/yr)[cite: 1]. Baseline Glider salary (£35k–£37k &approx; €41k–€43k) clears threshold[cite: 1].
+          <span class="rule-sub">// Cost: £0 (Earned salary)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-5">CLEARED</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_family_financial">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Family Financial Threshold (Wife & Son):</strong> Req: €4,275/mo gross (€51,300/yr &approx; £43.5k–£44k/yr)[cite: 1]. UK non-remote salaries cannot be pooled[cite: 1]. Unlock via £45k+ salary tier OR bridge £7k/yr deficit with ~£15k–£18k liquid bank savings at dependent filing[cite: 1].
+          <span class="rule-sub">// Cost: £0[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">BUFFER REQ</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_tenure">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>3-Month Continuous Remote Tenure:</strong> Demonstrate 3+ months continuous remote work with Glider prior to UGE submission (timed post-probation)[cite: 1].
+          <span class="rule-sub">// Cost: £0[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">POST-PROBATION</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_clause_perm_letter">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Clause 8.7 Variation & Employer Permission Letter:</strong> Agree Clause 8.7 variation with Dave Townsend[cite: 1]. Signed letter confirming role, EUR salary, 100% remote nature, and explicit permission to work from Spain[cite: 1].
+          <span class="rule-sub">// Cost: £0[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">OCT 2026</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_glider_good_standing">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Glider Certificate of Good Standing:</strong> Order from Companies House proving active trading &gt;1 year[cite: 1]. Must be issued &lt;6 months from application, with Hague Apostille and sworn translation[cite: 1].
+          <span class="rule-sub">// Cost: £15–£30[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">ADMIN</div>
+      </div>
+      <div class="task-item done" onclick="toggle(this)" data-task-id="dnv_prof_qual">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Professional Qualification / Work Experience:</strong> Satisfy both degree/Part 2 credentials and 3+ years AEC industry experience[cite: 1].
+          <span class="rule-sub">// Cost: £0[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-5">VERIFIED</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_spanish_cv">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Updated Spanish CV:</strong> Comprehensive CV tailored to DDM, CDE governance, and technical coordination, translated into Spanish[cite: 1].
+          <span class="rule-sub">// Cost: £0 (Self-translated)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-5">ACTION</div>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="card">
+      <div class="card-title"><span class="dot orange"></span>Phase 2: UK Civil Documents, Apostilles & Legalisation[cite: 1]</div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_acro_checks">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>ACRO Criminal Record Certificates:</strong> Clean UK certificate (2-year residence cover) + signed declaration of no offences for past 5 years[cite: 1]. Applicant: £65 | Wife: £65 (minor under 18 exempt)[cite: 1].
+          <span class="rule-sub">// Cost: £65 (Solo) | £130 (Family)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">POLICE</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_fcdo_apostilles">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>FCDO Legalisation (Hague Apostilles):</strong> Legalisation via UK FCDO (£45/doc + ~£6 tracked postage)[cite: 1]. Solo (3 docs): ACRO, Degree/HMRC work history, Companies House cert[cite: 1]. Family (5 docs): + Wife ACRO, Marriage cert, Son's birth cert[cite: 1].
+          <span class="rule-sub">// Cost: ~£141 (Solo) | ~£231 (Family)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">LEGALISE</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_sworn_translations">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Sworn Official Translations (Traducciones Juradas):</strong> Official Spanish Traductor Jurado (~£45–£55 per doc)[cite: 1]. Solo (~4 docs): ACRO, Degree/Work, Glider letter, Companies House cert[cite: 1]. Family (~7 docs): + Wife ACRO, Marriage cert, Birth cert[cite: 1].
+          <span class="rule-sub">// Cost: ~£200 (Solo) | ~£350 (Family)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">TRANSLATE</div>
+      </div>
+
+      <div style="margin-top: 18px;">
+        <div class="card-title"><span class="dot blue"></span>Phase 3: Social Security & Healthcare Coverage[cite: 1]</div>
+        <div class="task-item" onclick="toggle(this)" data-task-id="dnv_hmrc_a1">
+          <div class="checkbox"></div>
+          <div class="task-text">
+            <strong>HMRC A1 Certificate of Coverage:</strong> UK-EU bilateral agreement exemption form proving continuous UK NI contributions[cite: 1]. Exempts Glider from registering with or paying Spanish Social Security[cite: 1].
+            <span class="rule-sub">// Cost: £0 / FREE (HMRC issued)[cite: 1]</span>
+          </div>
+          <div class="task-tag tag-5">MANDATORY</div>
+        </div>
+        <div class="task-item" onclick="toggle(this)" data-task-id="dnv_private_insurance">
+          <div class="checkbox"></div>
+          <div class="task-text">
+            <strong>Spanish Private Health Insurance (1-Yr Upfront):</strong> Authorized insurer (Sanitas, Adeslas, DKV, Cigna Spain) with zero copays (<em>sin copagos</em>), emergency cover, zero deductibles[cite: 1]. Solo (~€60–€85/mo): £600–£850/yr[cite: 1]. Family (~€160–€225/mo): £1,650–£2,300/yr[cite: 1].
+            <span class="rule-sub">// Cost: £600–£850 (Solo) | £1,650–£2,300 (Family)[cite: 1]</span>
+          </div>
+          <div class="task-tag tag-20">HEALTH</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- Phase 4 -->
+    <div class="card">
+      <div class="card-title"><span class="dot"></span>Phase 4: Administrative Setup & In-Spain Digital Filing[cite: 1]</div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_london_nie">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Non-Resident NIE (Pre-Arrival):</strong> Obtain NIE via London Spanish Consulate before departing to bypass Spanish police appointment bottlenecks[cite: 1]. Fee: ~€10 / £8.50 per person[cite: 1].
+          <span class="rule-sub">// Cost: £8.50 (Solo) | £25.50 (Family)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-5">PRE-TRIP</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_schengen_entry">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Schengen 90-Day Entry:</strong> Enter Spain under the 90-day visa-free regime with clear passport entry stamp[cite: 1]. Submit electronic application prior to Day 60[cite: 1].
+          <span class="rule-sub">// Cost: Flights / Accommodation[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">LOGISTICS</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_fnmt_cert">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>FNMT Digital Certificate (Certificado Digital):</strong> Request online via FNMT using NIE, attend ID verification appointment in Spain (Ayuntamiento / Agencia Tributaria), install certificate in browser[cite: 1].
+          <span class="rule-sub">// Cost: £0 / FREE[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-5">ELECTRONIC</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_uge_submission">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>UGE Electronic Processing Fee (Tasa 790-038):</strong> Sede Electrónica filing fee: €73.26 (~£63) per applicant[cite: 1]. Complete Form MI-DNV (Lead) and MI-F (Dependents)[cite: 1]. Solo: £63 | Family: ~£189[cite: 1].
+          <span class="rule-sub">// Cost: £63 (Solo) | ~£189 (Family)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">UGE-CE</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_uge_resolution">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Statutory 20-Working-Day Resolution:</strong> UGE statutory processing timeline is 20 working days[cite: 1]. Approval issues an initial 3-year residence permit[cite: 1].
+          <span class="rule-sub">// Cost: £0[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-5">PERMIT</div>
+      </div>
+    </div>
+
+    <!-- Phase 5 -->
+    <div class="card">
+      <div class="card-title"><span class="dot green"></span>Phase 5: Post-Approval Formalities in Spain[cite: 1]</div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_padron_reg">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Padrón Registration (Empadronamiento):</strong> Register local rental address at municipal town hall (Ayuntamiento)[cite: 1].
+          <span class="rule-sub">// Cost: £0 / FREE[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-5">LOCAL</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_tie_fingerprints">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>TIE Biometric Residence Card (Tasa 790-012):</strong> Police fingerprint appointment fee (<em>Toma de Huellas</em>): €16.08 (~£14) per card[cite: 1]. Solo: £14 | Family: ~£42[cite: 1].
+          <span class="rule-sub">// Cost: £14 (Solo) | ~£42 (Family)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">BIOMETRICS</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_wife_work_rights">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Wife's Labor Activation (Article 65 Ley 14/2013):</strong> Her dependent TIE grants full, unrestricted working rights in Spain (employed or autónoma) upon issuance without separate sponsorship[cite: 1].
+          <span class="rule-sub">// Cost: £0 (Direct household income unlocked)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-5">WORK PERMIT</div>
+      </div>
+
+      <div class="next-action" style="margin-top: 16px; border-color: var(--accent4);">
+        <div class="next-action-label" style="color: var(--accent4);">// SHORT-TERM RECCE STRATEGY</div>
+        <div class="next-action-text">
+          UK passport holders can remain in Schengen up to 90 days in any 180-day window[cite: 1]. Leverage this window for a Barcelona operational recce before filing[cite: 1].
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Master Cost Table Card -->
+  <div class="card full" style="margin-bottom: 20px;">
+    <div class="card-title"><span class="dot yellow"></span>💰 MASTER COST SUMMARY TABLE[cite: 1]</div>
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>Phase / Item[cite: 1]</th>
+          <th>Specific Expense[cite: 1]</th>
+          <th>Solo Applicant (You)[cite: 1]</th>
+          <th>Family (You + Wife + Son)[cite: 1]</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Phase 1: Eligibility</strong>[cite: 1]</td>
+          <td>Glider Companies House Good Standing[cite: 1]</td>
+          <td>£20[cite: 1]</td>
+          <td>£20[cite: 1]</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Employer Letter, Contracts & A1 Form[cite: 1]</td>
+          <td>£0[cite: 1]</td>
+          <td>£0[cite: 1]</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 2: Legalisation</strong>[cite: 1]</td>
+          <td>ACRO Police Certificates[cite: 1]</td>
+          <td>£65[cite: 1]</td>
+          <td>£130[cite: 1]</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>FCDO Hague Apostilles[cite: 1]</td>
+          <td>~£141[cite: 1]</td>
+          <td>~£231[cite: 1]</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Sworn Translations (<em>Traductor Jurado</em>)[cite: 1]</td>
+          <td>~£200[cite: 1]</td>
+          <td>~£350[cite: 1]</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 3: Identification</strong>[cite: 1]</td>
+          <td>Consular Non-Resident NIE[cite: 1]</td>
+          <td>£8.50[cite: 1]</td>
+          <td>£25.50[cite: 1]</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>FNMT Digital Certificate & Padrón[cite: 1]</td>
+          <td>£0[cite: 1]</td>
+          <td>£0[cite: 1]</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>HMRC A1 Certificate of Coverage[cite: 1]</td>
+          <td>£0[cite: 1]</td>
+          <td>£0[cite: 1]</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 4: Healthcare</strong>[cite: 1]</td>
+          <td>Spanish Private Health Insurance (1 Year)[cite: 1]</td>
+          <td>£600 – £850[cite: 1]</td>
+          <td>£1,650 – £2,300[cite: 1]</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 5: Gov Fees</strong>[cite: 1]</td>
+          <td>Tasa 790-038 (UGE Submission)[cite: 1]</td>
+          <td>£63[cite: 1]</td>
+          <td>~£189[cite: 1]</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Tasa 790-012 (TIE Physical Card)[cite: 1]</td>
+          <td>£14[cite: 1]</td>
+          <td>~£42[cite: 1]</td>
+        </tr>
+        <tr class="total-row">
+          <td><strong>TOTAL (DIY ROUTE)</strong>[cite: 1]</td>
+          <td><em>Self-filed via Digital Certificate</em>[cite: 1]</td>
+          <td style="color: var(--accent2);">~£1,110 – £1,360[cite: 1]</td>
+          <td style="color: var(--accent);">~£2,640 – £3,290[cite: 1]</td>
+        </tr>
+        <tr class="total-row">
+          <td><strong>TOTAL (LAWYER ROUTE)</strong>[cite: 1]</td>
+          <td><em>With Agency / Legal Representation</em>[cite: 1]</td>
+          <td>~£2,400 – £2,650[cite: 1]</td>
+          <td>~£4,790 – £5,440[cite: 1]</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const STORAGE_PREFIX = 'habakuk_os_';
+
+    function toggle(element) {
+      element.classList.toggle('done');
+      saveTaskState();
+    }
+
+    function saveTaskState() {
+      const tasks = document.querySelectorAll('.task-item');
+      const state = {};
+      tasks.forEach((task) => {
+        const id = task.getAttribute('data-task-id');
+        if (id) {
+          state[id] = task.classList.contains('done');
+        }
+      });
+      try {
+        localStorage.setItem(STORAGE_PREFIX + 'tasks', JSON.stringify(state));
+      } catch (e) {
+        console.error('LocalStorage write error:', e);
+      }
+    }
+
+    function loadTaskState() {
+      const saved = localStorage.getItem(STORAGE_PREFIX + 'tasks');
+      if (saved) {
+        try {
+          const state = JSON.parse(saved);
+          document.querySelectorAll('.task-item').forEach((task) => {
+            const id = task.getAttribute('data-task-id');
+            if (id && Object.prototype.hasOwnProperty.call(state, id)) {
+              if (state[id]) {
+                task.classList.add('done');
+              } else {
+                task.classList.remove('done');
+              }
+            }
+          });
+        } catch (e) {
+          console.error('LocalStorage read error:', e);
+        }
+      }
+    }
+
+    function renderStreak() {
+      const container = document.getElementById('streak-grid');
+      if (!container) return;
+      container.innerHTML = '';
+      const totalDays = 28;
+      const savedStreak = parseInt(localStorage.getItem(STORAGE_PREFIX + 'streak_count'), 10) || 19;
+      
+      for (let i = 1; i <= totalDays; i++) {
+        const box = document.createElement('div');
+        box.className = 'streak-day' + (i <= savedStreak ? ' active' : '');
+        box.title = 'Day ' + i;
+        box.onclick = function() {
+          this.classList.toggle('active');
+          updateStreakCount();
+        };
+        container.appendChild(box);
+      }
+      document.getElementById('streak-count').innerText = savedStreak;
+    }
+
+    function updateStreakCount() {
+      const activeBoxes = document.querySelectorAll('.streak-day.active').length;
+      document.getElementById('streak-count').innerText = activeBoxes;
+      localStorage.setItem(STORAGE_PREFIX + 'streak_count', activeBoxes);
+    }
+
+    function initOS() {
+      loadTaskState();
+      renderStreak();
+    }
+
+    window.onload = initOS;
+  </script>
+</body>
+</html>
