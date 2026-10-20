@@ -66,6 +66,34 @@
     letter-spacing: 0.5px;
   }
 
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .back-btn {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 2px;
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .back-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--surface2);
+  }
+
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -283,7 +311,10 @@
 <p>// HABAKUK TWO TWO &mdash; v1.1 updated 2026 &middot; Target: 1,000 Words ✓ &middot; Core Stack Selected ✓ &middot; Barcelona Destination Integration ✓</p>
 </div>
 
+<div class="header-actions">
+<a href="../" class="back-btn">&larr; Launchpad</a>
 <div class="target-badge">🎯 Spanish Fluency Track</div>
+</div>
 </div>
 
 <div class="grid">
