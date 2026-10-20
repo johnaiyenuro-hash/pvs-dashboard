@@ -301,6 +301,43 @@
   .status-ready { background: #2a3a1a; color: var(--accent); }
   .portfolio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
   @media (max-width: 700px) { .portfolio-grid { grid-template-columns: 1fr; } }
+
+  /* Master Cost Table Styling */
+  .cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-top: 14px;
+  }
+  .cost-table th {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 8px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  .cost-table td {
+    padding: 9px 8px;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.4;
+    font-family: 'Space Mono', monospace;
+  }
+  .cost-table tr:last-child td { border-bottom: none; }
+  .cost-table tr.total-row {
+    background: rgba(74, 255, 180, 0.05);
+    font-weight: 700;
+  }
+  .cost-table tr.total-row td {
+    border-top: 1px solid var(--accent2);
+    border-bottom: 1px solid var(--accent2);
+    color: var(--text);
+  }
+  @media (max-width: 700px) {
+    .cost-table { display: block; overflow-x: auto; }
+  }
 	</style>
 </head>
 <body>
@@ -685,6 +722,305 @@
 </div>
 </div>
 </div>
+
+  <!-- INTEGRATED MASTER DNV SECTION -->
+  <div class="portfolio-header" style="background: linear-gradient(135deg, #1a1a2a 0%, #1a2a1a 100%); border-color: var(--accent4);">
+    <div>
+      <h2 style="color: var(--accent4);">📋 SPANISH DIGITAL NOMAD VISA (DNV) MASTER CHECKLIST & COST BREAKDOWN</h2>
+      <p>// Route: In-Spain Electronic Filing via Digital Certificate (UGE-CE) &bull; Grants Initial 3-Year Permit (vs 1-Yr via London Consulate)[cite: 1]</p>
+    </div>
+    <div class="portfolio-badge" style="background: var(--accent4);">TARGET: Q4 2026</div>
+  </div>
+
+  <div class="grid">
+    <!-- Phase 1 -->
+    <div class="card">
+      <div class="card-title"><span class="dot green"></span>Phase 1: Financial & Employment Qualification Gate[cite: 1]</div>
+      <div class="task-item done" onclick="toggle(this)" data-task-id="dnv_solo_financial">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Solo Financial Threshold Met:</strong> Statutory req: €2,849/mo gross (€34,188/yr)[cite: 1]. Baseline Glider salary (£35k–£37k &approx; €41k–€43k) clears threshold[cite: 1].
+          <span class="rule-sub">// Cost: £0 (Earned salary)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-5">CLEARED</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_family_financial">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Family Financial Threshold (Wife & Son):</strong> Req: €4,275/mo gross (€51,300/yr &approx; £43.5k–£44k/yr)[cite: 1]. UK non-remote salaries cannot be pooled[cite: 1]. Unlock via £45k+ salary tier OR bridge £7k/yr deficit with ~£15k–£18k liquid bank savings at dependent filing[cite: 1].
+          <span class="rule-sub">// Cost: £0[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">BUFFER REQ</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_tenure">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>3-Month Continuous Remote Tenure:</strong> Demonstrate 3+ months continuous remote work with Glider prior to UGE submission (timed post-probation)[cite: 1].
+          <span class="rule-sub">// Cost: £0[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">POST-PROBATION</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_clause_perm_letter">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Clause 8.7 Variation & Employer Permission Letter:</strong> Agree Clause 8.7 variation with Dave Townsend[cite: 1]. Signed letter confirming role, EUR salary, 100% remote nature, and explicit permission to work from Spain[cite: 1].
+          <span class="rule-sub">// Cost: £0[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">OCT 2026</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_glider_good_standing">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Glider Certificate of Good Standing:</strong> Order from Companies House proving active trading &gt;1 year[cite: 1]. Must be issued &lt;6 months from application, with Hague Apostille and sworn translation[cite: 1].
+          <span class="rule-sub">// Cost: £15–£30[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">ADMIN</div>
+      </div>
+      <div class="task-item done" onclick="toggle(this)" data-task-id="dnv_prof_qual">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Professional Qualification / Work Experience:</strong> Satisfy both degree/Part 2 credentials and 3+ years AEC industry experience[cite: 1].
+          <span class="rule-sub">// Cost: £0[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-5">VERIFIED</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_spanish_cv">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Updated Spanish CV:</strong> Comprehensive CV tailored to DDM, CDE governance, and technical coordination, translated into Spanish[cite: 1].
+          <span class="rule-sub">// Cost: £0 (Self-translated)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-5">ACTION</div>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="card">
+      <div class="card-title"><span class="dot orange"></span>Phase 2: UK Civil Documents, Apostilles & Legalisation[cite: 1]</div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_acro_checks">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>ACRO Criminal Record Certificates:</strong> Clean UK certificate (2-year residence cover) + signed declaration of no offences for past 5 years[cite: 1]. Applicant: £65 | Wife: £65 (minor under 18 exempt)[cite: 1].
+          <span class="rule-sub">// Cost: £65 (Solo) | £130 (Family)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">POLICE</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_fcdo_apostilles">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>FCDO Legalisation (Hague Apostilles):</strong> Legalisation via UK FCDO (£45/doc + ~£6 tracked postage)[cite: 1]. Solo (3 docs): ACRO, Degree/HMRC work history, Companies House cert[cite: 1]. Family (5 docs): + Wife ACRO, Marriage cert, Son's birth cert[cite: 1].
+          <span class="rule-sub">// Cost: ~£141 (Solo) | ~£231 (Family)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">LEGALISE</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_sworn_translations">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Sworn Official Translations (Traducciones Juradas):</strong> Official Spanish Traductor Jurado (~£45–£55 per doc)[cite: 1]. Solo (~4 docs): ACRO, Degree/Work, Glider letter, Companies House cert[cite: 1]. Family (~7 docs): + Wife ACRO, Marriage cert, Birth cert[cite: 1].
+          <span class="rule-sub">// Cost: ~£200 (Solo) | ~£350 (Family)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">TRANSLATE</div>
+      </div>
+
+      <div style="margin-top: 18px;">
+        <div class="card-title"><span class="dot blue"></span>Phase 3: Social Security & Healthcare Coverage[cite: 1]</div>
+        <div class="task-item" onclick="toggle(this)" data-task-id="dnv_hmrc_a1">
+          <div class="checkbox"></div>
+          <div class="task-text">
+            <strong>HMRC A1 Certificate of Coverage:</strong> UK-EU bilateral agreement exemption form proving continuous UK NI contributions[cite: 1]. Exempts Glider from registering with or paying Spanish Social Security[cite: 1].
+            <span class="rule-sub">// Cost: £0 / FREE (HMRC issued)[cite: 1]</span>
+          </div>
+          <div class="task-tag tag-5">MANDATORY</div>
+        </div>
+        <div class="task-item" onclick="toggle(this)" data-task-id="dnv_private_insurance">
+          <div class="checkbox"></div>
+          <div class="task-text">
+            <strong>Spanish Private Health Insurance (1-Yr Upfront):</strong> Authorized insurer (Sanitas, Adeslas, DKV, Cigna Spain) with zero copays (<em>sin copagos</em>), emergency cover, zero deductibles[cite: 1]. Solo (~€60–€85/mo): £600–£850/yr[cite: 1]. Family (~€160–€225/mo): £1,650–£2,300/yr[cite: 1].
+            <span class="rule-sub">// Cost: £600–£850 (Solo) | £1,650–£2,300 (Family)[cite: 1]</span>
+          </div>
+          <div class="task-tag tag-20">HEALTH</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- Phase 4 -->
+    <div class="card">
+      <div class="card-title"><span class="dot"></span>Phase 4: Administrative Setup & In-Spain Digital Filing[cite: 1]</div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_london_nie">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Non-Resident NIE (Pre-Arrival):</strong> Obtain NIE via London Spanish Consulate before departing to bypass Spanish police appointment bottlenecks[cite: 1]. Fee: ~€10 / £8.50 per person[cite: 1].
+          <span class="rule-sub">// Cost: £8.50 (Solo) | £25.50 (Family)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-5">PRE-TRIP</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_schengen_entry">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Schengen 90-Day Entry:</strong> Enter Spain under the 90-day visa-free regime with clear passport entry stamp[cite: 1]. Submit electronic application prior to Day 60[cite: 1].
+          <span class="rule-sub">// Cost: Flights / Accommodation[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">LOGISTICS</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_fnmt_cert">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>FNMT Digital Certificate (Certificado Digital):</strong> Request online via FNMT using NIE, attend ID verification appointment in Spain (Ayuntamiento / Agencia Tributaria), install certificate in browser[cite: 1].
+          <span class="rule-sub">// Cost: £0 / FREE[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-5">ELECTRONIC</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_uge_submission">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>UGE Electronic Processing Fee (Tasa 790-038):</strong> Sede Electrónica filing fee: €73.26 (~£63) per applicant[cite: 1]. Complete Form MI-DNV (Lead) and MI-F (Dependents)[cite: 1]. Solo: £63 | Family: ~£189[cite: 1].
+          <span class="rule-sub">// Cost: £63 (Solo) | ~£189 (Family)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">UGE-CE</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_uge_resolution">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Statutory 20-Working-Day Resolution:</strong> UGE statutory processing timeline is 20 working days[cite: 1]. Approval issues an initial 3-year residence permit[cite: 1].
+          <span class="rule-sub">// Cost: £0[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-5">PERMIT</div>
+      </div>
+    </div>
+
+    <!-- Phase 5 -->
+    <div class="card">
+      <div class="card-title"><span class="dot green"></span>Phase 5: Post-Approval Formalities in Spain[cite: 1]</div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_padron_reg">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Padrón Registration (Empadronamiento):</strong> Register local rental address at municipal town hall (Ayuntamiento)[cite: 1].
+          <span class="rule-sub">// Cost: £0 / FREE[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-5">LOCAL</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_tie_fingerprints">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>TIE Biometric Residence Card (Tasa 790-012):</strong> Police fingerprint appointment fee (<em>Toma de Huellas</em>): €16.08 (~£14) per card[cite: 1]. Solo: £14 | Family: ~£42[cite: 1].
+          <span class="rule-sub">// Cost: £14 (Solo) | ~£42 (Family)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-20">BIOMETRICS</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_wife_work_rights">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Wife's Labor Activation (Article 65 Ley 14/2013):</strong> Her dependent TIE grants full, unrestricted working rights in Spain (employed or autónoma) upon issuance without separate sponsorship[cite: 1].
+          <span class="rule-sub">// Cost: £0 (Direct household income unlocked)[cite: 1]</span>
+        </div>
+        <div class="task-tag tag-5">WORK PERMIT</div>
+      </div>
+
+      <div class="next-action" style="margin-top: 16px; border-color: var(--accent4);">
+        <div class="next-action-label" style="color: var(--accent4);">// SHORT-TERM RECCE STRATEGY</div>
+        <div class="next-action-text">
+          UK passport holders can remain in Schengen up to 90 days in any 180-day window[cite: 1]. Leverage this window for a Barcelona operational recce before filing[cite: 1].
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Master Cost Table Card -->
+  <div class="card full" style="margin-bottom: 20px;">
+    <div class="card-title"><span class="dot yellow"></span>💰 MASTER COST SUMMARY TABLE[cite: 1]</div>
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>Phase / Item[cite: 1]</th>
+          <th>Specific Expense[cite: 1]</th>
+          <th>Solo Applicant (You)[cite: 1]</th>
+          <th>Family (You + Wife + Son)[cite: 1]</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Phase 1: Eligibility</strong>[cite: 1]</td>
+          <td>Glider Companies House Good Standing[cite: 1]</td>
+          <td>£20[cite: 1]</td>
+          <td>£20[cite: 1]</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Employer Letter, Contracts & A1 Form[cite: 1]</td>
+          <td>£0[cite: 1]</td>
+          <td>£0[cite: 1]</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 2: Legalisation</strong>[cite: 1]</td>
+          <td>ACRO Police Certificates[cite: 1]</td>
+          <td>£65[cite: 1]</td>
+          <td>£130[cite: 1]</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>FCDO Hague Apostilles[cite: 1]</td>
+          <td>~£141[cite: 1]</td>
+          <td>~£231[cite: 1]</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Sworn Translations (<em>Traductor Jurado</em>)[cite: 1]</td>
+          <td>~£200[cite: 1]</td>
+          <td>~£350[cite: 1]</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 3: Identification</strong>[cite: 1]</td>
+          <td>Consular Non-Resident NIE[cite: 1]</td>
+          <td>£8.50[cite: 1]</td>
+          <td>£25.50[cite: 1]</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>FNMT Digital Certificate & Padrón[cite: 1]</td>
+          <td>£0[cite: 1]</td>
+          <td>£0[cite: 1]</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>HMRC A1 Certificate of Coverage[cite: 1]</td>
+          <td>£0[cite: 1]</td>
+          <td>£0[cite: 1]</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 4: Healthcare</strong>[cite: 1]</td>
+          <td>Spanish Private Health Insurance (1 Year)[cite: 1]</td>
+          <td>£600 – £850[cite: 1]</td>
+          <td>£1,650 – £2,300[cite: 1]</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 5: Gov Fees</strong>[cite: 1]</td>
+          <td>Tasa 790-038 (UGE Submission)[cite: 1]</td>
+          <td>£63[cite: 1]</td>
+          <td>~£189[cite: 1]</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Tasa 790-012 (TIE Physical Card)[cite: 1]</td>
+          <td>£14[cite: 1]</td>
+          <td>~£42[cite: 1]</td>
+        </tr>
+        <tr class="total-row">
+          <td><strong>TOTAL (DIY ROUTE)</strong>[cite: 1]</td>
+          <td><em>Self-filed via Digital Certificate</em>[cite: 1]</td>
+          <td style="color: var(--accent2);">~£1,110 – £1,360[cite: 1]</td>
+          <td style="color: var(--accent);">~£2,640 – £3,290[cite: 1]</td>
+        </tr>
+        <tr class="total-row">
+          <td><strong>TOTAL (LAWYER ROUTE)</strong>[cite: 1]</td>
+          <td><em>With Agency / Legal Representation</em>[cite: 1]</td>
+          <td>~£2,400 – £2,650[cite: 1]</td>
+          <td>~£4,790 – £5,440[cite: 1]</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 <script>
   function toggle(el) {
     el.classList.toggle('done');
