@@ -525,6 +525,96 @@
 
     .cs-title { flex: 1; line-height: 1.4; }
 
+    /* Interactive Case Study <details> Dropdown */
+    details.cs-details {
+      border-bottom: 1px solid var(--border);
+    }
+
+    details.cs-details:last-child {
+      border-bottom: none;
+    }
+
+    details.cs-details summary {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      font-size: 13px;
+      cursor: pointer;
+      list-style: none;
+      transition: all 0.2s ease;
+    }
+
+    details.cs-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.cs-details summary:hover {
+      color: var(--accent);
+    }
+
+    .cs-toggle-badge {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      padding: 3px 8px;
+      border-radius: 2px;
+      border: 1px solid var(--border);
+      color: var(--accent);
+      background: var(--surface2);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    details.cs-details[open] .cs-toggle-badge {
+      background: var(--accent);
+      color: #0d0f14;
+      border-color: var(--accent);
+      font-weight: 700;
+    }
+
+    .cs-body {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent2);
+      border-radius: 4px;
+      padding: 18px 20px;
+      margin: 6px 0 14px 0;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .cs-section-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent);
+      margin: 16px 0 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cs-section-title:first-of-type {
+      margin-top: 12px;
+    }
+
+    .cs-list {
+      margin: 6px 0 0 18px;
+      color: var(--text);
+    }
+
+    .cs-list li {
+      margin-bottom: 6px;
+    }
+
+    .cs-list li strong {
+      color: var(--accent2);
+    }
+
     /* Master Cost Table Styling */
     .cost-table {
       width: 100%;
@@ -792,6 +882,85 @@
         <strong>Ecosystem Integration Architecture (Proposed):</strong> Architected an automated event-driven compliance engine connecting Aconex, Solibri, SharePoint, and Asana via Azure middleware.
       </div>
     </div>
+
+    <details class="cs-details">
+      <summary>
+        <div class="cs-num">CS 05</div>
+        <div class="cs-title">
+          <strong>Automated Personal Vision System &amp; GitOps Knowledge Hub:</strong> Engineered a decoupled, terminal-first multi-subsystem operational portal with autonomous CLI GitOps synchronization and zero-backend state persistence.
+        </div>
+        <div class="cs-toggle-badge">STAR Breakdown &#9662;</div>
+      </summary>
+      <div class="cs-body">
+        <div class="role-meta" style="margin-top: 0; margin-bottom: 12px;">
+          <div class="role-pill highlight">Target: ConTech Solutions Architect (£85k–£110k+) / Domain Data Engineer ($140k–$180k)</div>
+          <div class="role-pill">Methodology: PLAN &rarr; BUILD &rarr; ANALYSE (PBA) Operational Engine</div>
+          <div class="role-pill">Stack: Git, GitHub Pages, Google Sites (sandboxed iframes), Antigravity CLI (agy), PowerShell, HTML5/CSS3, JS (localStorage)</div>
+        </div>
+
+        <div class="cs-section-title">1. Situation (The Problem &amp; Operational Context)</div>
+        <ul class="cs-list">
+          <li><strong>The Strategic Need:</strong> Managing a multi-year career trajectory (DDM onboarding &rarr; Solutions Architect dual track, Spain DNV mobility, technical study queues, and habit momentum) required a unified, high-signal dashboard.</li>
+          <li><strong>The Manual Friction:</strong>
+            <ul class="cs-list" style="margin-top: 4px;">
+              <li>Early iterations required manual HTML copy-pasting into Google Sites or GitHub's browser editor with every task or habit streak increment.</li>
+              <li>Sandboxed Google Sites iframes stripped raw HTML script executions, while cross-origin security rules (<code>X-Frame-Options</code>) prevented embedding raw GitHub repositories directly.</li>
+              <li>Managing separate repositories for individual trackers created context switching and maintenance overhead.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="cs-section-title">2. Task (The Engineering Objective)</div>
+        <ul class="cs-list">
+          <li><strong>Design an Automated, Decoupled Architecture:</strong> Build an automated personal operating system (PVS) with zero friction between local terminal activity, version-controlled cloud storage, and public-facing visual dashboards.</li>
+          <li><strong>Constraints &amp; Principles:</strong>
+            <ul class="cs-list" style="margin-top: 4px;">
+              <li><strong>Zero Code-Rot:</strong> Strict preservation of design tokens, CSS variables (<code>--accent</code>, <code>--surface</code>), and DOM structure.</li>
+              <li><strong>State Continuity:</strong> Browser <code>localStorage</code> persistence across embedded iframes using an explicit namespace (<code>habakuk_os_</code>) to prevent key collisions.</li>
+              <li><strong>Terminal-First Execution:</strong> Eliminate browser logins and manual file management through autonomous CLI execution.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="cs-section-title">3. Action (The Architectural Implementation)</div>
+        <div class="ascii-chart" style="margin-top: 6px; margin-bottom: 10px; background: var(--surface);">[ Antigravity CLI (Local Terminal) ]
+   │
+   ├─► Plain-Text Agent Prompt / PowerShell Alias (`Sync-PVS`)
+   ▼
+[ Local Workspace: pvs-dashboard/ ]
+   ├── index.html                   (Master Launchpad Hub)
+   ├── pvs/index.html               (ConTech DDM &amp; Solutions Architect OS v28)
+   ├── spanish/index.html           (Daily Fluency &amp; DNV Relocation Tracker)
+   ├── mercor/index.html            (AI Contracting &amp; Buffer Engine)
+   └── health/index.html            (Physical OS &amp; Habit Discipline)
+   │
+   ├─► agy: Updates DOM in-place &amp; executes GitOps cycle
+   ▼
+[ GitHub Pages Build: https://johnaiyenuro-hash.github.io/pvs-dashboard/ ]
+   │ (~30s Cloud Deployment)
+   ▼
+[ Google Sites Portal: Real-Time Dynamic Iframe Embed ]</div>
+        <ul class="cs-list">
+          <li><strong>Multi-Subsystem Monorepo Layout:</strong> Consolidated discrete tracking applications into a structured single repository (<code>pvs-dashboard</code>), linking four primary engines: Professional, Spanish, Mercor, and Health through a central, styled Master Launchpad (<code>index.html</code>).</li>
+          <li><strong>Decoupled Deployment Pipeline:</strong> Configured GitHub Pages to host the compiled directory while embedding the root domain into Google Sites via sandboxed iframes&mdash;ensuring that downstream visual representations refresh automatically upon any upstream push.</li>
+          <li><strong>Autonomous CLI Automation via Antigravity:</strong> Integrated Antigravity CLI (<code>agy --yolo</code>) with Windows PowerShell profile scripting (<code>$PROFILE</code>), enabling plain-English terminal commands to execute file parsing, streak calculations, Git staging, and remote pushes autonomously.</li>
+        </ul>
+
+        <div class="cs-section-title">4. Result &amp; Business Impact (The Metrics)</div>
+        <ul class="cs-list">
+          <li><strong>Deployment Friction Eliminated:</strong> Reduced the dashboard update and publish cycle from a multi-minute, 5-step manual copy-paste sequence &rarr; a single terminal command executed in under 10 seconds.</li>
+          <li><strong>Persistent State Integrity:</strong> Maintained 100% data continuity across 28-day habit streaks and multi-tier certification queues without database hosting overhead, utilizing domain-bound client serialization.</li>
+          <li><strong>Architectural Mastery:</strong> Demonstrated practical proficiency in GitOps, decoupled front-end architectures, local agent CLI orchestration, and cross-platform embedding.</li>
+        </ul>
+
+        <div class="next-action" style="margin-top: 14px; background: var(--surface); border-color: var(--accent2);">
+          <div class="next-action-label" style="color: var(--accent2);">💡 1-SENTENCE SUMMARY FOR LINKEDIN / CV BULLETS</div>
+          <div class="next-action-text" style="font-size: 13px; font-weight: 400; font-style: italic;">
+            "Engineered a GitOps-driven Personal Vision System and multi-subsystem portal using Antigravity CLI, GitHub Pages, and sandboxed iframe orchestration&mdash;automating local-to-cloud visual dashboard synchronization through autonomous terminal pipelines."
+          </div>
+        </div>
+      </div>
+    </details>
   </div>
 
   <script>
