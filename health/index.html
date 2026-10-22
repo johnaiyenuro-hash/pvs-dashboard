@@ -403,6 +403,26 @@
       border-radius: 2px;
     }
 
+    .habit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 32px;
+    }
+
+    .habit-grid .task-item:last-child { border-bottom: 1px solid var(--border); }
+
+    .habit-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .habit-grid { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 700px) {
       .grid { grid-template-columns: 1fr; }
       .full { grid-column: 1; }
@@ -553,6 +573,61 @@
           <strong>Active Recovery:</strong> Casual walk (10,000 step floor) + 5m shoulder/hip mobility.
         </div>
         <div class="day-type" style="color: var(--muted);">RECOVERY</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HABIT ACCELERATORS (source: "Habits That Fix Your Health Faster" health update) -->
+  <div class="card full" style="margin-bottom: 20px;">
+    <div class="card-title"><span class="dot green"></span>HABIT ACCELERATORS // TIME-TO-RESULT</div>
+    <p style="color: var(--muted); font-size: 12px; margin-bottom: 8px;">
+      Simple habits. Real results. Tick each habit once it is locked in for its full window.
+    </p>
+    <div class="habit-grid">
+      <div class="task-item" onclick="toggle(this)" data-task-id="habit_warm_water">
+        <div class="habit-num">01</div><div class="checkbox"></div>
+        <div class="task-text">Drinking warm water every morning</div>
+        <div class="task-tag tag-blue">3 WEEKS</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="habit_sleep_11">
+        <div class="habit-num">02</div><div class="checkbox"></div>
+        <div class="task-text">Sleeping before 11 PM</div>
+        <div class="task-tag tag-orange">21 DAYS</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="habit_steps">
+        <div class="habit-num">03</div><div class="checkbox"></div>
+        <div class="task-text">Walking 8k&ndash;10k steps</div>
+        <div class="task-tag tag-green">30 DAYS</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="habit_whole_foods">
+        <div class="habit-num">04</div><div class="checkbox"></div>
+        <div class="task-text">Eating whole foods daily</div>
+        <div class="task-tag tag-blue">1 MONTH</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="habit_sugar">
+        <div class="habit-num">05</div><div class="checkbox"></div>
+        <div class="task-text">Reducing sugar intake</div>
+        <div class="task-tag tag-blue">3 WEEKS</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="habit_stretching">
+        <div class="habit-num">06</div><div class="checkbox"></div>
+        <div class="task-text">Consistent stretching</div>
+        <div class="task-tag tag-orange">30 DAYS</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="habit_gut">
+        <div class="habit-num">07</div><div class="checkbox"></div>
+        <div class="task-text">Improving gut health</div>
+        <div class="task-tag tag-green">60 DAYS</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="habit_strength">
+        <div class="habit-num">08</div><div class="checkbox"></div>
+        <div class="task-text">Strength training regularly</div>
+        <div class="task-tag tag-blue">2 MONTHS</div>
+      </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="habit_posture">
+        <div class="habit-num">09</div><div class="checkbox"></div>
+        <div class="task-text">Fixing your posture</div>
+        <div class="task-tag tag-orange">45 DAYS</div>
       </div>
     </div>
   </div>
