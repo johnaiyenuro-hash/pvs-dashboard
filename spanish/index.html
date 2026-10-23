@@ -763,8 +763,8 @@
       <div class="task-item" onclick="toggle(this)" data-task-id="dnv_clause_perm_letter">
         <div class="checkbox"></div>
         <div class="task-text">
-          <strong>Clause 8.7 Variation & Employer Permission Letter:</strong> Agree Clause 8.7 variation with Dave Townsend[cite: 1]. Signed letter confirming role, EUR salary, 100% remote nature, and explicit permission to work from Spain[cite: 1].
-          <span class="rule-sub">// Cost: £0[cite: 1]</span>
+          <strong>Clause 8.7 Variation & Glider Permission Letter:</strong> Agree formal variation to Clause 8.7 (Place of Work / Remote Work restriction) with Dave Townsend. Signed employer letter on Glider letterhead must explicitly specify: (1) explicit permission to perform all duties 100% remotely from Spain, (2) confirmed role/title and duties (DDM/CDE), (3) gross salary in EUR/GBP clearing UGE threshold, and (4) continuous tenure (&gt;3 months). Must be submitted with sworn Spanish translation (<em>Traducción Jurada</em>)[cite: 1].
+          <span class="rule-sub">// Cost: £0 (Direct employer agreement)[cite: 1]</span>
         </div>
         <div class="task-tag tag-20">OCT 2026</div>
       </div>
@@ -864,6 +864,14 @@
         </div>
         <div class="task-tag tag-20">LOGISTICS</div>
       </div>
+      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_temp_rental_rule">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Rule: Book 30–60 Day Temporary Rental First:</strong> Secure a 30–60 day temporary stay (<em>alquiler de temporada</em>) upon arrival for filing and processing. <strong>Strict rule:</strong> Do not sign an annual Barcelona lease until official UGE approval is secured[cite: 1].
+          <span class="rule-sub">// Strategy: Temporary Rental First &rarr; UGE Resolution &rarr; Annual Lease</span>
+        </div>
+        <div class="task-tag tag-20">RULE: HOUSING</div>
+      </div>
       <div class="task-item" onclick="toggle(this)" data-task-id="dnv_fnmt_cert">
         <div class="checkbox"></div>
         <div class="task-text">
@@ -896,8 +904,8 @@
       <div class="task-item" onclick="toggle(this)" data-task-id="dnv_padron_reg">
         <div class="checkbox"></div>
         <div class="task-text">
-          <strong>Padrón Registration (Empadronamiento):</strong> Register local rental address at municipal town hall (Ayuntamiento)[cite: 1].
-          <span class="rule-sub">// Cost: £0 / FREE[cite: 1]</span>
+          <strong>Annual Barcelona Lease & Padrón Registration:</strong> Sign formal annual lease (LAU) only after receiving official UGE residency approval, then register municipal address (<em>Empadronamiento</em>) at the Ayuntamiento[cite: 1].
+          <span class="rule-sub">// Cost: £0 / FREE (Ayuntamiento)[cite: 1]</span>
         </div>
         <div class="task-tag tag-5">LOCAL</div>
       </div>
@@ -922,6 +930,13 @@
         <div class="next-action-label" style="color: var(--accent4);">// SHORT-TERM RECCE STRATEGY</div>
         <div class="next-action-text">
           UK passport holders can remain in Schengen up to 90 days in any 180-day window[cite: 1]. Leverage this window for a Barcelona operational recce before filing[cite: 1].
+        </div>
+      </div>
+
+      <div class="next-action" style="margin-top: 12px; border-color: var(--accent3);">
+        <div class="next-action-label" style="color: var(--accent3);">// BARCELONA HOUSING MANDATE</div>
+        <div class="next-action-text">
+          <strong>Pre-Approval Rental Protocol:</strong> Always book a 30–60 day temporary rental first before signing any long-term annual Barcelona lease until UGE approval is officially granted. Protects against lease cancellation penalties and financial exposure during the 20-working-day review.
         </div>
       </div>
     </div>
@@ -1064,12 +1079,32 @@
 
   function saveState() {
     const tasks = document.querySelectorAll('.task-item');
-    const state = Array.from(tasks).map(t => t.classList.contains('done'));
+    const map = {};
+    const state = [];
+    tasks.forEach(t => {
+      const isDone = t.classList.contains('done');
+      state.push(isDone);
+      const id = t.getAttribute('data-task-id');
+      if (id) map[id] = isDone;
+    });
+    try { localStorage.setItem('lang_tasks_map', JSON.stringify(map)); } catch {}
     try { localStorage.setItem('lang_tasks', JSON.stringify(state)); } catch {}
   }
 
   function loadTaskState() {
     try {
+      const map = JSON.parse(localStorage.getItem('lang_tasks_map'));
+      if (map && typeof map === 'object' && Object.keys(map).length > 0) {
+        const tasks = document.querySelectorAll('.task-item');
+        tasks.forEach(t => {
+          const id = t.getAttribute('data-task-id');
+          if (id && map.hasOwnProperty(id)) {
+            if (map[id]) t.classList.add('done');
+            else t.classList.remove('done');
+          }
+        });
+        return;
+      }
       const state = JSON.parse(localStorage.getItem('lang_tasks'));
       if (!state) return;
       const tasks = document.querySelectorAll('.task-item');
