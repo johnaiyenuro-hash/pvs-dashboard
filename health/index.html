@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HABAKUK BODY // Operational OS v26</title>
+  <title>HABAKUK BODY // Operational OS v27 — Weight Loss Engine</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
@@ -13,10 +13,11 @@
       --surface: #13161e;
       --surface2: #1a1e2a;
       --border: #252a38;
-      --accent: #e8ff4a;
-      --accent2: #4affb4;
-      --accent3: #ff6b4a;
-      --accent4: #4a9fff;
+      --accent: #e8ff4a;       /* Lime primary */
+      --accent2: #4affb4;      /* Mint / Done */
+      --accent3: #ff6b4a;      /* Coral / Fat Loss & Alert */
+      --accent4: #4a9fff;      /* Sky blue / Metrics & Hydration */
+      --accent5: #c084fc;      /* Purple / Fasting */
       --text: #e8eaf0;
       --muted: #6b7280;
       --done-text: #4affb4;
@@ -40,7 +41,7 @@
       justify-content: space-between;
       align-items: flex-end;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 16px;
     }
 
     .header-left h1 {
@@ -57,11 +58,18 @@
       margin-top: 4px;
     }
 
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
     .target-badge {
-      background: var(--accent);
+      background: var(--accent3);
       color: #0d0f14;
-      font-size: 12px;
-      font-weight: 700;
+      font-size: 11px;
+      font-weight: 800;
       padding: 6px 14px;
       border-radius: 2px;
       font-family: 'Space Mono', monospace;
@@ -69,11 +77,17 @@
       letter-spacing: 0.5px;
     }
 
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
+    .fasting-badge {
+      background: #2a1a3a;
+      color: var(--accent5);
+      border: 1px solid var(--accent5);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 2px;
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .back-btn {
@@ -136,6 +150,7 @@
     .card-title .dot.green { background: var(--accent2); }
     .card-title .dot.orange { background: var(--accent3); }
     .card-title .dot.blue { background: var(--accent4); }
+    .card-title .dot.purple { background: var(--accent5); }
 
     .role-name {
       font-size: 22px;
@@ -147,7 +162,7 @@
 
     .role-meta {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
       margin-top: 12px;
     }
@@ -159,11 +174,49 @@
       border-radius: 2px;
       border: 1px solid var(--border);
       color: var(--muted);
+      background: var(--surface2);
     }
 
     .role-pill.highlight {
+      border-color: var(--accent3);
+      color: var(--accent3);
+      font-weight: 700;
+    }
+
+    .role-pill.fasting {
+      border-color: var(--accent5);
+      color: var(--accent5);
+    }
+
+    .role-pill.protein {
       border-color: var(--accent2);
       color: var(--accent2);
+    }
+
+    .architecture-box {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent3);
+      padding: 12px 16px;
+      margin-top: 14px;
+      border-radius: 2px;
+    }
+
+    .architecture-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--accent3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .architecture-flow {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--text);
+      line-height: 1.6;
     }
 
     .tier { margin-bottom: 16px; }
@@ -179,8 +232,9 @@
       margin-bottom: 10px;
     }
 
-    .tier-now .tier-label { background: #2a3a1a; color: var(--accent); }
-    .tier-next .tier-label { background: #1a2a3a; color: var(--accent4); }
+    .tier-now .tier-label { background: #3a1a1a; color: var(--accent3); font-weight: 700; }
+    .tier-scale .tier-label { background: #1a2a3a; color: var(--accent4); font-weight: 700; }
+    .tier-fast .tier-label { background: #2a1a3a; color: var(--accent5); font-weight: 700; }
 
     .task-item {
       display: flex;
@@ -196,8 +250,9 @@
 
     .task-item:hover {
       background: var(--surface2);
-      margin: 0 -20px;
-      padding: 10px 20px;
+      margin: 0 -16px;
+      padding: 10px 16px;
+      border-radius: 2px;
     }
 
     .checkbox {
@@ -249,25 +304,32 @@
     .tag-green { background: #1a2a1a; color: var(--accent2); }
     .tag-blue { background: #1a1a2a; color: var(--accent4); }
     .tag-orange { background: #2a1a1a; color: var(--accent3); }
+    .tag-purple { background: #2a1a3a; color: var(--accent5); }
 
     .big-num {
-      font-size: 48px;
+      font-size: 42px;
       font-weight: 800;
       color: var(--accent);
       line-height: 1;
       font-family: 'Space Mono', monospace;
     }
 
+    .big-num.orange { color: var(--accent3); }
+    .big-num.mint { color: var(--accent2); }
+
     .big-num-label {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--muted);
       margin-top: 4px;
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
     }
 
     .streak-days {
       display: flex;
       gap: 4px;
       margin-top: 12px;
+      flex-wrap: wrap;
     }
 
     .streak-day {
@@ -281,8 +343,44 @@
     }
 
     .streak-day.active {
-      background: var(--accent);
-      border-color: var(--accent);
+      background: var(--accent3);
+      border-color: var(--accent3);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 14px;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .stat-val {
+      font-family: 'Space Mono', monospace;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .stat-val.accent { color: var(--accent); }
+    .stat-val.orange { color: var(--accent3); }
+    .stat-val.mint { color: var(--accent2); }
+    .stat-val.blue { color: var(--accent4); }
+
+    .stat-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .salary-bar { margin-bottom: 16px; }
@@ -299,45 +397,21 @@
     .salary-label strong { color: var(--text); }
 
     .bar-track {
-      height: 6px;
+      height: 8px;
       background: var(--surface2);
-      border-radius: 1px;
+      border-radius: 2px;
       overflow: hidden;
     }
 
     .bar-fill {
       height: 100%;
-      border-radius: 1px;
+      border-radius: 2px;
       transition: width 0.4s ease;
     }
 
-    .bar-fill.green { background: var(--accent2); }
+    .bar-fill.coral { background: var(--accent3); }
     .bar-fill.yellow { background: var(--accent); }
-    .bar-fill.blue { background: var(--accent4); }
-
-    .architecture-box {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent4);
-      padding: 12px 16px;
-      margin-top: 12px;
-      border-radius: 2px;
-    }
-
-    .architecture-title {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      color: var(--accent4);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 4px;
-    }
-
-    .architecture-flow {
-      font-family: 'Space Mono', monospace;
-      font-size: 11px;
-      color: var(--text);
-    }
+    .bar-fill.green { background: var(--accent2); }
 
     .day-row {
       display: flex;
@@ -375,32 +449,162 @@
 
     .metric-input-wrap {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       margin-top: 12px;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .metric-input {
       background: var(--surface2);
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 6px 10px;
+      padding: 8px 12px;
       font-family: 'Space Mono', monospace;
       font-size: 12px;
-      width: 110px;
       border-radius: 2px;
     }
 
     .metric-btn {
-      background: var(--accent);
+      background: var(--accent3);
       color: #0d0f14;
       border: none;
-      padding: 6px 12px;
+      padding: 8px 16px;
       font-family: 'Space Mono', monospace;
       font-size: 11px;
       font-weight: 700;
       cursor: pointer;
       border-radius: 2px;
+      transition: opacity 0.2s;
+    }
+
+    .metric-btn:hover { opacity: 0.9; }
+
+    .scale-guide-box {
+      background: rgba(74, 159, 255, 0.05);
+      border: 1px solid rgba(74, 159, 255, 0.2);
+      border-left: 3px solid var(--accent4);
+      padding: 12px 14px;
+      border-radius: 2px;
+      margin-top: 12px;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .scale-guide-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--accent4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .fasting-clock-box {
+      background: rgba(192, 132, 252, 0.06);
+      border: 1px solid rgba(192, 132, 252, 0.25);
+      border-left: 3px solid var(--accent5);
+      padding: 14px;
+      border-radius: 2px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .fasting-clock-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--accent5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .fasting-clock-status {
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .fasting-timeline {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .fast-phase {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 12px;
+      border-radius: 2px;
+    }
+
+    .fast-phase-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .fast-phase-time {
+      font-family: 'Space Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent5);
+      margin-bottom: 4px;
+    }
+
+    .fast-phase-desc {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .weight-log-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+    }
+
+    .weight-log-table th {
+      text-align: left;
+      padding: 8px 6px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      font-size: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .weight-log-table td {
+      padding: 8px 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .weight-log-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .del-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 12px;
+      transition: color 0.2s;
+    }
+
+    .del-btn:hover {
+      color: var(--accent3);
     }
 
     .habit-grid {
@@ -421,44 +625,71 @@
 
     @media (max-width: 900px) {
       .habit-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .fasting-timeline { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 700px) {
       .grid { grid-template-columns: 1fr; }
       .full { grid-column: 1; }
+      .stats-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <div class="header">
     <div class="header-left">
-      <h1>HABAKUK BODY</h1>
-      <p>PVS // PERSONAL VISION SYSTEM v26 &mdash; ATHLETIC RECOMP ENGINE</p>
+      <h1>HABAKUK BODY // OPERATIONAL OS v27</h1>
+      <p>PVS // PERSONAL VISION SYSTEM &mdash; TARGETED WEIGHT LOSS &amp; METABOLIC PROTOCOL</p>
     </div>
     <div class="header-actions">
       <a href="../" class="back-btn">&larr; Launchpad</a>
-      <div class="target-badge">MALE 5'9 // 88KG &rarr; 78KG LEAN BASELINE</div>
+      <div class="fasting-badge">16:8 FASTING ENGINE</div>
+      <div class="target-badge">PRIMARY TARGET: 88KG &rarr; 78KG (-10KG)</div>
     </div>
   </div>
 
+  <!-- STATS OVERVIEW -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-val" id="stat-start">88.0 kg</div>
+      <div class="stat-sub">Baseline Weight</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val orange" id="stat-current">-- kg</div>
+      <div class="stat-sub">Current Weight Logged</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val mint" id="stat-lost">0.0 kg</div>
+      <div class="stat-sub">Total Weight Shed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val blue" id="stat-target">78.0 kg</div>
+      <div class="stat-sub">Lean Target (-10.0kg)</div>
+    </div>
+  </div>
+
+  <!-- TOP GRID: WEIGHT LOSS DIRECTIVE & CONSISTENCY -->
   <div class="grid">
     <div class="card">
-      <div class="card-title"><span class="dot"></span>ACTIVE PHYSICAL MANDATE</div>
-      <div class="role-name">Athletic Density & Body Recomposition</div>
+      <div class="card-title"><span class="dot orange"></span>PRIMARY DIRECTIVE: RAPID SUSTAINABLE WEIGHT LOSS</div>
+      <div class="role-name">Deficit + Fasting + Muscle Defense</div>
       <p style="color: var(--muted); font-size: 13px; line-height: 1.5; margin-bottom: 12px;">
-        Prioritizing mechanical tension with home bodyweight and backpack resistance. Fat loss is managed passively via a non-negotiable protein floor and sustainable baseline movement.
+        Weight loss is the uncompromising metric. We engineer an effortless daily deficit through a time-restricted 16:8 feeding window, a strict protein floor (150g) to prevent muscle loss, 10k daily steps to maximize fat oxidation, and morning scale tracking.
       </p>
       <div class="role-meta">
-        <div class="role-pill highlight">Profile: 30yo / 5'9" / ~88kg</div>
-        <div class="role-pill">Protein Floor: 150g+</div>
-        <div class="role-pill">Target: ~2,050 kcal</div>
+        <div class="role-pill highlight">Goal: -10.0kg (88 &rarr; 78kg)</div>
+        <div class="role-pill fasting">Window: 16:8 (12:00 &ndash; 20:00)</div>
+        <div class="role-pill protein">Protein Floor: 150g+</div>
+        <div class="role-pill">Calorie Cap: ~1,850&ndash;2,050 kcal</div>
       </div>
       
       <div class="architecture-box">
-        <div class="architecture-title">// The Daily Micro-Standard</div>
+        <div class="architecture-title">// The Daily Weight Loss Flow</div>
         <div class="architecture-flow">
-          Warm Water AM &rarr; 150g Protein &rarr; 2,050 kcal Cap &rarr; 10,000+ Steps &rarr; 2.5L Water &rarr; Bed &lt;11 PM
+          Fasted Wakeup &rarr; Scale Log (Mornings) &rarr; Warm Water &amp; Black Coffee &rarr; Fasted NEAT (Steps) &rarr; Break Fast at 12:00 PM (Protein Core) &rarr; Close Window at 20:00 &rarr; Bed &lt;11:00 PM
         </div>
       </div>
     </div>
@@ -467,85 +698,185 @@
       <div class="card-title"><span class="dot green"></span>CONSISTENCY MOMENTUM</div>
       <div style="display: flex; justify-content: space-between; align-items: flex-end;">
         <div>
-          <div class="big-num" id="streak-count">0</div>
+          <div class="big-num orange" id="streak-count">0</div>
           <div class="big-num-label">DAY PROTOCOL STREAK</div>
         </div>
         <div style="text-align: right; font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted);">
-          Target: 28-Day Consistency<br><span style="color: var(--accent2);">Recomp Loop Active</span>
+          Target: 28-Day Consistency<br>
+          <span style="color: var(--accent3); font-weight: 700;">Fat Burning Engine Active</span>
         </div>
       </div>
       <div class="streak-days" id="streak-grid"></div>
       <div style="margin-top: 18px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 10px;">
-        <strong style="color: var(--text);">Standard:</strong> Complete all 6 daily execution items to tick today's block.
+        <strong style="color: var(--text);">Daily Standard:</strong> Complete all core execution items (Fasting, Deficit, 150g Protein, 10k Steps) to tick today's block.
       </div>
     </div>
   </div>
 
+  <!-- INTERMITTENT FASTING & SCALE ONBOARDING (NEW CARDS) -->
+  <div class="grid">
+    <!-- 16:8 FASTING COMMAND CENTER -->
+    <div class="card">
+      <div class="card-title"><span class="dot purple"></span>16:8 INTERMITTENT FASTING PROTOCOL</div>
+      
+      <div class="fasting-clock-box">
+        <div>
+          <div class="fasting-clock-title">// FASTING WINDOW STATUS</div>
+          <div class="fasting-clock-status" id="fasting-status-display">CALCULATING...</div>
+        </div>
+        <div style="font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted);" id="fasting-sub-display">
+          Active Schedule: 12:00 PM &ndash; 8:00 PM
+        </div>
+      </div>
+
+      <div class="fasting-timeline">
+        <div class="fast-phase">
+          <div class="fast-phase-title">FASTING WINDOW (16 HRS)</div>
+          <div class="fast-phase-time">20:00 &rarr; 12:00 (+1)</div>
+          <div class="fast-phase-desc">
+            • Zero calories. Water, black coffee, herbal tea, pinch of salt only.<br>
+            • Peak insulin drop &amp; maximal morning fatty acid mobilization.<br>
+            • Eliminates late-night mindless snacking (~400&ndash;600 kcal saved).
+          </div>
+        </div>
+        <div class="fast-phase">
+          <div class="fast-phase-title">EATING WINDOW (8 HRS)</div>
+          <div class="fast-phase-time">12:00 &rarr; 20:00</div>
+          <div class="fast-phase-desc">
+            • <strong>12:00 PM:</strong> Break fast with 40&ndash;50g protein (eggs/chicken/greens).<br>
+            • <strong>16:00 PM:</strong> Controlled snack &lt;150 kcal (Greek yogurt/nuts).<br>
+            • <strong>19:30 PM:</strong> Dinner &amp; protein closure. Fast resumes at 20:00.
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 14px; font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 10px;">
+        <span style="color: var(--accent5); font-weight: 700;">Weight Loss Rule:</span> Fasting does not grant a calorie free-for-all. It serves as an architectural guardrail to effortlessly lock your ~1,850&ndash;2,050 kcal deficit.
+      </div>
+    </div>
+
+    <!-- SCALE INITIALIZATION & WEIGH-IN LOG -->
+    <div class="card">
+      <div class="card-title"><span class="dot blue"></span>SCALE ENGINE &amp; WEIGH-IN LOG</div>
+      
+      <div class="scale-guide-box">
+        <div class="scale-guide-title">// SCALE ACQUISITION PROTOCOL (ARRIVING THIS WEEK)</div>
+        <div>
+          1. <strong>Placement:</strong> Hard flat surface (tile/wood, never carpet).<br>
+          2. <strong>Timing:</strong> Every morning immediately after toilet, completely fasted, before water.<br>
+          3. <strong>Metric Mentality:</strong> Daily weights fluctuate (water/glycogen). Track the 7-day downward trendline.
+        </div>
+      </div>
+
+      <div class="metric-input-wrap">
+        <input type="date" class="metric-input" id="weightLogDate" style="width: 140px;">
+        <input type="number" step="0.1" class="metric-input" id="currentWeightInput" placeholder="Weight (kg)" style="width: 120px;">
+        <button class="metric-btn" onclick="saveWeightEntry()">LOG WEIGH-IN</button>
+        <span id="weightLogStatus" style="font-family:'Space Mono', monospace; font-size:11px; color:var(--accent2);"></span>
+      </div>
+
+      <!-- RECENT ENTRIES TABLE -->
+      <div style="margin-top: 16px; max-height: 180px; overflow-y: auto;">
+        <table class="weight-log-table">
+          <thead>
+            <tr>
+              <th>DATE</th>
+              <th>WEIGHT</th>
+              <th>DIFF (START)</th>
+              <th>DIFF (PREV)</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="weight-history-tbody">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY PROTOCOL QUEUE & LIFTING CADENCE -->
   <div class="grid">
     <div class="card">
-      <div class="card-title"><span class="dot"></span>DAILY PROTOCOL QUEUE</div>
+      <div class="card-title"><span class="dot orange"></span>DAILY WEIGHT LOSS EXECUTION QUEUE</div>
       
       <div class="tier tier-now">
-        <div class="tier-label">TODAY // EXECUTION STACK</div>
-        <div class="task-item" onclick="toggle(this)" data-task-id="fit_protein">
+        <div class="tier-label">DAILY EXECUTION STACK // WEIGHT LOSS MANDATORY</div>
+        
+        <div class="task-item" onclick="toggle(this)" data-task-id="fit_fasting">
           <div class="checkbox"></div>
-          <div class="task-text">Protein Floor Locked (&ge;150g total)</div>
-          <div class="task-tag tag-green">NUTRITION</div>
+          <div class="task-text">16:8 Fasting Respected (No food before 12:00 PM, cutoff at 20:00 PM)</div>
+          <div class="task-tag tag-purple">FASTING</div>
         </div>
+
+        <div class="task-item" onclick="toggle(this)" data-task-id="fit_weighin_daily">
+          <div class="checkbox"></div>
+          <div class="task-text">Morning Weigh-in Recorded (Fasted, post-toilet, on hard floor)</div>
+          <div class="task-tag tag-blue">SCALE LOG</div>
+        </div>
+
         <div class="task-item" onclick="toggle(this)" data-task-id="fit_deficit">
           <div class="checkbox"></div>
-          <div class="task-text">Calorie Cap Met (~2,050 kcal / Afternoon snack boxed to 150 kcal)</div>
-          <div class="task-tag tag-green">NUTRITION</div>
+          <div class="task-text">Calorie Deficit Enforced (~1,850&ndash;2,050 kcal cap / Snack boxed &le;150 kcal)</div>
+          <div class="task-tag tag-orange">DEFICIT</div>
         </div>
-        <div class="task-item" onclick="toggle(this)" data-task-id="fit_water">
+
+        <div class="task-item" onclick="toggle(this)" data-task-id="fit_protein">
           <div class="checkbox"></div>
-          <div class="task-text">Hydration Base: 2.5L logged</div>
-          <div class="task-tag tag-blue">HYDRATION</div>
+          <div class="task-text">Protein Floor Locked (&ge;150g to shield muscle mass during deficit)</div>
+          <div class="task-tag tag-green">PROTEIN</div>
         </div>
+
         <div class="task-item" onclick="toggle(this)" data-task-id="fit_steps">
           <div class="checkbox"></div>
-          <div class="task-text">Movement Floor: 10,000+ steps logged</div>
-          <div class="task-tag tag-orange">ACTIVITY</div>
+          <div class="task-text">Movement Floor: 10,000+ steps logged (Primary fat oxidation driver)</div>
+          <div class="task-tag tag-orange">NEAT / FAT BURN</div>
         </div>
-        <div class="task-item" onclick="toggle(this)" data-task-id="fit_warm_water">
+
+        <div class="task-item" onclick="toggle(this)" data-task-id="fit_water">
           <div class="checkbox"></div>
-          <div class="task-text">Morning Primer: warm water on waking</div>
+          <div class="task-text">Hydration Base: 2.5L &ndash; 3.0L pure water logged</div>
           <div class="task-tag tag-blue">HYDRATION</div>
         </div>
+
+        <div class="task-item" onclick="toggle(this)" data-task-id="fit_warm_water">
+          <div class="checkbox"></div>
+          <div class="task-text">Morning Primer: warm water on waking (Kickstart metabolic motility)</div>
+          <div class="task-tag tag-blue">PRIMER</div>
+        </div>
+
         <div class="task-item" onclick="toggle(this)" data-task-id="fit_sleep">
           <div class="checkbox"></div>
-          <div class="task-text">Sleep Cutoff: in bed before 11 PM</div>
+          <div class="task-text">Sleep &amp; Cortisol Cutoff: in bed before 11:00 PM (Prevents midnight hunger)</div>
           <div class="task-tag tag-orange">RECOVERY</div>
         </div>
       </div>
 
-      <div class="tier tier-next">
-        <div class="tier-label">SUNDAY CHECKPOINT</div>
-        <div class="task-item" onclick="toggle(this)" data-task-id="fit_weighin">
+      <div class="tier tier-scale">
+        <div class="tier-label">WEEKLY CHECKPOINT // SUNDAY WEIGH-IN REVIEW</div>
+        <div class="task-item" onclick="toggle(this)" data-task-id="fit_sunday_review">
           <div class="checkbox"></div>
-          <div class="task-text">Weigh-in & Check Progressive Overload on Lifts</div>
-          <div class="task-tag tag-blue">METRICS</div>
-        </div>
-        <div class="metric-input-wrap">
-          <input type="number" step="0.1" class="metric-input" id="currentWeightInput" placeholder="kg (e.g. 87.5)">
-          <button class="metric-btn" onclick="saveWeight()">LOG WEIGHT</button>
-          <span id="weightLogStatus" style="font-family:'Space Mono', monospace; font-size:11px; color:var(--muted);"></span>
+          <div class="task-text">Sunday Weigh-in Review: Calculate 7-day average drop (Target: -0.5kg to -1.0kg/wk)</div>
+          <div class="task-tag tag-blue">AUDIT</div>
         </div>
       </div>
     </div>
 
-    <!-- PURE BODYWEIGHT & BACKPACK WORKOUT BOX -->
+    <!-- PURE BODYWEIGHT & BACKPACK RESISTANCE (MUSCLE-SPARING) -->
     <div class="card">
-      <div class="card-title"><span class="dot blue"></span>HOME & BODYWEIGHT A/B CADENCE</div>
+      <div class="card-title"><span class="dot blue"></span>MUSCLE-SPARING RESISTANCE CADENCE (A/B SPLIT)</div>
+      <p style="color: var(--muted); font-size: 12px; margin-bottom: 12px;">
+        During a calorie deficit, resistance training prevents the body from cannibalizing lean muscle tissue, ensuring that 100% of weight lost is pure body fat.
+      </p>
 
       <div class="day-row">
         <div class="day-name">MON</div>
         <div class="day-action">
-          <strong>Workout A (Push & Quad):</strong><br>
-          • Tempo Goblet Squats (Backpack): 3x12-15 (3s eccentric)<br>
-          • Push-Ups (Floor / Incline): 3x10-12<br>
-          • Bulgarian Split Squats (Foot on chair): 3x8-10/leg<br>
-          • Backpack Single-Arm Rows: 3x10-12/arm<br>
+          <strong>Workout A (Push &amp; Quad Focus):</strong><br>
+          • Tempo Goblet Squats (Backpack): 3x12&ndash;15 (3s slow eccentric)<br>
+          • Push-Ups (Floor / Incline): 3x10&ndash;12<br>
+          • Bulgarian Split Squats (Foot on chair): 3x8&ndash;10/leg<br>
+          • Backpack Single-Arm Rows: 3x10&ndash;12/arm<br>
           • Plank to Shoulder Taps: 3x45s
         </div>
         <div class="day-type">LIFT A</div>
@@ -554,11 +885,11 @@
       <div class="day-row">
         <div class="day-name">WED</div>
         <div class="day-action">
-          <strong>Workout B (Hinge & Pull):</strong><br>
-          • Backpack Romanian Deadlifts: 3x12-15 (Hamstring tension)<br>
-          • Pike Push-Ups (Shoulder press angle): 3x8-10<br>
+          <strong>Workout B (Hinge &amp; Pull Focus):</strong><br>
+          • Backpack Romanian Deadlifts: 3x12&ndash;15 (Hamstring &amp; Glute tension)<br>
+          • Pike Push-Ups (Shoulder press angle): 3x8&ndash;10<br>
           • Single-Leg Glute Bridges: 3x12/leg<br>
-          • Backpack Bicep Curl to Press: 3x10-12<br>
+          • Backpack Bicep Curl to Overhead Press: 3x10&ndash;12<br>
           • Deadbugs / Hollow Body Hold: 3x45s
         </div>
         <div class="day-type">LIFT B</div>
@@ -567,12 +898,12 @@
       <div class="day-row">
         <div class="day-name">FRI</div>
         <div class="day-action">
-          <strong>Workout A (Push & Quad):</strong><br>
-          • Tempo Goblet Squats: 3x12-15 (3s eccentric)<br>
-          • Push-Ups (Progress to weighted bag): 3x10-12<br>
-          • Bulgarian Split Squats: 3x8-10/leg<br>
-          • Backpack Single-Arm Rows: 3x10-12/arm<br>
-          • Backpack Suitcase Carry: 3x60s (Grip & Obliques)
+          <strong>Workout A (Push &amp; Quad Focus):</strong><br>
+          • Tempo Goblet Squats: 3x12&ndash;15<br>
+          • Weighted Backpack Push-Ups: 3x10&ndash;12<br>
+          • Bulgarian Split Squats: 3x8&ndash;10/leg<br>
+          • Backpack Rows: 3x10&ndash;12/arm<br>
+          • Backpack Suitcase Carry: 3x60s (Core &amp; Grip)
         </div>
         <div class="day-type">LIFT A</div>
       </div>
@@ -580,90 +911,93 @@
       <div class="day-row">
         <div class="day-name">T/T/S</div>
         <div class="day-action">
-          <strong>Active Recovery:</strong> Casual walk (10,000 step floor) + 5m shoulder/hip mobility.
+          <strong>Active Recovery &amp; Step Dominance:</strong> 10k&ndash;12k steps outdoors + 5 min hip/thoracic mobility.
         </div>
-        <div class="day-type" style="color: var(--muted);">RECOVERY</div>
+        <div class="day-type" style="color: var(--accent3);">FAT BURN</div>
       </div>
     </div>
   </div>
 
-  <!-- HABIT ACCELERATORS (source: "Habits That Fix Your Health Faster" health update) -->
+  <!-- HABIT ACCELERATORS -->
   <div class="card full" style="margin-bottom: 20px;">
-    <div class="card-title"><span class="dot green"></span>HABIT ACCELERATORS // TIME-TO-RESULT</div>
-    <p style="color: var(--muted); font-size: 12px; margin-bottom: 8px;">
-      Simple habits. Real results. Tick each habit once it is locked in for its full window.
+    <div class="card-title"><span class="dot green"></span>HABIT ACCELERATORS // WEIGHT LOSS IMPACT MATRIX</div>
+    <p style="color: var(--muted); font-size: 12px; margin-bottom: 12px;">
+      Simple daily habits with outsized metabolic returns. Tick each habit once it is locked in for its designated window.
     </p>
     <div class="habit-grid">
-      <div class="task-item" onclick="toggle(this)" data-task-id="habit_warm_water">
+      <div class="task-item" onclick="toggle(this)" data-task-id="habit_fasting_168">
         <div class="habit-num">01</div><div class="checkbox"></div>
-        <div class="task-text">Drinking warm water every morning</div>
-        <div class="task-tag tag-blue">3 WEEKS</div>
+        <div class="task-text">16:8 Intermittent Fasting consistency</div>
+        <div class="task-tag tag-purple">14 DAYS</div>
       </div>
-      <div class="task-item" onclick="toggle(this)" data-task-id="habit_sleep_11">
+      <div class="task-item" onclick="toggle(this)" data-task-id="habit_sugar">
         <div class="habit-num">02</div><div class="checkbox"></div>
-        <div class="task-text">Sleeping before 11 PM</div>
-        <div class="task-tag tag-orange">21 DAYS</div>
+        <div class="task-text">Zero liquid sugar &amp; processed snacks</div>
+        <div class="task-tag tag-orange">3 WEEKS</div>
       </div>
       <div class="task-item" onclick="toggle(this)" data-task-id="habit_steps">
         <div class="habit-num">03</div><div class="checkbox"></div>
-        <div class="task-text">Walking 8k&ndash;10k steps</div>
+        <div class="task-text">10,000+ daily steps (NEAT floor)</div>
         <div class="task-tag tag-green">30 DAYS</div>
       </div>
       <div class="task-item" onclick="toggle(this)" data-task-id="habit_whole_foods">
         <div class="habit-num">04</div><div class="checkbox"></div>
-        <div class="task-text">Eating whole foods daily</div>
+        <div class="task-text">Whole foods &amp; high satiety meals</div>
         <div class="task-tag tag-blue">1 MONTH</div>
       </div>
-      <div class="task-item" onclick="toggle(this)" data-task-id="habit_sugar">
+      <div class="task-item" onclick="toggle(this)" data-task-id="habit_warm_water">
         <div class="habit-num">05</div><div class="checkbox"></div>
-        <div class="task-text">Reducing sugar intake</div>
+        <div class="task-text">Warm water morning hydration</div>
         <div class="task-tag tag-blue">3 WEEKS</div>
       </div>
-      <div class="task-item" onclick="toggle(this)" data-task-id="habit_stretching">
+      <div class="task-item" onclick="toggle(this)" data-task-id="habit_sleep_11">
         <div class="habit-num">06</div><div class="checkbox"></div>
-        <div class="task-text">Consistent stretching</div>
-        <div class="task-tag tag-orange">30 DAYS</div>
+        <div class="task-text">Asleep before 11:00 PM (ghrelin/cortisol reset)</div>
+        <div class="task-tag tag-orange">21 DAYS</div>
       </div>
-      <div class="task-item" onclick="toggle(this)" data-task-id="habit_gut">
+      <div class="task-item" onclick="toggle(this)" data-task-id="habit_scale_tracking">
         <div class="habit-num">07</div><div class="checkbox"></div>
-        <div class="task-text">Improving gut health</div>
-        <div class="task-tag tag-green">60 DAYS</div>
+        <div class="task-text">Daily fasted morning weigh-in</div>
+        <div class="task-tag tag-blue">30 DAYS</div>
       </div>
       <div class="task-item" onclick="toggle(this)" data-task-id="habit_strength">
         <div class="habit-num">08</div><div class="checkbox"></div>
-        <div class="task-text">Strength training regularly</div>
+        <div class="task-text">3x/week strength resistance maintenance</div>
         <div class="task-tag tag-blue">2 MONTHS</div>
       </div>
-      <div class="task-item" onclick="toggle(this)" data-task-id="habit_posture">
+      <div class="task-item" onclick="toggle(this)" data-task-id="habit_gut">
         <div class="habit-num">09</div><div class="checkbox"></div>
-        <div class="task-text">Fixing your posture</div>
-        <div class="task-tag tag-orange">45 DAYS</div>
+        <div class="task-text">Gut health &amp; digestive recovery</div>
+        <div class="task-tag tag-green">60 DAYS</div>
       </div>
     </div>
   </div>
 
+  <!-- WEIGHT LOSS PROGRESSION TRAJECTORY -->
   <div class="card full">
-    <div class="card-title"><span class="dot orange"></span>RECOMP PROGRESSION TRAJECTORY (88.0KG &rarr; 78.0KG)</div>
+    <div class="card-title"><span class="dot orange"></span>WEIGHT LOSS TRAJECTORY &amp; PHASE MILESTONES (88.0KG &rarr; 78.0KG)</div>
     <div class="grid" style="margin-bottom: 0;">
       <div>
         <div class="salary-bar">
-          <div class="salary-label"><span>Phase 1: 88.0kg &rarr; 85.5kg (Habit Lock & Initial Drop)</span><strong id="p1-label">Pending</strong></div>
-          <div class="bar-track"><div class="bar-fill green" id="p1-bar" style="width: 0%;"></div></div>
+          <div class="salary-label"><span>Phase 1: 88.0kg &rarr; 85.0kg (Scale Baseline &amp; Initial Fat/Water Flush)</span><strong id="p1-label">Pending</strong></div>
+          <div class="bar-track"><div class="bar-fill coral" id="p1-bar" style="width: 0%;"></div></div>
         </div>
         <div class="salary-bar">
-          <div class="salary-label"><span>Phase 2: 85.5kg &rarr; 82.0kg (Visible Upper Body Definition)</span><strong id="p2-label">Pending</strong></div>
+          <div class="salary-label"><span>Phase 2: 85.0kg &rarr; 81.5kg (Deep Fat Mobilization &amp; Waist Slimming)</span><strong id="p2-label">Pending</strong></div>
           <div class="bar-track"><div class="bar-fill yellow" id="p2-bar" style="width: 0%;"></div></div>
         </div>
         <div class="salary-bar">
-          <div class="salary-label"><span>Phase 3: 82.0kg &rarr; 78.0kg (Lean Recomp Baseline)</span><strong id="p3-label">Pending</strong></div>
-          <div class="bar-track"><div class="bar-fill blue" id="p3-bar" style="width: 0%;"></div></div>
+          <div class="salary-label"><span>Phase 3: 81.5kg &rarr; 78.0kg (Final Definition &amp; Lean Baseline Lock)</span><strong id="p3-label">Pending</strong></div>
+          <div class="bar-track"><div class="bar-fill green" id="p3-bar" style="width: 0%;"></div></div>
         </div>
       </div>
       <div>
-        <div style="font-family: 'Space Mono', monospace; font-size: 11px; line-height: 1.5; color: var(--muted); background: var(--surface2); padding: 12px; border-radius: 4px; border: 1px solid var(--border);">
-Current Weight Logged: <strong id="dispCurrentWeight" style="color:var(--accent);">-- kg</strong>
-Baseline Starting: 88.0 kg | Target: 78.0 kg (-10.0 kg total)
-Primary Metric: Weekly Sunday weigh-in + progressive tempo/weight on lifts.
+        <div style="font-family: 'Space Mono', monospace; font-size: 11px; line-height: 1.6; color: var(--muted); background: var(--surface2); padding: 14px; border-radius: 4px; border: 1px solid var(--border);">
+          <span style="color: var(--accent3); font-weight: 700;">// EXECUTION SUMMARY</span><br>
+          Starting Weight: <strong>88.0 kg</strong> | Target Weight: <strong>78.0 kg</strong><br>
+          Total Target Deficit: <strong>-10.0 kg (~77,000 kcal cumulative fat deficit)</strong><br>
+          Estimated Rate of Loss: <strong>0.5kg &ndash; 0.75kg / week</strong><br>
+          Primary Pillars: <strong>16:8 Fasting Window + 10k Steps + Morning Scale Tracking</strong>
         </div>
       </div>
     </div>
@@ -736,49 +1070,182 @@ Primary Metric: Weekly Sunday weigh-in + progressive tempo/weight on lifts.
       localStorage.setItem(STORAGE_PREFIX + 'streak_count', activeBoxes);
     }
 
-    function saveWeight() {
-      const val = parseFloat(document.getElementById('currentWeightInput').value);
-      if (!val || isNaN(val)) return;
-      localStorage.setItem(STORAGE_PREFIX + 'latest_weight', val);
-      document.getElementById('currentWeightInput').value = '';
-      document.getElementById('weightLogStatus').innerText = '✓ Saved';
-      setTimeout(() => document.getElementById('weightLogStatus').innerText = '', 2000);
-      updateWeightBars();
+    // FASTING STATUS CLOCK
+    function updateFastingClock() {
+      const now = new Date();
+      const currentHour = now.getHours();
+      const currentMinute = now.getMinutes();
+      const timeDecimal = currentHour + currentMinute / 60;
+
+      const statusEl = document.getElementById('fasting-status-display');
+      const subEl = document.getElementById('fasting-sub-display');
+      if (!statusEl || !subEl) return;
+
+      // Eating window: 12:00 to 20:00 (12:00 PM - 8:00 PM)
+      if (timeDecimal >= 12 && timeDecimal < 20) {
+        statusEl.innerHTML = '<span style="color: var(--accent2);">EATING WINDOW OPEN (12:00 &ndash; 20:00)</span>';
+        const hoursLeft = Math.floor(20 - timeDecimal);
+        const minsLeft = Math.floor(((20 - timeDecimal) % 1) * 60);
+        subEl.innerText = `Fast begins in ~${hoursLeft}h ${minsLeft}m (Target: &ge;150g protein locked before 20:00)`;
+      } else {
+        statusEl.innerHTML = '<span style="color: var(--accent5);">FASTING WINDOW ACTIVE (16:8 FAST)</span>';
+        let hoursLeft, minsLeft;
+        if (timeDecimal >= 20) {
+          const hoursUntilMidnight = 24 - timeDecimal;
+          const totalHours = hoursUntilMidnight + 12;
+          hoursLeft = Math.floor(totalHours);
+          minsLeft = Math.floor((totalHours % 1) * 60);
+        } else {
+          const totalHours = 12 - timeDecimal;
+          hoursLeft = Math.floor(totalHours);
+          minsLeft = Math.floor((totalHours % 1) * 60);
+        }
+        subEl.innerText = `Fast breaks at 12:00 PM (~${hoursLeft}h ${minsLeft}m remaining &bull; Hydration only)`;
+      }
     }
 
-    function updateWeightBars() {
-      const w = parseFloat(localStorage.getItem(STORAGE_PREFIX + 'latest_weight')) || START_WEIGHT;
-      document.getElementById('dispCurrentWeight').innerText = w.toFixed(1) + ' kg';
+    // WEIGHT LOG HISTORY & SCALE ENGINE
+    function getWeightHistory() {
+      const raw = localStorage.getItem(STORAGE_PREFIX + 'weight_history');
+      if (raw) {
+        try {
+          return JSON.parse(raw);
+        } catch (e) {
+          return [];
+        }
+      }
+      // Migration from old single latest_weight
+      const oldWeight = parseFloat(localStorage.getItem(STORAGE_PREFIX + 'latest_weight'));
+      if (oldWeight && !isNaN(oldWeight)) {
+        const initial = [{ date: new Date().toISOString().split('T')[0], weight: oldWeight }];
+        localStorage.setItem(STORAGE_PREFIX + 'weight_history', JSON.stringify(initial));
+        return initial;
+      }
+      return [];
+    }
+
+    function saveWeightHistory(history) {
+      localStorage.setItem(STORAGE_PREFIX + 'weight_history', JSON.stringify(history));
+      if (history.length > 0) {
+        localStorage.setItem(STORAGE_PREFIX + 'latest_weight', history[0].weight);
+      }
+    }
+
+    function saveWeightEntry() {
+      const weightInput = document.getElementById('currentWeightInput');
+      const dateInput = document.getElementById('weightLogDate');
+      const val = parseFloat(weightInput.value);
+      const dateVal = dateInput.value || new Date().toISOString().split('T')[0];
+
+      if (!val || isNaN(val) || val < 40 || val > 200) {
+        alert('Please enter a valid weight in kg (e.g. 87.5)');
+        return;
+      }
+
+      const history = getWeightHistory();
+      // Check if entry for today exists, replace or prepend
+      const existingIdx = history.findIndex(item => item.date === dateVal);
+      if (existingIdx !== -1) {
+        history[existingIdx].weight = val;
+      } else {
+        history.unshift({ date: dateVal, weight: val });
+      }
+      // Sort descending by date
+      history.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      saveWeightHistory(history);
+      weightInput.value = '';
       
-      const totalLost = Math.max(0, START_WEIGHT - w);
-      
-      // Phase 1 (0 to 2.5kg lost)
-      const p1Lost = Math.min(Math.max(totalLost, 0), 2.5);
-      const p1Pct = (p1Lost / 2.5) * 100;
+      const statusEl = document.getElementById('weightLogStatus');
+      statusEl.innerText = '✓ Logged ' + val.toFixed(1) + ' kg';
+      setTimeout(() => { statusEl.innerText = ''; }, 3000);
+
+      renderWeightUI();
+    }
+
+    function deleteWeightEntry(idx) {
+      const history = getWeightHistory();
+      if (idx >= 0 && idx < history.length) {
+        history.splice(idx, 1);
+        saveWeightHistory(history);
+        renderWeightUI();
+      }
+    }
+
+    function renderWeightUI() {
+      const history = getWeightHistory();
+      const currentWeight = history.length > 0 ? history[0].weight : START_WEIGHT;
+
+      // Update stat cards
+      document.getElementById('stat-current').innerText = history.length > 0 ? currentWeight.toFixed(1) + ' kg' : '88.0 kg (Pending Scale)';
+      const totalLost = START_WEIGHT - currentWeight;
+      document.getElementById('stat-lost').innerText = (totalLost > 0 ? '-' + totalLost.toFixed(1) : (totalLost < 0 ? '+' + Math.abs(totalLost).toFixed(1) : '0.0')) + ' kg';
+
+      // Update Phase Progression Bars
+      // Phase 1: 88.0 to 85.0 (-3.0kg)
+      const p1Lost = Math.min(Math.max(totalLost, 0), 3.0);
+      const p1Pct = (p1Lost / 3.0) * 100;
       document.getElementById('p1-bar').style.width = p1Pct + '%';
       document.getElementById('p1-label').innerText = p1Pct >= 100 ? 'COMPLETED' : p1Pct.toFixed(0) + '%';
 
-      // Phase 2 (2.5kg to 6.0kg lost)
-      const p2Lost = Math.min(Math.max(totalLost - 2.5, 0), 3.5);
+      // Phase 2: 85.0 to 81.5 (-3.5kg)
+      const p2Lost = Math.min(Math.max(totalLost - 3.0, 0), 3.5);
       const p2Pct = (p2Lost / 3.5) * 100;
       document.getElementById('p2-bar').style.width = p2Pct + '%';
       document.getElementById('p2-label').innerText = p2Pct >= 100 ? 'COMPLETED' : p2Pct.toFixed(0) + '%';
 
-      // Phase 3 (6.0kg to 10.0kg lost)
-      const p3Lost = Math.min(Math.max(totalLost - 6.0, 0), 4.0);
-      const p3Pct = (p3Lost / 4.0) * 100;
+      // Phase 3: 81.5 to 78.0 (-3.5kg)
+      const p3Lost = Math.min(Math.max(totalLost - 6.5, 0), 3.5);
+      const p3Pct = (p3Lost / 3.5) * 100;
       document.getElementById('p3-bar').style.width = p3Pct + '%';
       document.getElementById('p3-label').innerText = p3Pct >= 100 ? 'COMPLETED' : p3Pct.toFixed(0) + '%';
+
+      // Render Table
+      const tbody = document.getElementById('weight-history-tbody');
+      tbody.innerHTML = '';
+      if (history.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" style="color: var(--muted); text-align: center; padding: 12px;">Scale arriving this week &bull; Initial baseline will appear here</td></tr>`;
+        return;
+      }
+
+      history.forEach((entry, idx) => {
+        const tr = document.createElement('tr');
+        const diffFromStart = (entry.weight - START_WEIGHT);
+        const diffStartStr = (diffFromStart > 0 ? '+' : '') + diffFromStart.toFixed(1) + ' kg';
+        
+        let diffPrevStr = '--';
+        if (idx < history.length - 1) {
+          const diffPrev = entry.weight - history[idx + 1].weight;
+          diffPrevStr = (diffPrev > 0 ? '+' : '') + diffPrev.toFixed(1) + ' kg';
+        }
+
+        tr.innerHTML = `
+          <td style="color: var(--text);">${entry.date}</td>
+          <td style="font-weight: 700; color: var(--accent);">${entry.weight.toFixed(1)} kg</td>
+          <td style="color: ${diffFromStart <= 0 ? 'var(--accent2)' : 'var(--accent3)'};">${diffStartStr}</td>
+          <td style="color: ${diffPrevStr.startsWith('-') ? 'var(--accent2)' : (diffPrevStr.startsWith('+') ? 'var(--accent3)' : 'var(--muted)')};">${diffPrevStr}</td>
+          <td style="text-align: right;"><button class="del-btn" onclick="deleteWeightEntry(${idx})" title="Delete entry">&times;</button></td>
+        `;
+        tbody.appendChild(tr);
+      });
     }
 
     function initOS() {
+      // Set today's date in weight input
+      const dateEl = document.getElementById('weightLogDate');
+      if (dateEl) {
+        dateEl.value = new Date().toISOString().split('T')[0];
+      }
+
       loadTaskState();
       renderStreak();
       const savedStreak = localStorage.getItem(STORAGE_PREFIX + 'streak_count');
       if (savedStreak) {
         document.getElementById('streak-count').innerText = savedStreak;
       }
-      updateWeightBars();
+      renderWeightUI();
+      updateFastingClock();
+      setInterval(updateFastingClock, 60000); // Check fasting clock every minute
     }
 
     window.onload = initOS;
