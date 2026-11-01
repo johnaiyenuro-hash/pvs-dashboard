@@ -338,6 +338,48 @@
   @media (max-width: 700px) {
     .cost-table { display: block; overflow-x: auto; }
   }
+
+  /* Recce & Resource Link Styling */
+  .recce-link {
+    color: var(--accent4);
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1px dotted var(--accent4);
+    transition: all 0.2s ease;
+  }
+  .recce-link:hover {
+    color: var(--accent2);
+    border-bottom-color: var(--accent2);
+  }
+  .recce-badge-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 4px 9px;
+    border-radius: 3px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    text-decoration: none;
+    margin: 3px 6px 3px 0;
+    transition: all 0.2s ease;
+  }
+  .recce-badge-link:hover {
+    border-color: var(--accent4);
+    color: var(--accent4);
+    background: #172033;
+    transform: translateY(-1px);
+  }
+  .recce-badge-link.accent {
+    border-color: rgba(74, 255, 180, 0.4);
+    color: var(--accent2);
+  }
+  .recce-badge-link.accent:hover {
+    background: #13261e;
+    border-color: var(--accent2);
+  }
 	</style>
 </head>
 <body>
@@ -940,6 +982,192 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- BARCELONA RECCE & PRE-SETTLEMENT EXPEDITION (27 NOV - 20 DEC) -->
+  <div class="portfolio-header" style="background: linear-gradient(135deg, #121c2b 0%, #172a20 100%); border-color: var(--accent4); margin-top: 24px; margin-bottom: 20px;">
+    <div>
+      <h2 style="color: var(--accent4);">🎯 BARCELONA OPERATIONAL RECCE: LOW-COST FIELD BLUEPRINT (27 NOV – 20 DEC)</h2>
+      <p>// 23-Night Pre-Settlement Expedition &bull; Off-Peak Winter Advantage &bull; Sub-£650 Execution Stack with Live Resource Links</p>
+    </div>
+    <div class="portfolio-badge" style="background: var(--accent4); color: #0d0f14;">WINDOW: 27 NOV – 20 DEC</div>
+  </div>
+
+  <div class="grid">
+    <!-- Recce Logistics & Housing -->
+    <div class="card">
+      <div class="card-title"><span class="dot blue"></span>Pillar 1: Transit, Housing & Urban Mobility Stack</div>
+
+      <div class="task-item" onclick="toggle(this)" data-task-id="recce_flights">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Direct Flights (Under-Seat Backpack Only):</strong> Fly off-peak mid-week from London to Barcelona (BCN). Pack a 30L–35L personal item (40&times;20&times;25cm) to bypass £60+ baggage fees; complete free check-in 24h prior.
+          <div style="margin-top: 6px;">
+            <a href="https://www.google.com/travel/flights" target="_blank" rel="noopener" class="recce-badge-link">✈️ Google Flights</a>
+            <a href="https://www.skyscanner.net/" target="_blank" rel="noopener" class="recce-badge-link">🔍 Skyscanner</a>
+            <a href="https://www.ryanair.com/" target="_blank" rel="noopener" class="recce-badge-link">Ryanair (STN/LTN)</a>
+            <a href="https://www.easyjet.com/" target="_blank" rel="noopener" class="recce-badge-link">easyJet (LGW)</a>
+            <a href="https://www.vueling.com/" target="_blank" rel="noopener" class="recce-badge-link">Vueling (LGW)</a>
+          </div>
+          <span class="rule-sub">// Target Cost: £40 – £65 return (Direct)</span>
+        </div>
+        <div class="task-tag tag-5">TRANSIT</div>
+      </div>
+
+      <div class="task-item" onclick="toggle(this)" data-task-id="recce_housing">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Sub-Market 23-Night Temporary Base (€450–€600):</strong> Leverage monthly rates to bypass £50+/night hotel gouging. Prioritize verified rooms in <em>piso compartido</em> or monthly units with bills included.
+          <div style="margin-top: 4px; font-size: 12px; color: var(--accent2);">
+            <strong>Optimal Budget Neighborhoods (Zone 1):</strong> L'Hospitalet (Collblanc, Torrassa, Santa Eulàlia on L1/L5/L9), Sants-Montjuïc, or Sant Andreu (12–15 min metro to Plaça Catalunya, 35% cheaper than Gothic/Eixample).
+          </div>
+          <div style="margin-top: 6px;">
+            <a href="https://badi.com/es/" target="_blank" rel="noopener" class="recce-badge-link accent">🏠 Badi (Direct Flatshare)</a>
+            <a href="https://www.spotahome.com/barcelona" target="_blank" rel="noopener" class="recce-badge-link">Spotahome BCN</a>
+            <a href="https://www.uniplaces.com/accommodation/barcelona" target="_blank" rel="noopener" class="recce-badge-link">Uniplaces BCN</a>
+            <a href="https://www.idealista.com/alquiler-habitacion/barcelona-barcelona/" target="_blank" rel="noopener" class="recce-badge-link">Idealista Habitaciones</a>
+            <a href="https://www.airbnb.com/" target="_blank" rel="noopener" class="recce-badge-link">Airbnb (Monthly Filter)</a>
+          </div>
+          <span class="rule-sub">// Target Cost: €450 – €600 (~£380 – £510) for 23 nights</span>
+        </div>
+        <div class="task-tag tag-20">HOUSING</div>
+      </div>
+
+      <div class="task-item" onclick="toggle(this)" data-task-id="recce_transit_tusual">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>T-usual 30-Day Unlimited Transit Pass (€22.80):</strong> Purchase at BCN Airport Metro/Renfe machine on arrival using UK passport number. Grants 30 days unlimited rides across Zone 1 (Metro, TMB buses, Rodalies commuter trains, Trams).
+          <div style="margin-top: 4px; font-size: 12px; color: var(--accent);">
+            <strong>Airport Inclusivity Hack:</strong> Valid on the L9 Sud Airport Metro and Renfe R2 Nord train directly from Terminal 2 to Sants/Passeig de Gràcia with <em>zero</em> airport surcharges (saves €11 round-trip vs single tickets and €70 vs taxis).
+          </div>
+          <div style="margin-top: 6px;">
+            <a href="https://www.tmb.cat/en/barcelona-fares-metro-bus/single-and-travel-cards/t-usual" target="_blank" rel="noopener" class="recce-badge-link accent">🚇 TMB T-usual Portal</a>
+            <a href="https://rodalies.gencat.cat/" target="_blank" rel="noopener" class="recce-badge-link">Renfe Rodalies (R2 Nord)</a>
+          </div>
+          <span class="rule-sub">// Total Transport Cost for entire 24 days: ~€22.80 (~£19.50)</span>
+        </div>
+        <div class="task-tag tag-5">UNLIMITED</div>
+      </div>
+    </div>
+
+    <!-- Subsistence, Banking & Reconnaissance -->
+    <div class="card">
+      <div class="card-title"><span class="dot green"></span>Pillar 2: Subsistence, Connectivity & Field Scouting</div>
+
+      <div class="task-item" onclick="toggle(this)" data-task-id="recce_groceries">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Grocery Self-Catering & Strategic Dining:</strong> Anchor food budget at €40–€50/week via Spanish supermarket staples (Mercadona, Lidl, Dia) for breakfast and light dinners.
+          <div style="margin-top: 4px; font-size: 12px; color: var(--muted); line-height: 1.4;">
+            <strong>Cheap Eating-Out Hacks:</strong> Enjoy lunchtime <em>Menú del Día</em> at neighborhood bodegas (€11–€14 for 3 full courses + wine/water); graze pinchos along Carrer de Blai in Poble Sec (€1.50–€2.50 per pincho); and hit 100 Montaditos for €1–€1.50 promotions.
+          </div>
+          <div style="margin-top: 6px;">
+            <a href="https://www.mercadona.es/" target="_blank" rel="noopener" class="recce-badge-link">🛒 Mercadona</a>
+            <a href="https://www.lidl.es/" target="_blank" rel="noopener" class="recce-badge-link">Lidl España</a>
+            <a href="https://www.dia.es/" target="_blank" rel="noopener" class="recce-badge-link">Dia Supermercados</a>
+            <a href="https://maps.google.com/?q=Carrer+de+Blai+Barcelona" target="_blank" rel="noopener" class="recce-badge-link">📍 Carrer de Blai (Poble Sec)</a>
+            <a href="https://spain.100montaditos.com/" target="_blank" rel="noopener" class="recce-badge-link">100 Montaditos Deals</a>
+          </div>
+          <span class="rule-sub">// Target Cost: ~£170 – £200 total food spend for 24 days</span>
+        </div>
+        <div class="task-tag tag-5">FOOD</div>
+      </div>
+
+      <div class="task-item" onclick="toggle(this)" data-task-id="recce_sim_fx">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Local 5G Connectivity & Zero-Fee Banking:</strong> Bypass UK carrier £2.50/day roaming fees. Grab a Spanish prepaid SIM (DIGI Mobil or Vodafone) for 50GB–100GB 5G data at €10, or install an eSIM before landing.
+          <div style="margin-top: 4px; font-size: 12px; color: var(--accent3);">
+            <strong>ATM & Payment Rule:</strong> Use Revolut or Monzo with zero FX fees. In terminals and ATMs, ALWAYS choose <em>"Charge in EUR without conversion"</em>. Avoid standalone yellow/blue Euronet kiosks.
+          </div>
+          <div style="margin-top: 6px;">
+            <a href="https://www.digimobil.es/" target="_blank" rel="noopener" class="recce-badge-link accent">📶 DIGI Mobil España (€10 SIM)</a>
+            <a href="https://www.airalo.com/" target="_blank" rel="noopener" class="recce-badge-link">Airalo eSIM</a>
+            <a href="https://www.revolut.com/" target="_blank" rel="noopener" class="recce-badge-link">Revolut</a>
+            <a href="https://www.monzo.com/" target="_blank" rel="noopener" class="recce-badge-link">Monzo</a>
+          </div>
+          <span class="rule-sub">// Total Connectivity & Banking Fees: ~£9 – £12</span>
+        </div>
+        <div class="task-tag tag-20">FINANCE/DATA</div>
+      </div>
+
+      <div class="task-item" onclick="toggle(this)" data-task-id="recce_field_scouting">
+        <div class="checkbox"></div>
+        <div class="task-text">
+          <strong>Field Scouting & High-Value Free Culture:</strong> Use the 24 days for active operational reconnaissance: test neighborhood fiber/Wi-Fi speeds for remote Glider deliverables, time public transit routes, and map local Ayuntamiento offices.
+          <div style="margin-top: 4px; font-size: 12px; color: var(--muted); line-height: 1.4;">
+            <strong>Free Cultural Windows:</strong> Sunday Dec 6 (first Sunday + Constitution Day weekend) offers 100% free museum admission with prior online reservation. Panoramic sunset scouting at Bunkers del Carmel & Montjuïc Castle.
+          </div>
+          <div style="margin-top: 6px;">
+            <a href="https://museupicassobcn.cat/en" target="_blank" rel="noopener" class="recce-badge-link">🎨 Museu Picasso (Free Slot)</a>
+            <a href="https://www.mnac.cat/en" target="_blank" rel="noopener" class="recce-badge-link">MNAC Montjuïc</a>
+            <a href="https://www.barcelona.cat/en" target="_blank" rel="noopener" class="recce-badge-link">📍 Bunkers del Carmel (Viewpoint)</a>
+          </div>
+          <span class="rule-sub">// Cost: £0 (Free cultural & neighborhood inspection)</span>
+        </div>
+        <div class="task-tag tag-5">SCOUTING</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 24-Day Recce Expense Ledger Card -->
+  <div class="card full" style="margin-bottom: 20px;">
+    <div class="card-title"><span class="dot yellow"></span>📊 24-DAY EXPEDITION BUDGET LEDGER (27 NOV – 20 DEC)</div>
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Cheapest Execution Method</th>
+          <th>Ultra-Frugal Stack</th>
+          <th>Standard Baseline</th>
+          <th>Capital Saved</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Return Flights</strong></td>
+          <td>Ryanair / easyJet direct with personal under-seat backpack</td>
+          <td style="color: var(--accent2);">£45</td>
+          <td>£130 (with cabin/checked bags)</td>
+          <td>£85</td>
+        </tr>
+        <tr>
+          <td><strong>Accommodation (23 Nights)</strong></td>
+          <td>Badi / Uniplaces shared flat room in L'Hospitalet / Sants (or hostel dorm)</td>
+          <td style="color: var(--accent2);">£390 (~€460)</td>
+          <td>£1,150 (hotel / central tourist flat)</td>
+          <td>£760</td>
+        </tr>
+        <tr>
+          <td><strong>City & Airport Transit</strong></td>
+          <td>T-usual 30-Day Zone 1 Unlimited Pass (covers Metro, Bus & Airport L9/R2)</td>
+          <td style="color: var(--accent2);">£19.50 (~€22.80)</td>
+          <td>£95 (single tickets + taxi rides)</td>
+          <td>£75.50</td>
+        </tr>
+        <tr>
+          <td><strong>Food & Groceries</strong></td>
+          <td>Mercadona/Lidl self-catering + occasional €12 Menú del Día & Blai pinchos</td>
+          <td style="color: var(--accent2);">£175</td>
+          <td>£480 (daily restaurant dining)</td>
+          <td>£305</td>
+        </tr>
+        <tr>
+          <td><strong>5G Mobile Data</strong></td>
+          <td>DIGI Mobil Spanish prepaid SIM (50GB–100GB 5G)</td>
+          <td style="color: var(--accent2);">£8.50 (~€10)</td>
+          <td>£57.50 (UK carrier £2.50/day roaming)</td>
+          <td>£49</td>
+        </tr>
+        <tr class="total-row">
+          <td><strong>TOTAL 24-DAY EXPENSE</strong></td>
+          <td><em>Full Pre-Settlement Reconnaissance Trip (Nov 27 – Dec 20)</em></td>
+          <td style="color: var(--accent2); font-size: 14px;"><strong>~£638</strong></td>
+          <td style="color: var(--muted);">~£1,912.50</td>
+          <td style="color: var(--accent);"><strong>£1,274.50 Saved</strong></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- Master Cost Table Card -->
