@@ -46,10 +46,10 @@
       tagClass: 'tag-mercor',
       url: './mercor/index.html',
       file: './mercor/index.html',
-      defaultTargetId: 'mercor_cv_glider',
-      defaultTitle: 'Add Glider Tech to top CV slot & sync LinkedIn',
-      defaultDesc: 'Update CV PDF & LinkedIn with CDE Information Mgmt role',
-      defaultTag: '10M // UNLOCKED'
+      defaultTargetId: 'mercor_ai_interview',
+      defaultTitle: 'Record Mercor AI Interview (STAR Answers)',
+      defaultDesc: 'Verbalize WCS, BEP & ISO 19650 anchors for Tier 1 roles',
+      defaultTag: '20M // ACTIVE GATE'
     },
     {
       id: 'health',

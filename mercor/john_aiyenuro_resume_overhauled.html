@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Aiyenuro - Resume</title>
+  <style>
+    :root {
+      --primary-color: #1e3a8a;
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+      --border-color: #e5e7eb;
+      --bg-accent: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      color: var(--text-main);
+      background-color: #f3f4f6;
+      padding: 2rem 1rem;
+    }
+
+    .resume-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 2.5rem 3rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #111827;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .professional-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-info {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+    }
+
+    .contact-info a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 1.75rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.35rem;
+      margin-bottom: 0.85rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+      color: var(--text-main);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 0.4rem 1.5rem;
+    }
+
+    .toolkit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .toolkit-card {
+      background: var(--bg-accent);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+    }
+
+    .toolkit-card h3 {
+      font-size: 0.95rem;
+      color: var(--primary-color);
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+
+    .toolkit-card p {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-bottom: 0;
+      line-height: 1.4;
+    }
+
+    .job {
+      margin-bottom: 1.25rem;
+    }
+
+    .job:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 0.35rem;
+    }
+
+    .job-title {
+      font-weight: 600;
+      color: #111827;
+      font-size: 1rem;
+    }
+
+    .job-company {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .job-meta {
+      font-size: 0.875rem;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .edu-title {
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .edu-inst {
+      color: var(--text-muted);
+    }
+
+    @media print {
+      body {
+        background-color: #ffffff;
+        padding: 0;
+      }
+      .resume-container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="resume-container">
+    <header>
+      <h1>John Aiyenuro</h1>
+      <div class="professional-title">Architectural Designer | BIM &amp; Technical CAD Specialist</div>
+      <div class="contact-info">
+        <span>Reading, UK</span>
+        <span>07706847493</span>
+        <span><a href="mailto:johnaiyenuro@gmail.com">johnaiyenuro@gmail.com</a></span>
+        <span><a href="https://linkedin.com/in/oluwaseun-john-aiyenuro-061510128" target="_blank">linkedin.com/in/oluwaseun-john-aiyenuro-061510128</a></span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Profile</h2>
+      <p>
+        Information Manager &amp; Architectural Designer with 6+ years' technical delivery experience across complex, deadline-driven projects. Specialist in ISO 19650 Common Data Environments (CDE protocols), structured Asset Information Models (AIM/AIR/EIR), 3D BIM/CAD modeling, and technical quality control. Proven track record managing cloud CDE workflows, auditing multi-disciplinary consultant models, and delivering audit-ready documentation under strict regulatory constraints.
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Toolkit (Software &amp; Domain Expertise)</h2>
+      <div class="toolkit-grid">
+        <div class="toolkit-card">
+          <h3>BIM, CAD &amp; 3D Modeling</h3>
+          <p>AutoCAD, Revit / BIM Authoring, 3D Laser Scan Surveys &amp; Point Clouds, 3D CAD Modeling, Clash Detection, Detail Drafting</p>
+        </div>
+        <div class="toolkit-card">
+          <h3>Standards &amp; Information Mgmt</h3>
+          <p>ISO 19650 Standards, Common Data Environments (GliderBIM, CDE Protocols), EIR &amp; AIR Verification, Version Control, Auditing</p>
+        </div>
+        <div class="toolkit-card">
+          <h3>Project &amp; Tender Delivery</h3>
+          <p>Architectural Tender &amp; Procurement Drawing Packs, Cost Tracking, Supplier Coordination, MS Teams, Excel Data Models</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Key Outcomes</h2>
+      <ul>
+        <li>Led coordination with an external regulatory body to achieve a nationally recognised quality certification; owned the process end-to-end, not just execution.</li>
+        <li>Delivered technical documentation independently across multiple projects, from initial concept through to final, construction-ready output, with zero missed deadlines.</li>
+        <li>Resolved information requests by coordinating directly with on-site teams, contractors, and external consultants across small teams (2-5 people), reducing delays caused by information gaps.</li>
+        <li>Maintained accuracy and version control according to ISO 19650 standards and CDE protocols across internal and external teams.</li>
+        <li>Managed document workflows and file-issue protocols across small teams, keeping records current and audit-ready at all times.</li>
+        <li>Delivered a technically complex project on a protected heritage building utilizing precision 3D CAD modeling &amp; 3D laser scan surveys with zero tolerance for error against real-world conditions.</li>
+        <li>Organised and issued time-sensitive architectural tender and procurement drawing packs to external suppliers and consultants, keeping projects on schedule and within budget.</li>
+        <li>Tracked project costs and coordinated supplier/contractor payments across multiple concurrent workstreams.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Core Skills</h2>
+      <div class="skills-grid">
+        <ul>
+          <li>Structured documentation &amp; data accuracy under formal standards</li>
+          <li>Cross-team coordination and stakeholder communication</li>
+          <li>Quality control and error-checking under regulatory/compliance constraints</li>
+          <li>Independent task ownership with minimal supervision</li>
+        </ul>
+        <ul>
+          <li>Remote and cloud-based collaboration tools (MS Teams, shared document systems)</li>
+          <li>Proficient with professional software: Excel, and detailed technical planning tools</li>
+          <li>Deadline and project-schedule management</li>
+          <li>Budget tracking, procurement, and supplier/invoice coordination</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Professional Experience</h2>
+      
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Information Manager / BIM &amp; Technical Specialist</span> &ndash; <span class="job-company">Glider Technology</span>
+          </div>
+          <div class="job-meta">Remote / UK | May 2026 &ndash; Present</div>
+        </div>
+        <ul>
+          <li>Implemented and managed ISO 19650-compliant Common Data Environment (CDE) protocols, configuring data workflows, permissions, and metadata status codes for client assets.</li>
+          <li>Audited and validated consultant information deliverables against Employer's Information Requirements (EIR) and Asset Information Requirements (AIR) with zero data compliance failures.</li>
+          <li>Conducted visual QA and automated data verification on IFC, COBie, and technical documentation packages to guarantee audit-ready handover models.</li>
+          <li>Orchestrated cross-disciplinary clash resolution, model federation, and technical coordination across multi-stakeholder delivery teams, reducing site-level discrepancy risks.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Project Delivery Lead</span> &ndash; <span class="job-company">The Harris Partnership</span>
+          </div>
+          <div class="job-meta">Reading, UK | Feb 2025 &ndash; May 2026</div>
+        </div>
+        <ul>
+          <li>Led coordination with an external regulatory body (police authority) to achieve a Gold-level quality certification.</li>
+          <li>Resolved formal information requests by working directly with local regulatory authorities.</li>
+          <li>Organised and distributed time-sensitive architectural tender and procurement drawing packs, coordinating with external consultants.</li>
+          <li>Built and maintained shared digital records adhering to ISO 19650 standards and CDE protocols for internal/external collaboration.</li>
+          <li>Owned revision, documentation, and formal issue of technical project information.</li>
+          <li>Delivered remote problem-solving and manual error-checking to support live, active projects.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Independent Contractor</span> &ndash; <span class="job-company">P+W=A</span>
+          </div>
+          <div class="job-meta">Reading, UK | Feb 2025 &ndash; Oct 2025</div>
+        </div>
+        <ul>
+          <li>Independently delivered technical documentation packages, compliant with current regulatory standards.</li>
+          <li>Documented and published architectural tender and procurement drawing packs for multiple residential and community projects.</li>
+          <li>Coordinated project documentation across all stages, from concept to technical design.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Project Delivery Lead</span> &ndash; <span class="job-company">Colony Architects</span>
+          </div>
+          <div class="job-meta">Theale, UK | Sep 2023 &ndash; Feb 2025</div>
+        </div>
+        <ul>
+          <li>Delivered a heritage-protected building project executing precision 3D CAD modeling &amp; 3D laser scan surveys with zero tolerance for error against real-world conditions.</li>
+          <li>Resolved formal information requests from on-site teams and contractors using detailed data extraction.</li>
+          <li>Scheduled and ran project planning meetings across multiple stages of delivery.</li>
+          <li>Managed architectural tender and procurement drawing packs and coordination with suppliers and consultants nationally.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Project Assistant</span> &ndash; <span class="job-company">Colony Architects</span>
+          </div>
+          <div class="job-meta">Theale, UK | Sep 2021 &ndash; Sep 2023</div>
+        </div>
+        <ul>
+          <li>Delivered assigned work on schedule and to budget across all remaining delivery stages.</li>
+          <li>Collated technical architectural tender and procurement drawing packs under formal contracts with external consultants.</li>
+          <li>Completed formal information requests and revised technical documents for live projects.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education &amp; Credentials</h2>
+      <div class="edu-item">
+        <span class="edu-title">Professional Registration (Regulated Body)</span>
+        <span class="edu-inst">Sep 2023 &ndash; Present</span>
+      </div>
+      <div class="edu-item">
+        <span class="edu-title">Postgraduate Diploma, Professional Practice</span>
+        <span class="edu-inst">Kingston University, 2022 &ndash; 2023</span>
+      </div>
+      <div class="edu-item">
+        <span class="edu-title">Master's Degree</span>
+        <span class="edu-inst">London South Bank University, 2019 &ndash; 2021</span>
+      </div>
+      <div class="edu-item">
+        <span class="edu-title">Bachelor's Degree (Hons)</span>
+        <span class="edu-inst">Nottingham Trent University, 2014 &ndash; 2017</span>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
