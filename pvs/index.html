@@ -92,10 +92,11 @@
       transition: all 0.2s ease;
     }
 
-    .back-btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: var(--surface2);
+    :target {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      background: var(--surface2) !important;
+      transition: all 0.3s ease;
     }
 
     .grid {
@@ -667,7 +668,7 @@
       <p>PVS // PERSONAL VISION SYSTEM v28 &mdash; SOLUTIONS ARCHITECTURE ENGINE</p>
     </div>
     <div class="header-actions">
-      <a href="../" class="back-btn">&larr; Launchpad</a>
+      <a href="../index.html" class="back-btn">&larr; Launchpad</a>
       <div class="target-badge">DDM &rarr; SOLUTIONS ARCHITECT</div>
     </div>
   </div>
@@ -729,7 +730,7 @@
           <div class="task-text">Asana Foundations Skill Badge</div>
           <div class="task-tag tag-5">DONE</div>
         </div>
-        <div class="task-item" onclick="toggle(this)" data-task-id="aconex_cert" data-status="now" data-pillar="pvs" data-lever-title="Oracle Aconex: Associate &rarr; Specialist Modules" data-lever-desc="Oracle Aconex CDE certification &amp; metadata workflows" data-lever-tag="NOW // FOCUS">
+        <div class="task-item" id="aconex_cert" onclick="toggle(this)" data-task-id="aconex_cert" data-status="now" data-pillar="pvs" data-lever-title="Oracle Aconex: Associate &rarr; Specialist Modules" data-lever-desc="Oracle Aconex CDE certification &amp; metadata workflows" data-lever-tag="NOW // FOCUS">
           <div class="checkbox"></div>
           <div class="task-text">Oracle Aconex: Associate &rarr; Specialist Modules</div>
           <div class="task-tag tag-20">NOW // FOCUS</div>

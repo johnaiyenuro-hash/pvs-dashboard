@@ -94,6 +94,13 @@
     background: var(--surface2);
   }
 
+  :target {
+    outline: 2px solid var(--accent4);
+    outline-offset: 4px;
+    background: var(--surface2) !important;
+    transition: all 0.3s ease;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -391,7 +398,7 @@
 </div>
 
 <div class="header-actions">
-<a href="../" class="back-btn">&larr; Launchpad</a>
+<a href="../index.html" class="back-btn">&larr; Launchpad</a>
 <div class="target-badge">🎯 Spanish Fluency Track</div>
 </div>
 </div>
@@ -468,7 +475,7 @@
 <div class="task-tag tag-5">5min</div>
 </div>
 
-<div class="task-item" onclick="toggle(this)" data-status="now" data-task-id="spanish_vocab_input" data-pillar="spanish" data-lever-title="Daily Spanish Vocabulary Input (15 words)" data-lever-desc="1,000 Most Common Spanish Words high-frequency deck (Memrise/Anki)" data-lever-tag="15 MIN">
+<div class="task-item" id="spanish_vocab_input" onclick="toggle(this)" data-status="now" data-task-id="spanish_vocab_input" data-pillar="spanish" data-lever-title="Daily Spanish Vocabulary Input (15 words)" data-lever-desc="1,000 Most Common Spanish Words high-frequency deck (Memrise/Anki)" data-lever-tag="15 MIN">
 <div class="checkbox">&nbsp;</div>
 
 <div class="task-text">Execute Day 1 Vocabulary Input: Learn your first batch of 15 words.</div>

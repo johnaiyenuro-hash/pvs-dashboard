@@ -18,8 +18,9 @@
       shortName: 'PVS',
       color: '#e8ff4a',
       tagClass: 'tag-prof',
-      url: './pvs/',
+      url: './pvs/index.html',
       file: './pvs/index.html',
+      defaultTargetId: 'aconex_cert',
       defaultTitle: 'Oracle Aconex: Associate → Specialist Modules',
       defaultDesc: 'Aconex CDE certification & metadata workflows',
       defaultTag: 'NOW // FOCUS'
@@ -30,8 +31,9 @@
       shortName: 'Spanish',
       color: '#4a9fff',
       tagClass: 'tag-spanish',
-      url: './spanish/',
+      url: './spanish/index.html',
       file: './spanish/index.html',
+      defaultTargetId: 'spanish_vocab_input',
       defaultTitle: 'Daily Spanish Vocabulary Input (15 words)',
       defaultDesc: '1,000 Most Common Spanish Words high-frequency deck (Memrise/Anki)',
       defaultTag: '15 MIN'
@@ -42,8 +44,9 @@
       shortName: 'Mercor',
       color: '#c084fc',
       tagClass: 'tag-mercor',
-      url: './mercor/',
+      url: './mercor/index.html',
       file: './mercor/index.html',
+      defaultTargetId: 'mercor_cv_glider',
       defaultTitle: 'Add Glider Tech to top CV slot & sync LinkedIn',
       defaultDesc: 'Update CV PDF & LinkedIn with CDE Information Mgmt role',
       defaultTag: '10M // UNLOCKED'
@@ -54,8 +57,9 @@
       shortName: 'Health',
       color: '#ff6b4a',
       tagClass: 'tag-health',
-      url: './health/',
+      url: './health/index.html',
       file: './health/index.html',
+      defaultTargetId: 'fit_fasting',
       defaultTitle: '16:8 Fasting Respected (12:00 – 20:00 Window)',
       defaultDesc: 'Zero calories before 12:00 PM; eating cutoff at 20:00 PM',
       defaultTag: 'FASTING'
@@ -246,24 +250,30 @@
       const target = targets[idx];
       const checkKey = 'lever_' + pillar.id + '_' + target.id;
       const isChecked = !!dailyState[checkKey];
+      const targetAnchor = target.id ? ('#' + target.id) : ('#' + pillar.defaultTargetId);
+      const directUrl = pillar.url + targetAnchor;
 
       html += `
         <div class="lever-card ${pillar.id}-card ${isChecked ? 'completed' : ''}" id="card_${checkKey}">
           <div class="lever-top">
-            <span class="lever-pillar-badge ${pillar.tagClass}">${pillar.shortName}</span>
+            <a href="${directUrl}" class="lever-pillar-badge ${pillar.tagClass}" title="Go directly to ${pillar.shortName}">
+              ${pillar.shortName} &nearr;
+            </a>
             <span class="lever-tag">${escapeHTML(target.tag)}</span>
           </div>
-          <div class="lever-body" onclick="DailyRhythm.toggleTask('${checkKey}')">
-            <div class="rhythm-checkbox ${isChecked ? 'checked' : ''}">
+          <div class="lever-body">
+            <div class="rhythm-checkbox ${isChecked ? 'checked' : ''}" onclick="DailyRhythm.toggleTask('${checkKey}')" title="Mark Done Today">
               ${isChecked ? '&#10003;' : ''}
             </div>
             <div class="lever-text">
-              <div class="lever-title">${target.title}</div>
+              <a href="${directUrl}" class="lever-title-link" title="Open directly in ${pillar.shortName}">
+                ${target.title}
+              </a>
               <div class="lever-desc">${escapeHTML(target.desc)}</div>
             </div>
           </div>
           <div class="lever-footer">
-            <a href="${pillar.url}" class="pillar-jump-link">
+            <a href="${directUrl}" class="pillar-jump-link">
               Open in ${pillar.shortName} &rarr;
             </a>
             <span class="lever-status-label">${isChecked ? 'DONE TODAY' : 'PENDING'}</span>

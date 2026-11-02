@@ -57,6 +57,12 @@
   </script>
 
   <style>
+    :target {
+      outline: 2px solid #06b6d4;
+      outline-offset: 4px;
+      background: rgba(6, 182, 212, 0.15) !important;
+      transition: all 0.3s ease;
+    }
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 6px;
@@ -134,7 +140,7 @@
 
         <!-- Quick Action Trigger -->
         <div class="flex items-center gap-2">
-          <a href="../" class="text-xs font-mono font-medium px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 hover:border-cyan-500/50 transition flex items-center gap-1.5">
+          <a href="../index.html" class="text-xs font-mono font-medium px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 hover:border-cyan-500/50 transition flex items-center gap-1.5">
             <span>&larr; Launchpad</span>
           </a>
           <button onclick="scrollToQueue()" class="text-xs font-mono font-medium px-3.5 py-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 transition flex items-center gap-1.5 shadow-glow-cyan">
@@ -684,7 +690,7 @@
                   </div>
                 </label>
 
-                <label class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-slate-900 cursor-pointer transition" data-status="now" data-pillar="mercor" data-task-id="mercor_cv_glider" data-lever-title="Add Glider Tech to top CV slot &amp; sync LinkedIn" data-lever-desc="Update CV PDF &amp; LinkedIn with CDE Information Mgmt role" data-lever-tag="10M // UNLOCKED">
+                <label id="mercor_cv_glider" class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-slate-900 cursor-pointer transition" data-status="now" data-pillar="mercor" data-task-id="mercor_cv_glider" data-lever-title="Add Glider Tech to top CV slot &amp; sync LinkedIn" data-lever-desc="Update CV PDF &amp; LinkedIn with CDE Information Mgmt role" data-lever-tag="10M // UNLOCKED">
                   <input type="checkbox" onchange="calcProgress()" class="task-check mt-0.5 w-4 h-4 rounded bg-slate-800 border-slate-700 text-emerald-500 focus:ring-0">
                   <div class="flex-1">
                     <span class="text-cyan-300 font-semibold">[ACTIVE NOW] Add Glider Tech (CDE &amp; Information Mgmt) to top CV slot &amp; sync LinkedIn</span>

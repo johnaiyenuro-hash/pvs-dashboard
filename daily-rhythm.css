@@ -214,6 +214,16 @@
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.5px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.lever-pillar-badge:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
 }
 
 .lever-tag {
@@ -227,7 +237,6 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  cursor: pointer;
   flex: 1;
 }
 
@@ -235,15 +244,27 @@
   flex: 1;
 }
 
-.lever-title {
+.lever-title-link {
   font-size: 14px;
   font-weight: 700;
   color: var(--text);
   line-height: 1.35;
   margin-bottom: 4px;
+  text-decoration: none;
+  display: block;
+  transition: color 0.2s ease;
 }
 
-.lever-card.completed .lever-title {
+.lever-title-link:hover {
+  color: var(--accent);
+}
+
+.lever-card.pvs-card .lever-title-link:hover { color: var(--accent); }
+.lever-card.spanish-card .lever-title-link:hover { color: var(--accent4); }
+.lever-card.mercor-card .lever-title-link:hover { color: var(--accent5); }
+.lever-card.health-card .lever-title-link:hover { color: var(--accent3); }
+
+.lever-card.completed .lever-title-link {
   text-decoration: line-through;
   color: var(--muted);
 }

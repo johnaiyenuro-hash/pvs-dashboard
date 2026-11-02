@@ -111,6 +111,13 @@
       background: var(--surface2);
     }
 
+    :target {
+      outline: 2px solid var(--accent3);
+      outline-offset: 4px;
+      background: var(--surface2) !important;
+      transition: all 0.3s ease;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -645,7 +652,7 @@
       <p>PVS // PERSONAL VISION SYSTEM &mdash; TARGETED WEIGHT LOSS &amp; METABOLIC PROTOCOL</p>
     </div>
     <div class="header-actions">
-      <a href="../" class="back-btn">&larr; Launchpad</a>
+      <a href="../index.html" class="back-btn">&larr; Launchpad</a>
       <div class="fasting-badge">16:8 FASTING ENGINE</div>
       <div class="target-badge">PRIMARY TARGET: 88KG &rarr; 78KG (-10KG)</div>
     </div>
@@ -803,7 +810,7 @@
       <div class="tier tier-now">
         <div class="tier-label">DAILY EXECUTION STACK // WEIGHT LOSS MANDATORY</div>
         
-        <div class="task-item" onclick="toggle(this)" data-task-id="fit_fasting" data-status="now" data-pillar="health" data-lever-title="16:8 Fasting Respected (12:00 &ndash; 20:00 Window)" data-lever-desc="Zero calories before 12:00 PM; eating cutoff at 20:00 PM" data-lever-tag="FASTING">
+        <div class="task-item" id="fit_fasting" onclick="toggle(this)" data-task-id="fit_fasting" data-status="now" data-pillar="health" data-lever-title="16:8 Fasting Respected (12:00 &ndash; 20:00 Window)" data-lever-desc="Zero calories before 12:00 PM; eating cutoff at 20:00 PM" data-lever-tag="FASTING">
           <div class="checkbox"></div>
           <div class="task-text">16:8 Fasting Respected (No food before 12:00 PM, cutoff at 20:00 PM)</div>
           <div class="task-tag tag-purple">FASTING</div>
