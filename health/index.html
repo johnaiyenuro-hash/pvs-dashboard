@@ -803,7 +803,7 @@
       <div class="tier tier-now">
         <div class="tier-label">DAILY EXECUTION STACK // WEIGHT LOSS MANDATORY</div>
         
-        <div class="task-item" onclick="toggle(this)" data-task-id="fit_fasting">
+        <div class="task-item" onclick="toggle(this)" data-task-id="fit_fasting" data-status="now" data-pillar="health" data-lever-title="16:8 Fasting Respected (12:00 &ndash; 20:00 Window)" data-lever-desc="Zero calories before 12:00 PM; eating cutoff at 20:00 PM" data-lever-tag="FASTING">
           <div class="checkbox"></div>
           <div class="task-text">16:8 Fasting Respected (No food before 12:00 PM, cutoff at 20:00 PM)</div>
           <div class="task-tag tag-purple">FASTING</div>
@@ -1023,6 +1023,25 @@
         }
       });
       localStorage.setItem(STORAGE_PREFIX + 'tasks', JSON.stringify(state));
+      syncActiveLever();
+    }
+
+    function syncActiveLever() {
+      const activeEl = document.querySelector('[data-status="now"]');
+      if (activeEl) {
+        const payload = {
+          pillar: 'health',
+          id: activeEl.getAttribute('data-task-id') || 'fit_fasting',
+          title: activeEl.getAttribute('data-lever-title') || '16:8 Fasting Respected (12:00 – 20:00 Window)',
+          desc: activeEl.getAttribute('data-lever-desc') || 'Zero calories before 12:00 PM; eating cutoff at 20:00 PM',
+          tag: activeEl.getAttribute('data-lever-tag') || 'FASTING',
+          done: activeEl.classList.contains('done'),
+          updatedAt: Date.now()
+        };
+        try {
+          localStorage.setItem('pvs_pillar_now_health', JSON.stringify(payload));
+        } catch (e) {}
+      }
     }
 
     function loadTaskState() {
@@ -1245,6 +1264,7 @@
       }
       renderWeightUI();
       updateFastingClock();
+      syncActiveLever();
       setInterval(updateFastingClock, 60000); // Check fasting clock every minute
     }
 

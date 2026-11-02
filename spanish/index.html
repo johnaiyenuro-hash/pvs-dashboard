@@ -468,7 +468,7 @@
 <div class="task-tag tag-5">5min</div>
 </div>
 
-<div class="task-item" onclick="toggle(this)">
+<div class="task-item" onclick="toggle(this)" data-status="now" data-task-id="spanish_vocab_input" data-pillar="spanish" data-lever-title="Daily Spanish Vocabulary Input (15 words)" data-lever-desc="1,000 Most Common Spanish Words high-frequency deck (Memrise/Anki)" data-lever-tag="15 MIN">
 <div class="checkbox">&nbsp;</div>
 
 <div class="task-text">Execute Day 1 Vocabulary Input: Learn your first batch of 15 words.</div>
@@ -1317,6 +1317,25 @@
     });
     try { localStorage.setItem('lang_tasks_map', JSON.stringify(map)); } catch {}
     try { localStorage.setItem('lang_tasks', JSON.stringify(state)); } catch {}
+    syncActiveLever();
+  }
+
+  function syncActiveLever() {
+    const activeEl = document.querySelector('[data-status="now"]');
+    if (activeEl) {
+      const payload = {
+        pillar: 'spanish',
+        id: activeEl.getAttribute('data-task-id') || 'spanish_vocab_input',
+        title: activeEl.getAttribute('data-lever-title') || 'Daily Spanish Vocabulary Input (15 words)',
+        desc: activeEl.getAttribute('data-lever-desc') || '1,000 Most Common Spanish Words high-frequency deck',
+        tag: activeEl.getAttribute('data-lever-tag') || '15 MIN',
+        done: activeEl.classList.contains('done'),
+        updatedAt: Date.now()
+      };
+      try {
+        localStorage.setItem('pvs_pillar_now_spanish', JSON.stringify(payload));
+      } catch (e) {}
+    }
   }
 
   function loadTaskState() {
@@ -1342,5 +1361,6 @@
 
   renderStreak();
   loadTaskState();
+  syncActiveLever();
 </script></body>
 </html>

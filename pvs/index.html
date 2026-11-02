@@ -729,7 +729,7 @@
           <div class="task-text">Asana Foundations Skill Badge</div>
           <div class="task-tag tag-5">DONE</div>
         </div>
-        <div class="task-item" onclick="toggle(this)" data-task-id="aconex_cert">
+        <div class="task-item" onclick="toggle(this)" data-task-id="aconex_cert" data-status="now" data-pillar="pvs" data-lever-title="Oracle Aconex: Associate &rarr; Specialist Modules" data-lever-desc="Oracle Aconex CDE certification &amp; metadata workflows" data-lever-tag="NOW // FOCUS">
           <div class="checkbox"></div>
           <div class="task-text">Oracle Aconex: Associate &rarr; Specialist Modules</div>
           <div class="task-tag tag-20">NOW // FOCUS</div>
@@ -985,6 +985,7 @@
       } catch (e) {
         console.error('LocalStorage write error:', e);
       }
+      syncActiveLever();
     }
 
     function loadTaskState() {
@@ -1034,9 +1035,28 @@
       localStorage.setItem(STORAGE_PREFIX + 'streak_count', activeBoxes);
     }
 
+    function syncActiveLever() {
+      const activeEl = document.querySelector('[data-status="now"]');
+      if (activeEl) {
+        const payload = {
+          pillar: 'pvs',
+          id: activeEl.getAttribute('data-task-id') || 'aconex_cert',
+          title: activeEl.getAttribute('data-lever-title') || 'Oracle Aconex: Associate → Specialist Modules',
+          desc: activeEl.getAttribute('data-lever-desc') || 'Aconex CDE certification & metadata workflows',
+          tag: activeEl.getAttribute('data-lever-tag') || 'NOW // FOCUS',
+          done: activeEl.classList.contains('done'),
+          updatedAt: Date.now()
+        };
+        try {
+          localStorage.setItem('pvs_pillar_now_pvs', JSON.stringify(payload));
+        } catch (e) {}
+      }
+    }
+
     function initOS() {
       loadTaskState();
       renderStreak();
+      syncActiveLever();
     }
 
     window.onload = initOS;

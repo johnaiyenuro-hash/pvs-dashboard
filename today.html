@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HABAKUK TODAY // Daily Rhythm Execution OS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="daily-rhythm.css">
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #13161e;
+      --surface2: #1a1e2a;
+      --border: #252a38;
+      --accent: #e8ff4a;       /* Lime primary */
+      --accent2: #4affb4;      /* Mint / Done */
+      --accent3: #ff6b4a;      /* Coral / Health */
+      --accent4: #4a9fff;      /* Sky blue / Language */
+      --accent5: #c084fc;      /* Purple / AI Mercor */
+      --text: #e8eaf0;
+      --muted: #6b7280;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 20px;
+    }
+
+    .today-nav {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+
+    .today-nav-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+    }
+
+    .back-btn {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 2px;
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .back-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--surface2);
+    }
+
+    .quick-links {
+      width: 100%;
+      max-width: 1100px;
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .quick-link-item {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 2px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+
+    .quick-link-item:hover {
+      color: var(--text);
+      border-color: var(--muted);
+    }
+
+    .today-footer {
+      margin-top: 36px;
+      text-align: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="today-nav">
+    <div class="today-nav-title">HABAKUK // DAILY RHYTHM OS</div>
+    <a href="./" class="back-btn">&larr; Master Launchpad</a>
+  </div>
+
+  <!-- DAILY RHYTHM HUD CONTAINER -->
+  <div id="daily-rhythm-container" style="width: 100%; max-width: 1100px;"></div>
+
+  <!-- QUICK ACCESS TO 4 PILLARS -->
+  <div class="quick-links">
+    <a href="./pvs/" class="quick-link-item" style="border-left: 2px solid var(--accent);">Professional Vision System &rarr;</a>
+    <a href="./spanish/" class="quick-link-item" style="border-left: 2px solid var(--accent4);">Spanish Vision System &rarr;</a>
+    <a href="./mercor/" class="quick-link-item" style="border-left: 2px solid var(--accent5);">Mercor AI Contracting &rarr;</a>
+    <a href="./health/" class="quick-link-item" style="border-left: 2px solid var(--accent3);">Health &amp; Weight Loss OS &rarr;</a>
+  </div>
+
+  <div class="today-footer">
+    ZERO-GIT EXECUTION &bull; AUTO-RESET MIDNIGHT &bull; RULE OF 4 ACTIVE
+  </div>
+
+  <script src="daily-rhythm.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      DailyRhythm.init('daily-rhythm-container');
+    });
+  </script>
+</body>
+</html>

@@ -684,7 +684,7 @@
                   </div>
                 </label>
 
-                <label class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-slate-900 cursor-pointer transition">
+                <label class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-slate-900 cursor-pointer transition" data-status="now" data-pillar="mercor" data-task-id="mercor_cv_glider" data-lever-title="Add Glider Tech to top CV slot &amp; sync LinkedIn" data-lever-desc="Update CV PDF &amp; LinkedIn with CDE Information Mgmt role" data-lever-tag="10M // UNLOCKED">
                   <input type="checkbox" onchange="calcProgress()" class="task-check mt-0.5 w-4 h-4 rounded bg-slate-800 border-slate-700 text-emerald-500 focus:ring-0">
                   <div class="flex-1">
                     <span class="text-cyan-300 font-semibold">[ACTIVE NOW] Add Glider Tech (CDE &amp; Information Mgmt) to top CV slot &amp; sync LinkedIn</span>
@@ -1092,6 +1092,26 @@
       if (percent === 100) {
         showToast('All execution tasks completed! Algorithm calibrated.');
       }
+      syncActiveLever();
+    }
+
+    function syncActiveLever() {
+      const activeEl = document.querySelector('[data-status="now"]');
+      if (activeEl) {
+        const inputCheck = activeEl.querySelector('input[type="checkbox"]');
+        const payload = {
+          pillar: 'mercor',
+          id: activeEl.getAttribute('data-task-id') || 'mercor_cv_glider',
+          title: activeEl.getAttribute('data-lever-title') || 'Add Glider Tech to top CV slot & sync LinkedIn',
+          desc: activeEl.getAttribute('data-lever-desc') || 'Update CV PDF & LinkedIn with CDE Information Mgmt role',
+          tag: activeEl.getAttribute('data-lever-tag') || '10M // UNLOCKED',
+          done: inputCheck ? inputCheck.checked : false,
+          updatedAt: Date.now()
+        };
+        try {
+          localStorage.setItem('pvs_pillar_now_mercor', JSON.stringify(payload));
+        } catch (e) {}
+      }
     }
 
     function markAllTasks() {
@@ -1203,6 +1223,7 @@
       initChart();
       calcProgress();
       renderStreak();
+      syncActiveLever();
     };
   </script>
 </body>
