@@ -1,0 +1,183 @@
+window.MERCOR_LIVE_DATA = {
+  "syncedAt": "2026-11-03T07:47:41.742Z",
+  "totalScanned": 324,
+  "matchingCount": 8,
+  "roles": [
+    {
+      "id": "list_AAABoKOQBVjEtnDVZPFH-Ljn",
+      "uid": "listing_uid_AAABoKhGRGZc5QJPtSBOmaXE",
+      "title": "Engineering Expert",
+      "rateMin": 60,
+      "rateMax": 125,
+      "rateFormatted": "$60–$125/hr",
+      "payRateFrequency": "hourly",
+      "commitment": "part-time",
+      "location": "Remote",
+      "postedAt": "2026-09-15T05:35:19",
+      "directUrl": "https://work.mercor.com/explore?listingId=list_AAABoKOQBVjEtnDVZPFH-Ljn",
+      "anchors": [
+        "Civil / Structural",
+        "Mechanical CAD"
+      ],
+      "verdict": "HIGH-LEVERAGE TARGET ($90+)",
+      "score": 95,
+      "pitch": "Senior CAD & technical drafting specialist with extensive experience in AutoCAD production, WCS coordinates, 3D laser point clouds, and drawing deliverable quality control. Zero rework guarantee.",
+      "hoursPerWeek": 40,
+      "remainingSlots": null
+    },
+    {
+      "id": "list_AAABoKMj4F2A8dtbrHBJobfe",
+      "uid": "listing_uid_AAABoKhF8K2ND7e_aMZEnawZ",
+      "title": "Mechanical Engineering Expert",
+      "rateMin": 70,
+      "rateMax": 125,
+      "rateFormatted": "$70–$125/hr",
+      "payRateFrequency": "hourly",
+      "commitment": "part-time",
+      "location": "Remote",
+      "postedAt": "2026-09-15T03:37:12",
+      "directUrl": "https://work.mercor.com/explore?listingId=list_AAABoKMj4F2A8dtbrHBJobfe",
+      "anchors": [
+        "Mechanical CAD"
+      ],
+      "verdict": "HIGH-LEVERAGE TARGET ($90+)",
+      "score": 95,
+      "pitch": "Experienced Mechanical & CAD specialist with strong proficiency in 3D modeling, drawing standards, and technical design verification. Immediate availability for high-precision delivery.",
+      "hoursPerWeek": 40,
+      "remainingSlots": null
+    },
+    {
+      "id": "list_AAABoVBmUnuxLt2htNZFaofM",
+      "uid": "listing_uid_AAABoVBrQPB4xxtLrItH95wh",
+      "title": "Civil Engineers & Architects (Must own MacBook)",
+      "rateMin": 50,
+      "rateMax": 60,
+      "rateFormatted": "$50–$60/hr",
+      "payRateFrequency": "hourly",
+      "commitment": "hourly",
+      "location": "Remote",
+      "postedAt": "2026-10-18T19:04:05",
+      "directUrl": "https://work.mercor.com/explore?listingId=list_AAABoVBmUnuxLt2htNZFaofM",
+      "anchors": [
+        "AutoCAD",
+        "Civil / Structural",
+        "Architecture / AEC"
+      ],
+      "verdict": "SUB-$65/HR BENCHMARK",
+      "score": 72,
+      "pitch": "Senior CAD & technical drafting specialist with extensive experience in AutoCAD production, WCS coordinates, 3D laser point clouds, and drawing deliverable quality control. Zero rework guarantee.",
+      "hoursPerWeek": 40,
+      "remainingSlots": 2
+    },
+    {
+      "id": "list_AAABoVBmP03TuNxFesRNHYQl",
+      "uid": "listing_uid_AAABoVBrQPCkvxKnZ55F-avx",
+      "title": "Mechanical & CAD Engineers (Must own MacBook)",
+      "rateMin": 50,
+      "rateMax": 60,
+      "rateFormatted": "$50–$60/hr",
+      "payRateFrequency": "hourly",
+      "commitment": "hourly",
+      "location": "Remote",
+      "postedAt": "2026-10-18T19:04:00",
+      "directUrl": "https://work.mercor.com/explore?listingId=list_AAABoVBmP03TuNxFesRNHYQl",
+      "anchors": [
+        "AutoCAD",
+        "Mechanical CAD"
+      ],
+      "verdict": "SUB-$65/HR BENCHMARK",
+      "score": 72,
+      "pitch": "Experienced Mechanical & CAD specialist with strong proficiency in 3D modeling, drawing standards, and technical design verification. Immediate availability for high-precision delivery.",
+      "hoursPerWeek": 40,
+      "remainingSlots": 2
+    },
+    {
+      "id": "list_AAABoKJpnR7AGoPAzWpB8bgY",
+      "uid": "listing_uid_AAABoMqgWEahZ1lkvrRCj7Vl",
+      "title": "Civil / Survey Engineer — Vulcan",
+      "rateMin": 45,
+      "rateMax": 60,
+      "rateFormatted": "$45–$60/hr",
+      "payRateFrequency": "hourly",
+      "commitment": "hourly",
+      "location": "Remote (US)",
+      "postedAt": "2026-09-15T00:13:46",
+      "directUrl": "https://work.mercor.com/explore?listingId=list_AAABoKJpnR7AGoPAzWpB8bgY",
+      "anchors": [
+        "AutoCAD",
+        "Civil / Structural"
+      ],
+      "verdict": "SUB-$65/HR BENCHMARK",
+      "score": 72,
+      "pitch": "Senior CAD & technical drafting specialist with extensive experience in AutoCAD production, WCS coordinates, 3D laser point clouds, and drawing deliverable quality control. Zero rework guarantee.",
+      "hoursPerWeek": 40,
+      "remainingSlots": 9
+    },
+    {
+      "id": "list_AAABoKJpbjxKMlb5EkZH_69v",
+      "uid": "listing_uid_AAABoMqfo6Gv-3mNOJ1M7Jdt",
+      "title": "Architect — Design Coordination (Vulcan)",
+      "rateMin": 45,
+      "rateMax": 60,
+      "rateFormatted": "$45–$60/hr",
+      "payRateFrequency": "hourly",
+      "commitment": "hourly",
+      "location": "Remote (US)",
+      "postedAt": "2026-09-15T00:13:34",
+      "directUrl": "https://work.mercor.com/explore?listingId=list_AAABoKJpbjxKMlb5EkZH_69v",
+      "anchors": [
+        "AutoCAD",
+        "Revit / BIM",
+        "Architecture / AEC"
+      ],
+      "verdict": "SUB-$65/HR BENCHMARK",
+      "score": 72,
+      "pitch": "Senior CAD & technical drafting specialist with extensive experience in AutoCAD production, WCS coordinates, 3D laser point clouds, and drawing deliverable quality control. Zero rework guarantee.",
+      "hoursPerWeek": 40,
+      "remainingSlots": 9
+    },
+    {
+      "id": "list_AAABoJgqNtzoVh5hqmtEQLnu",
+      "uid": "listing_uid_AAABoKZRXMCbFZ49kqdHmLD-",
+      "title": "Application Users - SolidWorks Premium on Windows - STEM",
+      "rateMin": 45,
+      "rateMax": 55,
+      "rateFormatted": "$45–$55/hr",
+      "payRateFrequency": "hourly",
+      "commitment": "hourly",
+      "location": "Remote",
+      "postedAt": "2026-09-13T00:28:18",
+      "directUrl": "https://work.mercor.com/explore?listingId=list_AAABoJgqNtzoVh5hqmtEQLnu",
+      "anchors": [
+        "Mechanical CAD"
+      ],
+      "verdict": "SUB-$65/HR BENCHMARK",
+      "score": 72,
+      "pitch": "Experienced Mechanical & CAD specialist with strong proficiency in 3D modeling, drawing standards, and technical design verification. Immediate availability for high-precision delivery.",
+      "hoursPerWeek": 40,
+      "remainingSlots": 30
+    },
+    {
+      "id": "list_AAABoJgqKEnGDYqhKlxERLZR",
+      "uid": "listing_uid_AAABoKxqIGG7RhIPinxOaaA3",
+      "title": "Application Users - AutoCAD Mechanical - STEM",
+      "rateMin": 45,
+      "rateMax": 55,
+      "rateFormatted": "$45–$55/hr",
+      "payRateFrequency": "hourly",
+      "commitment": "hourly",
+      "location": "Remote",
+      "postedAt": "2026-09-13T00:28:14",
+      "directUrl": "https://work.mercor.com/explore?listingId=list_AAABoJgqKEnGDYqhKlxERLZR",
+      "anchors": [
+        "AutoCAD",
+        "Mechanical CAD"
+      ],
+      "verdict": "SUB-$65/HR BENCHMARK",
+      "score": 72,
+      "pitch": "Experienced Mechanical & CAD specialist with strong proficiency in 3D modeling, drawing standards, and technical design verification. Immediate availability for high-precision delivery.",
+      "hoursPerWeek": 40,
+      "remainingSlots": 10
+    }
+  ]
+};
