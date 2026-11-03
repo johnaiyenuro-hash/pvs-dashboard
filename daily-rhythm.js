@@ -3,8 +3,8 @@
  * Habakuk Operational OS // Single Pane of Glass
  * 
  * Rules:
- * 1. Sole Source of Truth: 4 vision systems (PVS, Spanish, Mercor, Health)
- * 2. Rule of 4: Strictly query strictly ONE primary target per pillar (max 4 levers)
+ * 1. Sole Source of Truth: 5 vision systems (PVS, Spanish, Nomad Visa, Mercor, Health)
+ * 2. Primary Levers: 1 primary bottleneck lever per pillar + Health Daily Execution Stack dropdown
  * 3. Zero-Git Daily State: Checked items persist in localStorage keyed by date (YYYY-MM-DD), auto-reset at midnight
  */
 
@@ -39,6 +39,19 @@
       defaultTag: '15 MIN'
     },
     {
+      id: 'dnv',
+      name: 'Nomad Visa Master Checklist',
+      shortName: 'Nomad Visa',
+      color: '#2dd4bf',
+      tagClass: 'tag-dnv',
+      url: './spanish/index.html#dnv_clause_perm_letter',
+      file: './spanish/index.html',
+      defaultTargetId: 'dnv_clause_perm_letter',
+      defaultTitle: 'Clause 8.7 Variation & Glider Permission Letter',
+      defaultDesc: 'Agree formal remote variation with Dave Townsend on Glider letterhead',
+      defaultTag: 'NOW // ACTIVE'
+    },
+    {
       id: 'mercor',
       name: 'Mercor AI Contracting',
       shortName: 'Mercor',
@@ -57,13 +70,25 @@
       shortName: 'Health',
       color: '#ff6b4a',
       tagClass: 'tag-health',
-      url: './health/index.html',
+      url: './health/index.html#fit_fasting',
       file: './health/index.html',
+      isStack: true,
       defaultTargetId: 'fit_fasting',
-      defaultTitle: '16:8 Fasting Respected (12:00 – 20:00 Window)',
-      defaultDesc: 'Zero calories before 12:00 PM; eating cutoff at 20:00 PM',
-      defaultTag: 'FASTING'
+      defaultTitle: 'Daily Weight Loss Execution Stack',
+      defaultDesc: 'Mandatory daily protocol: Fasting, Scale Log, Deficit, Protein, Steps, Water, Sleep',
+      defaultTag: 'DAILY STACK'
     }
+  ];
+
+  const HEALTH_STACK_ITEMS = [
+    { id: 'fit_fasting', title: '16:8 Fasting Respected', desc: '12:00 – 20:00 window (0 cal before 12 PM)', tag: 'FASTING', color: '#c084fc' },
+    { id: 'fit_weighin_daily', title: 'Morning Weigh-in Recorded', desc: 'Fasted, post-toilet, on hard floor', tag: 'SCALE LOG', color: '#4a9fff' },
+    { id: 'fit_deficit', title: 'Calorie Deficit Enforced', desc: '~1,850–2,050 kcal cap / snack ≤150 kcal', tag: 'DEFICIT', color: '#ff6b4a' },
+    { id: 'fit_protein', title: 'Protein Floor Locked', desc: '≥150g protein to shield lean muscle mass', tag: 'PROTEIN', color: '#4affb4' },
+    { id: 'fit_steps', title: 'Movement Floor (10,000+ Steps)', desc: 'Primary fat oxidation & baseline NEAT', tag: 'NEAT', color: '#ff6b4a' },
+    { id: 'fit_water', title: 'Hydration Base (2.5L – 3.0L)', desc: 'Pure water hydration throughout day', tag: 'HYDRATION', color: '#4a9fff' },
+    { id: 'fit_warm_water', title: 'Morning Primer (Warm Water)', desc: 'Warm water on waking for gut motility', tag: 'PRIMER', color: '#4a9fff' },
+    { id: 'fit_sleep', title: 'Sleep & Cortisol Cutoff', desc: 'In bed before 11:00 PM to curb late hunger', tag: 'RECOVERY', color: '#ff6b4a' }
   ];
 
   const CADENCE_BLOCKS = [
@@ -74,7 +99,7 @@
       subtitle: 'Primer, Fasted NEAT & High-Leverage Deep Work',
       tasks: [
         { id: 'cad_am_primer', label: 'AM Primer & Fasted Weigh-In', note: 'Warm water primer + morning scale log upon wake' },
-        { id: 'cad_priority_align', label: 'Priority Alignment', note: "Review Today's 4 Levers; lock single focus outcome" },
+        { id: 'cad_priority_align', label: 'Priority Alignment', note: "Review Today's Levers; lock single focus outcome" },
         { id: 'cad_deep_work', label: 'High-Leverage Focus Block', note: 'Deep cognitive work block while insulin is low' }
       ]
     },
@@ -139,6 +164,16 @@
   }
 
   async function queryPillarTarget(pillar) {
+    if (pillar.isStack) {
+      return {
+        id: 'health_stack',
+        title: pillar.defaultTitle,
+        desc: pillar.defaultDesc,
+        tag: pillar.defaultTag,
+        source: 'stack'
+      };
+    }
+
     // 1. Check local synced target first
     let synced = null;
     try {
@@ -152,11 +187,21 @@
       if (response.ok) {
         const html = await response.text();
         const doc = new DOMParser().parseFromString(html, 'text/html');
-        // ENFORCE RULE OF 4: Query strictly the FIRST active item per pillar
-        const activeEl = doc.querySelector('[data-status="now"]');
+        
+        let activeEl = null;
+        if (pillar.id === 'dnv') {
+          activeEl = doc.querySelector('[data-pillar="dnv"][data-status="now"]') ||
+                     doc.querySelector('#dnv_clause_perm_letter, [data-task-id="dnv_clause_perm_letter"]');
+        } else if (pillar.id === 'spanish') {
+          activeEl = doc.querySelector('[data-pillar="spanish"][data-status="now"]') ||
+                     doc.querySelector('#spanish_vocab_input, [data-task-id="spanish_vocab_input"]');
+        } else {
+          activeEl = doc.querySelector('[data-status="now"]');
+        }
+
         if (activeEl) {
           const title = activeEl.getAttribute('data-lever-title') ||
-                        activeEl.querySelector('.task-text, span, div')?.innerText?.trim() ||
+                        activeEl.querySelector('.task-text strong, .task-text, span, div')?.innerText?.trim() ||
                         pillar.defaultTitle;
           const desc = activeEl.getAttribute('data-lever-desc') || pillar.defaultDesc;
           const tag = activeEl.getAttribute('data-lever-tag') ||
@@ -164,14 +209,7 @@
                       pillar.defaultTag;
           const id = activeEl.getAttribute('data-task-id') || (pillar.id + '_active');
 
-          const payload = {
-            id,
-            title,
-            desc,
-            tag,
-            source: 'live'
-          };
-          // Cache to localStorage for fast subsequent loads
+          const payload = { id, title, desc, tag, source: 'live' };
           try {
             localStorage.setItem('pvs_pillar_now_' + pillar.id, JSON.stringify(payload));
           } catch (e) {}
@@ -179,9 +217,7 @@
           return payload;
         }
       }
-    } catch (err) {
-      // Fetch may fail in local file:// protocol due to CORS; fallback gracefully
-    }
+    } catch (err) {}
 
     // 3. Fallback to synced state if available
     if (synced && synced.title) {
@@ -211,7 +247,7 @@
     const dailyState = loadDailyState();
     const todayStr = formatDisplayDate();
 
-    // Query the 4 active targets in parallel (strictly 1 per pillar)
+    // Query the active targets in parallel
     const targets = await Promise.all(PILLARS_CONFIG.map(p => queryPillarTarget(p)));
 
     // Generate HTML
@@ -222,7 +258,7 @@
           <div class="rhythm-header-left">
             <div class="rhythm-badge">DAILY RHYTHM EXECUTION HUD</div>
             <h2 class="rhythm-title">Today's Operational Command</h2>
-            <p class="rhythm-subtitle">Dynamic Bottleneck Pull &bull; Rule of 4 &bull; Zero-Git Local State</p>
+            <p class="rhythm-subtitle">Dynamic Bottleneck Pull &bull; 5 Pillars &bull; Zero-Git Local State</p>
           </div>
           <div class="rhythm-header-right">
             <div class="date-pill">${todayStr}</div>
@@ -236,50 +272,126 @@
           <div class="rhythm-progress-fill" id="rhythmProgressFill" style="width: 0%;"></div>
         </div>
 
-        <!-- SECTION 1: TODAY'S 4 PRIMARY LEVERS -->
+        <!-- SECTION 1: PRIMARY LEVERS -->
         <div class="rhythm-section">
           <div class="rhythm-section-header">
             <span class="dot-indicator"></span>
-            <span class="section-heading">PRIMARY LEVERS // TODAY'S 4 ACTIVE BOTTLENECK TARGETS</span>
-            <span class="rule-tag">RULE OF 4 ACTIVE</span>
+            <span class="section-heading">PRIMARY LEVERS // TODAY'S ACTIVE BOTTLENECK TARGETS</span>
+            <span class="rule-tag">5 PILLARS ACTIVE</span>
           </div>
           <div class="levers-grid">
     `;
 
     PILLARS_CONFIG.forEach((pillar, idx) => {
       const target = targets[idx];
-      const checkKey = 'lever_' + pillar.id + '_' + target.id;
-      const isChecked = !!dailyState[checkKey];
-      const targetAnchor = target.id ? ('#' + target.id) : ('#' + pillar.defaultTargetId);
-      const directUrl = pillar.url + targetAnchor;
 
-      html += `
-        <div class="lever-card ${pillar.id}-card ${isChecked ? 'completed' : ''}" id="card_${checkKey}">
-          <div class="lever-top">
-            <a href="${directUrl}" class="lever-pillar-badge ${pillar.tagClass}" title="Go directly to ${pillar.shortName}">
-              ${pillar.shortName} &nearr;
-            </a>
-            <span class="lever-tag">${escapeHTML(target.tag)}</span>
-          </div>
-          <div class="lever-body">
-            <div class="rhythm-checkbox ${isChecked ? 'checked' : ''}" onclick="DailyRhythm.toggleTask('${checkKey}')" title="Mark Done Today">
-              ${isChecked ? '&#10003;' : ''}
-            </div>
-            <div class="lever-text">
-              <a href="${directUrl}" class="lever-title-link" title="Open directly in ${pillar.shortName}">
-                ${target.title}
+      if (pillar.isStack) {
+        // HEALTH EXECUTION STACK WITH DROPDOWN
+        let doneCount = 0;
+        HEALTH_STACK_ITEMS.forEach(item => {
+          if (dailyState['lever_health_' + item.id]) doneCount++;
+        });
+        const isAllDone = doneCount === HEALTH_STACK_ITEMS.length;
+        const isExpanded = dailyState['health_stack_expanded'] !== false;
+
+        html += `
+          <div class="lever-card health-card health-stack-card ${isAllDone ? 'completed' : ''}" id="card_lever_health_stack">
+            <div class="lever-top">
+              <a href="${pillar.url}" class="lever-pillar-badge ${pillar.tagClass}" title="Go directly to ${pillar.shortName}">
+                ${pillar.shortName} &nearr;
               </a>
-              <div class="lever-desc">${escapeHTML(target.desc)}</div>
+              <div class="health-stack-pills">
+                <span class="health-count-badge ${isAllDone ? 'done' : ''}" id="healthCountBadge">${doneCount}/${HEALTH_STACK_ITEMS.length} DONE</span>
+                <span class="lever-tag">${escapeHTML(target.tag)}</span>
+              </div>
+            </div>
+
+            <div class="health-stack-header">
+              <div class="health-stack-title-row">
+                <a href="${pillar.url}" class="lever-title-link" title="Open Health OS">
+                  ${target.title}
+                </a>
+                <button type="button" class="health-dropdown-toggle-btn" onclick="DailyRhythm.toggleHealthDropdown(event)" title="Toggle daily stack drawer">
+                  <span id="healthDropdownBtnLabel">${isExpanded ? 'Collapse' : 'Expand'}</span>
+                  <span class="dropdown-chevron ${isExpanded ? 'open' : ''}">▼</span>
+                </button>
+              </div>
+              <div class="health-stack-progress-track">
+                <div class="health-stack-progress-fill" id="healthStackProgressFill" style="width: ${(doneCount / HEALTH_STACK_ITEMS.length) * 100}%;"></div>
+              </div>
+            </div>
+
+            <!-- Expandable Stack Dropdown Drawer -->
+            <div class="health-stack-drawer ${isExpanded ? 'expanded' : 'collapsed'}" id="healthStackDrawer">
+              <div class="health-stack-list">
+        `;
+
+        HEALTH_STACK_ITEMS.forEach(item => {
+          const itemKey = 'lever_health_' + item.id;
+          const itemChecked = !!dailyState[itemKey];
+          html += `
+            <div class="health-stack-row ${itemChecked ? 'checked' : ''}" id="row_${itemKey}" onclick="DailyRhythm.toggleTask('${itemKey}')">
+              <div class="rhythm-checkbox ${itemChecked ? 'checked' : ''}">
+                ${itemChecked ? '&#10003;' : ''}
+              </div>
+              <div class="health-stack-info">
+                <div class="health-stack-row-title">${item.title}</div>
+                <div class="health-stack-row-desc">${item.desc}</div>
+              </div>
+              <span class="health-stack-row-tag" style="color: ${item.color}; border: 1px solid ${item.color}40; background: ${item.color}15;">
+                ${item.tag}
+              </span>
+            </div>
+          `;
+        });
+
+        html += `
+              </div>
+            </div>
+
+            <div class="lever-footer">
+              <a href="${pillar.url}" class="pillar-jump-link">
+                Open in ${pillar.shortName} &rarr;
+              </a>
+              <span class="lever-status-label" id="healthStackStatusLabel">${isAllDone ? 'ALL 8 HABITS COMPLETED' : `${doneCount}/${HEALTH_STACK_ITEMS.length} COMPLETED TODAY`}</span>
             </div>
           </div>
-          <div class="lever-footer">
-            <a href="${directUrl}" class="pillar-jump-link">
-              Open in ${pillar.shortName} &rarr;
-            </a>
-            <span class="lever-status-label">${isChecked ? 'DONE TODAY' : 'PENDING'}</span>
+        `;
+      } else {
+        // STANDARD SINGLE-LEVER CARD
+        const checkKey = 'lever_' + pillar.id + '_' + target.id;
+        const isChecked = !!dailyState[checkKey];
+        const targetAnchor = target.id ? ('#' + target.id) : ('#' + pillar.defaultTargetId);
+        const directUrl = pillar.url.includes('#') ? pillar.url : (pillar.url + targetAnchor);
+
+        html += `
+          <div class="lever-card ${pillar.id}-card ${isChecked ? 'completed' : ''}" id="card_${checkKey}">
+            <div class="lever-top">
+              <a href="${directUrl}" class="lever-pillar-badge ${pillar.tagClass}" title="Go directly to ${pillar.shortName}">
+                ${pillar.shortName} &nearr;
+              </a>
+              <span class="lever-tag">${escapeHTML(target.tag)}</span>
+            </div>
+            <div class="lever-body">
+              <div class="rhythm-checkbox ${isChecked ? 'checked' : ''}" onclick="DailyRhythm.toggleTask('${checkKey}')" title="Mark Done Today">
+                ${isChecked ? '&#10003;' : ''}
+              </div>
+              <div class="lever-text">
+                <a href="${directUrl}" class="lever-title-link" title="Open directly in ${pillar.shortName}">
+                  ${target.title}
+                </a>
+                <div class="lever-desc">${escapeHTML(target.desc)}</div>
+              </div>
+            </div>
+            <div class="lever-footer">
+              <a href="${directUrl}" class="pillar-jump-link">
+                Open in ${pillar.shortName} &rarr;
+              </a>
+              <span class="lever-status-label">${isChecked ? 'DONE TODAY' : 'PENDING'}</span>
+            </div>
           </div>
-        </div>
-      `;
+        `;
+      }
     });
 
     html += `
@@ -298,29 +410,29 @@
 
     CADENCE_BLOCKS.forEach((block) => {
       html += `
-        <div class="cadence-card">
-          <div class="cadence-header">
+        <div class="cadence-block" id="block_${block.id}">
+          <div class="cadence-block-header">
             <div>
               <div class="cadence-title">${block.title}</div>
-              <div class="cadence-window">${block.timeWindow}</div>
+              <div class="cadence-subtitle">${block.subtitle}</div>
             </div>
+            <span class="cadence-time">${block.timeWindow}</span>
           </div>
-          <div class="cadence-sub">${block.subtitle}</div>
           <div class="cadence-tasks">
       `;
 
-      block.tasks.forEach((task) => {
-        const checkKey = 'cadence_' + task.id;
+      block.tasks.forEach((t) => {
+        const checkKey = 'cad_' + t.id;
         const isChecked = !!dailyState[checkKey];
 
         html += `
-          <div class="cadence-task-item ${isChecked ? 'completed' : ''}" onclick="DailyRhythm.toggleTask('${checkKey}')" id="task_${checkKey}">
-            <div class="rhythm-checkbox small ${isChecked ? 'checked' : ''}">
+          <div class="cadence-task-row ${isChecked ? 'completed' : ''}" id="task_${checkKey}" onclick="DailyRhythm.toggleTask('${checkKey}')">
+            <div class="rhythm-checkbox ${isChecked ? 'checked' : ''}">
               ${isChecked ? '&#10003;' : ''}
             </div>
-            <div class="cadence-task-text">
-              <div class="cadence-task-label">${escapeHTML(task.label)}</div>
-              <div class="cadence-task-note">${escapeHTML(task.note)}</div>
+            <div class="cadence-task-info">
+              <div class="cadence-task-label">${t.label}</div>
+              <div class="cadence-task-note">${t.note}</div>
             </div>
           </div>
         `;
@@ -355,15 +467,39 @@
     });
   }
 
+  function toggleHealthDropdown(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    const state = loadDailyState();
+    const current = state['health_stack_expanded'] !== false;
+    state['health_stack_expanded'] = !current;
+    saveDailyState(state);
+
+    const drawer = document.getElementById('healthStackDrawer');
+    const label = document.getElementById('healthDropdownBtnLabel');
+    const chevron = document.querySelector('.dropdown-chevron');
+    if (drawer) {
+      drawer.classList.toggle('collapsed', current);
+      drawer.classList.toggle('expanded', !current);
+    }
+    if (label) {
+      label.innerText = current ? 'Expand' : 'Collapse';
+    }
+    if (chevron) {
+      chevron.classList.toggle('open', !current);
+    }
+  }
+
   function toggleTask(checkKey) {
     const dailyState = loadDailyState();
     dailyState[checkKey] = !dailyState[checkKey];
     saveDailyState(dailyState);
 
-    // Update UI dynamically
     const isChecked = dailyState[checkKey];
 
-    // Check if lever card
+    // Check if single lever card
     const cardEl = document.getElementById('card_' + checkKey);
     if (cardEl) {
       cardEl.classList.toggle('completed', isChecked);
@@ -378,7 +514,42 @@
       }
     }
 
-    // Check if cadence item
+    // Check if health stack item row
+    const rowEl = document.getElementById('row_' + checkKey);
+    if (rowEl) {
+      rowEl.classList.toggle('checked', isChecked);
+      const box = rowEl.querySelector('.rhythm-checkbox');
+      if (box) {
+        box.classList.toggle('checked', isChecked);
+        box.innerHTML = isChecked ? '&#10003;' : '';
+      }
+      // Update health stack counters
+      let doneCount = 0;
+      HEALTH_STACK_ITEMS.forEach(item => {
+        if (dailyState['lever_health_' + item.id]) doneCount++;
+      });
+      const isAllDone = doneCount === HEALTH_STACK_ITEMS.length;
+
+      const badge = document.getElementById('healthCountBadge');
+      if (badge) {
+        badge.innerText = `${doneCount}/${HEALTH_STACK_ITEMS.length} DONE`;
+        badge.classList.toggle('done', isAllDone);
+      }
+      const fill = document.getElementById('healthStackProgressFill');
+      if (fill) {
+        fill.style.width = `${(doneCount / HEALTH_STACK_ITEMS.length) * 100}%`;
+      }
+      const statusLabel = document.getElementById('healthStackStatusLabel');
+      if (statusLabel) {
+        statusLabel.innerText = isAllDone ? 'ALL 8 HABITS COMPLETED' : `${doneCount}/${HEALTH_STACK_ITEMS.length} COMPLETED TODAY`;
+      }
+      const stackCard = document.getElementById('card_lever_health_stack');
+      if (stackCard) {
+        stackCard.classList.toggle('completed', isAllDone);
+      }
+    }
+
+    // Check if cadence task
     const taskEl = document.getElementById('task_' + checkKey);
     if (taskEl) {
       taskEl.classList.toggle('completed', isChecked);
@@ -395,20 +566,37 @@
   function updateProgressUI() {
     const dailyState = loadDailyState();
 
-    // Total tasks = 4 Primary Levers + 9 Cadence tasks = 13 tasks
-    let total = 4;
-    CADENCE_BLOCKS.forEach(b => { total += b.tasks.length; });
+    // 4 single primary levers (pvs, spanish, dnv, mercor) + 8 health stack items + 9 cadence items = 21 items
+    const singleLeverPillars = ['pvs', 'spanish', 'dnv', 'mercor'];
+    let totalItems = singleLeverPillars.length + HEALTH_STACK_ITEMS.length;
+    CADENCE_BLOCKS.forEach(b => { totalItems += b.tasks.length; });
 
     let completed = 0;
-    Object.keys(dailyState).forEach(k => {
-      if (dailyState[k]) completed++;
+
+    // Single levers
+    singleLeverPillars.forEach(pId => {
+      Object.keys(dailyState).forEach(k => {
+        if (k.startsWith('lever_' + pId + '_') && dailyState[k]) completed++;
+      });
     });
 
-    const percent = Math.round((completed / total) * 100);
+    // Health stack items
+    HEALTH_STACK_ITEMS.forEach(item => {
+      if (dailyState['lever_health_' + item.id]) completed++;
+    });
+
+    // Cadence tasks
+    CADENCE_BLOCKS.forEach(b => {
+      b.tasks.forEach(t => {
+        if (dailyState['cad_' + t.id]) completed++;
+      });
+    });
+
+    const percent = Math.min(100, Math.round((completed / totalItems) * 100));
 
     const scorePill = document.getElementById('rhythmScorePill');
     if (scorePill) {
-      scorePill.innerText = `${completed}/${total} (${percent}%)`;
+      scorePill.innerText = `${completed}/${totalItems} (${percent}%)`;
       if (percent === 100) {
         scorePill.classList.add('perfect');
       } else {
@@ -430,7 +618,6 @@
   function resetToday() {
     if (confirm('Reset all daily checks for today?')) {
       saveDailyState({});
-      // Re-render
       renderDailyRhythm('daily-rhythm-container');
     }
   }
@@ -449,6 +636,7 @@
   window.DailyRhythm = {
     init: renderDailyRhythm,
     toggleTask: toggleTask,
+    toggleHealthDropdown: toggleHealthDropdown,
     resetToday: resetToday
   };
 

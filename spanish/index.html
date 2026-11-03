@@ -809,7 +809,7 @@
         </div>
         <div class="task-tag tag-5">CLEARED // PASSED</div>
       </div>
-      <div class="task-item" onclick="toggle(this)" data-task-id="dnv_clause_perm_letter">
+      <div class="task-item" id="dnv_clause_perm_letter" onclick="toggle(this)" data-task-id="dnv_clause_perm_letter" data-status="now" data-pillar="dnv" data-lever-title="Clause 8.7 Variation & Glider Permission Letter" data-lever-desc="Agree formal remote variation with Dave Townsend on Glider letterhead (100% remote Spain permission)" data-lever-tag="NOW // ACTIVE">
         <div class="checkbox"></div>
         <div class="task-text">
           <strong>Clause 8.7 Variation & Glider Permission Letter:</strong> Agree formal variation to Clause 8.7 (Place of Work / Remote Work restriction) with Dave Townsend. Signed employer letter on Glider letterhead must explicitly specify: (1) explicit permission to perform all duties 100% remotely from Spain, (2) confirmed role/title and duties (DDM/CDE), (3) gross salary in EUR/GBP clearing UGE threshold, and (4) continuous tenure (&gt;3 months). Must be submitted with sworn Spanish translation (<em>Traducción Jurada</em>)[cite: 1].
@@ -1328,20 +1328,34 @@
   }
 
   function syncActiveLever() {
-    const activeEl = document.querySelector('[data-status="now"]');
-    if (activeEl) {
+    // 1. Spanish Language Pillar
+    const spanishEl = document.querySelector('[data-pillar="spanish"][data-status="now"]');
+    if (spanishEl) {
       const payload = {
         pillar: 'spanish',
-        id: activeEl.getAttribute('data-task-id') || 'spanish_vocab_input',
-        title: activeEl.getAttribute('data-lever-title') || 'Daily Spanish Vocabulary Input (15 words)',
-        desc: activeEl.getAttribute('data-lever-desc') || '1,000 Most Common Spanish Words high-frequency deck',
-        tag: activeEl.getAttribute('data-lever-tag') || '15 MIN',
-        done: activeEl.classList.contains('done'),
+        id: spanishEl.getAttribute('data-task-id') || 'spanish_vocab_input',
+        title: spanishEl.getAttribute('data-lever-title') || 'Daily Spanish Vocabulary Input (15 words)',
+        desc: spanishEl.getAttribute('data-lever-desc') || '1,000 Most Common Spanish Words high-frequency deck',
+        tag: spanishEl.getAttribute('data-lever-tag') || '15 MIN',
+        done: spanishEl.classList.contains('done'),
         updatedAt: Date.now()
       };
-      try {
-        localStorage.setItem('pvs_pillar_now_spanish', JSON.stringify(payload));
-      } catch (e) {}
+      try { localStorage.setItem('pvs_pillar_now_spanish', JSON.stringify(payload)); } catch (e) {}
+    }
+
+    // 2. Nomad Visa Pillar
+    const dnvEl = document.querySelector('[data-pillar="dnv"][data-status="now"]');
+    if (dnvEl) {
+      const payload = {
+        pillar: 'dnv',
+        id: dnvEl.getAttribute('data-task-id') || 'dnv_clause_perm_letter',
+        title: dnvEl.getAttribute('data-lever-title') || 'Clause 8.7 Variation & Glider Permission Letter',
+        desc: dnvEl.getAttribute('data-lever-desc') || 'Agree formal variation with Dave Townsend on Glider letterhead',
+        tag: dnvEl.getAttribute('data-lever-tag') || 'NOW // ACTIVE',
+        done: dnvEl.classList.contains('done'),
+        updatedAt: Date.now()
+      };
+      try { localStorage.setItem('pvs_pillar_now_dnv', JSON.stringify(payload)); } catch (e) {}
     }
   }
 
