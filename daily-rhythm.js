@@ -40,16 +40,16 @@
     },
     {
       id: 'dnv',
-      name: 'Nomad Visa Master Checklist',
+      name: 'Nomad Visa & Barcelona Recce',
       shortName: 'Nomad Visa',
       color: '#2dd4bf',
       tagClass: 'tag-dnv',
-      url: './spanish/index.html#dnv_clause_perm_letter',
+      url: './spanish/index.html#recce_transit_housing',
       file: './spanish/index.html',
-      defaultTargetId: 'dnv_clause_perm_letter',
-      defaultTitle: 'Clause 8.7 Variation & Glider Permission Letter',
-      defaultDesc: 'Agree formal remote variation with Dave Townsend on Glider letterhead',
-      defaultTag: 'NOW // ACTIVE'
+      defaultTargetId: 'recce_transit_housing',
+      defaultTitle: 'Pillar 1: Transit, Housing & Urban Mobility Stack',
+      defaultDesc: 'Lock London-BCN direct flights, 23-night temporary base (€450–€600) & T-usual pass',
+      defaultTag: 'NOW // PREREQ'
     },
     {
       id: 'mercor',
@@ -191,6 +191,7 @@
         let activeEl = null;
         if (pillar.id === 'dnv') {
           activeEl = doc.querySelector('[data-pillar="dnv"][data-status="now"]') ||
+                     doc.querySelector('#recce_transit_housing, [data-task-id="recce_transit_housing"]') ||
                      doc.querySelector('#dnv_clause_perm_letter, [data-task-id="dnv_clause_perm_letter"]');
         } else if (pillar.id === 'spanish') {
           activeEl = doc.querySelector('[data-pillar="spanish"][data-status="now"]') ||

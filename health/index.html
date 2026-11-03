@@ -654,14 +654,14 @@
     <div class="header-actions">
       <a href="../index.html" class="back-btn">&larr; Launchpad</a>
       <div class="fasting-badge">16:8 FASTING ENGINE</div>
-      <div class="target-badge">PRIMARY TARGET: 88KG &rarr; 78KG (-10KG)</div>
+      <div class="target-badge">PRIMARY TARGET: 92KG &rarr; 82KG (-10KG)</div>
     </div>
   </div>
 
   <!-- STATS OVERVIEW -->
   <div class="stats-row">
     <div class="stat-card">
-      <div class="stat-val" id="stat-start">88.0 kg</div>
+      <div class="stat-val" id="stat-start">92.0 kg</div>
       <div class="stat-sub">Baseline Weight</div>
     </div>
     <div class="stat-card">
@@ -673,7 +673,7 @@
       <div class="stat-sub">Total Weight Shed</div>
     </div>
     <div class="stat-card">
-      <div class="stat-val blue" id="stat-target">78.0 kg</div>
+      <div class="stat-val blue" id="stat-target">82.0 kg</div>
       <div class="stat-sub">Lean Target (-10.0kg)</div>
     </div>
   </div>
@@ -687,7 +687,7 @@
         Weight loss is the uncompromising metric. We engineer an effortless daily deficit through a time-restricted 16:8 feeding window, a strict protein floor (150g) to prevent muscle loss, 10k daily steps to maximize fat oxidation, and morning scale tracking.
       </p>
       <div class="role-meta">
-        <div class="role-pill highlight">Goal: -10.0kg (88 &rarr; 78kg)</div>
+        <div class="role-pill highlight">Goal: -10.0kg (92 &rarr; 82kg)</div>
         <div class="role-pill fasting">Window: 16:8 (12:00 &ndash; 20:00)</div>
         <div class="role-pill protein">Protein Floor: 150g+</div>
         <div class="role-pill">Calorie Cap: ~1,850&ndash;2,050 kcal</div>
@@ -982,26 +982,26 @@
 
   <!-- WEIGHT LOSS PROGRESSION TRAJECTORY -->
   <div class="card full">
-    <div class="card-title"><span class="dot orange"></span>WEIGHT LOSS TRAJECTORY &amp; PHASE MILESTONES (88.0KG &rarr; 78.0KG)</div>
+    <div class="card-title"><span class="dot orange"></span>WEIGHT LOSS TRAJECTORY &amp; PHASE MILESTONES (92.0KG &rarr; 82.0KG)</div>
     <div class="grid" style="margin-bottom: 0;">
       <div>
         <div class="salary-bar">
-          <div class="salary-label"><span>Phase 1: 88.0kg &rarr; 85.0kg (Scale Baseline &amp; Initial Fat/Water Flush)</span><strong id="p1-label">Pending</strong></div>
+          <div class="salary-label"><span>Phase 1: 92.0kg &rarr; 89.0kg (Scale Baseline &amp; Initial Fat/Water Flush)</span><strong id="p1-label">Pending</strong></div>
           <div class="bar-track"><div class="bar-fill coral" id="p1-bar" style="width: 0%;"></div></div>
         </div>
         <div class="salary-bar">
-          <div class="salary-label"><span>Phase 2: 85.0kg &rarr; 81.5kg (Deep Fat Mobilization &amp; Waist Slimming)</span><strong id="p2-label">Pending</strong></div>
+          <div class="salary-label"><span>Phase 2: 89.0kg &rarr; 85.5kg (Deep Fat Mobilization &amp; Waist Slimming)</span><strong id="p2-label">Pending</strong></div>
           <div class="bar-track"><div class="bar-fill yellow" id="p2-bar" style="width: 0%;"></div></div>
         </div>
         <div class="salary-bar">
-          <div class="salary-label"><span>Phase 3: 81.5kg &rarr; 78.0kg (Final Definition &amp; Lean Baseline Lock)</span><strong id="p3-label">Pending</strong></div>
+          <div class="salary-label"><span>Phase 3: 85.5kg &rarr; 82.0kg (Final Definition &amp; Lean Baseline Lock)</span><strong id="p3-label">Pending</strong></div>
           <div class="bar-track"><div class="bar-fill green" id="p3-bar" style="width: 0%;"></div></div>
         </div>
       </div>
       <div>
         <div style="font-family: 'Space Mono', monospace; font-size: 11px; line-height: 1.6; color: var(--muted); background: var(--surface2); padding: 14px; border-radius: 4px; border: 1px solid var(--border);">
           <span style="color: var(--accent3); font-weight: 700;">// EXECUTION SUMMARY</span><br>
-          Starting Weight: <strong>88.0 kg</strong> | Target Weight: <strong>78.0 kg</strong><br>
+          Starting Weight: <strong>92.0 kg</strong> | Target Weight: <strong>82.0 kg</strong><br>
           Total Target Deficit: <strong>-10.0 kg (~77,000 kcal cumulative fat deficit)</strong><br>
           Estimated Rate of Loss: <strong>0.5kg &ndash; 0.75kg / week</strong><br>
           Primary Pillars: <strong>16:8 Fasting Window + 10k Steps + Morning Scale Tracking</strong>
@@ -1012,8 +1012,8 @@
 
   <script>
     const STORAGE_PREFIX = 'habakuk_body_';
-    const START_WEIGHT = 88.0;
-    const GOAL_WEIGHT = 78.0;
+    const START_WEIGHT = 92.0;
+    const GOAL_WEIGHT = 82.0;
 
     function toggle(element) {
       element.classList.toggle('done');
@@ -1203,24 +1203,24 @@
       const currentWeight = history.length > 0 ? history[0].weight : START_WEIGHT;
 
       // Update stat cards
-      document.getElementById('stat-current').innerText = history.length > 0 ? currentWeight.toFixed(1) + ' kg' : '88.0 kg (Pending Scale)';
+      document.getElementById('stat-current').innerText = history.length > 0 ? currentWeight.toFixed(1) + ' kg' : '92.0 kg (Pending Scale)';
       const totalLost = START_WEIGHT - currentWeight;
       document.getElementById('stat-lost').innerText = (totalLost > 0 ? '-' + totalLost.toFixed(1) : (totalLost < 0 ? '+' + Math.abs(totalLost).toFixed(1) : '0.0')) + ' kg';
 
       // Update Phase Progression Bars
-      // Phase 1: 88.0 to 85.0 (-3.0kg)
+      // Phase 1: 92.0 to 89.0 (-3.0kg)
       const p1Lost = Math.min(Math.max(totalLost, 0), 3.0);
       const p1Pct = (p1Lost / 3.0) * 100;
       document.getElementById('p1-bar').style.width = p1Pct + '%';
       document.getElementById('p1-label').innerText = p1Pct >= 100 ? 'COMPLETED' : p1Pct.toFixed(0) + '%';
 
-      // Phase 2: 85.0 to 81.5 (-3.5kg)
+      // Phase 2: 89.0 to 85.5 (-3.5kg)
       const p2Lost = Math.min(Math.max(totalLost - 3.0, 0), 3.5);
       const p2Pct = (p2Lost / 3.5) * 100;
       document.getElementById('p2-bar').style.width = p2Pct + '%';
       document.getElementById('p2-label').innerText = p2Pct >= 100 ? 'COMPLETED' : p2Pct.toFixed(0) + '%';
 
-      // Phase 3: 81.5 to 78.0 (-3.5kg)
+      // Phase 3: 85.5 to 82.0 (-3.5kg)
       const p3Lost = Math.min(Math.max(totalLost - 6.5, 0), 3.5);
       const p3Pct = (p3Lost / 3.5) * 100;
       document.getElementById('p3-bar').style.width = p3Pct + '%';
