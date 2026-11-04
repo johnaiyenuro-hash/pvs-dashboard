@@ -48,7 +48,7 @@
       file: './spanish/index.html',
       defaultTargetId: 'recce_transit_housing',
       defaultTitle: 'Pillar 1: Transit, Housing & Urban Mobility Stack',
-      defaultDesc: 'Lock London-BCN direct flights, 23-night temporary base (€450–€600) & T-usual pass',
+      defaultDesc: 'Lock easyJet LGW-BCN (Sun 29 Nov 11:00), Ágora Move & Work base, T-usual pass, send Glider email',
       defaultTag: 'NOW // PREREQ'
     },
     {
