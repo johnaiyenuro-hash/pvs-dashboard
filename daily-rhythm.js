@@ -48,7 +48,7 @@
       file: './spanish/index.html',
       defaultTargetId: 'recce_transit_housing',
       defaultTitle: 'Pillar 1: Transit, Housing & Urban Mobility Stack',
-      defaultDesc: 'Lock easyJet LGW-BCN (Sat 5 Dec), Ágora Move & Work base & T-usual pass (Glider email sent)',
+      defaultDesc: 'Lock Sant Andreu accommodation & T-usual pass (Flights confirmed: easyJet 5–20 Dec)',
       defaultTag: 'NOW // PREREQ'
     },
     {
