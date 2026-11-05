@@ -48,7 +48,7 @@
       file: './spanish/index.html',
       defaultTargetId: 'recce_transit_housing',
       defaultTitle: 'Pillar 1: Transit, Housing & Urban Mobility Stack',
-      defaultDesc: 'Lock Sant Andreu accommodation & T-usual pass (Flights confirmed: easyJet 5–20 Dec)',
+      defaultDesc: 'Mimosabeach room (L\'Hospitalet) & easyJet flights confirmed. Purchase T-usual on landing',
       defaultTag: 'NOW // PREREQ'
     },
     {
