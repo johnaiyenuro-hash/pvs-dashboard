@@ -48,7 +48,7 @@
       file: './spanish/index.html',
       defaultTargetId: 'recce_transit_housing',
       defaultTitle: 'Pillar 1: Transit, Housing & Urban Mobility Stack',
-      defaultDesc: 'Mimosabeach room (L\'Hospitalet) & easyJet flights confirmed. Purchase T-usual on landing',
+      defaultDesc: 'Casa MEYO (Terrassa, £449) & easyJet flights confirmed. Purchase 3-Zone T-usual on landing',
       defaultTag: 'NOW // PREREQ'
     },
     {
