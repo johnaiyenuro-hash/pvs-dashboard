@@ -48,7 +48,7 @@
       file: './spanish/index.html',
       defaultTargetId: 'recce_transit_housing',
       defaultTitle: 'Pillar 1: Transit, Housing & Urban Mobility Stack',
-      defaultDesc: 'Lock easyJet LGW-BCN (Sat 5 Dec), Ágora Move & Work base, T-usual pass, send Glider email',
+      defaultDesc: 'Lock easyJet LGW-BCN (Sat 5 Dec), Ágora Move & Work base & T-usual pass (Glider email sent)',
       defaultTag: 'NOW // PREREQ'
     },
     {

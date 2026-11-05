@@ -787,11 +787,11 @@
       <div class="card-title"><span class="dot blue"></span>Pillar 1: Transit, Housing & Urban Mobility Stack</div>
 
       <!-- Action Gate: Glider Working From Abroad Request -->
-      <div class="task-item" id="recce_glider_abroad_email" onclick="toggle(this)" data-task-id="recce_glider_abroad_email" data-status="now" data-pillar="dnv" data-lever-title="Send Glider Working From Abroad Formal Request Email" data-lever-desc="Send formal notification email to report@glidertech.com (CC: David Townsend) by COP Friday 6 Nov 2026" data-lever-tag="COP FRI 6 NOV">
+      <div class="task-item done" id="recce_glider_abroad_email" onclick="toggle(this)" data-task-id="recce_glider_abroad_email" data-status="done" data-pillar="dnv" data-lever-title="Send Glider Working From Abroad Formal Request Email" data-lever-desc="Formal notification email sent to report@glidertech.com (CC: David Townsend)" data-lever-tag="SENT // SUBMITTED">
         <div class="checkbox"></div>
         <div class="task-text">
-          <strong style="color: var(--accent);">Send Glider Working From Abroad Formal Request Email (DEADLINE: COP Friday, 6th November 2026):</strong>
-          Submit the formal remote working notification composed on 3 Nov in accordance with <em>Glider Working From Abroad – Guidance & Process (v3, Oct 2026)</em>.
+          <strong style="color: var(--accent2);">Glider Working From Abroad Formal Request Email Sent (SUBMITTED 5 Nov 2026):</strong>
+          Formal remote working notification submitted in accordance with <em>Glider Working From Abroad – Guidance & Process (v3, Oct 2026)</em>.
           <div style="margin-top: 6px; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 4px; font-size: 11px; line-height: 1.5;">
             <div><strong>To:</strong> <code style="color: var(--accent2);">report@glidertech.com</code> (Business Support: HR, IT & Compliance) &bull; <strong>CC:</strong> <code style="color: var(--accent4);">david.townsend@glidertech.com</code></div>
             <div><strong>Subject:</strong> <code>Formal Request to Work Abroad – Spain (Barcelona) – John Aiyenuro [5 Dec 2026 – 20 Dec 2026]</code></div>
@@ -804,9 +804,9 @@
               <a href="file:///G:/My%20Drive/fl%20media/Distribution/download/Glider/Working%20From%20Abroad%20Request%20-%20John%20Aiyenuro%20-%20Barcelona%20Nov%202026.docx" target="_blank" class="recce-badge-link">📝 Exported Word Docx</a>
             </div>
           </div>
-          <span class="rule-sub">// Mandatory Compliance Gate &bull; Must be submitted before departure window</span>
+          <span class="rule-sub">// Mandatory Compliance Gate &bull; Awaiting IT/HR & Line Manager sign-off</span>
         </div>
-        <div class="task-tag tag-20" style="border-color: var(--accent3); color: var(--accent3);">COP FRI 6 NOV</div>
+        <div class="task-tag tag-20" style="border-color: var(--accent2); color: var(--accent2);">SENT</div>
       </div>
 
       <!-- Master Prerequisite Stack -->
@@ -1401,7 +1401,7 @@
         pillar: 'dnv',
         id: dnvEl.getAttribute('data-task-id') || 'recce_transit_housing',
         title: dnvEl.getAttribute('data-lever-title') || 'Pillar 1: Transit, Housing & Urban Mobility Stack',
-        desc: dnvEl.getAttribute('data-lever-desc') || 'Lock easyJet LGW-BCN (Sat 5 Dec), Ágora Move & Work base, T-usual pass, send Glider email',
+        desc: dnvEl.getAttribute('data-lever-desc') || 'Lock easyJet LGW-BCN (Sat 5 Dec), Ágora Move & Work base & T-usual pass (Glider email sent)',
         tag: dnvEl.getAttribute('data-lever-tag') || 'NOW // PREREQ',
         done: dnvEl.classList.contains('done'),
         updatedAt: Date.now()
