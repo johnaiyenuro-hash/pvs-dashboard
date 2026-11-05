@@ -387,6 +387,63 @@
     background: #13261e;
     border-color: var(--accent2);
   }
+
+  /* Collapsible Card Dropdowns (Pillars 1 & 2, Itinerary) */
+  details.collapsible-card {
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    align-self: start;
+  }
+  details.collapsible-card > summary.card-title {
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+    padding: 16px 20px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--surface);
+    transition: background 0.2s ease;
+  }
+  details.collapsible-card > summary.card-title::-webkit-details-marker {
+    display: none;
+  }
+  details.collapsible-card > summary.card-title:hover {
+    background: var(--surface2);
+  }
+  details.collapsible-card[open] > summary.card-title {
+    border-bottom: 1px solid var(--border);
+  }
+  details.collapsible-card > .card-body {
+    padding: 20px;
+  }
+  .dropdown-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    transition: all 0.2s ease;
+  }
+  details.collapsible-card:hover .dropdown-badge {
+    border-color: var(--accent4);
+    color: var(--text);
+  }
+  .dropdown-arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+    font-size: 9px;
+  }
+  details.collapsible-card[open] .dropdown-arrow {
+    transform: rotate(180deg);
+  }
 	</style>
 </head>
 <body>
@@ -778,328 +835,361 @@
       <h2 style="color: var(--accent4);">🎯 BARCELONA OPERATIONAL RECCE: LOW-COST FIELD BLUEPRINT (5 DEC – 20 DEC)</h2>
       <p>// 15-Night Pre-Settlement Expedition &bull; Ágora Move & Work Base (Sant Andreu / Onze de Setembre) &bull; Sub-£550 Execution Stack with Live Resource Links</p>
     </div>
-    <div class="portfolio-badge" style="background: var(--accent4); color: #0d0f14;">WINDOW: 5 DEC – 20 DEC</div>
+    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+      <button onclick="toggleAllRecceDropdowns(true)" class="recce-badge-link" style="cursor: pointer; background: var(--surface2); border-color: var(--border);">Expand All ▾</button>
+      <button onclick="toggleAllRecceDropdowns(false)" class="recce-badge-link" style="cursor: pointer; background: var(--surface2); border-color: var(--border);">Collapse All ▴</button>
+      <div class="portfolio-badge" style="background: var(--accent4); color: #0d0f14;">WINDOW: 5 DEC – 20 DEC</div>
+    </div>
   </div>
 
   <div class="grid">
-    <!-- Recce Logistics & Housing -->
-    <div class="card">
-      <div class="card-title"><span class="dot blue"></span>Pillar 1: Transit, Housing & Urban Mobility Stack</div>
-
-      <!-- Action Gate: Glider Working From Abroad Request -->
-      <div class="task-item done" id="recce_glider_abroad_email" onclick="toggle(this)" data-task-id="recce_glider_abroad_email" data-status="done" data-pillar="dnv" data-lever-title="Glider Working From Abroad Formal Request Email" data-lever-desc="Formal notification approved by Glider (HR/IT & Line Manager)" data-lever-tag="APPROVED">
-        <div class="checkbox"></div>
-        <div class="task-text">
-          <strong style="color: var(--accent2);">Glider Working From Abroad Request — Formally Approved (5 Nov 2026):</strong>
-          Formal remote working approval granted in accordance with <em>Glider Working From Abroad – Guidance & Process (v3, Oct 2026)</em>.
-          <div style="margin-top: 6px; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 4px; font-size: 11px; line-height: 1.5;">
-            <div><strong>To:</strong> <code style="color: var(--accent2);">report@glidertech.com</code> (Business Support: HR, IT & Compliance) &bull; <strong>CC:</strong> <code style="color: var(--accent4);">david.townsend@glidertech.com</code></div>
-            <div><strong>Subject:</strong> <code>Formal Request to Work Abroad – Spain (Barcelona) – John Aiyenuro [5 Dec 2026 – 20 Dec 2026]</code></div>
-            <div style="margin-top: 4px;"><strong>Trip Duration:</strong> 15 nights / 16 days (&lt;28-day threshold for extended vetting scrutiny; &gt;4 weeks advance notice provided vs 2-week requirement).</div>
-            <div><strong>Equipment Specified:</strong> Dell XPS 15 9500 (Serial / Service Tag: <code style="color: var(--accent);">4FYQZ53</code>), 130W USB-C charger, EU adapter, work headset.</div>
-            <div><strong>Hours & Connectivity:</strong> 100% UK core business hours (09:00–17:30 GMT / 10:00–18:30 CET). High-speed fiber at base + DIGI Mobil 5G eSIM backup.</div>
-            <div><strong>Formal Confirmations:</strong> Probation passed (28/10/2026), no active PIP, mandatory IT security training passed, equipment liability accepted, remote downtime policy agreed, Spain non-sanctions verified.</div>
-            <div style="margin-top: 6px; display: flex; gap: 8px; flex-wrap: wrap;">
-              <a href="file:///C:/Users/johna/.gemini/antigravity-cli/brain/b1d54445-6f94-47fc-b39d-7031edf7604b/Working_From_Abroad_Request_Barcelona.md" target="_blank" class="recce-badge-link accent">📄 View Composed Markdown Draft</a>
-              <a href="file:///G:/My%20Drive/fl%20media/Distribution/download/Glider/Working%20From%20Abroad%20Request%20-%20John%20Aiyenuro%20-%20Barcelona%20Nov%202026.docx" target="_blank" class="recce-badge-link">📝 Exported Word Docx</a>
+    <!-- Recce Logistics & Housing (Pillar 1 Dropdown) -->
+    <details class="card collapsible-card" id="recce_pillar_1">
+      <summary class="card-title">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="dot blue"></span>
+          <span>Pillar 1: Transit, Housing & Urban Mobility Stack</span>
+        </div>
+        <div class="dropdown-badge">
+          <span>PILLAR 1</span>
+          <span class="dropdown-arrow">▼</span>
+        </div>
+      </summary>
+      <div class="card-body">
+        <!-- Action Gate: Glider Working From Abroad Request -->
+        <div class="task-item done" id="recce_glider_abroad_email" onclick="toggle(this)" data-task-id="recce_glider_abroad_email" data-status="done" data-pillar="dnv" data-lever-title="Glider Working From Abroad Formal Request Email" data-lever-desc="Formal notification approved by Glider (HR/IT & Line Manager)" data-lever-tag="APPROVED">
+          <div class="checkbox"></div>
+          <div class="task-text">
+            <strong style="color: var(--accent2);">Glider Working From Abroad Request — Formally Approved (5 Nov 2026):</strong>
+            Formal remote working approval granted in accordance with <em>Glider Working From Abroad – Guidance & Process (v3, Oct 2026)</em>.
+            <div style="margin-top: 6px; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 4px; font-size: 11px; line-height: 1.5;">
+              <div><strong>To:</strong> <code style="color: var(--accent2);">report@glidertech.com</code> (Business Support: HR, IT & Compliance) &bull; <strong>CC:</strong> <code style="color: var(--accent4);">david.townsend@glidertech.com</code></div>
+              <div><strong>Subject:</strong> <code>Formal Request to Work Abroad – Spain (Barcelona) – John Aiyenuro [5 Dec 2026 – 20 Dec 2026]</code></div>
+              <div style="margin-top: 4px;"><strong>Trip Duration:</strong> 15 nights / 16 days (&lt;28-day threshold for extended vetting scrutiny; &gt;4 weeks advance notice provided vs 2-week requirement).</div>
+              <div><strong>Equipment Specified:</strong> Dell XPS 15 9500 (Serial / Service Tag: <code style="color: var(--accent);">4FYQZ53</code>), 130W USB-C charger, EU adapter, work headset.</div>
+              <div><strong>Hours & Connectivity:</strong> 100% UK core business hours (09:00–17:30 GMT / 10:00–18:30 CET). High-speed fiber at base + DIGI Mobil 5G eSIM backup.</div>
+              <div><strong>Formal Confirmations:</strong> Probation passed (28/10/2026), no active PIP, mandatory IT security training passed, equipment liability accepted, remote downtime policy agreed, Spain non-sanctions verified.</div>
+              <div style="margin-top: 6px; display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="file:///C:/Users/johna/.gemini/antigravity-cli/brain/b1d54445-6f94-47fc-b39d-7031edf7604b/Working_From_Abroad_Request_Barcelona.md" target="_blank" class="recce-badge-link accent">📄 View Composed Markdown Draft</a>
+                <a href="file:///G:/My%20Drive/fl%20media/Distribution/download/Glider/Working%20From%20Abroad%20Request%20-%20John%20Aiyenuro%20-%20Barcelona%20Nov%202026.docx" target="_blank" class="recce-badge-link">📝 Exported Word Docx</a>
+              </div>
             </div>
+            <span class="rule-sub">// Mandatory Compliance Gate &bull; Formally Approved by Glider (5 Nov 2026) &mdash; Ready to book transit & housing</span>
           </div>
-          <span class="rule-sub">// Mandatory Compliance Gate &bull; Formally Approved by Glider (5 Nov 2026) &mdash; Ready to book transit & housing</span>
+          <div class="task-tag tag-20" style="border-color: var(--accent2); color: var(--accent2);">APPROVED</div>
         </div>
-        <div class="task-tag tag-20" style="border-color: var(--accent2); color: var(--accent2);">APPROVED</div>
-      </div>
 
-      <!-- Master Prerequisite Stack -->
-      <div class="task-item" id="recce_transit_housing" onclick="toggle(this)" data-task-id="recce_transit_housing" data-status="now" data-pillar="dnv" data-lever-title="Pillar 1: Transit, Housing & Urban Mobility Stack" data-lever-desc="Casa MEYO (Terrassa) selected with 3-Zone T-usual pass & easyJet flights confirmed." data-lever-tag="LOCKED // HOUSING">
-        <div class="checkbox"></div>
-        <div class="task-text">
-          <strong>Pillar 1 Prerequisite Stack (Transit & Housing Base):</strong> Flights confirmed (easyJet U28063 / U28060 Sat 5 Dec – Sun 20 Dec, Seat 7A), selected accommodation at <strong>Casa MEYO (Terrassa Downtown &bull; Zone 3)</strong>, and purchase T-usual 3-Zone pass (€42.70) upon arrival at BCN Terminal 2.
-          <span class="rule-sub">// Prerequisite Gate for DNV &bull; Housing selected: Casa MEYO &bull; Next step: purchase 3-Zone T-usual upon landing</span>
+        <!-- Master Prerequisite Stack -->
+        <div class="task-item" id="recce_transit_housing" onclick="toggle(this)" data-task-id="recce_transit_housing" data-status="now" data-pillar="dnv" data-lever-title="Pillar 1: Transit, Housing & Urban Mobility Stack" data-lever-desc="Casa MEYO (Terrassa) selected with 3-Zone T-usual pass & easyJet flights confirmed." data-lever-tag="LOCKED // HOUSING">
+          <div class="checkbox"></div>
+          <div class="task-text">
+            <strong>Pillar 1 Prerequisite Stack (Transit & Housing Base):</strong> Flights confirmed (easyJet U28063 / U28060 Sat 5 Dec – Sun 20 Dec, Seat 7A), selected accommodation at <strong>Casa MEYO (Terrassa Downtown &bull; Zone 3)</strong>, and purchase T-usual 3-Zone pass (€42.70) upon arrival at BCN Terminal 2.
+            <span class="rule-sub">// Prerequisite Gate for DNV &bull; Housing selected: Casa MEYO &bull; Next step: purchase 3-Zone T-usual upon landing</span>
+          </div>
+          <div class="task-tag tag-20">NOW // ACTIVE</div>
         </div>
-        <div class="task-tag tag-20">NOW // ACTIVE</div>
-      </div>
 
-      <!-- Flight Route -->
-      <div class="task-item done" onclick="toggle(this)" data-task-id="recce_flights">
-        <div class="checkbox"></div>
-        <div class="task-text">
-          <strong style="color: var(--accent2);">Confirmed Flights: easyJet U28063 / U28060 (Trip.com #1653718940285437):</strong>
-          Round-trip flights locked for London Gatwick (LGW) &harr; Josep Tarradellas Barcelona-El Prat (BCN). Total paid: £143.10. Seat 7A and 15kg checked luggage confirmed.
-          <div style="margin-top: 6px; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 4px; font-size: 11px; line-height: 1.5;">
-            <div>✈️ <strong>Outbound (Sat 5 Dec 2026):</strong> easyJet <code>U28063</code> &bull; <strong>Depart:</strong> 09:25 LGW (North Terminal) &bull; <strong>Arrive:</strong> 12:30 CET BCN (Terminal 2) &bull; <strong>PNR:</strong> <code style="color: var(--accent);">KDNHCMQ</code> &bull; <strong>Seat:</strong> <code style="color: var(--accent2);">7A (Window)</code></div>
-            <div style="margin-top: 4px;">✈️ <strong>Return (Sun 20 Dec 2026):</strong> easyJet <code>U28060</code> &bull; <strong>Depart:</strong> 21:45 CET BCN (Terminal 2) &bull; <strong>Arrive:</strong> 23:10 GMT LGW (North Terminal) &bull; <strong>PNR:</strong> <code style="color: var(--accent);">KDNHC4X</code> &bull; Duration: 2h 25m</div>
-            <div style="margin-top: 4px; color: var(--accent4);">🧳 <strong>Baggage:</strong> 1&times; 15kg Checked Bag + 1&times; Under-seat Personal Item (45&times;36&times;20cm) + Checked Baggage Protection included.</div>
-            <div style="margin-top: 4px; color: var(--text);">🚆 <strong>UK Connection:</strong> Direct GWR train from Reading Station straight to London Gatwick Airport (~1h 25m). Depart Reading at ~06:30–06:45 AM to reach Gatwick North by ~08:00 AM.</div>
-            <div style="margin-top: 6px; display: flex; flex-wrap: wrap; gap: 8px;">
-              <a href="file:///G:/My%20Drive/fl%20media/Distribution/download/E-itinerary.pdf" target="_blank" class="recce-badge-link accent">📄 View E-itinerary PDF</a>
-              <a href="file:///G:/My%20Drive/fl%20media/Distribution/download/Gmail%20-%20Seats%20Confirmed.pdf" target="_blank" class="recce-badge-link">💺 Seats Confirmed (7A)</a>
-              <a href="file:///G:/My%20Drive/fl%20media/Distribution/download/E-receipt.pdf" target="_blank" class="recce-badge-link">🧾 E-receipt (£143.10)</a>
-              <a href="file:///G:/My%20Drive/fl%20media/Distribution/download/Flight%20details.pdf" target="_blank" class="recce-badge-link">📄 Flight Details PDF</a>
+        <!-- Flight Route -->
+        <div class="task-item done" onclick="toggle(this)" data-task-id="recce_flights">
+          <div class="checkbox"></div>
+          <div class="task-text">
+            <strong style="color: var(--accent2);">Confirmed Flights: easyJet U28063 / U28060 (Trip.com #1653718940285437):</strong>
+            Round-trip flights locked for London Gatwick (LGW) &harr; Josep Tarradellas Barcelona-El Prat (BCN). Total paid: £143.10. Seat 7A and 15kg checked luggage confirmed.
+            <div style="margin-top: 6px; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 4px; font-size: 11px; line-height: 1.5;">
+              <div>✈️ <strong>Outbound (Sat 5 Dec 2026):</strong> easyJet <code>U28063</code> &bull; <strong>Depart:</strong> 09:25 LGW (North Terminal) &bull; <strong>Arrive:</strong> 12:30 CET BCN (Terminal 2) &bull; <strong>PNR:</strong> <code style="color: var(--accent);">KDNHCMQ</code> &bull; <strong>Seat:</strong> <code style="color: var(--accent2);">7A (Window)</code></div>
+              <div style="margin-top: 4px;">✈️ <strong>Return (Sun 20 Dec 2026):</strong> easyJet <code>U28060</code> &bull; <strong>Depart:</strong> 21:45 CET BCN (Terminal 2) &bull; <strong>Arrive:</strong> 23:10 GMT LGW (North Terminal) &bull; <strong>PNR:</strong> <code style="color: var(--accent);">KDNHC4X</code> &bull; Duration: 2h 25m</div>
+              <div style="margin-top: 4px; color: var(--accent4);">🧳 <strong>Baggage:</strong> 1&times; 15kg Checked Bag + 1&times; Under-seat Personal Item (45&times;36&times;20cm) + Checked Baggage Protection included.</div>
+              <div style="margin-top: 4px; color: var(--text);">🚆 <strong>UK Connection:</strong> Direct GWR train from Reading Station straight to London Gatwick Airport (~1h 25m). Depart Reading at ~06:30–06:45 AM to reach Gatwick North by ~08:00 AM.</div>
+              <div style="margin-top: 6px; display: flex; flex-wrap: wrap; gap: 8px;">
+                <a href="file:///G:/My%20Drive/fl%20media/Distribution/download/E-itinerary.pdf" target="_blank" class="recce-badge-link accent">📄 View E-itinerary PDF</a>
+                <a href="file:///G:/My%20Drive/fl%20media/Distribution/download/Gmail%20-%20Seats%20Confirmed.pdf" target="_blank" class="recce-badge-link">💺 Seats Confirmed (7A)</a>
+                <a href="file:///G:/My%20Drive/fl%20media/Distribution/download/E-receipt.pdf" target="_blank" class="recce-badge-link">🧾 E-receipt (£143.10)</a>
+                <a href="file:///G:/My%20Drive/fl%20media/Distribution/download/Flight%20details.pdf" target="_blank" class="recce-badge-link">📄 Flight Details PDF</a>
+              </div>
             </div>
+            <span class="rule-sub">// Status: PAID & ISSUED &bull; Booking Ref: 1653718940285437 &bull; Passenger: Oluwaseun Aiyenuro</span>
           </div>
-          <span class="rule-sub">// Status: PAID & ISSUED &bull; Booking Ref: 1653718940285437 &bull; Passenger: Oluwaseun Aiyenuro</span>
+          <div class="task-tag tag-5" style="border-color: var(--accent2); color: var(--accent2);">CONFIRMED</div>
         </div>
-        <div class="task-tag tag-5" style="border-color: var(--accent2); color: var(--accent2);">CONFIRMED</div>
-      </div>
 
-      <!-- Housing & Destination Base -->
-      <div class="task-item done" onclick="toggle(this)" data-task-id="recce_housing">
-        <div class="checkbox"></div>
-        <div class="task-text">
-          <strong style="color: var(--accent2);">Selected Housing Base: Casa MEYO (Terrassa Downtown):</strong>
-          Confirmed 15-night accommodation selection (Sat 5 Dec – Sun 20 Dec 2026). Quiet private room with dedicated workspace, desk, door lock, and high-speed Wi-Fi &mdash; ideal for remote Glider delivery management.
-          <div style="margin-top: 6px; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 4px; font-size: 11px; line-height: 1.5;">
-            <div>🏠 <strong>Listing:</strong> <a href="https://www.airbnb.co.uk/rooms/53323765" target="_blank" style="color: var(--accent);">Casa MEYO. Nice room downtown - Terrassa (Airbnb #53323765)</a></div>
-            <div style="margin-top: 4px;">📍 <strong>Location:</strong> Carrer de la Rasa, Terrassa (<strong>Zone 3</strong> &mdash; 5 min walk to Terrassa Estació del Nord).</div>
-            <div style="margin-top: 4px; color: var(--accent2);">🚇 <strong>Commute to Ágora Base (~35 mins direct):</strong> Walk 5 mins to Terrassa Estació del Nord, take <strong>Renfe Rodalies R4 direct to Sant Andreu Arenal</strong> with zero line changes! Walk 10 mins down Fabra i Puig to Rambla de l'Onze de Setembre 54.</div>
-            <div style="margin-top: 4px; color: var(--accent4);">✈️ <strong>Arrival Connection:</strong> From BCN T2 (12:30 PM), board Rodalies R2 Nord to Barcelona Sants / Clot, transfer to R4 straight to Terrassa Estació del Nord. Fully covered by 3-Zone T-usual.</div>
+        <!-- Housing & Destination Base -->
+        <div class="task-item done" onclick="toggle(this)" data-task-id="recce_housing">
+          <div class="checkbox"></div>
+          <div class="task-text">
+            <strong style="color: var(--accent2);">Selected Housing Base: Casa MEYO (Terrassa Downtown):</strong>
+            Confirmed 15-night accommodation selection (Sat 5 Dec – Sun 20 Dec 2026). Quiet private room with dedicated workspace, desk, door lock, and high-speed Wi-Fi &mdash; ideal for remote Glider delivery management.
+            <div style="margin-top: 6px; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 4px; font-size: 11px; line-height: 1.5;">
+              <div>🏠 <strong>Listing:</strong> <a href="https://www.airbnb.co.uk/rooms/53323765" target="_blank" style="color: var(--accent);">Casa MEYO. Nice room downtown - Terrassa (Airbnb #53323765)</a></div>
+              <div style="margin-top: 4px;">📍 <strong>Location:</strong> Carrer de la Rasa, Terrassa (<strong>Zone 3</strong> &mdash; 5 min walk to Terrassa Estació del Nord).</div>
+              <div style="margin-top: 4px; color: var(--accent2);">🚇 <strong>Commute to Ágora Base (~35 mins direct):</strong> Walk 5 mins to Terrassa Estació del Nord, take <strong>Renfe Rodalies R4 direct to Sant Andreu Arenal</strong> with zero line changes! Walk 10 mins down Fabra i Puig to Rambla de l'Onze de Setembre 54.</div>
+              <div style="margin-top: 4px; color: var(--accent4);">✈️ <strong>Arrival Connection:</strong> From BCN T2 (12:30 PM), board Rodalies R2 Nord to Barcelona Sants / Clot, transfer to R4 straight to Terrassa Estació del Nord. Fully covered by 3-Zone T-usual.</div>
+            </div>
+            <span class="rule-sub">// Status: SELECTED & BOOKING &bull; Dedicated Desk + Quiet Work Base</span>
           </div>
-          <span class="rule-sub">// Status: SELECTED & BOOKING &bull; Dedicated Desk + Quiet Work Base</span>
+          <div class="task-tag tag-20" style="border-color: var(--accent2); color: var(--accent2);">SELECTED</div>
         </div>
-        <div class="task-tag tag-20" style="border-color: var(--accent2); color: var(--accent2);">SELECTED</div>
-      </div>
 
-      <!-- T-usual Pass & Airport Transit -->
-      <div class="task-item" onclick="toggle(this)" data-task-id="recce_transit_tusual">
-        <div class="checkbox"></div>
-        <div class="task-text">
-          <strong>T-usual 3-Zone Unlimited Transit Pass (€42.70) & Airport-to-Base Connection:</strong>
-          Purchase at BCN Terminal 2 Metro/Renfe machine on arrival using UK passport number. Grants 30 days unlimited rides across Zones 1, 2, and 3 (covers Rodalies R4, FGC S1, Metro, and Buses).
-          <div style="margin-top: 4px; font-size: 12px; color: var(--accent);">
-            <strong>Airport-to-Casa MEYO Route:</strong> From BCN T2 arrivals (12:30 PM), board the <strong>Renfe Rodalies R2 Nord</strong> to Sants or Clot, transfer to the <strong>R4 straight to Terrassa Estació del Nord</strong>. Daily commute on co-working days is a direct 35-min ride on the R4 into Sant Andreu Arenal.
+        <!-- T-usual Pass & Airport Transit -->
+        <div class="task-item" onclick="toggle(this)" data-task-id="recce_transit_tusual">
+          <div class="checkbox"></div>
+          <div class="task-text">
+            <strong>T-usual 3-Zone Unlimited Transit Pass (€42.70) & Airport-to-Base Connection:</strong>
+            Purchase at BCN Terminal 2 Metro/Renfe machine on arrival using UK passport number. Grants 30 days unlimited rides across Zones 1, 2, and 3 (covers Rodalies R4, FGC S1, Metro, and Buses).
+            <div style="margin-top: 4px; font-size: 12px; color: var(--accent);">
+              <strong>Airport-to-Casa MEYO Route:</strong> From BCN T2 arrivals (12:30 PM), board the <strong>Renfe Rodalies R2 Nord</strong> to Sants or Clot, transfer to the <strong>R4 straight to Terrassa Estació del Nord</strong>. Daily commute on co-working days is a direct 35-min ride on the R4 into Sant Andreu Arenal.
+            </div>
+            <div style="margin-top: 6px;">
+              <a href="https://www.tmb.cat/en/barcelona-fares-metro-bus/single-and-travel-cards/t-usual" target="_blank" rel="noopener" class="recce-badge-link accent">🚇 TMB T-usual Portal</a>
+              <a href="https://rodalies.gencat.cat/" target="_blank" rel="noopener" class="recce-badge-link">Renfe Rodalies (R4 Line)</a>
+            </div>
+            <span class="rule-sub">// Total Transport Cost for entire 16 days: €42.70 (~£36.50) &bull; Unlimited 3-Zone Pass</span>
           </div>
-          <div style="margin-top: 6px;">
-            <a href="https://www.tmb.cat/en/barcelona-fares-metro-bus/single-and-travel-cards/t-usual" target="_blank" rel="noopener" class="recce-badge-link accent">🚇 TMB T-usual Portal</a>
-            <a href="https://rodalies.gencat.cat/" target="_blank" rel="noopener" class="recce-badge-link">Renfe Rodalies (R4 Line)</a>
-          </div>
-          <span class="rule-sub">// Total Transport Cost for entire 16 days: €42.70 (~£36.50) &bull; Unlimited 3-Zone Pass</span>
+          <div class="task-tag tag-5">UNLIMITED 3-ZONE</div>
         </div>
-        <div class="task-tag tag-5">UNLIMITED 3-ZONE</div>
       </div>
-    </div>
+    </details>
 
-    <!-- Subsistence, Banking & Reconnaissance -->
-    <div class="card">
-      <div class="card-title"><span class="dot green"></span>Pillar 2: Subsistence, Connectivity & Field Scouting</div>
-
-      <div class="task-item" onclick="toggle(this)" data-task-id="recce_groceries">
-        <div class="checkbox"></div>
-        <div class="task-text">
-          <strong>Grocery Self-Catering & Strategic Dining:</strong> Anchor food budget at €40–€50/week via Spanish supermarket staples (Mercadona, Lidl, Dia) for breakfast and light dinners.
-          <div style="margin-top: 4px; font-size: 12px; color: var(--muted); line-height: 1.4;">
-            <strong>Cheap Eating-Out Hacks:</strong> Enjoy lunchtime <em>Menú del Día</em> at neighborhood bodegas (€11–€14 for 3 full courses + wine/water); graze pinchos along Carrer de Blai in Poble Sec (€1.50–€2.50 per pincho); and hit 100 Montaditos for €1–€1.50 promotions.
-          </div>
-          <div style="margin-top: 6px;">
-            <a href="https://www.mercadona.es/" target="_blank" rel="noopener" class="recce-badge-link">🛒 Mercadona</a>
-            <a href="https://www.lidl.es/" target="_blank" rel="noopener" class="recce-badge-link">Lidl España</a>
-            <a href="https://www.dia.es/" target="_blank" rel="noopener" class="recce-badge-link">Dia Supermercados</a>
-            <a href="https://maps.google.com/?q=Carrer+de+Blai+Barcelona" target="_blank" rel="noopener" class="recce-badge-link">📍 Carrer de Blai (Poble Sec)</a>
-            <a href="https://spain.100montaditos.com/" target="_blank" rel="noopener" class="recce-badge-link">100 Montaditos Deals</a>
-          </div>
-          <span class="rule-sub">// Target Cost: ~£170 – £200 total food spend for 24 days</span>
+    <!-- Subsistence, Banking & Reconnaissance (Pillar 2 Dropdown) -->
+    <details class="card collapsible-card" id="recce_pillar_2">
+      <summary class="card-title">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="dot green"></span>
+          <span>Pillar 2: Subsistence, Connectivity & Field Scouting</span>
         </div>
-        <div class="task-tag tag-5">FOOD</div>
-      </div>
-
-      <div class="task-item" onclick="toggle(this)" data-task-id="recce_sim_fx">
-        <div class="checkbox"></div>
-        <div class="task-text">
-          <strong>Local 5G Connectivity & Zero-Fee Banking:</strong> Bypass UK carrier £2.50/day roaming fees. Grab a Spanish prepaid SIM (DIGI Mobil or Vodafone) for 50GB–100GB 5G data at €10, or install an eSIM before landing.
-          <div style="margin-top: 4px; font-size: 12px; color: var(--accent3);">
-            <strong>ATM & Payment Rule:</strong> Use Revolut or Monzo with zero FX fees. In terminals and ATMs, ALWAYS choose <em>"Charge in EUR without conversion"</em>. Avoid standalone yellow/blue Euronet kiosks.
-          </div>
-          <div style="margin-top: 6px;">
-            <a href="https://www.digimobil.es/" target="_blank" rel="noopener" class="recce-badge-link accent">📶 DIGI Mobil España (€10 SIM)</a>
-            <a href="https://www.airalo.com/" target="_blank" rel="noopener" class="recce-badge-link">Airalo eSIM</a>
-            <a href="https://www.revolut.com/" target="_blank" rel="noopener" class="recce-badge-link">Revolut</a>
-            <a href="https://www.monzo.com/" target="_blank" rel="noopener" class="recce-badge-link">Monzo</a>
-          </div>
-          <span class="rule-sub">// Total Connectivity & Banking Fees: ~£9 – £12</span>
+        <div class="dropdown-badge">
+          <span>PILLAR 2</span>
+          <span class="dropdown-arrow">▼</span>
         </div>
-        <div class="task-tag tag-20">FINANCE/DATA</div>
-      </div>
-
-      <div class="task-item" onclick="toggle(this)" data-task-id="recce_field_scouting">
-        <div class="checkbox"></div>
-        <div class="task-text">
-          <strong>Field Scouting & High-Value Free Culture:</strong> Use the 24 days for active operational reconnaissance: test neighborhood fiber/Wi-Fi speeds for remote Glider deliverables, time public transit routes, and map local Ayuntamiento offices.
-          <div style="margin-top: 4px; font-size: 12px; color: var(--muted); line-height: 1.4;">
-            <strong>Free Cultural Windows:</strong> Sunday Dec 6 (first Sunday + Constitution Day weekend) offers 100% free museum admission with prior online reservation. Panoramic sunset scouting at Bunkers del Carmel & Montjuïc Castle.
+      </summary>
+      <div class="card-body">
+        <div class="task-item" onclick="toggle(this)" data-task-id="recce_groceries">
+          <div class="checkbox"></div>
+          <div class="task-text">
+            <strong>Grocery Self-Catering & Strategic Dining:</strong> Anchor food budget at €40–€50/week via Spanish supermarket staples (Mercadona, Lidl, Dia) for breakfast and light dinners.
+            <div style="margin-top: 4px; font-size: 12px; color: var(--muted); line-height: 1.4;">
+              <strong>Cheap Eating-Out Hacks:</strong> Enjoy lunchtime <em>Menú del Día</em> at neighborhood bodegas (€11–€14 for 3 full courses + wine/water); graze pinchos along Carrer de Blai in Poble Sec (€1.50–€2.50 per pincho); and hit 100 Montaditos for €1–€1.50 promotions.
+            </div>
+            <div style="margin-top: 6px;">
+              <a href="https://www.mercadona.es/" target="_blank" rel="noopener" class="recce-badge-link">🛒 Mercadona</a>
+              <a href="https://www.lidl.es/" target="_blank" rel="noopener" class="recce-badge-link">Lidl España</a>
+              <a href="https://www.dia.es/" target="_blank" rel="noopener" class="recce-badge-link">Dia Supermercados</a>
+              <a href="https://maps.google.com/?q=Carrer+de+Blai+Barcelona" target="_blank" rel="noopener" class="recce-badge-link">📍 Carrer de Blai (Poble Sec)</a>
+              <a href="https://spain.100montaditos.com/" target="_blank" rel="noopener" class="recce-badge-link">100 Montaditos Deals</a>
+            </div>
+            <span class="rule-sub">// Target Cost: ~£170 – £200 total food spend for 24 days</span>
           </div>
-          <div style="margin-top: 6px;">
-            <a href="https://museupicassobcn.cat/en" target="_blank" rel="noopener" class="recce-badge-link">🎨 Museu Picasso (Free Slot)</a>
-            <a href="https://www.mnac.cat/en" target="_blank" rel="noopener" class="recce-badge-link">MNAC Montjuïc</a>
-            <a href="https://www.barcelona.cat/en" target="_blank" rel="noopener" class="recce-badge-link">📍 Bunkers del Carmel (Viewpoint)</a>
-          </div>
-          <span class="rule-sub">// Cost: £0 (Free cultural & neighborhood inspection)</span>
+          <div class="task-tag tag-5">FOOD</div>
         </div>
-        <div class="task-tag tag-5">SCOUTING</div>
+
+        <div class="task-item" onclick="toggle(this)" data-task-id="recce_sim_fx">
+          <div class="checkbox"></div>
+          <div class="task-text">
+            <strong>Local 5G Connectivity & Zero-Fee Banking:</strong> Bypass UK carrier £2.50/day roaming fees. Grab a Spanish prepaid SIM (DIGI Mobil or Vodafone) for 50GB–100GB 5G data at €10, or install an eSIM before landing.
+            <div style="margin-top: 4px; font-size: 12px; color: var(--accent3);">
+              <strong>ATM & Payment Rule:</strong> Use Revolut or Monzo with zero FX fees. In terminals and ATMs, ALWAYS choose <em>"Charge in EUR without conversion"</em>. Avoid standalone yellow/blue Euronet kiosks.
+            </div>
+            <div style="margin-top: 6px;">
+              <a href="https://www.digimobil.es/" target="_blank" rel="noopener" class="recce-badge-link accent">📶 DIGI Mobil España (€10 SIM)</a>
+              <a href="https://www.airalo.com/" target="_blank" rel="noopener" class="recce-badge-link">Airalo eSIM</a>
+              <a href="https://www.revolut.com/" target="_blank" rel="noopener" class="recce-badge-link">Revolut</a>
+              <a href="https://www.monzo.com/" target="_blank" rel="noopener" class="recce-badge-link">Monzo</a>
+            </div>
+            <span class="rule-sub">// Total Connectivity & Banking Fees: ~£9 – £12</span>
+          </div>
+          <div class="task-tag tag-20">FINANCE/DATA</div>
+        </div>
+
+        <div class="task-item" onclick="toggle(this)" data-task-id="recce_field_scouting">
+          <div class="checkbox"></div>
+          <div class="task-text">
+            <strong>Field Scouting & High-Value Free Culture:</strong> Use the 24 days for active operational reconnaissance: test neighborhood fiber/Wi-Fi speeds for remote Glider deliverables, time public transit routes, and map local Ayuntamiento offices.
+            <div style="margin-top: 4px; font-size: 12px; color: var(--muted); line-height: 1.4;">
+              <strong>Free Cultural Windows:</strong> Sunday Dec 6 (first Sunday + Constitution Day weekend) offers 100% free museum admission with prior online reservation. Panoramic sunset scouting at Bunkers del Carmel & Montjuïc Castle.
+            </div>
+            <div style="margin-top: 6px;">
+              <a href="https://museupicassobcn.cat/en" target="_blank" rel="noopener" class="recce-badge-link">🎨 Museu Picasso (Free Slot)</a>
+              <a href="https://www.mnac.cat/en" target="_blank" rel="noopener" class="recce-badge-link">MNAC Montjuïc</a>
+              <a href="https://www.barcelona.cat/en" target="_blank" rel="noopener" class="recce-badge-link">📍 Bunkers del Carmel (Viewpoint)</a>
+            </div>
+            <span class="rule-sub">// Cost: £0 (Free cultural & neighborhood inspection)</span>
+          </div>
+          <div class="task-tag tag-5">SCOUTING</div>
+        </div>
       </div>
-    </div>
+    </details>
   </div>
 
-  <!-- Comprehensive Door-to-Door Travel Itinerary Card -->
-  <div class="card full" style="margin-bottom: 20px;" id="recce_travel_itinerary">
-    <div class="card-title" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-      <div><span class="dot green"></span>⏱️ DOOR-TO-DOOR TRAVEL ITINERARY: READING ➔ CASA MEYO, TERRASSA</div>
-      <span class="page-status status-ready">OUTBOUND: SAT 5 DEC 2026 // RETURN: SUN 20 DEC 2026</span>
-    </div>
-    <div style="font-size: 11px; color: var(--muted); font-family: 'Space Mono', monospace; margin-top: 4px; margin-bottom: 14px;">
-      // Complete transit timetable &bull; UK Rail (Reading ➔ LGW) &bull; easyJet U28063 (Seat 7A) &bull; Rodalies R2 Nord &bull; Sants transfer &bull; Rodalies R4 to Terrassa Estació del Nord
-    </div>
-
-    <!-- Outbound Journey Timeline Table -->
-    <div style="margin-bottom: 20px;">
-      <div style="font-family: 'Space Mono', monospace; font-size: 11px; color: var(--accent2); text-transform: uppercase; margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
-        🛫 Outbound Journey: Saturday 5 December 2026 (Reading ➔ Casa MEYO)
+  <!-- Comprehensive Door-to-Door Travel Itinerary Dropdown Card -->
+  <details class="card full collapsible-card" style="margin-bottom: 20px;" id="recce_travel_itinerary">
+    <summary class="card-title">
+      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+        <span class="dot green"></span>
+        <span style="font-weight: 700;">⏱️ DOOR-TO-DOOR TRAVEL ITINERARY: READING ➔ CASA MEYO, TERRASSA</span>
+        <span class="page-status status-ready" style="margin-left: 6px;">5 DEC – 20 DEC</span>
       </div>
-      <table class="cost-table">
-        <thead>
-          <tr>
-            <th style="width: 140px;">Estimated Time</th>
-            <th style="width: 160px;">Segment / Leg</th>
-            <th>Operator & Connection Details</th>
-            <th style="width: 180px;">Action / Checkpoint</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="color: var(--accent4);">05:40 – 06:00 GMT</td>
-            <td><strong>Reading Home ➔ Station</strong></td>
-            <td>Local walk or short cab from home base to Reading Station.</td>
-            <td><span class="role-pill">DEPART HOME</span></td>
-          </tr>
-          <tr>
-            <td style="color: var(--accent4);">06:05 – 07:30 GMT</td>
-            <td><strong>Reading ➔ Gatwick Airport</strong></td>
-            <td>Great Western Railway (GWR) direct train from Reading to Gatwick Airport (~1h 25m).</td>
-            <td>Arrive Gatwick South Station</td>
-          </tr>
-          <tr>
-            <td style="color: var(--accent4);">07:35 – 07:45 GMT</td>
-            <td><strong>South ➔ North Terminal</strong></td>
-            <td>Free Gatwick Inter-Terminal Monorail shuttle (2-minute ride, departs every 3 mins).</td>
-            <td>Transfer to North Terminal</td>
-          </tr>
-          <tr>
-            <td style="color: var(--accent4);">07:45 – 08:30 GMT</td>
-            <td><strong>Bag Drop & Security</strong></td>
-            <td>easyJet Bag Drop at Gatwick North. Drop 15kg checked luggage (closes at 08:45 GMT sharp). Clear security screening.</td>
-            <td><span class="role-pill highlight">BAG DROP (15KG)</span></td>
-          </tr>
-          <tr>
-            <td style="color: var(--accent4);">08:45 – 09:15 GMT</td>
-            <td><strong>Boarding Gate</strong></td>
-            <td>easyJet Flight <code>U28063</code> gate opens. Boarding with 1x under-seat personal bag.</td>
-            <td>Seat <code>7A (Window)</code></td>
-          </tr>
-          <tr>
-            <td style="color: var(--accent2);">09:25 GMT – 12:30 CET</td>
-            <td><strong>Flight U28063 (LGW ➔ BCN)</strong></td>
-            <td>Non-stop direct flight to Barcelona-El Prat (Terminal 2). Duration: 2h 05m. <em>(+1 hour time change to CET)</em>.</td>
-            <td><span class="role-pill highlight" style="border-color: var(--accent2); color: var(--accent2);">IN FLIGHT</span></td>
-          </tr>
-          <tr>
-            <td style="color: var(--accent4);">12:30 – 13:15 CET</td>
-            <td><strong>Arrival & Baggage Reclaim</strong></td>
-            <td>Josep Tarradellas BCN Terminal 2. Non-EU border control / passport stamp, collect 15kg bag at carousel.</td>
-            <td>Border Control & Baggage</td>
-          </tr>
-          <tr>
-            <td style="color: var(--accent4);">13:15 – 13:30 CET</td>
-            <td><strong>T-usual 3-Zone Purchase</strong></td>
-            <td>Walk covered footbridge to Aeroport Renfe Station. At ticket vending machine, select <strong>T-usual (Zone 3)</strong> for €42.70 (+ €0.50 card fee), enter UK passport number.</td>
-            <td><span class="role-pill" style="border-color: var(--accent); color: var(--accent);">BUY 3-ZONE PASS</span></td>
-          </tr>
-          <tr>
-            <td style="color: var(--accent4);">13:38 – 13:57 CET</td>
-            <td><strong>Airport ➔ Barcelona Sants</strong></td>
-            <td>Renfe Rodalies <strong>R2 Nord</strong> (train departs every 30 mins: 13:38 or 14:08). Direct 19-minute train to Sants.</td>
-            <td>R2 Nord Train (Covered)</td>
-          </tr>
-          <tr>
-            <td style="color: var(--accent4);">14:00 – 14:15 CET</td>
-            <td><strong>Transfer at Sants</strong></td>
-            <td>Inside Barcelona Sants, follow signs to Rodalies platforms for <strong>R4 Line</strong> (direction: Terrassa / Manresa).</td>
-            <td>Transfer to Line R4</td>
-          </tr>
-          <tr>
-            <td style="color: var(--accent4);">14:15 – 15:02 CET</td>
-            <td><strong>Sants ➔ Terrassa</strong></td>
-            <td>Renfe Rodalies <strong>R4</strong> direct to <strong>Terrassa Estació del Nord</strong> (~47 mins). Passes through Plaça Catalunya, Arc de Triomf, and Sant Andreu Arenal.</td>
-            <td>R4 Train to Terrassa</td>
-          </tr>
-          <tr>
-            <td style="color: var(--accent4);">15:05 – 15:15 CET</td>
-            <td><strong>Terrassa Station ➔ Casa MEYO</strong></td>
-            <td>Exit Terrassa Estació del Nord. 5-minute easy walk (400m) straight down Carrer del Nord into Carrer de la Rasa.</td>
-            <td>Walk to Accommodation</td>
-          </tr>
-          <tr style="background: rgba(74, 255, 180, 0.05);">
-            <td style="color: var(--accent2); font-weight: 700;">15:15 – 15:30 CET</td>
-            <td><strong style="color: var(--accent2);">Arrive at Casa MEYO</strong></td>
-            <td>Check into Casa MEYO (Carrer de la Rasa, Terrassa). Settle into private locked bedroom, connect Dell XPS 15 to Wi-Fi, test desk setup.</td>
-            <td><span class="role-pill highlight" style="border-color: var(--accent2); color: var(--accent2); font-weight: 700;">BASE ESTABLISHED</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Return Journey Breakdown -->
-    <div>
-      <div style="font-family: 'Space Mono', monospace; font-size: 11px; color: var(--accent4); text-transform: uppercase; margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
-        🛬 Return Journey: Sunday 20 December 2026 (Casa MEYO ➔ Reading)
+      <div class="dropdown-badge">
+        <span>TIMETABLE</span>
+        <span class="dropdown-arrow">▼</span>
       </div>
-      <table class="cost-table">
-        <thead>
-          <tr>
-            <th style="width: 140px;">Estimated Time</th>
-            <th style="width: 160px;">Segment / Leg</th>
-            <th>Operator & Connection Details</th>
-            <th style="width: 180px;">Action / Checkpoint</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="color: var(--accent4);">17:30 – 17:40 CET</td>
-            <td><strong>Casa MEYO ➔ Terrassa Station</strong></td>
-            <td>Check out of room, 5-minute walk to Terrassa Estació del Nord.</td>
-            <td>Depart Casa MEYO</td>
-          </tr>
-          <tr>
-            <td style="color: var(--accent4);">17:45 – 18:32 CET</td>
-            <td><strong>Terrassa ➔ Barcelona Sants</strong></td>
-            <td>Renfe Rodalies <strong>R4</strong> train to Barcelona Sants (~47 mins). Covered by 3-Zone T-usual.</td>
-            <td>R4 Train to Sants</td>
-          </tr>
-          <tr>
-            <td style="color: var(--accent4);">18:40 – 19:05 CET</td>
-            <td><strong>Sants ➔ BCN Terminal 2</strong></td>
-            <td>Transfer to Rodalies <strong>R2 Nord</strong> direct to Aeroport Terminal 2 (~19 mins). Covered by 3-Zone T-usual.</td>
-            <td>R2 Nord to Airport</td>
-          </tr>
-          <tr>
-            <td style="color: var(--accent4);">19:15 – 20:30 CET</td>
-            <td><strong>Bag Drop & Airport Security</strong></td>
-            <td>Drop 15kg checked suitcase at easyJet T2 bag drop desks (closes 21:05 CET). Clear airport security and passport control.</td>
-            <td><span class="role-pill highlight">BAG DROP & SECURITY</span></td>
-          </tr>
-          <tr>
-            <td style="color: var(--accent2);">21:45 CET – 23:10 GMT</td>
-            <td><strong>Flight U28060 (BCN ➔ LGW)</strong></td>
-            <td>easyJet flight <code>U28060</code> direct to London Gatwick (North Terminal). Flight duration ~2h 25m.</td>
-            <td><span class="role-pill highlight" style="border-color: var(--accent2); color: var(--accent2);">IN FLIGHT</span></td>
-          </tr>
-          <tr>
-            <td style="color: var(--accent4);">23:10 – 23:55 GMT</td>
-            <td><strong>LGW Arrival & Return Rail</strong></td>
-            <td>Passport e-gates, baggage reclaim at Gatwick North, transit monorail to South Station, rail connection back to Reading.</td>
-            <td><span class="role-pill">RETURN HOME</span></td>
-          </tr>
-        </tbody>
-      </table>
+    </summary>
+    <div class="card-body">
+      <div style="font-size: 11px; color: var(--muted); font-family: 'Space Mono', monospace; margin-top: 4px; margin-bottom: 14px;">
+        // Complete transit timetable &bull; UK Rail (Reading ➔ LGW) &bull; easyJet U28063 (Seat 7A) &bull; Rodalies R2 Nord &bull; Sants transfer &bull; Rodalies R4 to Terrassa Estació del Nord
+      </div>
+
+      <!-- Outbound Journey Timeline Table -->
+      <div style="margin-bottom: 20px;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 11px; color: var(--accent2); text-transform: uppercase; margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+          🛫 Outbound Journey: Saturday 5 December 2026 (Reading ➔ Casa MEYO)
+        </div>
+        <table class="cost-table">
+          <thead>
+            <tr>
+              <th style="width: 140px;">Estimated Time</th>
+              <th style="width: 160px;">Segment / Leg</th>
+              <th>Operator & Connection Details</th>
+              <th style="width: 180px;">Action / Checkpoint</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="color: var(--accent4);">05:40 – 06:00 GMT</td>
+              <td><strong>Reading Home ➔ Station</strong></td>
+              <td>Local walk or short cab from home base to Reading Station.</td>
+              <td><span class="role-pill">DEPART HOME</span></td>
+            </tr>
+            <tr>
+              <td style="color: var(--accent4);">06:05 – 07:30 GMT</td>
+              <td><strong>Reading ➔ Gatwick Airport</strong></td>
+              <td>Great Western Railway (GWR) direct train from Reading to Gatwick Airport (~1h 25m).</td>
+              <td>Arrive Gatwick South Station</td>
+            </tr>
+            <tr>
+              <td style="color: var(--accent4);">07:35 – 07:45 GMT</td>
+              <td><strong>South ➔ North Terminal</strong></td>
+              <td>Free Gatwick Inter-Terminal Monorail shuttle (2-minute ride, departs every 3 mins).</td>
+              <td>Transfer to North Terminal</td>
+            </tr>
+            <tr>
+              <td style="color: var(--accent4);">07:45 – 08:30 GMT</td>
+              <td><strong>Bag Drop & Security</strong></td>
+              <td>easyJet Bag Drop at Gatwick North. Drop 15kg checked luggage (closes at 08:45 GMT sharp). Clear security screening.</td>
+              <td><span class="role-pill highlight">BAG DROP (15KG)</span></td>
+            </tr>
+            <tr>
+              <td style="color: var(--accent4);">08:45 – 09:15 GMT</td>
+              <td><strong>Boarding Gate</strong></td>
+              <td>easyJet Flight <code>U28063</code> gate opens. Boarding with 1x under-seat personal bag.</td>
+              <td>Seat <code>7A (Window)</code></td>
+            </tr>
+            <tr>
+              <td style="color: var(--accent2);">09:25 GMT – 12:30 CET</td>
+              <td><strong>Flight U28063 (LGW ➔ BCN)</strong></td>
+              <td>Non-stop direct flight to Barcelona-El Prat (Terminal 2). Duration: 2h 05m. <em>(+1 hour time change to CET)</em>.</td>
+              <td><span class="role-pill highlight" style="border-color: var(--accent2); color: var(--accent2);">IN FLIGHT</span></td>
+            </tr>
+            <tr>
+              <td style="color: var(--accent4);">12:30 – 13:15 CET</td>
+              <td><strong>Arrival & Baggage Reclaim</strong></td>
+              <td>Josep Tarradellas BCN Terminal 2. Non-EU border control / passport stamp, collect 15kg bag at carousel.</td>
+              <td>Border Control & Baggage</td>
+            </tr>
+            <tr>
+              <td style="color: var(--accent4);">13:15 – 13:30 CET</td>
+              <td><strong>T-usual 3-Zone Purchase</strong></td>
+              <td>Walk covered footbridge to Aeroport Renfe Station. At ticket vending machine, select <strong>T-usual (Zone 3)</strong> for €42.70 (+ €0.50 card fee), enter UK passport number.</td>
+              <td><span class="role-pill" style="border-color: var(--accent); color: var(--accent);">BUY 3-ZONE PASS</span></td>
+            </tr>
+            <tr>
+              <td style="color: var(--accent4);">13:38 – 13:57 CET</td>
+              <td><strong>Airport ➔ Barcelona Sants</strong></td>
+              <td>Renfe Rodalies <strong>R2 Nord</strong> (train departs every 30 mins: 13:38 or 14:08). Direct 19-minute train to Sants.</td>
+              <td>R2 Nord Train (Covered)</td>
+            </tr>
+            <tr>
+              <td style="color: var(--accent4);">14:00 – 14:15 CET</td>
+              <td><strong>Transfer at Sants</strong></td>
+              <td>Inside Barcelona Sants, follow signs to Rodalies platforms for <strong>R4 Line</strong> (direction: Terrassa / Manresa).</td>
+              <td>Transfer to Line R4</td>
+            </tr>
+            <tr>
+              <td style="color: var(--accent4);">14:15 – 15:02 CET</td>
+              <td><strong>Sants ➔ Terrassa</strong></td>
+              <td>Renfe Rodalies <strong>R4</strong> direct to <strong>Terrassa Estació del Nord</strong> (~47 mins). Passes through Plaça Catalunya, Arc de Triomf, and Sant Andreu Arenal.</td>
+              <td>R4 Train to Terrassa</td>
+            </tr>
+            <tr>
+              <td style="color: var(--accent4);">15:05 – 15:15 CET</td>
+              <td><strong>Terrassa Station ➔ Casa MEYO</strong></td>
+              <td>Exit Terrassa Estació del Nord. 5-minute easy walk (400m) straight down Carrer del Nord into Carrer de la Rasa.</td>
+              <td>Walk to Accommodation</td>
+            </tr>
+            <tr style="background: rgba(74, 255, 180, 0.05);">
+              <td style="color: var(--accent2); font-weight: 700;">15:15 – 15:30 CET</td>
+              <td><strong style="color: var(--accent2);">Arrive at Casa MEYO</strong></td>
+              <td>Check into Casa MEYO (Carrer de la Rasa, Terrassa). Settle into private locked bedroom, connect Dell XPS 15 to Wi-Fi, test desk setup.</td>
+              <td><span class="role-pill highlight" style="border-color: var(--accent2); color: var(--accent2); font-weight: 700;">BASE ESTABLISHED</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Return Journey Breakdown -->
+      <div>
+        <div style="font-family: 'Space Mono', monospace; font-size: 11px; color: var(--accent4); text-transform: uppercase; margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+          🛬 Return Journey: Sunday 20 December 2026 (Casa MEYO ➔ Reading)
+        </div>
+        <table class="cost-table">
+          <thead>
+            <tr>
+              <th style="width: 140px;">Estimated Time</th>
+              <th style="width: 160px;">Segment / Leg</th>
+              <th>Operator & Connection Details</th>
+              <th style="width: 180px;">Action / Checkpoint</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="color: var(--accent4);">17:30 – 17:40 CET</td>
+              <td><strong>Casa MEYO ➔ Terrassa Station</strong></td>
+              <td>Check out of room, 5-minute walk to Terrassa Estació del Nord.</td>
+              <td>Depart Casa MEYO</td>
+            </tr>
+            <tr>
+              <td style="color: var(--accent4);">17:45 – 18:32 CET</td>
+              <td><strong>Terrassa ➔ Barcelona Sants</strong></td>
+              <td>Renfe Rodalies <strong>R4</strong> train to Barcelona Sants (~47 mins). Covered by 3-Zone T-usual.</td>
+              <td>R4 Train to Sants</td>
+            </tr>
+            <tr>
+              <td style="color: var(--accent4);">18:40 – 19:05 CET</td>
+              <td><strong>Sants ➔ BCN Terminal 2</strong></td>
+              <td>Transfer to Rodalies <strong>R2 Nord</strong> direct to Aeroport Terminal 2 (~19 mins). Covered by 3-Zone T-usual.</td>
+              <td>R2 Nord to Airport</td>
+            </tr>
+            <tr>
+              <td style="color: var(--accent4);">19:15 – 20:30 CET</td>
+              <td><strong>Bag Drop & Airport Security</strong></td>
+              <td>Drop 15kg checked suitcase at easyJet T2 bag drop desks (closes 21:05 CET). Clear airport security and passport control.</td>
+              <td><span class="role-pill highlight">BAG DROP & SECURITY</span></td>
+            </tr>
+            <tr>
+              <td style="color: var(--accent2);">21:45 CET – 23:10 GMT</td>
+              <td><strong>Flight U28060 (BCN ➔ LGW)</strong></td>
+              <td>easyJet flight <code>U28060</code> direct to London Gatwick (North Terminal). Flight duration ~2h 25m.</td>
+              <td><span class="role-pill highlight" style="border-color: var(--accent2); color: var(--accent2);">IN FLIGHT</span></td>
+            </tr>
+            <tr>
+              <td style="color: var(--accent4);">23:10 – 23:55 GMT</td>
+              <td><strong>LGW Arrival & Return Rail</strong></td>
+              <td>Passport e-gates, baggage reclaim at Gatwick North, transit monorail to South Station, rail connection back to Reading.</td>
+              <td><span class="role-pill">RETURN HOME</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
+  </details>
 
   <!-- 15-Day Recce Expense Ledger Card -->
   <div class="card full" style="margin-bottom: 20px;">
@@ -1585,8 +1675,56 @@
     } catch {}
   }
 
+  // Recce Dropdowns (Pillar 1, Pillar 2, Itinerary)
+  function initCollapsibleCards() {
+    const cards = document.querySelectorAll('details.collapsible-card');
+    cards.forEach(card => {
+      const id = card.id;
+      if (id) {
+        const saved = localStorage.getItem('collapse_' + id);
+        if (saved === 'open') card.open = true;
+        else if (saved === 'closed') card.open = false;
+        card.addEventListener('toggle', () => {
+          localStorage.setItem('collapse_' + id, card.open ? 'open' : 'closed');
+        });
+      }
+    });
+  }
+
+  function toggleAllRecceDropdowns(openState) {
+    const targets = ['recce_pillar_1', 'recce_pillar_2', 'recce_travel_itinerary'];
+    targets.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.open = openState;
+        localStorage.setItem('collapse_' + id, openState ? 'open' : 'closed');
+      }
+    });
+  }
+
+  function handleHashOpen() {
+    if (window.location.hash) {
+      try {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          const parentDetails = target.closest('details');
+          if (parentDetails) {
+            parentDetails.open = true;
+            localStorage.setItem('collapse_' + parentDetails.id, 'open');
+            setTimeout(() => {
+              target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+          }
+        }
+      } catch (e) {}
+    }
+  }
+
   renderStreak();
   loadTaskState();
   syncActiveLever();
+  initCollapsibleCards();
+  handleHashOpen();
+  window.addEventListener('hashchange', handleHashOpen);
 </script></body>
 </html>
