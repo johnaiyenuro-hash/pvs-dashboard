@@ -85,7 +85,7 @@
     { id: 'fit_weighin_daily', title: 'Morning Weigh-in Recorded', desc: 'Fasted, post-toilet, on hard floor', tag: 'SCALE LOG', color: '#4a9fff' },
     { id: 'fit_deficit', title: 'Calorie Deficit Enforced', desc: '~1,850–2,050 kcal cap / snack ≤150 kcal', tag: 'DEFICIT', color: '#ff6b4a' },
     { id: 'fit_protein', title: 'Protein Floor Locked', desc: '≥150g protein to shield lean muscle mass', tag: 'PROTEIN', color: '#4affb4' },
-    { id: 'fit_steps', title: 'Movement Floor (10,000+ Steps)', desc: 'Primary fat oxidation & baseline NEAT', tag: 'NEAT', color: '#ff6b4a' },
+    { id: 'fit_steps', title: 'Movement Floor (7,000+ Steps)', desc: 'Primary fat oxidation & baseline NEAT', tag: 'NEAT', color: '#ff6b4a' },
     { id: 'fit_water', title: 'Hydration Base (2.5L – 3.0L)', desc: 'Pure water hydration throughout day', tag: 'HYDRATION', color: '#4a9fff' },
     { id: 'fit_warm_water', title: 'Morning Primer (Warm Water)', desc: 'Warm water on waking for gut motility', tag: 'PRIMER', color: '#4a9fff' },
     { id: 'fit_sleep', title: 'Sleep & Cortisol Cutoff', desc: 'In bed before 11:00 PM to curb late hunger', tag: 'RECOVERY', color: '#ff6b4a' }
@@ -110,7 +110,7 @@
       subtitle: 'Refuel, Movement Floor & Operational Rhythm',
       tasks: [
         { id: 'cad_break_fast', label: 'Break Fast & Protein Anchor (12:00 PM)', note: '≥40-50g protein first meal, high satiety whole foods' },
-        { id: 'cad_movement_step', label: 'Midday Movement Check (≥5,000 steps)', note: 'Midday outdoor walk to build baseline NEAT' },
+        { id: 'cad_movement_step', label: 'Midday Movement Check (≥3,500 steps)', note: 'Midday outdoor walk to build baseline NEAT' },
         { id: 'cad_operational_sync', label: 'Operational Rhythm Sync', note: 'Clear communications & pipeline calibration' }
       ]
     },
