@@ -48,8 +48,8 @@
       file: './spanish/index.html',
       defaultTargetId: 'recce_transit_housing',
       defaultTitle: 'Pillar 1: Transit, Housing & Urban Mobility Stack',
-      defaultDesc: 'Casa MEYO (Terrassa, £449) & easyJet flights confirmed. Purchase 3-Zone T-usual on landing',
-      defaultTag: 'NOW // PREREQ'
+      defaultDesc: 'Casa MEYO booked & easyJet flights confirmed. Purchase 3-Zone T-usual upon landing',
+      defaultTag: 'LOCKED // BOOKED'
     },
     {
       id: 'mercor',
