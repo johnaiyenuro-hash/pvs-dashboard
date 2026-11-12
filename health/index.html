@@ -641,6 +641,425 @@
       .full { grid-column: 1; }
       .stats-row { grid-template-columns: 1fr; }
     }
+  
+    /* CALENDAR & DAY COMMAND ENGINE */
+    .cal-kpi-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 4px;
+    }
+
+    .cal-kpi-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cal-kpi-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+    }
+
+    .cal-kpi-val {
+      font-family: 'Space Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent3);
+    }
+
+    .cal-kpi-val.mint { color: var(--accent2); }
+
+    .cal-nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .cal-month-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cal-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .cal-btn:hover {
+      border-color: var(--accent3);
+      color: var(--accent3);
+    }
+
+    .cal-btn.today-btn {
+      background: rgba(232, 255, 74, 0.08);
+      border-color: rgba(232, 255, 74, 0.4);
+      color: var(--accent);
+    }
+
+    .cal-btn.today-btn:hover {
+      background: var(--accent);
+      color: #0d0f14;
+    }
+
+    .cal-month-title {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      color: var(--text);
+      min-width: 150px;
+      text-align: center;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .calendar-table {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+    }
+
+    .cal-weekday-header {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      text-align: center;
+      padding: 4px 0 8px 0;
+    }
+
+    .cal-cell {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      min-height: 68px;
+      padding: 6px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.15s ease;
+      position: relative;
+    }
+
+    .cal-cell:hover {
+      border-color: var(--accent3);
+      background: #1f2433;
+    }
+
+    .cal-cell.empty {
+      background: transparent;
+      border-color: transparent;
+      cursor: default;
+      min-height: 0;
+    }
+
+    .cal-cell.today {
+      outline: 2px solid var(--accent);
+      outline-offset: -1px;
+    }
+
+    .cal-cell.selected {
+      border-color: var(--accent3) !important;
+      background: #2a1f26 !important;
+      box-shadow: 0 0 12px rgba(255, 107, 74, 0.25);
+    }
+
+    .cal-cell.consistent {
+      border-color: rgba(255, 107, 74, 0.5);
+      background: rgba(255, 107, 74, 0.08);
+    }
+
+    .cal-cell.consistent.all-done {
+      border-color: rgba(74, 255, 180, 0.6);
+      background: rgba(74, 255, 180, 0.08);
+    }
+
+    .cal-cell-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cal-cell-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .cal-cell-flame {
+      font-size: 11px;
+      line-height: 1;
+      opacity: 0.3;
+      transition: all 0.2s ease;
+    }
+
+    .cal-cell.consistent .cal-cell-flame {
+      opacity: 1;
+      filter: drop-shadow(0 0 4px rgba(255, 107, 74, 0.6));
+    }
+
+    .cal-cadence-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 8px;
+      font-weight: 700;
+      padding: 2px 4px;
+      border-radius: 2px;
+      text-transform: uppercase;
+      margin-top: 3px;
+      align-self: flex-start;
+      letter-spacing: 0.5px;
+    }
+
+    .tag-cad-lift-a { background: #1a2a1a; color: var(--accent2); border: 1px solid rgba(74, 255, 180, 0.3); }
+    .tag-cad-lift-b { background: #1a202a; color: var(--accent4); border: 1px solid rgba(74, 159, 255, 0.3); }
+    .tag-cad-recover { background: #222530; color: #9ca3af; border: 1px solid var(--border); }
+    .tag-cad-audit { background: #2a1a1a; color: var(--accent3); border: 1px solid rgba(255, 107, 74, 0.3); }
+
+    .cal-cell-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 4px;
+    }
+
+    .cal-cell-stat {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      color: var(--muted);
+    }
+
+    .cal-cell-stat.done {
+      color: var(--accent2);
+      font-weight: 700;
+    }
+
+    /* DAY COMMAND PANEL */
+    .day-panel-box {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .day-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 14px;
+    }
+
+    .day-panel-title h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.3px;
+    }
+
+    .day-panel-title p {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .day-lock-btn {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .day-lock-btn.locked {
+      background: rgba(255, 107, 74, 0.15);
+      border-color: var(--accent3);
+      color: var(--accent3);
+    }
+
+    .day-lock-btn.locked.all-good {
+      background: rgba(74, 255, 180, 0.15);
+      border-color: var(--accent2);
+      color: var(--accent2);
+    }
+
+    .day-lock-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .day-progress-track {
+      width: 100%;
+      height: 6px;
+      background: var(--surface2);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .day-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent3), var(--accent2));
+      transition: width 0.3s ease;
+    }
+
+    .day-section-head {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent3);
+      margin: 16px 0 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .day-section-head.cadence {
+      color: var(--accent4);
+    }
+
+    .day-task-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .day-task-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .day-task-row:hover {
+      border-color: var(--accent3);
+    }
+
+    .day-task-row.done {
+      border-color: rgba(74, 255, 180, 0.3);
+      background: rgba(74, 255, 180, 0.04);
+    }
+
+    .day-task-row.done .day-task-text {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+
+    .day-task-box {
+      width: 18px;
+      height: 18px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: #0d0f14;
+      background: var(--surface);
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+
+    .day-task-row.done .day-task-box {
+      background: var(--accent2);
+      border-color: var(--accent2);
+    }
+
+    .day-task-text {
+      font-size: 13px;
+      line-height: 1.4;
+      flex: 1;
+      color: var(--text);
+    }
+
+    .day-task-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      padding: 2px 6px;
+      border-radius: 2px;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
+    .day-cadence-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 10px;
+      padding: 8px 12px;
+      background: rgba(74, 159, 255, 0.05);
+      border-left: 2px solid var(--accent4);
+      border-radius: 2px;
+    }
+
+  
+    @media (max-width: 600px) {
+      .cal-cell {
+        min-height: 52px;
+        padding: 4px;
+      }
+      .cal-cadence-tag {
+        font-size: 7px;
+        padding: 1px 3px;
+      }
+      .cal-cell-num {
+        font-size: 11px;
+      }
+      .cal-month-title {
+        min-width: 120px;
+        font-size: 13px;
+      }
+      .cal-kpi-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      .cal-kpi-item {
+        border-left: none !important;
+        padding-left: 0 !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -678,7 +1097,7 @@
     </div>
   </div>
 
-  <!-- TOP GRID: WEIGHT LOSS DIRECTIVE & CONSISTENCY -->
+  <!-- TOP GRID: WEIGHT LOSS DIRECTIVE & FASTING COMMAND -->
   <div class="grid">
     <div class="card">
       <div class="card-title"><span class="dot orange"></span>PRIMARY DIRECTIVE: RAPID SUSTAINABLE WEIGHT LOSS</div>
@@ -701,27 +1120,6 @@
       </div>
     </div>
 
-    <div class="card">
-      <div class="card-title"><span class="dot green"></span>CONSISTENCY MOMENTUM</div>
-      <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-        <div>
-          <div class="big-num orange" id="streak-count">0</div>
-          <div class="big-num-label">DAY PROTOCOL STREAK</div>
-        </div>
-        <div style="text-align: right; font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted);">
-          Target: 28-Day Consistency<br>
-          <span style="color: var(--accent3); font-weight: 700;">Fat Burning Engine Active</span>
-        </div>
-      </div>
-      <div class="streak-days" id="streak-grid"></div>
-      <div style="margin-top: 18px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 10px;">
-        <strong style="color: var(--text);">Daily Standard:</strong> Complete all core execution items (Fasting, Deficit, 150g Protein, 7k Steps) to tick today's block.
-      </div>
-    </div>
-  </div>
-
-  <!-- INTERMITTENT FASTING & SCALE ONBOARDING (NEW CARDS) -->
-  <div class="grid">
     <!-- 16:8 FASTING COMMAND CENTER -->
     <div class="card">
       <div class="card-title"><span class="dot purple"></span>16:8 INTERMITTENT FASTING PROTOCOL</div>
@@ -741,18 +1139,18 @@
           <div class="fast-phase-title">FASTING WINDOW (16 HRS)</div>
           <div class="fast-phase-time">20:00 &rarr; 12:00 (+1)</div>
           <div class="fast-phase-desc">
-            • Zero calories. Water, black coffee, herbal tea, pinch of salt only.<br>
-            • Peak insulin drop &amp; maximal morning fatty acid mobilization.<br>
-            • Eliminates late-night mindless snacking (~400&ndash;600 kcal saved).
+            &bull; Zero calories. Water, black coffee, herbal tea, pinch of salt only.<br>
+            &bull; Peak insulin drop &amp; maximal morning fatty acid mobilization.<br>
+            &bull; Eliminates late-night mindless snacking (~400&ndash;600 kcal saved).
           </div>
         </div>
         <div class="fast-phase">
           <div class="fast-phase-title">EATING WINDOW (8 HRS)</div>
           <div class="fast-phase-time">12:00 &rarr; 20:00</div>
           <div class="fast-phase-desc">
-            • <strong>12:00 PM:</strong> Break fast with 40&ndash;50g protein (eggs/chicken/greens).<br>
-            • <strong>16:00 PM:</strong> Controlled snack &lt;150 kcal (Greek yogurt/nuts).<br>
-            • <strong>19:30 PM:</strong> Dinner &amp; protein closure. Fast resumes at 20:00.
+            &bull; <strong>12:00 PM:</strong> Break fast with 40&ndash;50g protein (eggs/chicken/greens).<br>
+            &bull; <strong>16:00 PM:</strong> Controlled snack &lt;150 kcal (Greek yogurt/nuts).<br>
+            &bull; <strong>19:30 PM:</strong> Dinner &amp; protein closure. Fast resumes at 20:00.
           </div>
         </div>
       </div>
@@ -761,7 +1159,65 @@
         <span style="color: var(--accent5); font-weight: 700;">Weight Loss Rule:</span> Fasting does not grant a calorie free-for-all. It serves as an architectural guardrail to effortlessly lock your ~1,850&ndash;2,050 kcal deficit.
       </div>
     </div>
+  </div>
 
+  <!-- PROTOCOL CONSISTENCY CALENDAR & DAY EXECUTION ENGINE -->
+  <div class="grid" id="protocolCalendarSection">
+    <!-- CALENDAR CARD -->
+    <div class="card" id="calendarCard">
+      <div class="card-title"><span class="dot green"></span>PROTOCOL CONSISTENCY CALENDAR</div>
+      
+      <div class="cal-kpi-bar">
+        <div class="cal-kpi-item">
+          <span class="cal-kpi-label">Current Streak:</span>
+          <span class="cal-kpi-val" id="calCurrentStreak">0 DAYS</span>
+        </div>
+        <div class="cal-kpi-item" style="border-left: 1px solid var(--border); padding-left: 12px;">
+          <span class="cal-kpi-label">Month Consistency:</span>
+          <span class="cal-kpi-val mint" id="calMonthRate">0/30 (0%)</span>
+        </div>
+        <div class="cal-kpi-item" style="border-left: 1px solid var(--border); padding-left: 12px;">
+          <span class="cal-kpi-label">Selected:</span>
+          <span class="cal-kpi-val" style="color: var(--accent);" id="calSelectedDisplay">TODAY</span>
+        </div>
+      </div>
+
+      <div class="cal-nav-bar">
+        <div class="cal-month-controls">
+          <button class="cal-btn" onclick="prevCalendarMonth()" title="Previous Month">&larr;</button>
+          <div class="cal-month-title" id="calMonthTitle">NOVEMBER 2026</div>
+          <button class="cal-btn" onclick="nextCalendarMonth()" title="Next Month">&rarr;</button>
+        </div>
+        <button class="cal-btn today-btn" onclick="jumpCalendarToToday()">TODAY &bull;</button>
+      </div>
+
+      <div class="calendar-table" id="calendarGridTable">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div style="margin-top: 14px; font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 10px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+        <span>Click any date to open checklist &bull; Click &#x1f525; or button to lock consistency.</span>
+        <span style="display: flex; gap: 8px;">
+          <span style="color: var(--accent2); font-weight: 700;">&bull; LIFT A</span>
+          <span style="color: var(--accent4); font-weight: 700;">&bull; LIFT B</span>
+          <span style="color: #9ca3af;">&bull; RECOVER</span>
+          <span style="color: var(--accent3); font-weight: 700;">&bull; AUDIT</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- OPEN DAY EXECUTION & CADENCE COMMAND PANEL -->
+    <div class="card" id="dayCommandPanelCard">
+      <div class="card-title"><span class="dot orange"></span>DAILY EXECUTION &amp; CADENCE COMMAND</div>
+      
+      <div class="day-panel-box" id="dayPanelContainer">
+        <!-- Rendered dynamically by renderDayPanel(selectedDateKey) -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SCALE ENGINE & A/B SPLIT REFERENCE -->
+  <div class="grid">
     <!-- SCALE INITIALIZATION & WEIGH-IN LOG -->
     <div class="card">
       <div class="card-title"><span class="dot blue"></span>SCALE ENGINE &amp; WEIGH-IN LOG</div>
@@ -800,78 +1256,10 @@
         </table>
       </div>
     </div>
-  </div>
 
-  <!-- DAILY PROTOCOL QUEUE & LIFTING CADENCE -->
-  <div class="grid">
+    <!-- PURE BODYWEIGHT & BACKPACK RESISTANCE (MUSCLE-SPARING REFERENCE) -->
     <div class="card">
-      <div class="card-title"><span class="dot orange"></span>DAILY WEIGHT LOSS EXECUTION QUEUE</div>
-      
-      <div class="tier tier-now">
-        <div class="tier-label">DAILY EXECUTION STACK // WEIGHT LOSS MANDATORY</div>
-        
-        <div class="task-item" id="fit_fasting" onclick="toggle(this)" data-task-id="fit_fasting" data-status="now" data-pillar="health" data-lever-title="16:8 Fasting Respected (12:00 &ndash; 20:00 Window)" data-lever-desc="Zero calories before 12:00 PM; eating cutoff at 20:00 PM" data-lever-tag="FASTING">
-          <div class="checkbox"></div>
-          <div class="task-text">16:8 Fasting Respected (No food before 12:00 PM, cutoff at 20:00 PM)</div>
-          <div class="task-tag tag-purple">FASTING</div>
-        </div>
-
-        <div class="task-item" onclick="toggle(this)" data-task-id="fit_weighin_daily">
-          <div class="checkbox"></div>
-          <div class="task-text">Morning Weigh-in Recorded (Fasted, post-toilet, on hard floor)</div>
-          <div class="task-tag tag-blue">SCALE LOG</div>
-        </div>
-
-        <div class="task-item" onclick="toggle(this)" data-task-id="fit_deficit">
-          <div class="checkbox"></div>
-          <div class="task-text">Calorie Deficit Enforced (~1,850&ndash;2,050 kcal cap / Snack boxed &le;150 kcal)</div>
-          <div class="task-tag tag-orange">DEFICIT</div>
-        </div>
-
-        <div class="task-item" onclick="toggle(this)" data-task-id="fit_protein">
-          <div class="checkbox"></div>
-          <div class="task-text">Protein Floor Locked (&ge;150g to shield muscle mass during deficit)</div>
-          <div class="task-tag tag-green">PROTEIN</div>
-        </div>
-
-        <div class="task-item" onclick="toggle(this)" data-task-id="fit_steps">
-          <div class="checkbox"></div>
-          <div class="task-text">Movement Floor: 7,000+ steps logged (Primary fat oxidation driver)</div>
-          <div class="task-tag tag-orange">NEAT / FAT BURN</div>
-        </div>
-
-        <div class="task-item" onclick="toggle(this)" data-task-id="fit_water">
-          <div class="checkbox"></div>
-          <div class="task-text">Hydration Base: 2.5L &ndash; 3.0L pure water logged</div>
-          <div class="task-tag tag-blue">HYDRATION</div>
-        </div>
-
-        <div class="task-item" onclick="toggle(this)" data-task-id="fit_warm_water">
-          <div class="checkbox"></div>
-          <div class="task-text">Morning Primer: warm water on waking (Kickstart metabolic motility)</div>
-          <div class="task-tag tag-blue">PRIMER</div>
-        </div>
-
-        <div class="task-item" onclick="toggle(this)" data-task-id="fit_sleep">
-          <div class="checkbox"></div>
-          <div class="task-text">Sleep &amp; Cortisol Cutoff: in bed before 11:00 PM (Prevents midnight hunger)</div>
-          <div class="task-tag tag-orange">RECOVERY</div>
-        </div>
-      </div>
-
-      <div class="tier tier-scale">
-        <div class="tier-label">WEEKLY CHECKPOINT // SUNDAY WEIGH-IN REVIEW</div>
-        <div class="task-item" onclick="toggle(this)" data-task-id="fit_sunday_review">
-          <div class="checkbox"></div>
-          <div class="task-text">Sunday Weigh-in Review: Calculate 7-day average drop (Target: -0.5kg to -1.0kg/wk)</div>
-          <div class="task-tag tag-blue">AUDIT</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PURE BODYWEIGHT & BACKPACK RESISTANCE (MUSCLE-SPARING) -->
-    <div class="card">
-      <div class="card-title"><span class="dot blue"></span>MUSCLE-SPARING RESISTANCE CADENCE (A/B SPLIT)</div>
+      <div class="card-title"><span class="dot blue"></span>MUSCLE-SPARING RESISTANCE CADENCE (A/B SPLIT REFERENCE)</div>
       <p style="color: var(--muted); font-size: 12px; margin-bottom: 12px;">
         During a calorie deficit, resistance training prevents the body from cannibalizing lean muscle tissue, ensuring that 100% of weight lost is pure body fat.
       </p>
@@ -880,11 +1268,11 @@
         <div class="day-name">MON</div>
         <div class="day-action">
           <strong>Workout A (Push &amp; Quad Focus):</strong><br>
-          • Tempo Goblet Squats (Backpack): 3x12&ndash;15 (3s slow eccentric)<br>
-          • Push-Ups (Floor / Incline): 3x10&ndash;12<br>
-          • Bulgarian Split Squats (Foot on chair): 3x8&ndash;10/leg<br>
-          • Backpack Single-Arm Rows: 3x10&ndash;12/arm<br>
-          • Plank to Shoulder Taps: 3x45s
+          &bull; Tempo Goblet Squats (Backpack): 3x12&ndash;15 (3s slow eccentric)<br>
+          &bull; Push-Ups (Floor / Incline): 3x10&ndash;12<br>
+          &bull; Bulgarian Split Squats (Foot on chair): 3x8&ndash;10/leg<br>
+          &bull; Backpack Single-Arm Rows: 3x10&ndash;12/arm<br>
+          &bull; Plank to Shoulder Taps: 3x45s
         </div>
         <div class="day-type">LIFT A</div>
       </div>
@@ -893,11 +1281,11 @@
         <div class="day-name">WED</div>
         <div class="day-action">
           <strong>Workout B (Hinge &amp; Pull Focus):</strong><br>
-          • Backpack Romanian Deadlifts: 3x12&ndash;15 (Hamstring &amp; Glute tension)<br>
-          • Pike Push-Ups (Shoulder press angle): 3x8&ndash;10<br>
-          • Single-Leg Glute Bridges: 3x12/leg<br>
-          • Backpack Bicep Curl to Overhead Press: 3x10&ndash;12<br>
-          • Deadbugs / Hollow Body Hold: 3x45s
+          &bull; Backpack Romanian Deadlifts: 3x12&ndash;15 (Hamstring &amp; Glute tension)<br>
+          &bull; Pike Push-Ups (Shoulder press angle): 3x8&ndash;10<br>
+          &bull; Single-Leg Glute Bridges: 3x12/leg<br>
+          &bull; Backpack Bicep Curl to Overhead Press: 3x10&ndash;12<br>
+          &bull; Deadbugs / Hollow Body Hold: 3x45s
         </div>
         <div class="day-type">LIFT B</div>
       </div>
@@ -906,11 +1294,11 @@
         <div class="day-name">FRI</div>
         <div class="day-action">
           <strong>Workout A (Push &amp; Quad Focus):</strong><br>
-          • Tempo Goblet Squats: 3x12&ndash;15<br>
-          • Weighted Backpack Push-Ups: 3x10&ndash;12<br>
-          • Bulgarian Split Squats: 3x8&ndash;10/leg<br>
-          • Backpack Rows: 3x10&ndash;12/arm<br>
-          • Backpack Suitcase Carry: 3x60s (Core &amp; Grip)
+          &bull; Tempo Goblet Squats: 3x12&ndash;15<br>
+          &bull; Weighted Backpack Push-Ups: 3x10&ndash;12<br>
+          &bull; Bulgarian Split Squats: 3x8&ndash;10/leg<br>
+          &bull; Backpack Rows: 3x10&ndash;12/arm<br>
+          &bull; Backpack Suitcase Carry: 3x60s (Core &amp; Grip)
         </div>
         <div class="day-type">LIFT A</div>
       </div>
@@ -1015,6 +1403,482 @@
     const START_WEIGHT = 92.0;
     const GOAL_WEIGHT = 82.0;
 
+    // CALENDAR & DAY COMMAND ENGINE STATE
+    const CAL_MONTH_NAMES = [
+      'JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE',
+      'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'
+    ];
+    const CAL_WEEKDAY_NAMES = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+
+    let calViewYear = new Date().getFullYear();
+    let calViewMonth = new Date().getMonth();
+    let calSelectedDate = formatYMD(new Date());
+
+    function formatYMD(d) {
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${y}-${m}-${day}`;
+    }
+
+    function parseYMD(str) {
+      const parts = str.split('-');
+      return new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+    }
+
+    function getConsistentDates() {
+      try {
+        const raw = localStorage.getItem(STORAGE_PREFIX + 'consistent_dates');
+        if (raw) return JSON.parse(raw);
+        // Fallback: migrate from prior streak_count if exists
+        const oldStreak = parseInt(localStorage.getItem(STORAGE_PREFIX + 'streak_count') || '0', 10);
+        if (oldStreak > 0) {
+          const dates = [];
+          const now = new Date();
+          for (let i = 0; i < oldStreak; i++) {
+            const d = new Date();
+            d.setDate(now.getDate() - i);
+            dates.push(formatYMD(d));
+          }
+          localStorage.setItem(STORAGE_PREFIX + 'consistent_dates', JSON.stringify(dates));
+          return dates;
+        }
+      } catch (e) {}
+      return [];
+    }
+
+    function saveConsistentDates(dates) {
+      try {
+        localStorage.setItem(STORAGE_PREFIX + 'consistent_dates', JSON.stringify(dates));
+      } catch (e) {}
+    }
+
+    function isDateConsistent(dateStr) {
+      const dates = getConsistentDates();
+      return dates.includes(dateStr);
+    }
+
+    function toggleDayConsistency(dateStr) {
+      let dates = getConsistentDates();
+      if (dates.includes(dateStr)) {
+        dates = dates.filter(d => d !== dateStr);
+      } else {
+        dates.push(dateStr);
+      }
+      saveConsistentDates(dates);
+      updateStreakKPIs();
+      renderCalendar();
+      renderDayPanel(calSelectedDate);
+    }
+
+    function getDayTasks(dateStr) {
+      try {
+        const raw = localStorage.getItem(STORAGE_PREFIX + 'day_' + dateStr);
+        if (raw) return JSON.parse(raw);
+      } catch (e) {}
+      return {};
+    }
+
+    function saveDayTasks(dateStr, tasks) {
+      try {
+        localStorage.setItem(STORAGE_PREFIX + 'day_' + dateStr, JSON.stringify(tasks));
+      } catch (e) {}
+    }
+
+    function toggleDayTask(dateStr, taskId) {
+      const tasks = getDayTasks(dateStr);
+      tasks[taskId] = !tasks[taskId];
+      saveDayTasks(dateStr, tasks);
+
+      // Auto-evaluate consistency: if all core execution items are completed, automatically mark consistent
+      const coreDefs = getDailyCoreDefs(dateStr);
+      const allCoreDone = coreDefs.every(def => !!tasks[def.id]);
+      
+      let dates = getConsistentDates();
+      if (allCoreDone && !dates.includes(dateStr)) {
+        dates.push(dateStr);
+        saveConsistentDates(dates);
+      }
+
+      // If today is updated, sync active lever
+      if (dateStr === formatYMD(new Date())) {
+        syncActiveLever();
+      }
+
+      updateStreakKPIs();
+      renderCalendar();
+      renderDayPanel(dateStr);
+    }
+
+    function getDailyCoreDefs(dateStr) {
+      const d = parseYMD(dateStr);
+      const isSunday = d.getDay() === 0;
+
+      const base = [
+        { id: 'fit_fasting', title: '16:8 Fasting Respected (Zero food before 12:00 PM, cutoff at 20:00 PM)', tag: 'FASTING', tagClass: 'tag-purple' },
+        { id: 'fit_weighin_daily', title: 'Morning Weigh-in Recorded (Fasted, post-toilet, on hard floor)', tag: 'SCALE LOG', tagClass: 'tag-blue' },
+        { id: 'fit_deficit', title: 'Calorie Deficit Enforced (~1,850–2,050 kcal cap / Snack boxed ≤150 kcal)', tag: 'DEFICIT', tagClass: 'tag-orange' },
+        { id: 'fit_protein', title: 'Protein Floor Locked (≥150g to shield muscle mass during deficit)', tag: 'PROTEIN', tagClass: 'tag-green' },
+        { id: 'fit_steps', title: 'Movement Floor: 7,000+ steps logged (Primary fat oxidation driver)', tag: 'NEAT / FAT BURN', tagClass: 'tag-orange' },
+        { id: 'fit_water', title: 'Hydration Base: 2.5L – 3.0L pure water logged', tag: 'HYDRATION', tagClass: 'tag-blue' },
+        { id: 'fit_warm_water', title: 'Morning Primer: warm water on waking (Kickstart metabolic motility)', tag: 'PRIMER', tagClass: 'tag-blue' },
+        { id: 'fit_sleep', title: 'Sleep & Cortisol Cutoff: in bed before 11:00 PM (Prevents midnight hunger)', tag: 'RECOVERY', tagClass: 'tag-orange' }
+      ];
+
+      if (isSunday) {
+        base.push({
+          id: 'fit_sunday_review',
+          title: 'Sunday Weigh-in Review: Calculate 7-day average drop (Target: -0.5kg to -1.0kg/wk)',
+          tag: 'AUDIT',
+          tagClass: 'tag-blue'
+        });
+      }
+
+      return base;
+    }
+
+    function getCadenceDefs(dateStr) {
+      const d = parseYMD(dateStr);
+      const day = d.getDay(); // 0 Sun, 1 Mon, 2 Tue, 3 Wed, 4 Thu, 5 Fri, 6 Sat
+
+      switch (day) {
+        case 1: // Monday: Workout A
+          return {
+            type: 'lift-a',
+            badge: 'WORKOUT A // PUSH & QUADS',
+            desc: 'High-intensity resistance protocol forcing myofibrillar protein synthesis to prevent muscle catabolism during deficit.',
+            tasks: [
+              { id: 'ex_a_goblet', title: 'Tempo Goblet Squats (Backpack): 3 sets × 12–15 reps (3s slow eccentric, explosive drive)' },
+              { id: 'ex_a_pushups', title: 'Push-Ups (Floor / Incline): 3 sets × 10–12 reps (Chest touch ground, full lockout)' },
+              { id: 'ex_a_split_squat', title: 'Bulgarian Split Squats (Rear foot on chair): 3 sets × 8–10 reps / leg (Deep quad stretch)' },
+              { id: 'ex_a_rows', title: 'Backpack Single-Arm Rows: 3 sets × 10–12 reps / arm (Elbow drive to hip pocket)' },
+              { id: 'ex_a_plank', title: 'Plank to Shoulder Taps: 3 sets × 45 seconds (Anti-rotation core brace)' }
+            ]
+          };
+        case 2: // Tuesday: Active Recovery
+          return {
+            type: 'recover',
+            badge: 'ACTIVE RECOVERY & NEAT FLOOR',
+            desc: 'Low central nervous system stress. Maximizes fat oxidation via non-exercise physical activity without elevating cortisol.',
+            tasks: [
+              { id: 'ex_rec_steps', title: '7,000–8,000 Outdoor Steps Logged (Primary low-intensity fat burn)' },
+              { id: 'ex_rec_hip_mob', title: '5 Min Hip Flexor & Glute Opening Drills (Undo sitting compression)' },
+              { id: 'ex_rec_thoracic', title: 'Thoracic Spine Rotations & Arm Circles (Upper body posture recovery)' },
+              { id: 'ex_rec_deficit', title: 'Strict Deficit Discipline: Zero snacking outside 12:00–20:00 window' }
+            ]
+          };
+        case 3: // Wednesday: Workout B
+          return {
+            type: 'lift-b',
+            badge: 'WORKOUT B // HINGE & PULL',
+            desc: 'Posterior chain and shoulder focus. Preserves lower back strength, hamstrings, and upper pulling musculature.',
+            tasks: [
+              { id: 'ex_b_rdl', title: 'Backpack Romanian Deadlifts: 3 sets × 12–15 reps (Hamstring tension, neutral spine)' },
+              { id: 'ex_b_pike', title: 'Pike Push-Ups: 3 sets × 8–10 reps (Vertical shoulder pressing angle)' },
+              { id: 'ex_b_glute_bridge', title: 'Single-Leg Glute Bridges: 3 sets × 12 reps / leg (2s hold at peak contraction)' },
+              { id: 'ex_b_curl_press', title: 'Backpack Bicep Curl to Overhead Press: 3 sets × 10–12 reps' },
+              { id: 'ex_b_deadbugs', title: 'Deadbugs / Hollow Body Hold: 3 sets × 45 seconds (Deep abdominal brace)' }
+            ]
+          };
+        case 4: // Thursday: Active Recovery
+          return {
+            type: 'recover',
+            badge: 'ACTIVE RECOVERY & NEAT FLOOR',
+            desc: 'Mid-week active restoration. Keeps metabolism elevated through pure low-impact movement and hydration.',
+            tasks: [
+              { id: 'ex_rec_steps_thu', title: '7,000–8,000 Steps Logged (Continuous steady-state walk)' },
+              { id: 'ex_rec_lower_mob', title: '5 Min Hamstring & Ankle Mobility Flow' },
+              { id: 'ex_rec_water', title: '3.0L Water Target Locked to flush metabolic byproducts' },
+              { id: 'ex_rec_sleep_prep', title: 'Digital Sunset by 22:30 (Cortisol downregulation for deep sleep)' }
+            ]
+          };
+        case 5: // Friday: Workout A
+          return {
+            type: 'lift-a',
+            badge: 'WORKOUT A // PUSH & QUADS',
+            desc: 'End-of-week hypertrophy stimulus. Signals the body to maintain dense skeletal muscle heading into the weekend.',
+            tasks: [
+              { id: 'ex_a2_goblet', title: 'Tempo Goblet Squats (Backpack): 3 sets × 12–15 reps (Strict 3s descent)' },
+              { id: 'ex_a2_weighted_pushups', title: 'Weighted Backpack Push-Ups: 3 sets × 10–12 reps' },
+              { id: 'ex_a2_split_squat', title: 'Bulgarian Split Squats: 3 sets × 8–10 reps / leg' },
+              { id: 'ex_a2_rows', title: 'Backpack Rows: 3 sets × 10–12 reps / arm' },
+              { id: 'ex_a2_suitcase', title: 'Backpack Suitcase Carry: 3 sets × 60 seconds (Heavy core and grip walk)' }
+            ]
+          };
+        case 6: // Saturday: Active Recovery
+          return {
+            type: 'recover',
+            badge: 'WEEKEND NEAT & RECOVERY',
+            desc: 'Weekend active lifestyle. Prevent metabolic slowdown and maintain nutritional integrity.',
+            tasks: [
+              { id: 'ex_sat_steps', title: '7,000–8,000 Outdoor Steps / Errand NEAT' },
+              { id: 'ex_sat_foam_roll', title: 'Full-Body Foam Rolling & Stretching (Relieve training stiffness)' },
+              { id: 'ex_sat_deficit', title: 'Weekend Calorie Integrity: No liquid sugar or unmeasured restaurant calories' }
+            ]
+          };
+        case 0: // Sunday: Audit & Prep
+        default:
+          return {
+            type: 'audit',
+            badge: 'WEEKLY AUDIT & MEAL PREP',
+            desc: 'Sunday evaluation checkpoint. Audit weight trends, verify fat loss rate, and prep logistics for the coming week.',
+            tasks: [
+              { id: 'ex_sun_scale_audit', title: 'Morning Fasted Scale Weigh-in Logged in History Table' },
+              { id: 'ex_sun_calc_trend', title: 'Calculate 7-Day Trend: Confirm -0.5kg to -1.0kg weekly drop' },
+              { id: 'ex_sun_walk', title: '7,000+ Steps Gentle Walk & Mental Reset' },
+              { id: 'ex_sun_prep', title: 'High-Protein Meal & Schedule Logistics Prepped for Monday–Friday' }
+            ]
+          };
+      }
+    }
+
+    function calculateStreak() {
+      const dates = new Set(getConsistentDates());
+      const now = new Date();
+      let check = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      
+      const todayKey = formatYMD(check);
+      // If today is not marked consistent yet, start checking from yesterday so in-progress today doesn't break active streak
+      if (!dates.has(todayKey)) {
+        check.setDate(check.getDate() - 1);
+      }
+
+      let streak = 0;
+      while (true) {
+        const k = formatYMD(check);
+        if (dates.has(k)) {
+          streak++;
+          check.setDate(check.getDate() - 1);
+        } else {
+          break;
+        }
+      }
+      return streak;
+    }
+
+    function updateStreakKPIs() {
+      const streak = calculateStreak();
+      const streakEl = document.getElementById('calCurrentStreak');
+      if (streakEl) streakEl.innerText = streak + (streak === 1 ? ' DAY' : ' DAYS');
+
+      // Update month rate
+      const consistent = getConsistentDates();
+      const daysInMonth = new Date(calViewYear, calViewMonth + 1, 0).getDate();
+      let monthCount = 0;
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dStr = `${calViewYear}-${String(calViewMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        if (consistent.includes(dStr)) monthCount++;
+      }
+      const pct = Math.round((monthCount / daysInMonth) * 100);
+      const rateEl = document.getElementById('calMonthRate');
+      if (rateEl) rateEl.innerText = `${monthCount}/${daysInMonth} (${pct}%)`;
+
+      // Selected display
+      const selEl = document.getElementById('calSelectedDisplay');
+      if (selEl) {
+        const todayStr = formatYMD(new Date());
+        if (calSelectedDate === todayStr) {
+          selEl.innerText = 'TODAY (' + calSelectedDate.substring(5) + ')';
+        } else {
+          selEl.innerText = calSelectedDate;
+        }
+      }
+
+      // Save streak count for backwards compatibility
+      localStorage.setItem(STORAGE_PREFIX + 'streak_count', streak);
+    }
+
+    function renderCalendar() {
+      const container = document.getElementById('calendarGridTable');
+      if (!container) return;
+
+      const titleEl = document.getElementById('calMonthTitle');
+      if (titleEl) {
+        titleEl.innerText = `${CAL_MONTH_NAMES[calViewMonth]} ${calViewYear}`;
+      }
+
+      const weekdays = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+      let html = '';
+      weekdays.forEach(w => {
+        html += `<div class="cal-weekday-header">${w}</div>`;
+      });
+
+      const firstDayOffset = (new Date(calViewYear, calViewMonth, 1).getDay() + 6) % 7;
+      for (let i = 0; i < firstDayOffset; i++) {
+        html += '<div class="cal-cell empty"></div>';
+      }
+
+      const daysInMonth = new Date(calViewYear, calViewMonth + 1, 0).getDate();
+      const todayStr = formatYMD(new Date());
+      const consistent = getConsistentDates();
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dateKey = `${calViewYear}-${String(calViewMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        const isToday = (dateKey === todayStr);
+        const isSelected = (dateKey === calSelectedDate);
+        const isConsistent = consistent.includes(dateKey);
+
+        const cad = getCadenceDefs(dateKey);
+        const core = getDailyCoreDefs(dateKey);
+        const tasks = getDayTasks(dateKey);
+
+        const totalTasks = core.length + cad.tasks.length;
+        let doneTasks = 0;
+        core.forEach(t => { if (tasks[t.id]) doneTasks++; });
+        cad.tasks.forEach(t => { if (tasks[t.id]) doneTasks++; });
+
+        const allDone = (doneTasks === totalTasks && totalTasks > 0);
+
+        let cadLabel = 'RECOVER';
+        if (cad.type === 'lift-a') cadLabel = 'LIFT A';
+        if (cad.type === 'lift-b') cadLabel = 'LIFT B';
+        if (cad.type === 'audit') cadLabel = 'AUDIT';
+
+        html += `
+          <div class="cal-cell ${isToday ? 'today' : ''} ${isSelected ? 'selected' : ''} ${isConsistent ? 'consistent' : ''} ${allDone ? 'all-done' : ''}" onclick="selectCalendarDate('${dateKey}')">
+            <div class="cal-cell-header">
+              <span class="cal-cell-num">${day}</span>
+              <span class="cal-cell-flame" title="${isConsistent ? 'Consistent Day Locked' : 'Consistent Day Pending'}">&#x1f525;</span>
+            </div>
+            <div class="cal-cadence-tag tag-cad-${cad.type}">${cadLabel}</div>
+            <div class="cal-cell-footer">
+              <span class="cal-cell-stat ${allDone ? 'done' : ''}">${doneTasks > 0 ? (doneTasks + '/' + totalTasks) : ''}</span>
+            </div>
+          </div>
+        `;
+      }
+
+      container.innerHTML = html;
+      updateStreakKPIs();
+    }
+
+    function renderDayPanel(dateStr) {
+      const container = document.getElementById('dayPanelContainer');
+      if (!container) return;
+
+      const d = parseYMD(dateStr);
+      const isConsistent = isDateConsistent(dateStr);
+      const coreDefs = getDailyCoreDefs(dateStr);
+      const cadDefs = getCadenceDefs(dateStr);
+      const tasks = getDayTasks(dateStr);
+
+      const totalTasks = coreDefs.length + cadDefs.tasks.length;
+      let doneTasks = 0;
+      coreDefs.forEach(t => { if (tasks[t.id]) doneTasks++; });
+      cadDefs.tasks.forEach(t => { if (tasks[t.id]) doneTasks++; });
+
+      const pct = totalTasks > 0 ? Math.round((doneTasks / totalTasks) * 100) : 0;
+      const allDone = (doneTasks === totalTasks && totalTasks > 0);
+
+      const isToday = (dateStr === formatYMD(new Date()));
+      const dateHeaderStr = `${CAL_WEEKDAY_NAMES[d.getDay()]}, ${d.getDate()} ${CAL_MONTH_NAMES[d.getMonth()]} ${d.getFullYear()}`;
+
+      let html = `
+        <div class="day-panel-header">
+          <div class="day-panel-title">
+            <h3>${dateHeaderStr} ${isToday ? '<span style="font-size:12px; color:var(--accent); font-family:Space Mono;">[TODAY]</span>' : ''}</h3>
+            <p>Cadence Focus: <strong style="color:var(--text);">${cadDefs.badge}</strong></p>
+          </div>
+          <button class="day-lock-btn ${isConsistent ? 'locked' : ''} ${allDone ? 'all-good' : ''}" onclick="toggleDayConsistency('${dateStr}')" title="Click to toggle consistency status for this day">
+            ${isConsistent ? '&#x2713; CONSISTENT LOCKED' : '&#x25cb; MARK DAY CONSISTENT'}
+          </button>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; font-family:'Space Mono', monospace; font-size:11px; margin-bottom:6px;">
+          <span style="color:var(--muted);">DAY COMPLETION:</span>
+          <span style="color:${pct === 100 ? 'var(--accent2)' : 'var(--accent3)'}; font-weight:700;">${doneTasks} / ${totalTasks} TASKS (${pct}%)</span>
+        </div>
+
+        <div class="day-progress-track">
+          <div class="day-progress-fill" style="width: ${pct}%;"></div>
+        </div>
+
+        <!-- 1. DAILY WEIGHT LOSS EXECUTION QUEUE -->
+        <div class="day-section-head">
+          <span>&bull; DAILY WEIGHT LOSS EXECUTION QUEUE</span>
+          <span style="color:var(--muted); font-size:9px;">WEIGHT LOSS MANDATORY</span>
+        </div>
+
+        <div class="day-task-list">
+      `;
+
+      coreDefs.forEach(item => {
+        const isDone = !!tasks[item.id];
+        html += `
+          <div class="day-task-row ${isDone ? 'done' : ''}" onclick="toggleDayTask('${dateStr}', '${item.id}')">
+            <div class="day-task-box">${isDone ? '&#x2713;' : ''}</div>
+            <div class="day-task-text">${item.title}</div>
+            <div class="day-task-tag ${item.tagClass}">${item.tag}</div>
+          </div>
+        `;
+      });
+
+      html += `
+        </div>
+
+        <!-- 2. DAY-SPECIFIC MUSCLE-SPARING CADENCE -->
+        <div class="day-section-head cadence" style="margin-top:20px;">
+          <span>&bull; MUSCLE-SPARING RESISTANCE CADENCE</span>
+          <span style="color:var(--accent4); font-size:9px;">${cadDefs.badge}</span>
+        </div>
+
+        <div class="day-cadence-desc">
+          ${cadDefs.desc}
+        </div>
+
+        <div class="day-task-list">
+      `;
+
+      cadDefs.tasks.forEach(item => {
+        const isDone = !!tasks[item.id];
+        html += `
+          <div class="day-task-row ${isDone ? 'done' : ''}" onclick="toggleDayTask('${dateStr}', '${item.id}')">
+            <div class="day-task-box">${isDone ? '&#x2713;' : ''}</div>
+            <div class="day-task-text">${item.title}</div>
+          </div>
+        `;
+      });
+
+      html += `
+        </div>
+      `;
+
+      container.innerHTML = html;
+    }
+
+    function selectCalendarDate(dateStr) {
+      calSelectedDate = dateStr;
+      renderCalendar();
+      renderDayPanel(dateStr);
+    }
+
+    function prevCalendarMonth() {
+      calViewMonth--;
+      if (calViewMonth < 0) {
+        calViewMonth = 11;
+        calViewYear--;
+      }
+      renderCalendar();
+    }
+
+    function nextCalendarMonth() {
+      calViewMonth++;
+      if (calViewMonth > 11) {
+        calViewMonth = 0;
+        calViewYear++;
+      }
+      renderCalendar();
+    }
+
+    function jumpCalendarToToday() {
+      const now = new Date();
+      calViewYear = now.getFullYear();
+      calViewMonth = now.getMonth();
+      calSelectedDate = formatYMD(now);
+      renderCalendar();
+      renderDayPanel(calSelectedDate);
+    }
+
     function toggle(element) {
       element.classList.toggle('done');
       saveTaskState();
@@ -1034,21 +1898,23 @@
     }
 
     function syncActiveLever() {
-      const activeEl = document.querySelector('[data-status="now"]');
-      if (activeEl) {
-        const payload = {
-          pillar: 'health',
-          id: activeEl.getAttribute('data-task-id') || 'fit_fasting',
-          title: activeEl.getAttribute('data-lever-title') || '16:8 Fasting Respected (12:00 – 20:00 Window)',
-          desc: activeEl.getAttribute('data-lever-desc') || 'Zero calories before 12:00 PM; eating cutoff at 20:00 PM',
-          tag: activeEl.getAttribute('data-lever-tag') || 'FASTING',
-          done: activeEl.classList.contains('done'),
-          updatedAt: Date.now()
-        };
-        try {
-          localStorage.setItem('pvs_pillar_now_health', JSON.stringify(payload));
-        } catch (e) {}
-      }
+      // Sync today's fit_fasting status
+      const todayStr = formatYMD(new Date());
+      const todayTasks = getDayTasks(todayStr);
+      const isFastingDone = !!todayTasks['fit_fasting'];
+
+      const payload = {
+        pillar: 'health',
+        id: 'fit_fasting',
+        title: '16:8 Fasting Respected (12:00 – 20:00 Window)',
+        desc: 'Zero calories before 12:00 PM; eating cutoff at 20:00 PM',
+        tag: 'FASTING',
+        done: isFastingDone,
+        updatedAt: Date.now()
+      };
+      try {
+        localStorage.setItem('pvs_pillar_now_health', JSON.stringify(payload));
+      } catch (e) {}
     }
 
     function loadTaskState() {
@@ -1070,30 +1936,6 @@
           console.error("Failed to load task state", e);
         }
       }
-    }
-
-    function renderStreak() {
-      const container = document.getElementById('streak-grid');
-      container.innerHTML = '';
-      const totalDays = 28;
-      const currentStreak = parseInt(localStorage.getItem(STORAGE_PREFIX + 'streak_count') || '0');
-      
-      for (let i = 1; i <= totalDays; i++) {
-        const box = document.createElement('div');
-        box.className = 'streak-day' + (i <= currentStreak ? ' active' : '');
-        box.title = 'Day ' + i;
-        box.onclick = function() {
-          this.classList.toggle('active');
-          updateStreakCount();
-        };
-        container.appendChild(box);
-      }
-    }
-
-    function updateStreakCount() {
-      const activeBoxes = document.querySelectorAll('.streak-day.active').length;
-      document.getElementById('streak-count').innerText = activeBoxes;
-      localStorage.setItem(STORAGE_PREFIX + 'streak_count', activeBoxes);
     }
 
     // FASTING STATUS CLOCK
@@ -1264,11 +2106,8 @@
       }
 
       loadTaskState();
-      renderStreak();
-      const savedStreak = localStorage.getItem(STORAGE_PREFIX + 'streak_count');
-      if (savedStreak) {
-        document.getElementById('streak-count').innerText = savedStreak;
-      }
+      renderCalendar();
+      renderDayPanel(calSelectedDate);
       renderWeightUI();
       updateFastingClock();
       syncActiveLever();
