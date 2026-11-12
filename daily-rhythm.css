@@ -627,3 +627,12 @@
     justify-content: flex-start;
   }
 }
+
+@keyframes highlightPulse {
+  0% { outline: 3px solid var(--accent); box-shadow: 0 0 15px rgba(232, 255, 74, 0.4); }
+  50% { outline: 3px solid var(--accent2); box-shadow: 0 0 25px rgba(74, 255, 180, 0.6); }
+  100% { outline: 3px solid var(--accent); box-shadow: 0 0 15px rgba(232, 255, 74, 0.4); }
+}
+.highlight-pulse {
+  animation: highlightPulse 0.8s ease-in-out 2;
+}

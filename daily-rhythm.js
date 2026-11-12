@@ -6,10 +6,20 @@
  * 1. Core Source of Truth: PVS & Spanish Vision Systems
  * 2. Primary Levers: 2 high-leverage bottleneck levers (PVS & Spanish)
  * 3. Zero-Git Daily State: Checked items persist in localStorage keyed by date (YYYY-MM-DD), auto-reset at midnight
+ * 4. Context-Aware Paths: Supports root (index.html, today.html) and subdirectories (/pvs/, /spanish/)
  */
 
 (function(window) {
   'use strict';
+
+  function getPathInfo() {
+    const p = (window.location && window.location.pathname) ? window.location.pathname.replace(/\\/g, '/') : '';
+    const isInsidePvs = p.includes('/pvs/') || p.endsWith('/pvs') || p.endsWith('/pvs/index.html');
+    const isInsideSpanish = p.includes('/spanish/') || p.endsWith('/spanish') || p.endsWith('/spanish/index.html');
+    const isSubdir = isInsidePvs || isInsideSpanish || p.includes('/mercor/') || p.includes('/health/');
+    const rootPrefix = isSubdir ? '../' : './';
+    return { isInsidePvs, isInsideSpanish, isSubdir, rootPrefix };
+  }
 
   const PILLARS_CONFIG = [
     {
@@ -18,8 +28,6 @@
       shortName: 'PVS',
       color: '#e8ff4a',
       tagClass: 'tag-prof',
-      url: './pvs/index.html',
-      file: './pvs/index.html',
       defaultTargetId: 'aconex_cert',
       defaultTitle: 'Oracle Aconex: Associate → Specialist Modules',
       defaultDesc: 'Aconex CDE certification & metadata workflows',
@@ -31,14 +39,25 @@
       shortName: 'Spanish',
       color: '#4a9fff',
       tagClass: 'tag-spanish',
-      url: './spanish/index.html',
-      file: './spanish/index.html',
       defaultTargetId: 'spanish_vocab_input',
       defaultTitle: 'Daily Spanish Vocabulary Input (15 words)',
       defaultDesc: '1,000 Most Common Spanish Words high-frequency deck (Memrise/Anki)',
       defaultTag: '15 MIN'
     }
   ];
+
+  function getPillarUrl(pillarId, targetId) {
+    const { isInsidePvs, isInsideSpanish, rootPrefix } = getPathInfo();
+    const anchor = '#' + (targetId || (pillarId === 'pvs' ? 'aconex_cert' : 'spanish_vocab_input'));
+    
+    if (pillarId === 'pvs') {
+      return isInsidePvs ? anchor : (rootPrefix + 'pvs/index.html' + anchor);
+    }
+    if (pillarId === 'spanish') {
+      return isInsideSpanish ? anchor : (rootPrefix + 'spanish/index.html' + anchor);
+    }
+    return rootPrefix + pillarId + '/index.html' + anchor;
+  }
 
   function getTodayKey() {
     const d = new Date();
@@ -77,16 +96,50 @@
   }
 
   async function queryPillarTarget(pillar) {
-    // 1. Check local synced target first
+    const { isInsidePvs, isInsideSpanish, rootPrefix } = getPathInfo();
+
+    // 1. Direct live DOM inspection if currently on that page
+    if ((pillar.id === 'pvs' && isInsidePvs) || (pillar.id === 'spanish' && isInsideSpanish)) {
+      try {
+        let activeEl = null;
+        if (pillar.id === 'pvs') {
+          activeEl = document.querySelector('[data-status="now"]') ||
+                     document.querySelector('#aconex_cert, [data-task-id="aconex_cert"]');
+        } else {
+          activeEl = document.querySelector('[data-pillar="spanish"][data-status="now"]') ||
+                     document.querySelector('#spanish_vocab_input, [data-task-id="spanish_vocab_input"]');
+        }
+
+        if (activeEl) {
+          const title = activeEl.getAttribute('data-lever-title') ||
+                        activeEl.querySelector('.task-text strong, .task-text, span, div')?.innerText?.trim() ||
+                        pillar.defaultTitle;
+          const desc = activeEl.getAttribute('data-lever-desc') || pillar.defaultDesc;
+          const tag = activeEl.getAttribute('data-lever-tag') ||
+                      activeEl.querySelector('.task-tag, span[class*="tag"]')?.innerText?.trim() ||
+                      pillar.defaultTag;
+          const id = activeEl.getAttribute('data-task-id') || pillar.defaultTargetId;
+
+          const payload = { id, title, desc, tag, source: 'live-dom' };
+          try {
+            localStorage.setItem('pvs_pillar_now_' + pillar.id, JSON.stringify(payload));
+          } catch (e) {}
+          return payload;
+        }
+      } catch (e) {}
+    }
+
+    // 2. Check local synced target first
     let synced = null;
     try {
       const raw = localStorage.getItem('pvs_pillar_now_' + pillar.id);
       if (raw) synced = JSON.parse(raw);
     } catch (e) {}
 
-    // 2. Attempt dynamic live fetch (works in HTTP / server environment)
+    // 3. Attempt dynamic live fetch (works in HTTP / GitHub Pages environment)
     try {
-      const response = await fetch(pillar.file, { cache: 'no-store' });
+      const targetFile = rootPrefix + pillar.id + '/index.html';
+      const response = await fetch(targetFile, { cache: 'no-store' });
       if (response.ok) {
         const html = await response.text();
         const doc = new DOMParser().parseFromString(html, 'text/html');
@@ -108,7 +161,7 @@
           const tag = activeEl.getAttribute('data-lever-tag') ||
                       activeEl.querySelector('.task-tag, span[class*="tag"]')?.innerText?.trim() ||
                       pillar.defaultTag;
-          const id = activeEl.getAttribute('data-task-id') || (pillar.id + '_active');
+          const id = activeEl.getAttribute('data-task-id') || pillar.defaultTargetId;
 
           const payload = { id, title, desc, tag, source: 'live' };
           try {
@@ -120,10 +173,10 @@
       }
     } catch (err) {}
 
-    // 3. Fallback to synced state if available
+    // 4. Fallback to synced state if available
     if (synced && synced.title) {
       return {
-        id: synced.id || (pillar.id + '_synced'),
+        id: synced.id || pillar.defaultTargetId,
         title: synced.title,
         desc: synced.desc || pillar.defaultDesc,
         tag: synced.tag || pillar.defaultTag,
@@ -131,9 +184,9 @@
       };
     }
 
-    // 4. Default baseline fallback
+    // 5. Default baseline fallback
     return {
-      id: pillar.id + '_default',
+      id: pillar.defaultTargetId,
       title: pillar.defaultTitle,
       desc: pillar.defaultDesc,
       tag: pillar.defaultTag,
@@ -187,13 +240,13 @@
       const target = targets[idx];
       const checkKey = 'lever_' + pillar.id + '_' + target.id;
       const isChecked = !!dailyState[checkKey];
-      const targetAnchor = target.id ? ('#' + target.id) : ('#' + pillar.defaultTargetId);
-      const directUrl = pillar.url.includes('#') ? pillar.url : (pillar.url + targetAnchor);
+      const directUrl = getPillarUrl(pillar.id, target.id);
+      const isAnchorOnly = directUrl.startsWith('#');
 
       html += `
         <div class="lever-card ${pillar.id}-card ${isChecked ? 'completed' : ''}" id="card_${checkKey}">
           <div class="lever-top">
-            <a href="${directUrl}" class="lever-pillar-badge ${pillar.tagClass}" title="Go directly to ${pillar.shortName}">
+            <a href="${directUrl}" ${isAnchorOnly ? 'onclick="DailyRhythm.scrollToTarget(\'' + target.id + '\')"' : ''} class="lever-pillar-badge ${pillar.tagClass}" title="Go directly to ${pillar.shortName}">
               ${pillar.shortName} &nearr;
             </a>
             <span class="lever-tag">${escapeHTML(target.tag)}</span>
@@ -203,15 +256,15 @@
               ${isChecked ? '&#10003;' : ''}
             </div>
             <div class="lever-text">
-              <a href="${directUrl}" class="lever-title-link" title="Open directly in ${pillar.shortName}">
+              <a href="${directUrl}" ${isAnchorOnly ? 'onclick="DailyRhythm.scrollToTarget(\'' + target.id + '\')"' : ''} class="lever-title-link" title="Open directly in ${pillar.shortName}">
                 ${target.title}
               </a>
               <div class="lever-desc">${escapeHTML(target.desc)}</div>
             </div>
           </div>
           <div class="lever-footer">
-            <a href="${directUrl}" class="pillar-jump-link">
-              Open in ${pillar.shortName} &rarr;
+            <a href="${directUrl}" ${isAnchorOnly ? 'onclick="DailyRhythm.scrollToTarget(\'' + target.id + '\')"' : ''} class="pillar-jump-link">
+              ${isAnchorOnly ? 'Jump to Section &darr;' : ('Open in ' + pillar.shortName + ' &rarr;')}
             </a>
             <span class="lever-status-label">${isChecked ? 'DONE TODAY' : 'PENDING'}</span>
           </div>
@@ -227,6 +280,15 @@
 
     root.innerHTML = html;
     updateProgressUI();
+  }
+
+  function scrollToTarget(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.classList.add('highlight-pulse');
+      setTimeout(() => el.classList.remove('highlight-pulse'), 2000);
+    }
   }
 
   function escapeHTML(str) {
@@ -321,7 +383,8 @@
   window.DailyRhythm = {
     init: renderDailyRhythm,
     toggleTask: toggleTask,
-    resetToday: resetToday
+    resetToday: resetToday,
+    scrollToTarget: scrollToTarget
   };
 
 })(typeof window !== 'undefined' ? window : globalThis);
