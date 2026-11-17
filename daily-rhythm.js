@@ -28,9 +28,9 @@
       shortName: 'PVS',
       color: '#e8ff4a',
       tagClass: 'tag-prof',
-      defaultTargetId: 'asana_workflow',
-      defaultTitle: 'Asana Workflow Specialist Certificate',
-      defaultDesc: 'Workflow specialist certification & automation pipelines',
+      defaultTargetId: 'excel_adv',
+      defaultTitle: 'Advanced Excel: Power Query & Relational Data Models',
+      defaultDesc: 'Automating CDE export cleanups & relational data models',
       defaultTag: 'NOW // FOCUS'
     },
     {
@@ -48,7 +48,7 @@
 
   function getPillarUrl(pillarId, targetId) {
     const { isInsidePvs, isInsideSpanish, rootPrefix } = getPathInfo();
-    const anchor = '#' + (targetId || (pillarId === 'pvs' ? 'asana_workflow' : 'spanish_vocab_input'));
+    const anchor = '#' + (targetId || (pillarId === 'pvs' ? 'excel_adv' : 'spanish_vocab_input'));
     
     if (pillarId === 'pvs') {
       return isInsidePvs ? anchor : (rootPrefix + 'pvs/index.html' + anchor);
@@ -104,8 +104,8 @@
         let activeEl = null;
         if (pillar.id === 'pvs') {
           activeEl = document.querySelector('[data-status="now"]') ||
-                     document.querySelector('#asana_workflow, [data-task-id="asana_workflow"]') ||
-                     document.querySelector('#aconex_cert, [data-task-id="aconex_cert"]');
+                     document.querySelector('#excel_adv, [data-task-id="excel_adv"]') ||
+                     document.querySelector('#solibri_qa, [data-task-id="solibri_qa"]');
         } else {
           activeEl = document.querySelector('[data-pillar="spanish"][data-status="now"]') ||
                      document.querySelector('#spanish_vocab_input, [data-task-id="spanish_vocab_input"]');
@@ -151,8 +151,8 @@
                      doc.querySelector('#spanish_vocab_input, [data-task-id="spanish_vocab_input"]');
         } else {
           activeEl = doc.querySelector('[data-status="now"]') ||
-                     doc.querySelector('#asana_workflow, [data-task-id="asana_workflow"]') ||
-                     doc.querySelector('#aconex_cert, [data-task-id="aconex_cert"]');
+                     doc.querySelector('#excel_adv, [data-task-id="excel_adv"]') ||
+                     doc.querySelector('#solibri_qa, [data-task-id="solibri_qa"]');
         }
 
         if (activeEl) {

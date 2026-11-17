@@ -695,7 +695,7 @@
       </div>
       <div class="next-action">
         <div class="next-action-label">ACTIVE OPERATIONAL FOCUS</div>
-        <div class="next-action-text">Advance Asana Workflow Specialist certification &amp; Power Query data modeling while architecting event-driven QA validation pipelines.</div>
+        <div class="next-action-text">Master Power Query data transformation &amp; Solibri IFC automated rule checking while delivering live CDE governance.</div>
       </div>
     </div>
 
@@ -743,29 +743,24 @@
           <div class="task-text">Oracle Aconex: Professional Accreditation</div>
           <div class="task-tag tag-5">DONE // ACCREDITED</div>
         </div>
-        <div class="task-item" id="asana_workflow" onclick="toggle(this)" data-task-id="asana_workflow" data-status="now" data-pillar="pvs" data-lever-title="Asana Workflow Specialist Certificate" data-lever-desc="Advanced project orchestration &amp; cross-team workflow automation" data-lever-tag="NOW // FOCUS">
+        <div class="task-item" id="excel_adv" onclick="toggle(this)" data-task-id="excel_adv" data-status="now" data-pillar="pvs" data-lever-title="Advanced Excel: Power Query &amp; Relational Data Models (Macquarie)" data-lever-desc="Automating CDE export cleanups &amp; relational data models" data-lever-tag="NOW // FOCUS">
           <div class="checkbox"></div>
-          <div class="task-text">Asana Workflow Specialist Certificate</div>
+          <div class="task-text">Advanced Excel: Power Query &amp; Relational Data Models (Macquarie)</div>
           <div class="task-tag tag-20">NOW // FOCUS</div>
+        </div>
+        <div class="task-item" id="solibri_qa" onclick="toggle(this)" data-task-id="solibri_qa" data-pillar="pvs" data-lever-title="Solibri: IFC Rule Checking &amp; Information Takeoff (ITO)" data-lever-desc="IFC model validation, COBie parameter checking &amp; automated ITO" data-lever-tag="NOW // PRESSING">
+          <div class="checkbox"></div>
+          <div class="task-text">Solibri: IFC Rule Checking &amp; Information Takeoff (ITO)</div>
+          <div class="task-tag tag-60">NOW // PRESSING</div>
         </div>
       </div>
 
       <div class="tier tier-next">
         <div class="tier-label">NEXT // THE DATA & MIDDLEWARE BRIDGE</div>
-        <div class="task-item" onclick="toggle(this)" data-task-id="excel_adv">
-          <div class="checkbox"></div>
-          <div class="task-text">Advanced Excel: Power Query & Relational Data Models (Macquarie)</div>
-          <div class="task-tag tag-20">NEXT</div>
-        </div>
         <div class="task-item" onclick="toggle(this)" data-task-id="postman_rest">
           <div class="checkbox"></div>
           <div class="task-text">Postman & REST APIs (Inspecting CDE / BCF JSON Payloads)</div>
           <div class="task-tag tag-20">NEXT</div>
-        </div>
-        <div class="task-item" onclick="toggle(this)" data-task-id="solibri_qa">
-          <div class="checkbox"></div>
-          <div class="task-text">Solibri: IFC Rule Checking & Information Takeoff (ITO)</div>
-          <div class="task-tag tag-60">NEXT</div>
         </div>
         <div class="task-item" onclick="toggle(this)" data-task-id="plannerly_l3">
           <div class="checkbox"></div>
@@ -776,6 +771,7 @@
 
       <div class="tier tier-later">
         <div class="tier-label">LATER // SOLUTIONS ARCHITECTURE STACK</div>
+        <div class="parked-item">Asana Workflow Specialist (Subscription Dropped &mdash; Foundations Active) <span>PARKED</span></div>
         <div class="parked-item">Azure Integration Services (Logic Apps & Functions) <span>MONTH 6+</span></div>
         <div class="parked-item">SQL & Relational Databases (PostgreSQL for Asset Metadata) <span>MONTH 6+</span></div>
         <div class="parked-item">Python / Pandas (Programmatic IFC / BCF Parsing) <span>MONTH 12+</span></div>
@@ -1049,9 +1045,9 @@
       if (activeEl) {
         const payload = {
           pillar: 'pvs',
-          id: activeEl.getAttribute('data-task-id') || 'asana_workflow',
-          title: activeEl.getAttribute('data-lever-title') || 'Asana Workflow Specialist Certificate',
-          desc: activeEl.getAttribute('data-lever-desc') || 'Advanced project orchestration & cross-team workflow automation',
+          id: activeEl.getAttribute('data-task-id') || 'excel_adv',
+          title: activeEl.getAttribute('data-lever-title') || 'Advanced Excel: Power Query & Relational Data Models',
+          desc: activeEl.getAttribute('data-lever-desc') || 'Automating CDE export cleanups & relational data models',
           tag: activeEl.getAttribute('data-lever-tag') || 'NOW // FOCUS',
           done: activeEl.classList.contains('done'),
           updatedAt: Date.now()
