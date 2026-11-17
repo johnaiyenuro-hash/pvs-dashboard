@@ -28,9 +28,9 @@
       shortName: 'PVS',
       color: '#e8ff4a',
       tagClass: 'tag-prof',
-      defaultTargetId: 'aconex_cert',
-      defaultTitle: 'Oracle Aconex: Associate → Specialist Modules',
-      defaultDesc: 'Aconex CDE certification & metadata workflows',
+      defaultTargetId: 'asana_workflow',
+      defaultTitle: 'Asana Workflow Specialist Certificate',
+      defaultDesc: 'Workflow specialist certification & automation pipelines',
       defaultTag: 'NOW // FOCUS'
     },
     {
@@ -48,7 +48,7 @@
 
   function getPillarUrl(pillarId, targetId) {
     const { isInsidePvs, isInsideSpanish, rootPrefix } = getPathInfo();
-    const anchor = '#' + (targetId || (pillarId === 'pvs' ? 'aconex_cert' : 'spanish_vocab_input'));
+    const anchor = '#' + (targetId || (pillarId === 'pvs' ? 'asana_workflow' : 'spanish_vocab_input'));
     
     if (pillarId === 'pvs') {
       return isInsidePvs ? anchor : (rootPrefix + 'pvs/index.html' + anchor);
@@ -104,6 +104,7 @@
         let activeEl = null;
         if (pillar.id === 'pvs') {
           activeEl = document.querySelector('[data-status="now"]') ||
+                     document.querySelector('#asana_workflow, [data-task-id="asana_workflow"]') ||
                      document.querySelector('#aconex_cert, [data-task-id="aconex_cert"]');
         } else {
           activeEl = document.querySelector('[data-pillar="spanish"][data-status="now"]') ||
@@ -150,6 +151,7 @@
                      doc.querySelector('#spanish_vocab_input, [data-task-id="spanish_vocab_input"]');
         } else {
           activeEl = doc.querySelector('[data-status="now"]') ||
+                     doc.querySelector('#asana_workflow, [data-task-id="asana_workflow"]') ||
                      doc.querySelector('#aconex_cert, [data-task-id="aconex_cert"]');
         }
 

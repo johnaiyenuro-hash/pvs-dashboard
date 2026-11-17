@@ -695,7 +695,7 @@
       </div>
       <div class="next-action">
         <div class="next-action-label">ACTIVE OPERATIONAL FOCUS</div>
-        <div class="next-action-text">Complete Oracle Aconex Associate modules while architecting event-driven QA validation pipelines.</div>
+        <div class="next-action-text">Advance Asana Workflow Specialist certification &amp; Power Query data modeling while architecting event-driven QA validation pipelines.</div>
       </div>
     </div>
 
@@ -738,20 +738,20 @@
           <div class="task-text">Asana Foundations Skill Badge</div>
           <div class="task-tag tag-5">DONE</div>
         </div>
-        <div class="task-item" id="aconex_cert" onclick="toggle(this)" data-task-id="aconex_cert" data-status="now" data-pillar="pvs" data-lever-title="Oracle Aconex: Associate &rarr; Specialist Modules" data-lever-desc="Oracle Aconex CDE certification &amp; metadata workflows" data-lever-tag="NOW // FOCUS">
+        <div class="task-item done" id="aconex_cert" onclick="toggle(this)" data-task-id="aconex_cert" data-status="done" data-pillar="pvs" data-lever-title="Oracle Aconex: Professional Accreditation" data-lever-desc="Oracle Aconex CDE certification &amp; metadata workflows" data-lever-tag="DONE // ACCREDITED">
           <div class="checkbox"></div>
-          <div class="task-text">Oracle Aconex: Associate &rarr; Specialist Modules</div>
+          <div class="task-text">Oracle Aconex: Professional Accreditation</div>
+          <div class="task-tag tag-5">DONE // ACCREDITED</div>
+        </div>
+        <div class="task-item" id="asana_workflow" onclick="toggle(this)" data-task-id="asana_workflow" data-status="now" data-pillar="pvs" data-lever-title="Asana Workflow Specialist Certificate" data-lever-desc="Advanced project orchestration &amp; cross-team workflow automation" data-lever-tag="NOW // FOCUS">
+          <div class="checkbox"></div>
+          <div class="task-text">Asana Workflow Specialist Certificate</div>
           <div class="task-tag tag-20">NOW // FOCUS</div>
         </div>
       </div>
 
       <div class="tier tier-next">
         <div class="tier-label">NEXT // THE DATA & MIDDLEWARE BRIDGE</div>
-        <div class="task-item" onclick="toggle(this)" data-task-id="asana_workflow">
-          <div class="checkbox"></div>
-          <div class="task-text">Asana Workflow Specialist Certificate</div>
-          <div class="task-tag tag-20">NEXT</div>
-        </div>
         <div class="task-item" onclick="toggle(this)" data-task-id="excel_adv">
           <div class="checkbox"></div>
           <div class="task-text">Advanced Excel: Power Query & Relational Data Models (Macquarie)</div>
@@ -1049,9 +1049,9 @@
       if (activeEl) {
         const payload = {
           pillar: 'pvs',
-          id: activeEl.getAttribute('data-task-id') || 'aconex_cert',
-          title: activeEl.getAttribute('data-lever-title') || 'Oracle Aconex: Associate → Specialist Modules',
-          desc: activeEl.getAttribute('data-lever-desc') || 'Aconex CDE certification & metadata workflows',
+          id: activeEl.getAttribute('data-task-id') || 'asana_workflow',
+          title: activeEl.getAttribute('data-lever-title') || 'Asana Workflow Specialist Certificate',
+          desc: activeEl.getAttribute('data-lever-desc') || 'Advanced project orchestration & cross-team workflow automation',
           tag: activeEl.getAttribute('data-lever-tag') || 'NOW // FOCUS',
           done: activeEl.classList.contains('done'),
           updatedAt: Date.now()
@@ -1075,6 +1075,6 @@
       }
     };
   </script>
-  <script src="../daily-rhythm.js?v=20261112b"></script>
+  <script src="../daily-rhythm.js?v=20261117"></script>
 </body>
 </html>
