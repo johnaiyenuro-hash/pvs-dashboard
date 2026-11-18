@@ -1,0 +1,1586 @@
+[
+  {
+    "id": "sliders",
+    "title": "Honey Chipotle Garlic Chicken Sliders",
+    "creator": "@erinscozykitchen",
+    "category": "Comfort Food",
+    "tag": "Comfort Feast",
+    "prepTime": "25 mins",
+    "servings": 4,
+    "imageUrl": "https://i.pinimg.com/736x/16/f2/84/16f28413c616f7642cb2e95e7d35ed64.jpg",
+    "ingredients": [
+      {
+        "name": "Chicken Breast Fillets",
+        "qty": "600g",
+        "aisle": "Meat & Poultry",
+        "pantry": false,
+        "search": "chicken breast fillets"
+      },
+      {
+        "name": "Brioche Slider Buns",
+        "qty": "8-12 pack",
+        "aisle": "Bakery",
+        "pantry": false,
+        "search": "brioche slider buns"
+      },
+      {
+        "name": "Chipotle Peppers in Adobo",
+        "qty": "1 can",
+        "aisle": "Pantry & World Food",
+        "pantry": false,
+        "search": "chipotle in adobo"
+      },
+      {
+        "name": "Honey",
+        "qty": "100g",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "runny honey"
+      },
+      {
+        "name": "Unsalted Butter",
+        "qty": "125g",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "unsalted butter"
+      },
+      {
+        "name": "Fresh Garlic",
+        "qty": "4 cloves",
+        "aisle": "Fresh Produce",
+        "pantry": true,
+        "search": "fresh garlic"
+      },
+      {
+        "name": "Dill Pickle Slices",
+        "qty": "1 jar",
+        "aisle": "Food Cupboard",
+        "pantry": false,
+        "search": "dill sandwich pickle slices"
+      },
+      {
+        "name": "Ranch Dressing",
+        "qty": "1 bottle",
+        "aisle": "Food Cupboard",
+        "pantry": false,
+        "search": "ranch dressing"
+      },
+      {
+        "name": "Fresh Flat Leaf Parsley",
+        "qty": "1 small pack",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "fresh flat leaf parsley"
+      },
+      {
+        "name": "Cornstarch / Cornflour",
+        "qty": "50g",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "cornflour"
+      },
+      {
+        "name": "Plain Flour",
+        "qty": "150g",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "plain white flour"
+      },
+      {
+        "name": "Vegetable Frying Oil",
+        "qty": "500ml",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "vegetable oil"
+      }
+    ],
+    "instructions": [
+      "Cut chicken into slider-sized fillets.",
+      "Dredge in seasoned flour & cornstarch, then deep fry in hot oil at 180°C until crispy and golden.",
+      "Simmer butter with honey, minced garlic, and 2 tbsp blended chipotle in adobo to make glaze.",
+      "Toss hot chicken in honey chipotle glaze.",
+      "Toast slider buns with garlic parsley butter. Assemble with pickles, glazed chicken, and chipotle ranch drizzle."
+    ]
+  },
+  {
+    "id": "marry_me_chicken_soup",
+    "title": "Creamy Marry Me Chicken Tortellini Soup",
+    "creator": "Pinterest Community",
+    "category": "Soups & Stews",
+    "tag": "One-Pot Cozy",
+    "prepTime": "30 mins",
+    "servings": 4,
+    "imageUrl": "https://i.pinimg.com/736x/ec/1a/44/ec1a442062e322cd3ce7765206ee147a.jpg",
+    "ingredients": [
+      {
+        "name": "Chicken Breast Fillets",
+        "qty": "500g",
+        "aisle": "Meat & Poultry",
+        "pantry": false,
+        "search": "chicken breast fillets"
+      },
+      {
+        "name": "Fresh Cheese Tortellini",
+        "qty": "250g pack",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "fresh cheese tortellini"
+      },
+      {
+        "name": "Sun-Dried Tomatoes in Oil",
+        "qty": "1 jar (150g)",
+        "aisle": "Food Cupboard",
+        "pantry": false,
+        "search": "sun dried tomatoes in oil"
+      },
+      {
+        "name": "Fresh Baby Spinach",
+        "qty": "150g bag",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "baby spinach"
+      },
+      {
+        "name": "Double Cream",
+        "qty": "200ml pot",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "double cream"
+      },
+      {
+        "name": "Chicken Stock / Broth",
+        "qty": "1 litre",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "chicken stock cubes"
+      },
+      {
+        "name": "Fresh Garlic",
+        "qty": "4 cloves",
+        "aisle": "Fresh Produce",
+        "pantry": true,
+        "search": "fresh garlic"
+      },
+      {
+        "name": "Parmesan Cheese",
+        "qty": "50g grated",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "grated parmesan"
+      },
+      {
+        "name": "Dried Italian Herbs",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "mixed herbs"
+      }
+    ],
+    "instructions": [
+      "Dice chicken and sear in a pot with a spoonful of sun-dried tomato oil until browned.",
+      "Add minced garlic, sliced sun-dried tomatoes, and dried herbs; sauté 1 minute until fragrant.",
+      "Pour in chicken stock, bring to a gentle boil, and simmer for 15 minutes.",
+      "Drop in fresh tortellini and cook for 3-4 minutes until tender.",
+      "Stir in double cream, grated parmesan, and baby spinach until wilted and rich. Season with black pepper and serve with crusty bread."
+    ]
+  },
+  {
+    "id": "crispy_salmon_bites",
+    "title": "Crispy Air Fryer Salmon Bites & Jasmine Rice",
+    "creator": "@nutritionfromkay",
+    "category": "Quick & Easy",
+    "tag": "High Protein",
+    "prepTime": "15 mins",
+    "servings": 2,
+    "imageUrl": "https://i.pinimg.com/736x/5a/44/18/5a441855d1f6128ce56411062ff52376.jpg",
+    "ingredients": [
+      {
+        "name": "Fresh Salmon Fillets (skinless)",
+        "qty": "400g (2 fillets)",
+        "aisle": "Meat & Poultry",
+        "pantry": false,
+        "search": "boneless salmon fillets"
+      },
+      {
+        "name": "Sweet Chili Sauce",
+        "qty": "2 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": false,
+        "search": "sweet chilli sauce"
+      },
+      {
+        "name": "Soy Sauce",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "dark soy sauce"
+      },
+      {
+        "name": "Garlic Powder & Smoked Paprika",
+        "qty": "1 tsp each",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "garlic powder"
+      },
+      {
+        "name": "Olive Oil",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "olive oil"
+      },
+      {
+        "name": "Cucumber",
+        "qty": "1 whole",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "cucumber"
+      },
+      {
+        "name": "Microwave Jasmine Rice",
+        "qty": "1 pouch (250g)",
+        "aisle": "Food Cupboard",
+        "pantry": false,
+        "search": "microwave jasmine rice pouch"
+      }
+    ],
+    "instructions": [
+      "Cut salmon into 1-inch uniform cubes.",
+      "Toss salmon bites in a bowl with olive oil, sweet chili sauce, soy sauce, garlic powder, and smoked paprika.",
+      "Arrange in air fryer basket in a single layer at 200°C for 7-9 minutes until caramelized and crispy on edges.",
+      "Heat jasmine rice and slice fresh cucumber. Assemble bowls and drizzle pan juices over top."
+    ]
+  },
+  {
+    "id": "creamy_cauliflower_cheese",
+    "title": "Ultimate Cheddar & Mozzarella Cauliflower Cheese",
+    "creator": "Pinterest Community",
+    "category": "Comfort Food",
+    "tag": "Sunday Feast Side",
+    "prepTime": "35 mins",
+    "servings": 6,
+    "imageUrl": "https://i.pinimg.com/736x/db/d0/4a/dbd04a34977651d1c089c3364c83e6d0.jpg",
+    "ingredients": [
+      {
+        "name": "Fresh Cauliflower",
+        "qty": "1 large head (approx 1kg)",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "whole cauliflower"
+      },
+      {
+        "name": "Mature Cheddar Cheese",
+        "qty": "200g block",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "cathedral city mature cheddar"
+      },
+      {
+        "name": "Mozzarella Cheese (Grated)",
+        "qty": "150g bag",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "grated mozzarella cheese"
+      },
+      {
+        "name": "Unsalted Butter",
+        "qty": "75g",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "unsalted butter"
+      },
+      {
+        "name": "Plain Flour",
+        "qty": "50g",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "plain flour"
+      },
+      {
+        "name": "Semi-Skimmed Milk",
+        "qty": "500ml",
+        "aisle": "Dairy & Chilled",
+        "pantry": true,
+        "search": "semi skimmed milk 1 pint"
+      },
+      {
+        "name": "Vegetable Stock Pot (Knorr)",
+        "qty": "1 pod",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "knorr vegetable stock pots"
+      },
+      {
+        "name": "English Mustard",
+        "qty": "1 tsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "colmans english mustard"
+      }
+    ],
+    "instructions": [
+      "Cut cauliflower into large florets. Steam or boil for 5 minutes until just knife-tender; drain thoroughly.",
+      "Melt butter in a saucepan, whisk in flour for 1 minute to make a roux.",
+      "Gradually whisk in warm milk and the Knorr vegetable stock pot until silky and thick.",
+      "Take off heat, stir in English mustard, 120g cheddar, and 100g mozzarella until velvety smooth.",
+      "Pour cheese sauce over cauliflower in an ovenproof dish. Top with remaining cheddar and mozzarella.",
+      "Bake at 200°C for 20-25 minutes until deeply bubbly, blistered, and golden."
+    ]
+  },
+  {
+    "id": "curry_goat",
+    "title": "Authentic Jamaican Curry Goat & Rice",
+    "creator": "@chefdwightsmith",
+    "category": "Soups & Stews",
+    "tag": "Island Classic",
+    "prepTime": "90 mins",
+    "servings": 6,
+    "imageUrl": "https://i.pinimg.com/736x/03/f8/57/03f85702a2ac964b0a4544c5742cf388.jpg",
+    "ingredients": [
+      {
+        "name": "Diced Goat Meat / Stewing Beef",
+        "qty": "800g pack",
+        "aisle": "Meat & Poultry",
+        "pantry": false,
+        "search": "diced beef stewing steak"
+      },
+      {
+        "name": "Jamaican Curry Powder (Betapac/Dunn's)",
+        "qty": "3 tbsp",
+        "aisle": "Pantry & World Food",
+        "pantry": false,
+        "search": "curry powder hot"
+      },
+      {
+        "name": "Scotch Bonnet Peppers",
+        "qty": "2 peppers",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "scotch bonnet peppers"
+      },
+      {
+        "name": "Fresh Thyme",
+        "qty": "1 small pack",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "fresh thyme pack"
+      },
+      {
+        "name": "Fresh Garlic",
+        "qty": "5 cloves",
+        "aisle": "Fresh Produce",
+        "pantry": true,
+        "search": "fresh garlic"
+      },
+      {
+        "name": "Fresh Ginger Root",
+        "qty": "1 thumb piece",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "fresh root ginger"
+      },
+      {
+        "name": "Allspice Pimento Berries",
+        "qty": "1 tsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "allspice whole berries"
+      },
+      {
+        "name": "Spring Onions / Scallions",
+        "qty": "1 bunch",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "spring onions"
+      },
+      {
+        "name": "Potatoes",
+        "qty": "2 medium",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "baking potatoes"
+      },
+      {
+        "name": "Easy-Cook Basmati Rice",
+        "qty": "500g",
+        "aisle": "Food Cupboard",
+        "pantry": false,
+        "search": "easy cook basmati rice"
+      }
+    ],
+    "instructions": [
+      "Season meat with 2 tbsp curry powder, minced garlic, ginger, scallions, pimento berries, salt, and black pepper. Marinate 1 hour (or overnight).",
+      "Heat oil in a heavy Dutch oven, add 1 tbsp curry powder to 'burn the curry' for 1 minute.",
+      "Brown meat on high heat in batches.",
+      "Add remaining marinade, whole scotch bonnet pepper, fresh thyme sprigs, and boiling water to cover. Simmer covered on low heat for 1 hour 15 mins.",
+      "Add peeled potato chunks during the final 20 minutes until tender and gravy is deeply thickened. Serve with hot steamed rice."
+    ]
+  },
+  {
+    "id": "tuna_yaki_onigiri",
+    "title": "Crispy Creamy Tuna Yaki Onigiri (Grilled Rice Balls)",
+    "creator": "@TiffyBooks",
+    "category": "Quick & Easy",
+    "tag": "20-Min Snack",
+    "prepTime": "20 mins",
+    "servings": 2,
+    "imageUrl": "https://i.pinimg.com/736x/15/ca/6c/15ca6cd273994de0ceae5e77584edd4a.jpg",
+    "ingredients": [
+      {
+        "name": "Sushi Rice / Short Grain Rice",
+        "qty": "300g",
+        "aisle": "Food Cupboard",
+        "pantry": false,
+        "search": "sushi rice"
+      },
+      {
+        "name": "Canned Tuna in Spring Water",
+        "qty": "2 tins (160g each)",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "tuna chunks in spring water"
+      },
+      {
+        "name": "Kewpie Mayonnaise / Mayo",
+        "qty": "3 tbsp",
+        "aisle": "Pantry & World Food",
+        "pantry": false,
+        "search": "kewpie mayonnaise"
+      },
+      {
+        "name": "Sriracha Hot Sauce",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "sriracha sauce"
+      },
+      {
+        "name": "Soy Sauce",
+        "qty": "2 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "dark soy sauce"
+      },
+      {
+        "name": "Toasted Sesame Oil",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "toasted sesame oil"
+      },
+      {
+        "name": "Nori Seaweed Sheets",
+        "qty": "1 pack",
+        "aisle": "Pantry & World Food",
+        "pantry": false,
+        "search": "nori seaweed sheets"
+      }
+    ],
+    "instructions": [
+      "Drain tuna thoroughly and mix with mayonnaise, sriracha, black pepper, and 1 tsp soy sauce.",
+      "Wet hands with salted water. Place warm cooked sushi rice in palms, add a spoonful of spicy tuna in center, and mold firmly into triangular patties.",
+      "Whisk soy sauce, honey/mirin, and sesame oil in a small dish.",
+      "Pan-fry onigiri in a lightly oiled non-stick pan for 3 mins per side until crispy.",
+      "Brush glaze on both sides and fry 30 seconds more until caramelized. Wrap base with a strip of nori seaweed."
+    ]
+  },
+  {
+    "id": "sushi_bake",
+    "title": "Viral Spicy Salmon & Crab Sushi Bake",
+    "creator": "@gaming_foodieee_",
+    "category": "Comfort Food",
+    "tag": "Crowd Favorite",
+    "prepTime": "25 mins",
+    "servings": 4,
+    "imageUrl": "https://i.pinimg.com/736x/73/5b/f0/735bf011c0da03e785b2bf42921751b8.jpg",
+    "ingredients": [
+      {
+        "name": "Sushi Rice",
+        "qty": "400g",
+        "aisle": "Food Cupboard",
+        "pantry": false,
+        "search": "sushi rice"
+      },
+      {
+        "name": "Fresh Salmon / Crab Sticks",
+        "qty": "300g",
+        "aisle": "Meat & Poultry",
+        "pantry": false,
+        "search": "seafood crab sticks"
+      },
+      {
+        "name": "Cream Cheese (Philadelphia)",
+        "qty": "150g tub",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "philadelphia original cream cheese"
+      },
+      {
+        "name": "Kewpie Mayonnaise",
+        "qty": "3 tbsp",
+        "aisle": "Pantry & World Food",
+        "pantry": false,
+        "search": "kewpie mayonnaise"
+      },
+      {
+        "name": "Sriracha Chili Sauce",
+        "qty": "2 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "sriracha sauce"
+      },
+      {
+        "name": "Rice Wine Vinegar",
+        "qty": "2 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "rice vinegar"
+      },
+      {
+        "name": "Toasted Sesame Seeds",
+        "qty": "2 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "toasted sesame seeds"
+      },
+      {
+        "name": "Snack Nori Seaweed Packs",
+        "qty": "2 small packs",
+        "aisle": "Pantry & World Food",
+        "pantry": false,
+        "search": "crispy seaweed thins"
+      }
+    ],
+    "instructions": [
+      "Season cooked warm sushi rice with rice vinegar, sugar, and salt; press flat into bottom of an 8x8 baking dish.",
+      "Shred cooked salmon or crab sticks. Fold together with softened cream cheese, mayo, sriracha, and scallions.",
+      "Spread seafood mixture evenly over the rice layer.",
+      "Drizzle extra sriracha and Kewpie mayo zig-zags across top, finish with toasted sesame seeds.",
+      "Bake at 200°C for 12-15 minutes, then broil 2 minutes until top is bubbly and toasted. Scoop onto crisp seaweed sheets like mini sushi tacos!"
+    ]
+  },
+  {
+    "id": "gochujang_tofu",
+    "title": "Crispy 25g-Protein Gochujang Glazed Tofu",
+    "creator": "Pinterest Community",
+    "category": "Healthy & Veggie",
+    "tag": "Vegan / High Protein",
+    "prepTime": "25 mins",
+    "servings": 3,
+    "imageUrl": "https://i.pinimg.com/736x/3d/76/13/3d76130f909fcc273eaa60369c926ccb.jpg",
+    "ingredients": [
+      {
+        "name": "Extra-Firm Tofu",
+        "qty": "400g block",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "tofoo extra firm naked tofu"
+      },
+      {
+        "name": "Cornstarch / Cornflour",
+        "qty": "3 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "cornflour"
+      },
+      {
+        "name": "Gochujang (Korean Chili Paste)",
+        "qty": "2 tbsp",
+        "aisle": "Pantry & World Food",
+        "pantry": false,
+        "search": "gochujang paste"
+      },
+      {
+        "name": "Soy Sauce",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "dark soy sauce"
+      },
+      {
+        "name": "Maple Syrup or Honey",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "maple syrup"
+      },
+      {
+        "name": "Toasted Sesame Oil",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "toasted sesame oil"
+      },
+      {
+        "name": "Fresh Garlic",
+        "qty": "2 cloves",
+        "aisle": "Fresh Produce",
+        "pantry": true,
+        "search": "fresh garlic"
+      },
+      {
+        "name": "Spring Onions / Scallions",
+        "qty": "1 bunch",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "spring onions"
+      }
+    ],
+    "instructions": [
+      "Tear extra-firm tofu into bite-sized jagged pieces (jagged edges crisp up better than cubes!).",
+      "Toss tofu pieces in cornstarch and a pinch of salt until evenly coated.",
+      "Pan-fry in hot oil for 8-10 minutes, turning until all sides are crunchy and golden.",
+      "Whisk Gochujang, soy sauce, maple syrup, minced garlic, sesame oil, and 2 tbsp water in a small bowl.",
+      "Pour sauce directly into hot skillet over crispy tofu; toss vigorously for 60 seconds until sticky and glossy. Garnish with sesame seeds and scallions."
+    ]
+  },
+  {
+    "id": "pea_spinach_soup",
+    "title": "Vibrant Pea, Spinach & White Bean Soup",
+    "creator": "Pinterest Community",
+    "category": "Healthy & Veggie",
+    "tag": "Clean & Green",
+    "prepTime": "20 mins",
+    "servings": 4,
+    "imageUrl": "https://i.pinimg.com/736x/73/13/be/7313bec3b3be2459cb1dc63ca77e80df.jpg",
+    "ingredients": [
+      {
+        "name": "Frozen Garden Sweet Peas",
+        "qty": "500g bag",
+        "aisle": "Frozen",
+        "pantry": false,
+        "search": "frozen garden peas"
+      },
+      {
+        "name": "Fresh Baby Spinach",
+        "qty": "200g bag",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "baby spinach bag"
+      },
+      {
+        "name": "Cannellini White Beans",
+        "qty": "1 tin (400g)",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "cannellini beans tin"
+      },
+      {
+        "name": "Vegetable Stock / Broth",
+        "qty": "750ml",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "vegetable stock cubes"
+      },
+      {
+        "name": "Fresh Garlic",
+        "qty": "3 cloves",
+        "aisle": "Fresh Produce",
+        "pantry": true,
+        "search": "fresh garlic"
+      },
+      {
+        "name": "Fresh Flat Leaf Parsley",
+        "qty": "1 bunch",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "fresh flat leaf parsley"
+      },
+      {
+        "name": "Crusty Sourdough Loaf / Baguette",
+        "qty": "1 loaf",
+        "aisle": "Bakery",
+        "pantry": false,
+        "search": "fresh sourdough loaf"
+      },
+      {
+        "name": "Olive Oil",
+        "qty": "2 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "extra virgin olive oil"
+      }
+    ],
+    "instructions": [
+      "Sauté sliced garlic in olive oil for 1 minute until fragrant.",
+      "Add vegetable stock, frozen peas, drained cannellini beans, and fresh spinach.",
+      "Simmer for 5-6 minutes until peas are vibrant green and tender.",
+      "Blitz with an immersion blender until velvety smooth and bright green.",
+      "Ladle into bowls, swirl with olive oil or cream, top with chili flakes and fresh parsley, and serve with toasted sourdough."
+    ]
+  },
+  {
+    "id": "grandma_wontons",
+    "title": "Grandma's Pork & Shiitake Wontons with Chili Sauce",
+    "creator": "@makehealthyfoodrecipes",
+    "category": "Appetizers & Bites",
+    "tag": "Batch Freezer Star",
+    "prepTime": "35 mins",
+    "servings": 4,
+    "imageUrl": "https://i.pinimg.com/736x/c8/4a/3d/c84a3d448a8e93fbae3bd803705150c7.jpg",
+    "ingredients": [
+      {
+        "name": "Pork Mince (or Chicken)",
+        "qty": "450g / 1 lb",
+        "aisle": "Meat & Poultry",
+        "pantry": false,
+        "search": "pork mince 500g"
+      },
+      {
+        "name": "Wonton Wrappers / Skins",
+        "qty": "2 packs",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "wonton wrappers pastry"
+      },
+      {
+        "name": "Shiitake Mushrooms",
+        "qty": "100g",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "fresh shiitake mushrooms"
+      },
+      {
+        "name": "Water Chestnuts (canned)",
+        "qty": "1 tin (220g)",
+        "aisle": "Pantry & World Food",
+        "pantry": false,
+        "search": "water chestnuts can"
+      },
+      {
+        "name": "Fresh Ginger Root",
+        "qty": "1 thumb piece",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "fresh root ginger"
+      },
+      {
+        "name": "Spring Onions / Scallions",
+        "qty": "1 bunch",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "spring onions"
+      },
+      {
+        "name": "Large Eggs",
+        "qty": "1 egg",
+        "aisle": "Dairy & Chilled",
+        "pantry": true,
+        "search": "free range eggs"
+      },
+      {
+        "name": "Soy Sauce",
+        "qty": "4 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "dark soy sauce"
+      },
+      {
+        "name": "Toasted Sesame Oil",
+        "qty": "2 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "toasted sesame oil"
+      },
+      {
+        "name": "Rice Wine Vinegar",
+        "qty": "2 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "rice vinegar"
+      },
+      {
+        "name": "Chili Oil / Crispy Chili",
+        "qty": "2 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": false,
+        "search": "crispy chili oil"
+      },
+      {
+        "name": "Toasted Sesame Seeds",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "toasted sesame seeds"
+      }
+    ],
+    "instructions": [
+      "Finely mince soaked shiitakes, drained water chestnuts, ginger, and scallions.",
+      "Mix thoroughly with pork mince, 1 egg, 1 tbsp soy sauce, sesame oil, salt, sugar, black pepper, and 2 tbsp cornstarch until sticky.",
+      "Place 1 tsp filling in center of each wonton wrapper, wet edges with water, fold into triangles and pinch corners together.",
+      "Boil in salted water for 4-5 mins until floating, or pan-fry into potstickers.",
+      "Whisk dipping sauce: soy sauce, rice vinegar, sesame oil, sesame seeds, and chili oil. Pour over warm wontons."
+    ]
+  },
+  {
+    "id": "korean_broccoli",
+    "title": "5-Ingredient Korean Sesame Garlic Broccoli",
+    "creator": "@jamesbok",
+    "category": "Healthy & Veggie",
+    "tag": "10-Min Clean Veggie",
+    "prepTime": "10 mins",
+    "servings": 3,
+    "imageUrl": "https://i.pinimg.com/736x/f9/46/18/f94618fd167378f2b57bc67c0ff231fd.jpg",
+    "ingredients": [
+      {
+        "name": "Fresh Broccoli Heads",
+        "qty": "2 medium heads",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "fresh broccoli head"
+      },
+      {
+        "name": "Fresh Garlic",
+        "qty": "3 cloves",
+        "aisle": "Fresh Produce",
+        "pantry": true,
+        "search": "fresh garlic"
+      },
+      {
+        "name": "Toasted Sesame Oil",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "toasted sesame oil"
+      },
+      {
+        "name": "Toasted Sesame Seeds",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "toasted sesame seeds"
+      },
+      {
+        "name": "Sea Salt",
+        "qty": "1/2 tsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "table salt"
+      }
+    ],
+    "instructions": [
+      "Chop broccoli into bite-sized florets.",
+      "Blanch in boiling salted water for 90 seconds until bright green and tender-crisp.",
+      "Immediately transfer to cold water and drain very well in a colander.",
+      "In a bowl, toss warm broccoli with finely minced garlic, toasted sesame oil, sea salt, and toasted sesame seeds. Serve as banchan or side."
+    ]
+  },
+  {
+    "id": "cheese_balls",
+    "title": "Crispy Garlic Parmesan Mozzarella Cheese Balls",
+    "creator": "Pinterest Community",
+    "category": "Appetizers & Bites",
+    "tag": "Crowd Pleaser Snack",
+    "prepTime": "20 mins",
+    "servings": 4,
+    "imageUrl": "https://i.pinimg.com/736x/07/aa/40/07aa4044afd70b12f49cc2e1e2e018eb.jpg",
+    "ingredients": [
+      {
+        "name": "Mozzarella Pearls or Block",
+        "qty": "250g",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "fresh mozzarella block"
+      },
+      {
+        "name": "Panko Breadcrumbs",
+        "qty": "150g",
+        "aisle": "Food Cupboard",
+        "pantry": false,
+        "search": "panko breadcrumbs"
+      },
+      {
+        "name": "Parmesan Cheese (Grated)",
+        "qty": "60g",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "grated parmesan cheese"
+      },
+      {
+        "name": "Garlic Powder",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "garlic powder"
+      },
+      {
+        "name": "Eggs",
+        "qty": "2 large",
+        "aisle": "Dairy & Chilled",
+        "pantry": true,
+        "search": "free range eggs"
+      },
+      {
+        "name": "Plain Flour",
+        "qty": "100g",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "plain flour"
+      },
+      {
+        "name": "Dried Oregano & Parsley",
+        "qty": "1 tsp each",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "dried oregano"
+      },
+      {
+        "name": "Marinara / Pizza Dip Sauce",
+        "qty": "1 jar",
+        "aisle": "Food Cupboard",
+        "pantry": false,
+        "search": "marinara pasta sauce"
+      },
+      {
+        "name": "Frying Vegetable Oil",
+        "qty": "500ml",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "vegetable oil"
+      }
+    ],
+    "instructions": [
+      "Cut mozzarella into 1-inch bite-sized cubes or balls.",
+      "Season panko breadcrumbs with grated parmesan, garlic powder, dried oregano, and parsley.",
+      "Double-dredge mozzarella: roll in flour, dip in beaten egg, then roll in seasoned panko. Repeat egg and panko for extra thick crunch.",
+      "Freeze for 15 minutes to prevent leaking.",
+      "Deep fry at 190°C for 2-3 mins until golden and puffed. Serve piping hot with marinara dipping sauce."
+    ]
+  },
+  {
+    "id": "firecracker_shrimp",
+    "title": "Crispy Firecracker Spring Roll Shrimp",
+    "creator": "Pinterest Community",
+    "category": "Appetizers & Bites",
+    "tag": "Crunchy Appetizer",
+    "prepTime": "20 mins",
+    "servings": 4,
+    "imageUrl": "https://i.pinimg.com/736x/c0/0e/6d/c00e6d610c0cdcf8a26c3c6cfb3d234c.jpg",
+    "ingredients": [
+      {
+        "name": "Raw King Prawns (tail-on)",
+        "qty": "400g / 1 pack",
+        "aisle": "Meat & Poultry",
+        "pantry": false,
+        "search": "raw peeled king prawns"
+      },
+      {
+        "name": "Spring Roll Pastry Sheets",
+        "qty": "1 pack (large)",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "spring roll pastry"
+      },
+      {
+        "name": "Sweet Chili Sauce",
+        "qty": "1 bottle",
+        "aisle": "Food Cupboard",
+        "pantry": false,
+        "search": "sweet chilli sauce"
+      },
+      {
+        "name": "Sriracha Hot Sauce",
+        "qty": "1 bottle",
+        "aisle": "Food Cupboard",
+        "pantry": false,
+        "search": "sriracha sauce"
+      },
+      {
+        "name": "Garlic Powder & White Pepper",
+        "qty": "1 tsp each",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "garlic powder"
+      },
+      {
+        "name": "Frying Oil",
+        "qty": "500ml",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "sunflower oil"
+      }
+    ],
+    "instructions": [
+      "Peel prawns leaving tails attached. Make small shallow cuts along inner belly so prawns stay completely straight.",
+      "Toss prawns with a pinch of salt, white pepper, and garlic powder.",
+      "Cut spring roll pastry sheets in half diagonally into triangles.",
+      "Place prawn on wrapper with tail poking out. Roll tightly into a torpedo and seal edge with a dab of water/cornstarch slurry.",
+      "Deep fry at 180°C for 3-4 minutes until blistered and ultra-crunchy. Mix sweet chili with sriracha for firecracker dip."
+    ]
+  },
+  {
+    "id": "stuffed_shells",
+    "title": "Baked Spinach & Chicken Alfredo Stuffed Jumbo Shells",
+    "creator": "@alexisbochoaaaa",
+    "category": "Comfort Food",
+    "tag": "Cozy Pasta Bake",
+    "prepTime": "40 mins",
+    "servings": 5,
+    "imageUrl": "https://i.pinimg.com/736x/73/13/be/7313bec3b3be2459cb1dc63ca77e80df.jpg",
+    "ingredients": [
+      {
+        "name": "Jumbo Pasta Shells (Conchiglioni)",
+        "qty": "1 box (350g)",
+        "aisle": "Food Cupboard",
+        "pantry": false,
+        "search": "conchiglioni pasta shells"
+      },
+      {
+        "name": "Cooked Shredded Chicken Breast",
+        "qty": "400g",
+        "aisle": "Meat & Poultry",
+        "pantry": false,
+        "search": "cooked chicken breast pieces"
+      },
+      {
+        "name": "Ricotta Cheese",
+        "qty": "250g tub",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "ricotta cheese"
+      },
+      {
+        "name": "Grated Mozzarella",
+        "qty": "200g bag",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "grated mozzarella cheese"
+      },
+      {
+        "name": "Fresh Baby Spinach",
+        "qty": "150g bag",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "baby spinach"
+      },
+      {
+        "name": "Double Cream",
+        "qty": "300ml pot",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "double cream"
+      },
+      {
+        "name": "Parmesan Cheese",
+        "qty": "50g",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "grated parmesan"
+      },
+      {
+        "name": "Fresh Garlic",
+        "qty": "3 cloves",
+        "aisle": "Fresh Produce",
+        "pantry": true,
+        "search": "fresh garlic"
+      },
+      {
+        "name": "Garlic Baguette / Texas Toast",
+        "qty": "1 pack",
+        "aisle": "Bakery",
+        "pantry": false,
+        "search": "garlic baguette"
+      }
+    ],
+    "instructions": [
+      "Boil jumbo shells in salted water for 9 mins until al dente; drain and rinse with cold water.",
+      "Wilt spinach in a pan with 1 clove minced garlic and butter.",
+      "In a large bowl, mix shredded chicken, ricotta, wilted spinach, half the mozzarella, parmesan, salt, pepper, and Italian herbs.",
+      "Make quick Alfredo sauce: simmer double cream, minced garlic, butter, and parmesan for 4 minutes until thick.",
+      "Spread half the Alfredo sauce on a baking dish. Stuff shells generously with chicken-ricotta filling and arrange in dish.",
+      "Pour remaining Alfredo over shells, top with remaining mozzarella, and bake at 190°C for 22 mins until bubbly and golden brown. Serve with hot garlic bread."
+    ]
+  },
+  {
+    "id": "crispy_fried_chicken",
+    "title": "Southern Extra-Crispy Buttermilk Fried Chicken",
+    "creator": "Pinterest Community",
+    "category": "Comfort Food",
+    "tag": "Weekend Comfort",
+    "prepTime": "45 mins",
+    "servings": 4,
+    "imageUrl": "https://i.pinimg.com/736x/c8/4a/3d/c84a3d448a8e93fbae3bd803705150c7.jpg",
+    "ingredients": [
+      {
+        "name": "Chicken Drumsticks & Thighs",
+        "qty": "1kg pack",
+        "aisle": "Meat & Poultry",
+        "pantry": false,
+        "search": "chicken drumsticks and thighs"
+      },
+      {
+        "name": "Buttermilk",
+        "qty": "300ml carton",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "buttermilk"
+      },
+      {
+        "name": "Hot Pepper Sauce",
+        "qty": "2 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "louisiana hot sauce"
+      },
+      {
+        "name": "Plain Flour",
+        "qty": "250g",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "plain flour"
+      },
+      {
+        "name": "Cornstarch / Cornflour",
+        "qty": "60g",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "cornflour"
+      },
+      {
+        "name": "Smoked Paprika",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "smoked paprika"
+      },
+      {
+        "name": "Garlic Powder & Onion Powder",
+        "qty": "1 tbsp each",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "garlic powder"
+      },
+      {
+        "name": "Vegetable Oil for Deep Frying",
+        "qty": "1 litre",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "vegetable oil 1l"
+      }
+    ],
+    "instructions": [
+      "Marinate chicken in buttermilk, 2 tbsp hot sauce, 1 tsp salt, and garlic powder for at least 30 mins (or overnight).",
+      "Whisk flour, cornstarch, smoked paprika, garlic powder, onion powder, cayenne, salt, and black pepper in a large shallow bowl.",
+      "Drizzle 3 tablespoons of buttermilk marinade directly into dry flour and rub with fingertips to create shaggy flakes.",
+      "Dredge chicken pieces thoroughly, packing flour onto meat.",
+      "Fry at 165°C-170°C for 14-16 minutes (flipping halfway) until deep amber, shatteringly crispy, and 75°C internal temp. Drain on wire rack."
+    ]
+  },
+  {
+    "id": "fondant_leeks",
+    "title": "Fondant 'Melting' Leeks",
+    "creator": "Pinterest Community",
+    "category": "Healthy & Veggie",
+    "tag": "Gourmet Side",
+    "prepTime": "30 mins",
+    "servings": 4,
+    "imageUrl": "https://i.pinimg.com/736x/43/c5/a3/43c5a361ce460ac1405e33410d889b4f.jpg",
+    "ingredients": [
+      {
+        "name": "Fresh Leeks",
+        "qty": "3-4 large",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "fresh leeks"
+      },
+      {
+        "name": "Unsalted Butter",
+        "qty": "60g",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "unsalted butter"
+      },
+      {
+        "name": "Fresh Garlic",
+        "qty": "5 whole cloves",
+        "aisle": "Fresh Produce",
+        "pantry": true,
+        "search": "fresh garlic"
+      },
+      {
+        "name": "Fresh Rosemary & Thyme",
+        "qty": "1 pack each",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "fresh rosemary thyme pack"
+      },
+      {
+        "name": "Beef Broth / Stock Cubes",
+        "qty": "500ml",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "beef stock cubes"
+      },
+      {
+        "name": "Olive Oil",
+        "qty": "2 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "olive oil"
+      },
+      {
+        "name": "Flaky Sea Salt",
+        "qty": "1 pinch",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "sea salt flakes"
+      }
+    ],
+    "instructions": [
+      "Wash leeks thoroughly and cut white & pale green stalks into 2-inch cylinders.",
+      "Heat olive oil and butter in an oven-safe skillet over medium-high heat.",
+      "Sear leek cylinders cut-side down for 4-5 mins until deeply caramelized, then flip.",
+      "Add smashed garlic cloves, rosemary, and thyme sprigs. Baste with sizzling butter.",
+      "Pour in beef broth until leeks are halfway submerged. Cover and simmer gently for 25 mins (or bake at 180°C) until fork-tender like butter."
+    ]
+  },
+  {
+    "id": "cabbage_egg_stirfry",
+    "title": "Quick Cabbage & Egg Stir-Fry",
+    "creator": "HerryJohnson",
+    "category": "Quick & Easy",
+    "tag": "15-Min Healthy",
+    "prepTime": "15 mins",
+    "servings": 2,
+    "imageUrl": "https://i.pinimg.com/736x/2a/be/5f/2abe5fb40fcea792ed3847df211e3bf2.jpg",
+    "ingredients": [
+      {
+        "name": "Green Cabbage",
+        "qty": "1/2 head",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "pointed sweet cabbage"
+      },
+      {
+        "name": "Large Eggs",
+        "qty": "4 eggs",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "free range large eggs"
+      },
+      {
+        "name": "Carrots",
+        "qty": "2 medium",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "carrots"
+      },
+      {
+        "name": "Green Bell Pepper",
+        "qty": "1 pepper",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "green bell pepper"
+      },
+      {
+        "name": "Spring Onions / Scallions",
+        "qty": "1 bunch",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "spring onions"
+      },
+      {
+        "name": "Fresh Garlic",
+        "qty": "2 cloves",
+        "aisle": "Fresh Produce",
+        "pantry": true,
+        "search": "fresh garlic"
+      },
+      {
+        "name": "Soy Sauce",
+        "qty": "2 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "dark soy sauce"
+      },
+      {
+        "name": "Toasted Sesame Oil",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "toasted sesame oil"
+      }
+    ],
+    "instructions": [
+      "Thinly slice cabbage, carrots, and green bell pepper into uniform matchsticks.",
+      "Beat 4 eggs and scramble quickly in a smoking hot wok or skillet; remove when soft.",
+      "Add a splash of oil and minced garlic, toss in vegetables over high heat for 3-4 mins until tender-crisp.",
+      "Return scrambled eggs to wok, drizzle soy sauce and toasted sesame oil, toss for 30 seconds and serve immediately."
+    ]
+  },
+  {
+    "id": "korean_spinach",
+    "title": "Korean Seasoned Spinach (Sigeumchi Namul)",
+    "creator": "@itshelenmelon",
+    "category": "Healthy & Veggie",
+    "tag": "Clean Banchan",
+    "prepTime": "10 mins",
+    "servings": 4,
+    "imageUrl": "https://i.pinimg.com/736x/0c/a3/d6/0ca3d6713e14e5659bc93047f08425fa.jpg",
+    "ingredients": [
+      {
+        "name": "Fresh Spinach",
+        "qty": "300g",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "fresh spinach bag"
+      },
+      {
+        "name": "Fresh Garlic",
+        "qty": "2 cloves",
+        "aisle": "Fresh Produce",
+        "pantry": true,
+        "search": "fresh garlic"
+      },
+      {
+        "name": "Spring Onions / Scallions",
+        "qty": "1 stalk",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "spring onions"
+      },
+      {
+        "name": "Toasted Sesame Oil",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "toasted sesame oil"
+      },
+      {
+        "name": "Soy Sauce",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "all purpose soy sauce"
+      },
+      {
+        "name": "Toasted Sesame Seeds",
+        "qty": "1 tsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "toasted sesame seeds"
+      }
+    ],
+    "instructions": [
+      "Bring a pot of salted water to a rolling boil. Drop fresh spinach in for 35-45 seconds only.",
+      "Immediately plunge into an ice-water bath to lock in vibrant green colour.",
+      "Squeeze spinach aggressively with both hands until virtually zero liquid remains.",
+      "Gently loosen the spinach clump with fingers, toss with finely minced garlic, scallion, soy sauce, sesame oil, and sesame seeds."
+    ]
+  },
+  {
+    "id": "mcd_nuggets",
+    "title": "Homemade McDonald's-Style Nuggets",
+    "creator": "Pinterest Community",
+    "category": "Comfort Food",
+    "tag": "Batch Cook",
+    "prepTime": "30 mins",
+    "servings": 4,
+    "imageUrl": "https://i.pinimg.com/736x/60/4d/4c/604d4c76376e44f09c17287bcff632e9.jpg",
+    "ingredients": [
+      {
+        "name": "Chicken Breast Mince",
+        "qty": "500g",
+        "aisle": "Meat & Poultry",
+        "pantry": false,
+        "search": "chicken breast mince"
+      },
+      {
+        "name": "Garlic Powder & Onion Powder",
+        "qty": "1 tsp each",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "garlic powder"
+      },
+      {
+        "name": "Cornstarch / Cornflour",
+        "qty": "60g",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "cornflour"
+      },
+      {
+        "name": "Plain Flour",
+        "qty": "100g",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "plain flour"
+      },
+      {
+        "name": "Baking Powder",
+        "qty": "1 tsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "baking powder"
+      },
+      {
+        "name": "Egg",
+        "qty": "1 egg",
+        "aisle": "Dairy & Chilled",
+        "pantry": false,
+        "search": "free range eggs"
+      },
+      {
+        "name": "Vegetable Oil for Frying",
+        "qty": "500ml",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "vegetable oil"
+      }
+    ],
+    "instructions": [
+      "Blend chicken mince with salt, onion powder, and garlic powder into a smooth paste.",
+      "Shape into classic boot/bell nugget shapes and freeze on a parchment tray for 20 mins to firm up.",
+      "Whisk flour, cornstarch, egg, baking powder, and ice-cold water into a light tempura batter.",
+      "Dip cold nuggets into batter, then fry in 180°C oil for 5-6 mins until puffed and golden."
+    ]
+  },
+  {
+    "id": "jollof_chicken",
+    "title": "Classic Nigerian Jollof Rice & Roasted Chicken",
+    "creator": "Simple Ideas Daily Plan",
+    "category": "Comfort Food",
+    "tag": "Cultural Classic",
+    "prepTime": "50 mins",
+    "servings": 6,
+    "imageUrl": "https://i.pinimg.com/736x/c0/0e/6d/c00e6d610c0cdcf8a26c3c6cfb3d234c.jpg",
+    "ingredients": [
+      {
+        "name": "Easy-Cook Long Grain Rice",
+        "qty": "500g",
+        "aisle": "Food Cupboard",
+        "pantry": false,
+        "search": "easy cook long grain rice"
+      },
+      {
+        "name": "Chicken Thighs or Drumsticks",
+        "qty": "800g",
+        "aisle": "Meat & Poultry",
+        "pantry": false,
+        "search": "chicken thighs pack"
+      },
+      {
+        "name": "Red Bell Peppers (Tatashe)",
+        "qty": "3 large",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "red bell peppers"
+      },
+      {
+        "name": "Chopped Tomatoes Can",
+        "qty": "1 tin",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "chopped tomatoes tin"
+      },
+      {
+        "name": "Red Onions",
+        "qty": "2 large",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "red onions"
+      },
+      {
+        "name": "Scotch Bonnet Pepper",
+        "qty": "1-2 peppers",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "scotch bonnet peppers"
+      },
+      {
+        "name": "Tomato Puree",
+        "qty": "1 tube",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "tomato puree paste"
+      },
+      {
+        "name": "Curry Powder & Dried Thyme",
+        "qty": "1 tbsp each",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "curry powder"
+      },
+      {
+        "name": "Chicken Stock Cubes (Maggi/Knorr)",
+        "qty": "4 cubes",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "knorr chicken stock cubes"
+      }
+    ],
+    "instructions": [
+      "Season chicken with curry powder, thyme, and stock cubes, then roast at 200°C until browned.",
+      "Blend red bell peppers, onions, scotch bonnet, and canned tomatoes into a smooth pepper base.",
+      "Fry tomato puree in oil for 5 mins, add blended pepper mix and fry down until thick and oil floats on top.",
+      "Pour chicken stock into sauce, stir in washed rice, cover pot tightly with foil + lid, and steam on low for 30 mins until smoky and tender."
+    ]
+  },
+  {
+    "id": "green_pepper_base",
+    "title": "Chefabbys' All-Purpose Green Pepper Seasoning Base",
+    "creator": "@chefabbys",
+    "category": "Appetizers & Bites",
+    "tag": "Essential Marinade",
+    "prepTime": "15 mins",
+    "servings": 8,
+    "imageUrl": "https://i.pinimg.com/736x/0c/a3/d6/0ca3d6713e14e5659bc93047f08425fa.jpg",
+    "ingredients": [
+      {
+        "name": "Green Bell Peppers",
+        "qty": "3 large",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "green bell peppers"
+      },
+      {
+        "name": "Green Scotch Bonnet Peppers",
+        "qty": "3-4 peppers",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "scotch bonnet peppers"
+      },
+      {
+        "name": "Fresh Ginger Root",
+        "qty": "100g",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "fresh root ginger"
+      },
+      {
+        "name": "Fresh Garlic Bulbs",
+        "qty": "1 whole head",
+        "aisle": "Fresh Produce",
+        "pantry": true,
+        "search": "fresh garlic"
+      },
+      {
+        "name": "Red Onions",
+        "qty": "2 medium",
+        "aisle": "Fresh Produce",
+        "pantry": false,
+        "search": "red onions"
+      },
+      {
+        "name": "Fennel Seeds",
+        "qty": "2 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": false,
+        "search": "fennel seeds"
+      },
+      {
+        "name": "Dried Rosemary",
+        "qty": "1 tbsp",
+        "aisle": "Food Cupboard",
+        "pantry": true,
+        "search": "dried rosemary"
+      }
+    ],
+    "instructions": [
+      "Roughly chop green bell peppers, scotch bonnets, ginger, peeled garlic cloves, and red onions.",
+      "Add fennel seeds and dried rosemary to food processor/blender.",
+      "Pulse until a coarse, aromatic green paste forms.",
+      "Store in clean jars topped with olive oil in fridge for 2 weeks, or freeze in ice cube trays. Use 2 tablespoons as a marinade for chicken, beef, seafood, or jollof bases."
+    ]
+  }
+]
