@@ -56,11 +56,9 @@ const currentStoreBtnName = document.getElementById('current-store-btn-name');
 const syncModal = document.getElementById('sync-modal');
 const btnOpenSync = document.getElementById('btn-open-sync');
 const syncModalClose = document.getElementById('sync-modal-close');
-const pinterestTokenInput = document.getElementById('pinterest-token-input');
-const btnFetchBoards = document.getElementById('btn-fetch-boards');
-const boardsContainer = document.getElementById('boards-container');
-const boardSelect = document.getElementById('board-select');
-const btnSyncPins = document.getElementById('btn-sync-pins');
+const btnQuickSyncShalom = document.getElementById('btn-quick-sync-shalom');
+const customBoardInput = document.getElementById('custom-board-input');
+const btnImportUrl = document.getElementById('btn-import-url');
 const syncStatus = document.getElementById('sync-status');
 
 // Recipe Modal Elements
@@ -401,81 +399,70 @@ syncModalClose.onclick = () => {
   syncModal.classList.add('hidden');
 };
 
-btnFetchBoards.onclick = async () => {
-  const token = pinterestTokenInput.value.trim();
-  if (!token) {
-    alert('Please enter your Pinterest API access token.');
-    return;
-  }
-
-  btnFetchBoards.disabled = true;
-  btnFetchBoards.innerText = 'Connecting to Pinterest...';
+// Direct Board & Pin Sync Handler (Zero Tokens)
+async function executeImport(targetUrl, triggerBtn) {
+  const originalText = triggerBtn.innerHTML;
+  triggerBtn.disabled = true;
+  triggerBtn.innerHTML = '<span>⏳</span><span>Syncing Recipes...</span>';
   syncStatus.classList.remove('hidden');
-  syncStatus.innerText = 'Verifying token and fetching boards...';
+  syncStatus.innerText = 'Connecting directly to Pinterest board feed... (No API tokens required)';
 
   try {
-    const res = await fetch('/api/pinterest/boards', {
+    const res = await fetch('/api/import', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token })
+      body: JSON.stringify({ url: targetUrl })
     });
     const data = await res.json();
 
     if (!res.ok) {
-      throw new Error(data.error || 'Failed to connect to Pinterest API');
+      throw new Error(data.error || 'Failed to import recipes');
     }
 
-    const boards = data.boards || [];
-    boardSelect.innerHTML = boards.map(b => 
-      `<option value="${b.id}">${b.name} (${b.pin_count} pins)</option>`
-    ).join('');
+    const count = data.newImported || data.count || (data.recipes ? data.recipes.length : 0);
+    syncStatus.innerText = `🎉 Successfully synced ${count} recipes! Reloading meal planner...`;
+    triggerBtn.innerHTML = '<span>✅</span><span>Import Complete!</span>';
 
-    boardsContainer.classList.remove('hidden');
-    syncStatus.innerText = `Connected! Found ${boards.length} boards. Select "Food" and click Import.`;
-    btnFetchBoards.innerText = '✅ Connected';
-  } catch (err) {
-    alert(`Connection error: ${err.message}`);
-    btnFetchBoards.disabled = false;
-    btnFetchBoards.innerText = '1. Connect & Load Boards';
-    syncStatus.classList.add('hidden');
-  }
-};
-
-btnSyncPins.onclick = async () => {
-  const token = pinterestTokenInput.value.trim();
-  const boardId = boardSelect.value;
-
-  btnSyncPins.disabled = true;
-  btnSyncPins.innerText = 'Importing all pins (this takes ~10 seconds)...';
-  syncStatus.innerText = 'Fetching full pin catalog via Pinterest API v5...';
-
-  try {
-    const res = await fetch('/api/pinterest/sync', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token, boardId })
-    });
-    const data = await res.json();
-
-    if (!res.ok) {
-      throw new Error(data.error || 'Failed to import pins');
+    if (data.recipes && data.recipes.length > 0) {
+      recipes = data.recipes;
+      setupCategoryCounts();
+      renderStores();
+      renderRecipes();
+      renderBasket();
+    } else {
+      await init();
     }
-
-    syncStatus.innerText = `🎉 Successfully imported ${data.pinsFetched} pins! Total catalog: ${data.totalRecipes} recipes.`;
-    btnSyncPins.innerText = '✅ Imported Successfully!';
-
-    // Reload recipes into UI
-    await init();
 
     setTimeout(() => {
       syncModal.classList.add('hidden');
-    }, 2000);
+      triggerBtn.disabled = false;
+      triggerBtn.innerHTML = originalText;
+      syncStatus.classList.add('hidden');
+    }, 1800);
   } catch (err) {
-    alert(`Sync error: ${err.message}`);
-    btnSyncPins.disabled = false;
-    btnSyncPins.innerText = '2. Import All Pins to App';
+    alert(`Import notice: ${err.message}`);
+    triggerBtn.disabled = false;
+    triggerBtn.innerHTML = originalText;
+    syncStatus.classList.add('hidden');
   }
-};
+}
+
+if (btnQuickSyncShalom) {
+  btnQuickSyncShalom.onclick = () => {
+    executeImport('https://uk.pinterest.com/shalom_x/food', btnQuickSyncShalom);
+  };
+}
+
+if (btnImportUrl) {
+  btnImportUrl.onclick = () => {
+    const url = (customBoardInput.value || '').trim();
+    if (!url) {
+      alert('Please enter a Pinterest board link or recipe URL');
+      return;
+    }
+    executeImport(url, btnImportUrl);
+  };
+}
 
 // Open Recipe Modal
 function openRecipeModal(recipe) {
