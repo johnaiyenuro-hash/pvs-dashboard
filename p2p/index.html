@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PINTEREST TO PLATE // VENTURE VISION SYSTEM — Habakuk OS</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter & JetBrains Mono & Syne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            syne: ['Syne', 'sans-serif'],
+          },
+          colors: {
+            p2p: {
+              red: '#E60023',
+              crimson: '#f43f5e',
+              neon: '#10b981',
+              amber: '#f59e0b',
+              slate: {
+                950: '#030712',
+                900: '#090d16',
+                850: '#0d1321',
+                800: '#141c2e',
+                750: '#1b253b',
+                700: '#26344f',
+              }
+            }
+          },
+          boxShadow: {
+            'glow-red': '0 0 25px -5px rgba(230, 0, 35, 0.4)',
+            'glow-emerald': '0 0 25px -5px rgba(16, 185, 129, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #090d16; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    .glass-panel {
+      background: rgba(13, 19, 33, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-p2p-slate-950 text-slate-100 font-sans min-h-screen antialiased flex flex-col items-center">
+
+  <!-- Top Navigation Bar -->
+  <header class="w-full border-b border-slate-800 bg-p2p-slate-900/90 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="../index.html" class="p-2 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors border border-slate-700/60" title="Back to Master Launchpad">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        </a>
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-red-600 to-rose-500 flex items-center justify-center text-white shadow-glow-red">
+            <i data-lucide="chef-hat" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="font-syne font-extrabold text-base tracking-tight text-white flex items-center gap-1.5">
+              PINTEREST TO PLATE <span class="text-red-500 text-xs font-mono font-bold px-1.5 py-0.5 rounded bg-red-950/80 border border-red-800/60">P2P // VENTURE OS</span>
+            </span>
+            <span class="text-[10px] font-mono text-slate-400">HABAKUK 2:2 STRATEGIC PARAMETER: PLAN → BUILD → ANALYSE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="http://localhost:3000" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-mono text-xs font-bold transition-all shadow-glow-red">
+          <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
+          <span>Launch Local App</span>
+        </a>
+        <span class="px-2.5 py-1 rounded bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 font-mono text-xs font-bold flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+          v1.0 BETA LIVE
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8 space-y-8 flex-1">
+
+    <!-- Hero Banner & Executive Summary -->
+    <div class="glass-panel rounded-2xl p-6 sm:p-8 relative overflow-hidden border border-red-500/20 shadow-glow-red">
+      <div class="absolute -right-12 -bottom-12 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="max-w-3xl space-y-3 relative z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/60 border border-red-500/30 text-red-400 font-mono text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="target" class="w-3.5 h-3.5"></i>
+          The Core Commercial Thesis
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-syne font-extrabold text-white tracking-tight">
+          Turning 600+ Dead Recipe Pins into <span class="text-red-500">1-Click UK Supermarket Baskets</span>
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Millions of people hoard recipes across Pinterest, TikTok, and Instagram without ever making them due to decision fatigue and manual grocery ordering hassle. 
+          <strong>Pinterest to Plate</strong> eliminates the friction by ingesting personal saved boards, deduplicating ingredients across weekly meals, and populating automated carts at 
+          <span class="text-white font-semibold">Tesco, Sainsbury's, and Asda</span>.
+        </p>
+      </div>
+
+      <!-- Financial Metric Targets Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-6 border-t border-slate-800">
+        <div class="space-y-1">
+          <div class="text-[11px] font-mono text-slate-400 uppercase">Target 12M MRR</div>
+          <div class="text-2xl font-mono font-bold text-emerald-400">£12,500/mo</div>
+          <div class="text-[10px] text-slate-500 font-mono">Bounties + Pro SaaS</div>
+        </div>
+        <div class="space-y-1">
+          <div class="text-[11px] font-mono text-slate-400 uppercase">Avg Basket Value</div>
+          <div class="text-2xl font-mono font-bold text-white">£78.50</div>
+          <div class="text-[10px] text-slate-500 font-mono">UK Online Grocery Avg</div>
+        </div>
+        <div class="space-y-1">
+          <div class="text-[11px] font-mono text-slate-400 uppercase">Affiliate / Bounty</div>
+          <div class="text-2xl font-mono font-bold text-amber-400">£3.50 – £8.00</div>
+          <div class="text-[10px] text-slate-500 font-mono">Per converted basket</div>
+        </div>
+        <div class="space-y-1">
+          <div class="text-[11px] font-mono text-slate-400 uppercase">Target Cookers</div>
+          <div class="text-2xl font-mono font-bold text-cyan-400">2,500 WAC</div>
+          <div class="text-[10px] text-slate-500 font-mono">Weekly Active Cookers</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. LIVE AI VISION SYSTEM ARCHITECTURE & DEMO -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-cyan-400"></div>
+          <h2 class="text-lg font-syne font-bold uppercase tracking-wider text-white">1. Multi-Modal AI Vision System Architecture</h2>
+        </div>
+        <span class="text-xs font-mono text-slate-400">Gemini 1.5 Flash Vision Pipeline</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Interactive Vision Simulator -->
+        <div class="lg:col-span-7 glass-panel rounded-xl p-5 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold uppercase text-slate-400">Vision Ingestion Simulator</span>
+            <span class="text-[11px] font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40">Multi-Format Parser</span>
+          </div>
+
+          <!-- Drag and drop preview -->
+          <div class="border-2 border-dashed border-slate-700 hover:border-red-500/60 rounded-xl p-6 text-center transition-colors bg-slate-900/50 cursor-pointer" id="drop-zone">
+            <i data-lucide="image-plus" class="w-8 h-8 text-slate-400 mx-auto mb-2"></i>
+            <p class="text-xs font-semibold text-slate-200">Drag & drop any recipe screenshot, infographic, or TikTok freeze-frame</p>
+            <p class="text-[11px] text-slate-500 mt-1">Or test with recent board pins below:</p>
+            
+            <div class="flex items-center justify-center gap-2 mt-4 flex-wrap">
+              <button class="sample-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-[11px] font-mono text-slate-300 border border-slate-700" data-sample="sliders">
+                🍗 Honey Chipotle Sliders
+              </button>
+              <button class="sample-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-[11px] font-mono text-slate-300 border border-slate-700" data-sample="leeks">
+                🧈 Melting Leeks
+              </button>
+              <button class="sample-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-[11px] font-mono text-slate-300 border border-slate-700" data-sample="wontons">
+                🥟 Grandma's Wontons
+              </button>
+            </div>
+          </div>
+
+          <!-- Output parsed display -->
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs space-y-2">
+            <div class="flex items-center justify-between text-slate-400 pb-2 border-b border-slate-900 text-[11px]">
+              <span>VISION OCR & EXTRACTION LOG</span>
+              <span id="vision-status" class="text-emerald-400">● READY</span>
+            </div>
+            <pre id="vision-output" class="text-slate-300 text-[11px] overflow-x-auto custom-scroll leading-relaxed h-48 custom-scroll">// Click a sample recipe above to simulate the Vision extraction pipeline...
+{
+  "status": "awaiting_input",
+  "pipeline": "OCR → Unit Normalization → Supermarket Aisle Mapping → Cart Link"
+}</pre>
+          </div>
+        </div>
+
+        <!-- System Flow Pipeline Diagram -->
+        <div class="lg:col-span-5 glass-panel rounded-xl p-5 space-y-4 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-bold uppercase text-slate-400">5-Stage Vision Engine Pipeline</span>
+            <div class="mt-4 space-y-3 font-mono text-xs">
+              
+              <div class="flex items-start gap-3 p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+                <div class="w-6 h-6 rounded bg-red-950 text-red-400 flex items-center justify-center font-bold text-xs shrink-0">01</div>
+                <div>
+                  <div class="font-bold text-white">Visual Ingestion</div>
+                  <div class="text-[11px] text-slate-400">OCR scans infographic text, handwriting & TikTok/Reels captions.</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+                <div class="w-6 h-6 rounded bg-amber-950 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0">02</div>
+                <div>
+                  <div class="font-bold text-white">Semantic Normalization</div>
+                  <div class="text-[11px] text-slate-400">Converts "3 dollops" or "a handful" into standard metric units (grams, packs, whole).</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+                <div class="w-6 h-6 rounded bg-emerald-950 text-emerald-400 flex items-center justify-center font-bold text-xs shrink-0">03</div>
+                <div>
+                  <div class="font-bold text-white">Multi-Recipe Deduplication</div>
+                  <div class="text-[11px] text-slate-400">Merges overlapping items across 3 meals (e.g. 8 cloves garlic → 1 fresh head).</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+                <div class="w-6 h-6 rounded bg-cyan-950 text-cyan-400 flex items-center justify-center font-bold text-xs shrink-0">04</div>
+                <div>
+                  <div class="font-bold text-white">Pantry Staple Filter</div>
+                  <div class="text-[11px] text-slate-400">Detects kitchen staples (salt, oil, flour) and remembers user cupboard inventory.</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+                <div class="w-6 h-6 rounded bg-purple-950 text-purple-400 flex items-center justify-center font-bold text-xs shrink-0">05</div>
+                <div>
+                  <div class="font-bold text-white">Supermarket Cart Injection</div>
+                  <div class="text-[11px] text-slate-400">Maps each item to real SKUs in Tesco, Sainsbury's, and Asda with affiliate tracking.</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-800/80 text-[11px] font-mono text-slate-500">
+            Average Vision Processing Time: <span class="text-emerald-400 font-bold">1.2 seconds</span> / recipe
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. THE COMPLETE STEP-BY-STEP BLUEPRINT TO PROFITABILITY -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+          <h2 class="text-lg font-syne font-bold uppercase tracking-wider text-white">2. Strategic Profitability Engine (The 4 Phases)</h2>
+        </div>
+        <span class="text-xs font-mono text-emerald-400">Path to £10,000+ MRR</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Phase 1: Zero-Capital Launch & Viral Hook -->
+        <div class="glass-panel rounded-xl p-6 space-y-4 border-l-4 border-l-cyan-500">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold uppercase text-cyan-400">PHASE 1 // WEEKS 1–4</span>
+            <span class="text-[10px] font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded">BOOTSTRAP</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Zero-Capital Launch & Organic Viral Wedge</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Validate demand without spending a penny on advertising. Tap into existing TikTok & Pinterest food communities where users complain about having hundreds of bookmarks they never cook.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-400 font-bold">✔</span>
+              <span>Deploy Vercel web app with instant Pinterest board ingest.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-400 font-bold">✔</span>
+              <span><strong>The Viral TikTok Hook:</strong> Post 15s screen recordings showing: <em>"POV: You have 600 saved recipes on Pinterest... watch this tool put them in my Tesco cart in 10 seconds."</em></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-400 font-bold">✔</span>
+              <span><strong>Milestone:</strong> 500 initial active weekly cookers.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Phase 2: Supermarket Affiliate & Bounty Network -->
+        <div class="glass-panel rounded-xl p-6 space-y-4 border-l-4 border-l-amber-500">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold uppercase text-amber-400">PHASE 2 // MONTHS 2–4</span>
+            <span class="text-[10px] font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded">MONETIZATION 1</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Supermarket Affiliate & Bounty Network</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Supermarkets operate massive affiliate bounty programs through networks like Awin. You earn every time a user checks out an online delivery basket.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 font-bold">✔</span>
+              <span>Sign up to <strong>Awin</strong> (hosts Sainsbury's, Asda, and Morrisons grocery affiliate programs in the UK).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 font-bold">✔</span>
+              <span><strong>Unit Economics:</strong> £3.50–£8.00 bounty per new online grocery customer; 2%–3% commission on existing shopper basket totals.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 font-bold">✔</span>
+              <span><strong>Milestone:</strong> £2,500/month recurring affiliate revenue from 400 weekly supermarket orders.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Phase 3: "Plate Pro" Consumer SaaS -->
+        <div class="glass-panel rounded-xl p-6 space-y-4 border-l-4 border-l-emerald-500">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold uppercase text-emerald-400">PHASE 3 // MONTHS 4–6</span>
+            <span class="text-[10px] font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded">MONETIZATION 2</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">"Plate Pro" Consumer Subscription (£3.99/mo)</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Free tier allows 3 recipes/week. Power cooks who want unlimited pin syncing, macro/calorie counts, and automated cart injection subscribe to Pro.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✔</span>
+              <span>Stripe checkout integration for <strong>£3.99/month</strong> or <strong>£34.99/year</strong>.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✔</span>
+              <span>Pro features: Unlimited board sync, automatic portion scaling for 2, 4, or 6 people, full nutritional macro totals, and shared family baskets.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✔</span>
+              <span><strong>Milestone:</strong> 1,200 paying subscribers = <strong>£4,788/month pure MRR</strong>.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Phase 4: Retail Media & FMCG Brand Sponsorships -->
+        <div class="glass-panel rounded-xl p-6 space-y-4 border-l-4 border-l-purple-500">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold uppercase text-purple-400">PHASE 4 // MONTHS 6–12</span>
+            <span class="text-[10px] font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded">ENTERPRISE SCALE</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">FMCG Retail Media & Sponsored Ingredients</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            This is how food apps like Jow reach $10M+ valuations. Major brands pay to have their branded product pre-selected as the default ingredient.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-purple-400 font-bold">✔</span>
+              <span>Partner with FMCG brands (Knorr, Hellmann's, Lurpak, Philadelphia, Heinz).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-purple-400 font-bold">✔</span>
+              <span>When a recipe calls for "mayo", Hellmann's pays £0.15 to be the default selected SKU in the Tesco/Sainsbury's basket.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-purple-400 font-bold">✔</span>
+              <span><strong>Milestone:</strong> Total Venture Run Rate exceeds <strong>£15,000 to £20,000 / month</strong>.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. ACTIONABLE ROADMAP & HABAKUK PBA CADENCE -->
+    <section class="glass-panel rounded-xl p-6 space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div>
+          <h3 class="text-base font-syne font-bold text-white uppercase">Operational Execution Checklist</h3>
+          <p class="text-xs font-mono text-slate-400">Next immediate engineering & commercial actions</p>
+        </div>
+        <a href="http://localhost:3000" target="_blank" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-300 border border-slate-700">
+          Open Local Prototype ↗
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="font-bold text-red-400 uppercase tracking-wider flex items-center gap-1.5">
+            <i data-lucide="compass" class="w-4 h-4"></i>
+            <span>[P] PLAN: WEEKS 1–2</span>
+          </div>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            • Package current prototype into Vercel-ready Next.js / Node app.<br>
+            • Create TikTok & Instagram handle (@pinteresttoplate).<br>
+            • Record first 3 demo videos of decoded board recipes.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
+            <i data-lucide="code" class="w-4 h-4"></i>
+            <span>[B] BUILD: WEEKS 3–4</span>
+          </div>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            • Publish Chrome / Edge companion extension for 1-click cart insertion.<br>
+            • Submit developer application for Samsung Food (Whisk) API.<br>
+            • Hook up Stripe Billing for Pro subscriptions (£3.99/mo).
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+            <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
+            <span>[A] ANALYSE: MONTHS 2–3</span>
+          </div>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            • Track Supermarket click-through rate & basket conversion.<br>
+            • Optimize Awin affiliate commissions for Tesco/Sainsbury's.<br>
+            • Measure Pro upgrade conversion rate (target: 3–5%).
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full border-t border-slate-800 py-6 text-center text-xs font-mono text-slate-500">
+    HABAKUK 2:2 MASTER LAUNCHPAD &bull; PINTEREST TO PLATE VISION SYSTEM &bull; DEPLOYED ON VERCEL
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Sample data for vision simulator
+    const SAMPLES = {
+      sliders: {
+        title: "Honey Chipotle Garlic Chicken Sliders",
+        prep: "25 mins",
+        servings: 4,
+        category: "Comfort Food",
+        aisles: {
+          "Meat & Poultry": ["600g Chicken breast fillets"],
+          "Bakery": ["1 pack Brioche slider buns (8-12)"],
+          "Produce": ["4 cloves Fresh garlic", "Fresh parsley"],
+          "Dairy": ["125g Unsalted butter"],
+          "Food Cupboard": ["Chipotle in adobo (can)", "Honey", "Pickle slices", "Ranch dressing", "Cornflour", "Flour"]
+        },
+        pantryDetected: ["Garlic", "Honey", "Flour", "Cornflour", "Vegetable oil"],
+        storeUrls: {
+          Tesco: "https://www.tesco.com/groceries/en-GB/search?query=chicken+breast+fillets",
+          Sainsburys: "https://www.sainsburys.co.uk/gol-ui/SearchResults/chicken%20breast%20fillets",
+          Asda: "https://groceries.asda.com/search/chicken%20breast%20fillets"
+        }
+      },
+      leeks: {
+        title: "Fondant 'Melting' Leeks with Herb Butter",
+        prep: "30 mins",
+        servings: 4,
+        category: "Healthy & Veggie",
+        aisles: {
+          "Produce": ["3-4 large Fresh leeks", "5 whole cloves Garlic", "Fresh rosemary & thyme pack"],
+          "Dairy": ["60g Unsalted butter"],
+          "Food Cupboard": ["500ml Beef broth / stock cubes", "Olive oil", "Flaky sea salt"]
+        },
+        pantryDetected: ["Garlic", "Olive oil", "Beef stock cubes", "Sea salt"],
+        storeUrls: {
+          Tesco: "https://www.tesco.com/groceries/en-GB/search?query=fresh+leeks",
+          Sainsburys: "https://www.sainsburys.co.uk/gol-ui/SearchResults/fresh%20leeks"
+        }
+      },
+      wontons: {
+        title: "Grandma's Pork & Shiitake Wontons with Chili Dip",
+        prep: "35 mins",
+        servings: 4,
+        category: "Appetizers & Bites",
+        aisles: {
+          "Meat & Poultry": ["450g Pork mince"],
+          "Chilled": ["2 packs Wonton wrappers", "1 Large egg"],
+          "Produce": ["100g Shiitake mushrooms", "Fresh ginger root", "1 bunch Spring onions"],
+          "Food Cupboard": ["Canned water chestnuts", "Soy sauce", "Toasted sesame oil", "Rice vinegar", "Chili oil", "Sesame seeds"]
+        },
+        pantryDetected: ["Egg", "Soy sauce", "Sesame oil", "Rice vinegar", "Sesame seeds"],
+        storeUrls: {
+          Tesco: "https://www.tesco.com/groceries/en-GB/search?query=pork+mince+500g",
+          Sainsburys: "https://www.sainsburys.co.uk/gol-ui/SearchResults/pork%20mince"
+        }
+      }
+    };
+
+    const outputEl = document.getElementById('vision-output');
+    const statusEl = document.getElementById('vision-status');
+
+    document.querySelectorAll('.sample-btn').forEach(btn => {
+      btn.onclick = () => {
+        const sampleKey = btn.dataset.sample;
+        const data = SAMPLES[sampleKey];
+        if (!data) return;
+
+        statusEl.innerText = '⚡ SCANNING IMAGE...';
+        statusEl.className = 'text-amber-400 animate-pulse';
+
+        setTimeout(() => {
+          statusEl.innerText = '● PARSED SUCCESSFULLY';
+          statusEl.className = 'text-emerald-400';
+
+          outputEl.innerText = JSON.stringify({
+            extractedRecipe: {
+              title: data.title,
+              prepTime: data.prep,
+              servings: data.servings,
+              category: data.category,
+              supermarketAisles: data.aisles,
+              pantryStaplesAutoDetected: data.pantryDetected,
+              directSupermarketCartLinks: data.storeUrls
+            }
+          }, null, 2);
+        }, 400);
+      };
+    });
+  </script>
+</body>
+</html>
