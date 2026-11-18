@@ -371,6 +371,152 @@
       </div>
     </section>
 
+    <!-- 2.5 BRAND IDENTITY & LOGO STUDIO -->
+    <section class="space-y-4" id="brand-identity">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-rose-500"></div>
+          <h2 class="text-lg font-syne font-bold uppercase tracking-wider text-white">3. Brand Identity & Logo Showcase</h2>
+        </div>
+        <span class="text-xs font-mono text-rose-400">Select Your Visual Mark</span>
+      </div>
+
+      <!-- Logo Studio Container -->
+      <div class="glass-panel rounded-2xl p-6 sm:p-8 space-y-8 border border-rose-500/20">
+        
+        <!-- Header Selector Tabs -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+          <div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Visual Identity Direction</span>
+            <h3 class="text-xl font-syne font-extrabold text-white mt-0.5">4 Strategic Brand Mark Concepts</h3>
+          </div>
+          
+          <div class="flex items-center gap-2 p-1.5 rounded-xl bg-slate-900 border border-slate-800 flex-wrap" id="logo-tabs">
+            <button class="logo-tab active px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-red-600 text-white shadow-glow-red" data-logo="pinfork">
+              Concept 1: The PinFork
+            </button>
+            <button class="logo-tab px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white" data-logo="orbit">
+              Concept 2: Orbit Plate
+            </button>
+            <button class="logo-tab px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white" data-logo="cloche">
+              Concept 3: Shoppable Cloche
+            </button>
+            <button class="logo-tab px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white" data-logo="monogram">
+              Concept 4: P² Monogram
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Brand Showcase Display -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center" id="logo-showcase-container">
+          
+          <!-- LEFT: Large Vector Logo Display & Mockups (7 cols) -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <!-- Primary Hero Lockup Card -->
+            <div class="p-8 sm:p-10 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center text-center relative overflow-hidden group shadow-2xl">
+              <div class="absolute inset-0 bg-gradient-to-b from-red-600/5 via-transparent to-transparent opacity-50"></div>
+              
+              <!-- Vector Graphic Container -->
+              <div id="hero-logo-svg" class="w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                <!-- Injected via JS -->
+              </div>
+
+              <!-- Full Wordmark Lockup -->
+              <div class="mt-6 space-y-1 z-10">
+                <div id="hero-logo-title" class="text-2xl sm:text-3xl font-syne font-black tracking-tight text-white">
+                  Pinterest <span class="text-red-500">to</span> Plate
+                </div>
+                <div id="hero-logo-tagline" class="text-xs font-mono text-slate-400">
+                  Stop Collecting. Start Cooking.
+                </div>
+              </div>
+            </div>
+
+            <!-- Real-World Asset Mockups Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 font-mono text-xs">
+              
+              <!-- iOS App Icon Squircle Mockup -->
+              <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center text-center space-y-2">
+                <span class="text-[10px] text-slate-400 uppercase font-bold">App Store Icon</span>
+                <div id="mockup-squircle" class="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg transition-transform hover:scale-110">
+                  <!-- Injected via JS -->
+                </div>
+                <span class="text-[10px] text-slate-500">iOS / Android</span>
+              </div>
+
+              <!-- Browser Favicon Preview -->
+              <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center text-center space-y-2">
+                <span class="text-[10px] text-slate-400 uppercase font-bold">Browser Tab</span>
+                <div class="w-full py-1.5 px-2 rounded-lg bg-slate-950 border border-slate-800 flex items-center gap-2">
+                  <div id="mockup-favicon" class="w-4 h-4 shrink-0"></div>
+                  <span class="text-[9px] text-slate-300 truncate font-sans">Pinterest to Plate</span>
+                </div>
+                <span class="text-[10px] text-slate-500">16x16 / 32x32</span>
+              </div>
+
+              <!-- Supermarket Cart Badge Mockup -->
+              <div class="col-span-2 sm:col-span-1 p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center text-center space-y-2">
+                <span class="text-[10px] text-slate-400 uppercase font-bold">Cart Tag Badge</span>
+                <div id="mockup-badge" class="px-2.5 py-1 rounded-full text-[10px] font-bold flex items-center gap-1.5 border">
+                  <!-- Injected via JS -->
+                </div>
+                <span class="text-[10px] text-slate-500">Checkout Widget</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- RIGHT: Design Rational, Palette & Action Controls (5 cols) -->
+          <div class="lg:col-span-5 space-y-6">
+            
+            <!-- Strategic Concept Rationale -->
+            <div class="space-y-3">
+              <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono text-rose-400 font-bold uppercase">
+                <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+                <span id="concept-label">Concept 1 Strategy</span>
+              </div>
+              <h4 id="concept-name" class="text-xl font-syne font-extrabold text-white">The PinFork</h4>
+              <p id="concept-desc" class="text-xs text-slate-300 leading-relaxed font-sans">
+                A modern pushpin whose needle seamlessly morphs into a 3-prong culinary fork resting on a minimalist plate silhouette. Instantly communicates "pin to meal" in 0.2 seconds.
+              </p>
+            </div>
+
+            <!-- Brand Color Palette -->
+            <div class="space-y-2 pt-4 border-t border-slate-800">
+              <span class="text-xs font-mono text-slate-400 uppercase font-bold">Official Colorway</span>
+              <div id="concept-palette" class="grid grid-cols-3 gap-2 font-mono text-[10px]">
+                <!-- Palette swatches injected via JS -->
+              </div>
+            </div>
+
+            <!-- Brand Personality & Strengths -->
+            <div class="space-y-2 pt-4 border-t border-slate-800 text-xs font-mono">
+              <span class="text-slate-400 uppercase font-bold">Best For:</span>
+              <div id="concept-best-for" class="text-slate-300 bg-slate-900/60 p-3 rounded-xl border border-slate-800 leading-relaxed">
+                App Store icon recognition, consumer merchandise, viral TikTok watermarking.
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="pt-4 flex items-center gap-3">
+              <button id="btn-select-brand" class="flex-1 py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-mono text-xs font-bold transition-all shadow-glow-red flex items-center justify-center gap-2">
+                <i data-lucide="check" class="w-4 h-4"></i>
+                <span>Set As Active Brand</span>
+              </button>
+              <button id="btn-copy-svg" class="px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 font-mono text-xs font-semibold transition-colors" title="Copy raw SVG code">
+                Copy SVG
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
     <!-- 3. ACTIONABLE ROADMAP & HABAKUK PBA CADENCE -->
     <section class="glass-panel rounded-xl p-6 space-y-4">
       <div class="flex items-center justify-between pb-3 border-b border-slate-800">
@@ -518,6 +664,211 @@
         }, 400);
       };
     });
+
+    // ==========================================
+    // BRAND IDENTITY & LOGO STUDIO CONTROLLER
+    // ==========================================
+    const LOGO_CONCEPTS = {
+      pinfork: {
+        name: "The PinFork",
+        label: "Concept 1 Strategy: Direct Fusion",
+        desc: "A bold minimalist pushpin whose needle seamlessly morphs into a 3-prong culinary fork, set against a subtle ceramic plate silhouette. Tells the entire 'pin to plate' story in 0.2 seconds.",
+        bestFor: "App Store icon recognition, consumer merchandise, viral TikTok watermarking.",
+        palette: [
+          { name: "Pinterest Scarlet", hex: "#E60023", text: "#fff" },
+          { name: "Platinum White", hex: "#FFFFFF", text: "#000" },
+          { name: "Obsidian Slate", hex: "#090D16", text: "#fff" }
+        ],
+        badgeHtml: `<span class="w-2 h-2 rounded-full bg-red-500"></span><span class="text-red-400 font-bold">P2P Powered</span>`,
+        badgeClass: "border-red-500/40 bg-red-950/40 text-red-300",
+        squircleClass: "bg-gradient-to-tr from-red-600 via-rose-600 to-red-500 shadow-glow-red",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full filter drop-shadow-[0_10px_20px_rgba(230,0,35,0.35)]">
+          <!-- Outer Plate Rim -->
+          <circle cx="50" cy="50" r="44" stroke="#e60023" stroke-width="2.5" fill="none" opacity="0.35" stroke-dasharray="4 2"/>
+          <circle cx="50" cy="50" r="38" fill="#13161e" stroke="#252a38" stroke-width="2"/>
+          <!-- Pushpin Head -->
+          <circle cx="50" cy="30" r="13" fill="#e60023"/>
+          <circle cx="50" cy="30" r="5" fill="#ffffff"/>
+          <!-- Fork Neck & 3 Prongs -->
+          <path d="M 50,43 L 50,56 C 50,60 41,60 41,64 L 41,75 M 50,56 L 50,78 M 50,60 C 50,60 59,60 59,64 L 59,75" 
+                stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>`,
+        faviconSvg: `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#e60023"/><circle cx="50" cy="35" r="14" fill="#fff"/><circle cx="50" cy="35" r="6" fill="#e60023"/><path d="M 50,49 L 50,82 M 42,65 L 42,80 M 58,65 L 58,80" stroke="#fff" stroke-width="6" stroke-linecap="round"/></svg>`
+      },
+
+      orbit: {
+        name: "The Orbit Plate",
+        label: "Concept 2 Strategy: Navigational Modernist",
+        desc: "A sleek ceramic dinner plate surrounded by an active neon GPS locator arc. Symbolizes your effortless journey from saved pin to dinner plate with zero decision fatigue.",
+        bestFor: "SaaS dashboard, web navigation, Chrome extension toolbar icon.",
+        palette: [
+          { name: "Coral Rose", hex: "#F43F5E", text: "#fff" },
+          { name: "Electric Mint", hex: "#10B981", text: "#000" },
+          { name: "Midnight Navy", hex: "#0D1321", text: "#fff" }
+        ],
+        badgeHtml: `<span class="w-2 h-2 rounded-full bg-emerald-400"></span><span class="text-emerald-300 font-bold">Orbit Cart</span>`,
+        badgeClass: "border-emerald-500/40 bg-emerald-950/40 text-emerald-300",
+        squircleClass: "bg-gradient-to-tr from-slate-900 via-slate-800 to-slate-900 border border-emerald-500/40 shadow-glow-emerald",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full filter drop-shadow-[0_10px_25px_rgba(16,185,129,0.35)]">
+          <!-- Inner Plate Base -->
+          <circle cx="50" cy="50" r="34" fill="#0d1321" stroke="#10b981" stroke-width="2.5"/>
+          <circle cx="50" cy="50" r="22" stroke="#334155" stroke-width="1.5" fill="none"/>
+          <!-- Fork and Knife Minimalist Cutout -->
+          <path d="M 45,40 L 45,60 M 42,40 L 42,48 M 48,40 L 48,48 M 55,40 L 55,60" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
+          <!-- Orbit Arc -->
+          <path d="M 18,50 A 38,38 0 1,1 78,22" stroke="#f43f5e" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <!-- Pin Beacon on Orbit -->
+          <circle cx="78" cy="22" r="7" fill="#f43f5e"/>
+          <circle cx="78" cy="22" r="3" fill="#ffffff"/>
+        </svg>`,
+        faviconSvg: `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#0d1321"/><circle cx="50" cy="50" r="32" stroke="#10b981" stroke-width="6" fill="none"/><path d="M 18,50 A 36,36 0 1,1 78,22" stroke="#f43f5e" stroke-width="7" stroke-linecap="round" fill="none"/><circle cx="78" cy="22" r="8" fill="#f43f5e"/></svg>`
+      },
+
+      cloche: {
+        name: "The Shoppable Cloche",
+        label: "Concept 3 Strategy: Commercial Grocery",
+        desc: "A gleaming restaurant cloche dome whose handle forms a pushpin, poised over an active supermarket basket base with rolling wheels. Emphasizes the 1-click grocery cart superpower.",
+        bestFor: "Supermarket partnerships (Tesco, Sainsbury's, Asda), e-commerce checkout widgets.",
+        palette: [
+          { name: "Vivid Tangerine", hex: "#F97316", text: "#fff" },
+          { name: "Crimson Punch", hex: "#E11D48", text: "#fff" },
+          { name: "Warm Gold", hex: "#FBBF24", text: "#000" }
+        ],
+        badgeHtml: `<span class="w-2 h-2 rounded-full bg-amber-400"></span><span class="text-amber-300 font-bold">1-Click Basket</span>`,
+        badgeClass: "border-amber-500/40 bg-amber-950/40 text-amber-300",
+        squircleClass: "bg-gradient-to-tr from-amber-600 via-orange-600 to-rose-600 shadow-lg",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full filter drop-shadow-[0_10px_20px_rgba(249,115,22,0.35)]">
+          <!-- Pin Top Handle -->
+          <circle cx="50" cy="22" r="7" fill="#fbbf24"/>
+          <circle cx="50" cy="22" r="3" fill="#ffffff"/>
+          <rect x="48" y="29" width="4" height="6" fill="#fbbf24" rx="1"/>
+          <!-- Cloche Dome -->
+          <path d="M 22,60 C 22,38 78,38 78,60 Z" fill="#e11d48"/>
+          <!-- Plate Base Lip -->
+          <rect x="18" y="60" width="64" height="5" rx="2.5" fill="#f97316"/>
+          <!-- Cart Wheels & Underframe -->
+          <circle cx="34" cy="74" r="5" fill="#fbbf24"/>
+          <circle cx="66" cy="74" r="5" fill="#fbbf24"/>
+          <path d="M 28,67 L 72,67" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>`,
+        faviconSvg: `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#f97316"/><path d="M 26,62 C 26,42 74,42 74,62 Z" fill="#fff"/><circle cx="50" cy="28" r="8" fill="#fff"/><rect x="22" y="62" width="56" height="6" rx="3" fill="#fff"/><circle cx="36" cy="76" r="5" fill="#fff"/><circle cx="64" cy="76" r="5" fill="#fff"/></svg>`
+      },
+
+      monogram: {
+        name: "P² Geometric Monogram",
+        label: "Concept 4 Strategy: Silicon Valley Minimalist",
+        desc: "Two interlocking isometric geometric letters forming P (Pin) and P (Plate), revealing a subtle fork silhouette in the negative space. High-end, premium consumer software brand.",
+        bestFor: "Venture pitch decks, iOS home screens, developer APIs.",
+        palette: [
+          { name: "Cyber Red", hex: "#FF2A55", text: "#fff" },
+          { name: "Ultraviolet Indigo", hex: "#6366F1", text: "#fff" },
+          { name: "Dark Matrix", hex: "#030712", text: "#fff" }
+        ],
+        badgeHtml: `<span class="w-2 h-2 rounded-full bg-indigo-400"></span><span class="text-indigo-300 font-bold">P² Verified</span>`,
+        badgeClass: "border-indigo-500/40 bg-indigo-950/40 text-indigo-300",
+        squircleClass: "bg-gradient-to-tr from-indigo-900 via-slate-900 to-rose-950 border border-indigo-500/30 shadow-2xl",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full filter drop-shadow-[0_10px_25px_rgba(255,42,85,0.4)]">
+          <!-- First P (Pin - Red) -->
+          <path d="M 28,24 L 52,24 C 62,24 62,44 52,44 L 38,44 L 38,76 L 28,76 Z" fill="#ff2a55"/>
+          <!-- Second P (Plate - Indigo / Overlapping) -->
+          <path d="M 44,40 L 68,40 C 78,40 78,60 68,60 L 54,60 L 54,80 L 44,80 Z" fill="#6366f1" opacity="0.85"/>
+          <!-- Inner negative space dot -->
+          <circle cx="45" cy="34" r="4" fill="#ffffff"/>
+        </svg>`,
+        faviconSvg: `<svg viewBox="0 0 100 100"><rect width="100" height="100" rx="24" fill="#030712"/><path d="M 30,26 L 54,26 C 64,26 64,46 54,46 L 40,46 L 40,78 L 30,78 Z" fill="#ff2a55"/><path d="M 46,42 L 70,42 C 80,42 80,62 70,62 L 56,62 L 56,82 L 46,82 Z" fill="#6366f1" opacity="0.85"/></svg>`
+      }
+    };
+
+    let activeLogoKey = localStorage.getItem('p2p_active_logo') || 'pinfork';
+
+    const heroSvgEl = document.getElementById('hero-logo-svg');
+    const heroTitleEl = document.getElementById('hero-logo-title');
+    const heroTaglineEl = document.getElementById('hero-logo-tagline');
+    const mockupSquircleEl = document.getElementById('mockup-squircle');
+    const mockupFaviconEl = document.getElementById('mockup-favicon');
+    const mockupBadgeEl = document.getElementById('mockup-badge');
+    const conceptLabelEl = document.getElementById('concept-label');
+    const conceptNameEl = document.getElementById('concept-name');
+    const conceptDescEl = document.getElementById('concept-desc');
+    const conceptPaletteEl = document.getElementById('concept-palette');
+    const conceptBestForEl = document.getElementById('concept-best-for');
+    const btnSelectBrand = document.getElementById('btn-select-brand');
+    const btnCopySvg = document.getElementById('btn-copy-svg');
+    const logoTabs = document.querySelectorAll('.logo-tab');
+
+    function renderLogoConcept(key) {
+      const concept = LOGO_CONCEPTS[key] || LOGO_CONCEPTS.pinfork;
+
+      heroSvgEl.innerHTML = concept.svg;
+      heroTitleEl.innerHTML = `Pinterest <span class="text-red-500">to</span> Plate`;
+      heroTaglineEl.innerText = "Stop Collecting. Start Cooking.";
+
+      mockupSquircleEl.className = `w-14 h-14 rounded-2xl flex items-center justify-center p-2.5 transition-transform hover:scale-110 ${concept.squircleClass}`;
+      mockupSquircleEl.innerHTML = concept.svg;
+
+      mockupFaviconEl.innerHTML = concept.faviconSvg;
+      
+      mockupBadgeEl.className = `px-2.5 py-1 rounded-full text-[10px] font-bold flex items-center gap-1.5 border ${concept.badgeClass}`;
+      mockupBadgeEl.innerHTML = concept.badgeHtml;
+
+      conceptLabelEl.innerText = concept.label;
+      conceptNameEl.innerText = concept.name;
+      conceptDescEl.innerText = concept.desc;
+      conceptBestForEl.innerText = concept.bestFor;
+
+      // Render Palette Swatches
+      conceptPaletteEl.innerHTML = concept.palette.map(p => `
+        <div class="p-2 rounded-lg border border-slate-800 flex flex-col justify-between h-14 cursor-pointer hover:border-slate-600 transition-colors" 
+             style="background: ${p.hex}" onclick="navigator.clipboard.writeText('${p.hex}'); alert('Copied hex ${p.hex} to clipboard!');">
+          <span class="text-[9px] font-bold" style="color: ${p.text}">${p.name}</span>
+          <span class="text-[9px] font-mono opacity-80" style="color: ${p.text}">${p.hex}</span>
+        </div>
+      `).join('');
+
+      // Update button state
+      if (activeLogoKey === key) {
+        btnSelectBrand.innerHTML = `<i data-lucide="check-check" class="w-4 h-4"></i><span>Active Brand Selected</span>`;
+        btnSelectBrand.className = "flex-1 py-3 rounded-xl bg-emerald-600 text-white font-mono text-xs font-bold transition-all shadow-glow-emerald flex items-center justify-center gap-2";
+      } else {
+        btnSelectBrand.innerHTML = `<i data-lucide="check" class="w-4 h-4"></i><span>Set As Active Brand</span>`;
+        btnSelectBrand.className = "flex-1 py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-mono text-xs font-bold transition-all shadow-glow-red flex items-center justify-center gap-2";
+      }
+      lucide.createIcons();
+    }
+
+    logoTabs.forEach(tab => {
+      tab.onclick = () => {
+        logoTabs.forEach(t => {
+          t.className = "logo-tab px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white";
+        });
+        tab.className = "logo-tab active px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-red-600 text-white shadow-glow-red";
+
+        renderLogoConcept(tab.dataset.logo);
+      };
+    });
+
+    btnSelectBrand.onclick = () => {
+      const currentTab = document.querySelector('.logo-tab.active')?.dataset.logo || 'pinfork';
+      activeLogoKey = currentTab;
+      localStorage.setItem('p2p_active_logo', activeLogoKey);
+      renderLogoConcept(activeLogoKey);
+      alert(`🎉 Set "${LOGO_CONCEPTS[activeLogoKey].name}" as the active brand identity!`);
+    };
+
+    btnCopySvg.onclick = async () => {
+      const currentTab = document.querySelector('.logo-tab.active')?.dataset.logo || 'pinfork';
+      const rawSvg = LOGO_CONCEPTS[currentTab].svg;
+      try {
+        await navigator.clipboard.writeText(rawSvg);
+        btnCopySvg.innerText = "✅ SVG Copied!";
+        setTimeout(() => { btnCopySvg.innerText = "Copy SVG"; }, 2000);
+      } catch (e) {
+        prompt("Copy raw vector SVG below:", rawSvg);
+      }
+    };
+
+    // Initial logo render
+    renderLogoConcept(activeLogoKey);
   </script>
 </body>
 </html>
