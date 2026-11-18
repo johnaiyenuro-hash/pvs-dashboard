@@ -672,6 +672,7 @@
       <p>PVS // PERSONAL VISION SYSTEM v28 &mdash; SOLUTIONS ARCHITECTURE ENGINE</p>
     </div>
     <div class="header-actions">
+      <a href="#linkedin_sprint" class="back-btn" style="border-color: #4a9fff; color: #4a9fff;">&darr; LinkedIn Sprint</a>
       <a href="../index.html" class="back-btn">&larr; Launchpad</a>
       <div class="target-badge">DDM &rarr; SOLUTIONS ARCHITECT</div>
     </div>
@@ -814,6 +815,131 @@
         <div class="rule-item"><div class="rule-num">04</div><div class="rule-text">Track streaks not hours. Did something today? Yes/no.<span class="rule-sub">// consistency beats intensity</span></div></div>
         <div class="rule-item"><div class="rule-num">05</div><div class="rule-text">Max 2 active skills. Everything else is in the parking lot.<span class="rule-sub">// permission to ignore parked stacks</span></div></div>
         <div class="rule-item"><div class="rule-num">06</div><div class="rule-text">If thinking "what to learn" &mdash; check this page.<span class="rule-sub">// decision is already made</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINKEDIN LEARNING ACCELERATION SPRINT (60-90 DAY TARGETED PROTOCOL) -->
+  <div class="card full" id="linkedin_sprint" style="margin-bottom: 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 14px;">
+      <div>
+        <div class="card-title" style="margin-bottom: 4px;">
+          <span class="dot blue"></span>LINKEDIN LEARNING ACCELERATION SPRINT // 60&ndash;90 DAY PROTOCOL
+        </div>
+        <p style="color: var(--muted); font-size: 13px; line-height: 1.5; margin: 0;">
+          Time-boxed foundational sprint covering 5 core technical accelerators bridging BIM coordination to ConTech Solutions Architecture.
+        </p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span id="lil-status-badge" style="font-family: 'Space Mono', monospace; font-size: 11px; padding: 4px 10px; border-radius: 2px; background: #1a2a3a; color: var(--accent4); border: 1px solid var(--accent4); font-weight: 700;">
+          0 / 5 TRACKS (0%)
+        </span>
+      </div>
+    </div>
+
+    <!-- Progress Meter -->
+    <div style="margin-bottom: 18px;">
+      <div style="display: flex; justify-content: space-between; font-size: 11px; font-family: 'Space Mono', monospace; color: var(--muted); margin-bottom: 6px;">
+        <span>SPRINT COMPLETION METRIC</span>
+        <span id="lil-progress-text">0 of 5 tracks completed</span>
+      </div>
+      <div class="bar-track" style="height: 8px; background: var(--surface2); border: 1px solid var(--border);">
+        <div id="lil-progress-bar" class="bar-fill blue" style="width: 0%; transition: width 0.4s ease;"></div>
+      </div>
+    </div>
+
+    <!-- 5 Track Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-bottom: 18px;">
+      
+      <!-- Track 1: Solibri Office QA/QC -->
+      <div style="background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 14px;">
+        <div class="task-item" onclick="toggle(this)" data-task-id="lil_solibri" style="margin: 0; padding: 0 0 10px 0;">
+          <div class="checkbox"></div>
+          <div class="task-text" style="font-weight: 700;">Track 01: Solibri Office QA/QC &amp; ITO</div>
+          <div class="task-tag tag-5" style="background: #1a2a3a; color: var(--accent4);">~2.5H</div>
+        </div>
+        <div style="font-size: 12px; color: var(--muted); line-height: 1.45; margin-top: 8px;">
+          <div style="color: var(--text); font-weight: 600; margin-bottom: 2px;">Course: <em>Learning Solibri Office</em> &bull; Shaun Bryant</div>
+          <div>&bull; Rulesets: Clash vs defect checking, model audit hierarchy</div>
+          <div>&bull; Classifications: Custom classification rules for Uniclass &amp; NRM</div>
+          <div>&bull; ITO: Information Takeoff schedules, Excel/BCF reporting</div>
+        </div>
+      </div>
+
+      <!-- Track 2: Power Query & Power Pivot -->
+      <div style="background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 14px;">
+        <div class="task-item" onclick="toggle(this)" data-task-id="lil_excel_pq" style="margin: 0; padding: 0 0 10px 0;">
+          <div class="checkbox"></div>
+          <div class="task-text" style="font-weight: 700;">Track 02: Excel Power Query &amp; Relational Data</div>
+          <div class="task-tag tag-5" style="background: #1a2a3a; color: var(--accent4);">~5.0H</div>
+        </div>
+        <div style="font-size: 12px; color: var(--muted); line-height: 1.45; margin-top: 8px;">
+          <div style="color: var(--text); font-weight: 600; margin-bottom: 2px;">Course: <em>Excel: Power Query &amp; Power Pivot in Depth</em> &bull; Curt Frye &amp; Josh Rischin</div>
+          <div>&bull; ETL Pipeline: Automated multi-folder CDE export ingests &amp; unpivoting</div>
+          <div>&bull; Data Model: Star schema design, relationships, surrogate keys</div>
+          <div>&bull; DAX: CALCULATE, RELATED, custom KPI validation measures</div>
+        </div>
+      </div>
+
+      <!-- Track 3: Postman & REST APIs -->
+      <div style="background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 14px;">
+        <div class="task-item" onclick="toggle(this)" data-task-id="lil_postman" style="margin: 0; padding: 0 0 10px 0;">
+          <div class="checkbox"></div>
+          <div class="task-text" style="font-weight: 700;">Track 03: Postman &amp; REST APIs (CDE / BCF Payloads)</div>
+          <div class="task-tag tag-5" style="background: #1a2a3a; color: var(--accent4);">~2.5H</div>
+        </div>
+        <div style="font-size: 12px; color: var(--muted); line-height: 1.45; margin-top: 8px;">
+          <div style="color: var(--text); font-weight: 600; margin-bottom: 2px;">Course: <em>Postman Essential Training</em> &bull; Dave Westerveld</div>
+          <div>&bull; HTTP Methods: GET, POST, PUT, DELETE against REST endpoints</div>
+          <div>&bull; Auth &amp; Headers: Bearer tokens, OAuth2, 3-legged CDE authentication</div>
+          <div>&bull; Payloads: Parsing JSON responses, inspecting BCF API topic models</div>
+        </div>
+      </div>
+
+      <!-- Track 4: SQL & Database Schema -->
+      <div style="background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 14px;">
+        <div class="task-item" onclick="toggle(this)" data-task-id="lil_sql" style="margin: 0; padding: 0 0 10px 0;">
+          <div class="checkbox"></div>
+          <div class="task-text" style="font-weight: 700;">Track 04: SQL &amp; Relational Databases (PostgreSQL)</div>
+          <div class="task-tag tag-5" style="background: #1a2a3a; color: var(--accent4);">~3.5H</div>
+        </div>
+        <div style="font-size: 12px; color: var(--muted); line-height: 1.45; margin-top: 8px;">
+          <div style="color: var(--text); font-weight: 600; margin-bottom: 2px;">Course: <em>SQL Essential Training</em> &bull; Bill Weinman</div>
+          <div>&bull; Relational Queries: Multi-table JOINs, GROUP BY, aggregates, subqueries</div>
+          <div>&bull; Asset Modeling: COBie component / type tables &amp; Uniclass joins</div>
+          <div>&bull; Architecture: Indexes, foreign keys, database integrity constraints</div>
+        </div>
+      </div>
+
+      <!-- Track 5: Python for Automation & Pandas -->
+      <div style="background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 14px;">
+        <div class="task-item" onclick="toggle(this)" data-task-id="lil_python" style="margin: 0; padding: 0 0 10px 0;">
+          <div class="checkbox"></div>
+          <div class="task-text" style="font-weight: 700;">Track 05: Python Automation &amp; Pandas DataFrames</div>
+          <div class="task-tag tag-5" style="background: #1a2a3a; color: var(--accent4);">~4.0H</div>
+        </div>
+        <div style="font-size: 12px; color: var(--muted); line-height: 1.45; margin-top: 8px;">
+          <div style="color: var(--text); font-weight: 600; margin-bottom: 2px;">Course: <em>Python Essential Training &amp; Pandas</em> &bull; Bill Weinman &amp; Jonathan Fernandes</div>
+          <div>&bull; Core Syntax: Lists, dictionaries, list comprehensions, modules</div>
+          <div>&bull; Pandas DataFrames: Reading/writing CSV/Excel/JSON, vectorised filtering</div>
+          <div>&bull; Automation: Bulk IFC metadata checks, validation error logging scripts</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Exit Protocol Banner -->
+    <div style="background: #0d1520; border: 1px solid #1f3a5f; border-left: 3px solid #4a9fff; border-radius: 3px; padding: 12px 16px; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+      <div style="flex: 1; min-width: 260px;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 10px; color: #4a9fff; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 4px;">
+          SUBSCRIPTION EXIT PROTOCOL // ZERO-WASTE FINANCIAL GOVERNANCE
+        </div>
+        <div style="font-size: 12px; color: var(--muted); line-height: 1.5;">
+          <strong>Free 1-Month Trial + Max 2&ndash;3 Paid Months:</strong> LinkedIn Learning is strictly a high-velocity springboard for foundational concepts. Once all 5 tracks are completed (or 60&ndash;90 days lapse), cancel the subscription immediately. Do not hold an idle recurring subscription. Transition directly into live Azure (DP-900 / AZ-900) and enterprise code repositories.
+        </div>
+      </div>
+      <div style="display: flex; gap: 8px; align-items: center; align-self: center;">
+        <span style="font-family: 'Space Mono', monospace; font-size: 10px; color: #4a9fff; background: #162438; padding: 4px 8px; border-radius: 2px; border: 1px solid #284770;">FREE TRIAL &rarr; CANCEL ON COMPLETION</span>
       </div>
     </div>
   </div>
@@ -974,6 +1100,7 @@
     function toggle(element) {
       element.classList.toggle('done');
       saveTaskState();
+      updateLinkedInSprintProgress();
     }
 
     function saveTaskState() {
@@ -1010,6 +1137,42 @@
           });
         } catch (e) {
           console.error('LocalStorage read error:', e);
+        }
+      }
+      updateLinkedInSprintProgress();
+    }
+
+    function updateLinkedInSprintProgress() {
+      const sprintCard = document.getElementById('linkedin_sprint');
+      if (!sprintCard) return;
+      const items = sprintCard.querySelectorAll('.task-item');
+      if (!items || items.length === 0) return;
+
+      let completed = 0;
+      items.forEach((item) => {
+        if (item.classList.contains('done')) completed++;
+      });
+      const total = items.length;
+      const pct = Math.round((completed / total) * 100);
+
+      const bar = document.getElementById('lil-progress-bar');
+      if (bar) bar.style.width = pct + '%';
+
+      const text = document.getElementById('lil-progress-text');
+      if (text) text.innerText = completed + ' of ' + total + ' tracks completed (' + pct + '%)';
+
+      const badge = document.getElementById('lil-status-badge');
+      if (badge) {
+        if (completed === total) {
+          badge.innerText = 'SPRINT COMPLETE // READY TO CANCEL';
+          badge.style.background = '#1a3a22';
+          badge.style.color = 'var(--accent2)';
+          badge.style.borderColor = 'var(--accent2)';
+        } else {
+          badge.innerText = completed + ' / ' + total + ' TRACKS (' + pct + '%)';
+          badge.style.background = '#1a2a3a';
+          badge.style.color = 'var(--accent4)';
+          badge.style.borderColor = 'var(--accent4)';
         }
       }
     }
@@ -1062,6 +1225,7 @@
       loadTaskState();
       renderStreak();
       syncActiveLever();
+      updateLinkedInSprintProgress();
     }
 
     window.onload = function() {
@@ -1071,6 +1235,6 @@
       }
     };
   </script>
-  <script src="../daily-rhythm.js?v=20261117b"></script>
+  <script src="../daily-rhythm.js?v=20261118"></script>
 </body>
 </html>
