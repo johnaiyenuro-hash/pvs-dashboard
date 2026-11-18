@@ -216,10 +216,10 @@ function renderRecipes() {
         </div>
 
         <div class="absolute bottom-3 left-3 flex items-center gap-1.5 flex-wrap">
-          <span class="px-2 py-0.5 rounded-md text-[11px] font-bold bg-white/90 backdrop-blur-sm text-slate-900 shadow-sm">
+          <span class="px-2 py-0.5 rounded-md text-xs font-bold bg-white/95 backdrop-blur-sm text-slate-900 shadow-sm">
             ${recipe.tag}
           </span>
-          <span class="px-2 py-0.5 rounded-md text-[11px] font-medium bg-black/40 backdrop-blur-sm text-white">
+          <span class="px-2 py-0.5 rounded-md text-xs font-medium bg-black/60 backdrop-blur-sm text-white">
             ⏱ ${recipe.prepTime}
           </span>
         </div>
@@ -230,12 +230,12 @@ function renderRecipes() {
           <h3 class="font-bold text-slate-900 text-sm leading-snug group-hover:text-red-600 transition-colors">
             ${recipe.title}
           </h3>
-          <p class="text-xs text-slate-400 mt-1">${recipe.creator} • ${recipe.servings} servings</p>
+          <p class="text-xs text-slate-600 mt-1 font-medium">${recipe.creator} • ${recipe.servings} servings</p>
         </div>
 
         <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
-          <span class="text-xs text-slate-500 font-medium">${recipe.ingredients.length} ingredients</span>
-          <button class="btn-view-steps text-xs font-semibold text-slate-600 hover:text-slate-900 underline underline-offset-2">
+          <span class="text-xs text-slate-600 font-semibold">${recipe.ingredients.length} ingredients</span>
+          <button class="btn-view-steps text-xs font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2">
             View Steps
           </button>
         </div>
@@ -338,10 +338,10 @@ async function renderBasket() {
           <input type="checkbox" ${isChecked ? 'checked' : ''} class="item-pantry-checkbox w-4 h-4 rounded text-slate-800 border-slate-300 focus:ring-slate-500 cursor-pointer">
           <div class="min-w-0 flex-1">
             <div class="flex items-center gap-2">
-              <span class="font-semibold text-slate-800 truncate ${isChecked ? 'line-through text-slate-400' : ''}">${item.name}</span>
-              <span class="text-xs text-slate-500 font-medium whitespace-nowrap bg-slate-100 px-1.5 py-0.5 rounded">${item.combinedQty}</span>
+              <span class="font-semibold text-slate-800 truncate ${isChecked ? 'line-through text-slate-500' : ''}">${item.name}</span>
+              <span class="text-xs text-slate-700 font-semibold whitespace-nowrap bg-slate-100 px-1.5 py-0.5 rounded">${item.combinedQty}</span>
             </div>
-            <div class="text-[11px] text-slate-400 truncate">
+            <div class="text-xs text-slate-600 truncate mt-0.5">
               For: ${item.fromRecipes.join(', ')}
             </div>
           </div>
