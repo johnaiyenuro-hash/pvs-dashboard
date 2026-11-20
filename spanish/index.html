@@ -14,7 +14,7 @@
     --accent3: #ff6b4a;
     --accent4: #4a9fff;
     --text: #e8eaf0;
-    --muted: #6b7280;
+    --muted: #94a3b8;
     --done: #2a3a2a;
     --done-text: #4affb4;
   }
@@ -77,7 +77,7 @@
     background: var(--surface);
     color: var(--text);
     border: 1px solid var(--border);
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     padding: 6px 12px;
     border-radius: 2px;
@@ -125,7 +125,7 @@
   }
 
   .card-title {
-    font-size: 10px;
+    font-size: 12px;
     font-family: 'Space Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -165,7 +165,7 @@
 
   .role-pill {
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
+    font-size: 12px;
     padding: 4px 10px;
     border-radius: 2px;
     border: 1px solid var(--border);
@@ -181,7 +181,7 @@
 
   .tier-label {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     padding: 3px 8px;
@@ -221,14 +221,14 @@
   }
 
   .task-item.done .checkbox { background: var(--done-text); border-color: var(--done-text); }
-  .task-item.done .checkbox::after { content: '✓'; font-size: 10px; color: #0d0f14; font-weight: 700; }
+  .task-item.done .checkbox::after { content: '✓'; font-size: 12px; color: #0d0f14; font-weight: 700; }
   .task-item.done .task-text { text-decoration: line-through; color: var(--muted); }
 
   .task-text { font-size: 14px; line-height: 1.4; flex: 1; }
 
   .task-tag {
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
+    font-size: 12px;
     padding: 2px 6px;
     border-radius: 2px;
     text-transform: uppercase;
@@ -242,31 +242,31 @@
 
   .day-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
   .day-row:last-child { border-bottom: none; }
-  .day-name { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); width: 30px; flex-shrink: 0; }
+  .day-name { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--muted); width: 30px; flex-shrink: 0; }
   .day-action { font-size: 13px; flex: 1; line-height: 1.4; }
-  .day-type { font-family: 'Space Mono', monospace; font-size: 9px; color: var(--accent); text-transform: uppercase; flex-shrink: 0; }
+  .day-type { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent); text-transform: uppercase; flex-shrink: 0; }
 
   .rule-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
   .rule-item:last-child { border-bottom: none; }
   .rule-num { font-family: 'Space Mono', monospace; font-size: 18px; font-weight: 700; color: var(--accent); flex-shrink: 0; line-height: 1; width: 28px; }
   .rule-text { font-size: 13px; line-height: 1.5; color: var(--text); }
-  .rule-sub { display: block; font-size: 11px; color: var(--muted); margin-top: 3px; font-family: 'Space Mono', monospace; }
+  .rule-sub { display: block; font-size: 12px; color: var(--muted); margin-top: 3px; font-family: 'Space Mono', monospace; }
 
-  .parked-item { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .parked-item { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--muted); padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
   .parked-item:last-child { border-bottom: none; }
-  .parked-item span { font-size: 9px; color: #3a3e4a; }
+  .parked-item span { font-size: 12px; color: #94a3b8; }
 
   .salary-bar { margin-bottom: 16px; }
   .salary-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 6px; font-family: 'Space Mono', monospace; }
   .salary-label strong { color: var(--text); }
   .bar-track { height: 6px; background: var(--surface2); border-radius: 1px; overflow: hidden; }
-  .bar-fill { height: 100%; border-radius: 1px; transition: width 1s ease; }
+  .bar-fill { color: transparent; font-size: 0;  height: 100%; border-radius: 1px; transition: width 1s ease; }
   .bar-fill.green { background: var(--accent2); }
   .bar-fill.yellow { background: var(--accent); }
   .bar-fill.orange { background: var(--accent3); }
 
   .next-action { background: var(--surface2); border: 1px solid var(--accent); border-radius: 4px; padding: 16px 20px; margin-top: 16px; }
-  .next-action-label { font-family: 'Space Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 8px; }
+  .next-action-label { font-family: 'Space Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 8px; }
   .next-action-text { font-size: 15px; font-weight: 700; line-height: 1.4; }
 
   .big-num { font-size: 48px; font-weight: 800; color: var(--accent); line-height: 1; font-family: 'Space Mono', monospace; }
@@ -279,7 +279,7 @@
 
   .course-row { display: flex; gap: 10px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
   .course-row:last-child { border-bottom: none; }
-  .course-priority { font-family: 'Space Mono', monospace; font-size: 9px; padding: 2px 6px; border-radius: 2px; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .course-priority { font-family: 'Space Mono', monospace; font-size: 12px; padding: 2px 6px; border-radius: 2px; flex-shrink: 0; min-width: 36px; text-align: center; }
   .p1 { background: #2a3a1a; color: var(--accent); }
   .p2 { background: #1a2a3a; color: var(--accent4); }
   .p3 { background: #1e1a1a; color: var(--muted); }
@@ -292,8 +292,8 @@
 
   .portfolio-header { background: linear-gradient(135deg, #1a2a1a 0%, #1a1e2a 100%); border: 1px solid var(--accent2); border-radius: 4px; padding: 20px 24px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
   .portfolio-header h2 { font-size: 18px; font-weight: 800; color: var(--accent2); }
-  .portfolio-header p { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; }
-  .portfolio-badge { background: var(--accent2); color: #0d0f14; font-size: 11px; font-weight: 700; padding: 5px 12px; border-radius: 2px; font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0; }
+  .portfolio-header p { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .portfolio-badge { background: var(--accent2); color: #0d0f14; font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 2px; font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0; }
   .page-card { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 14px; transition: border-color 0.2s; }
   .page-card:hover { border-color: var(--accent2); }
   .page-num { font-family: 'Space Mono', monospace; font-size: 22px; font-weight: 700; color: var(--accent2); flex-shrink: 0; line-height: 1; width: 32px; }
@@ -301,8 +301,8 @@
   .page-num.orange { color: var(--accent3); }
   .page-content { flex: 1; }
   .page-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; line-height: 1.3; }
-  .page-sub { font-family: 'Space Mono', monospace; font-size: 10px; color: var(--muted); line-height: 1.5; }
-  .page-status { font-family: 'Space Mono', monospace; font-size: 9px; padding: 2px 8px; border-radius: 2px; flex-shrink: 0; margin-top: 2px; }
+  .page-sub { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .page-status { font-family: 'Space Mono', monospace; font-size: 12px; padding: 2px 8px; border-radius: 2px; flex-shrink: 0; margin-top: 2px; }
   .status-done { background: #1a3a1a; color: var(--accent2); }
   .status-fill { background: #1a2a3a; color: var(--accent4); }
   .status-ready { background: #2a3a1a; color: var(--accent); }
@@ -318,7 +318,7 @@
   }
   .cost-table th {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
     text-align: left;
     padding: 8px;
@@ -368,7 +368,7 @@
     padding: 4px 9px;
     border-radius: 3px;
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
+    font-size: 12px;
     text-decoration: none;
     margin: 3px 6px 3px 0;
     transition: all 0.2s ease;
@@ -421,7 +421,7 @@
   }
   .dropdown-badge {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     color: var(--muted);
     display: inline-flex;
     align-items: center;
@@ -439,7 +439,7 @@
   .dropdown-arrow {
     display: inline-block;
     transition: transform 0.25s ease;
-    font-size: 9px;
+    font-size: 12px;
   }
   details.collapsible-card[open] .dropdown-arrow {
     transform: rotate(180deg);
@@ -519,7 +519,7 @@
 <div class="card">
 <div class="card-title">Active Queue &mdash; Do These Now</div>
 
-<p style="font-size:11px; color:var(--muted); margin-bottom:12px; font-family:'Space Mono',monospace;">Max 2 active routine habits at once. Tags = time needed.</p>
+<p style="font-size: 12px; color:var(--muted); margin-bottom:12px; font-family:'Space Mono',monospace;">Max 2 active routine habits at once. Tags = time needed.</p>
 
 <div class="tier tier-now">
 <div class="tier-label">NOW &mdash; This Week</div>
@@ -589,9 +589,9 @@
 <div class="card">
 <div class="card-title">Ordered Resource List</div>
 
-<p style="font-size:11px; color:var(--muted); margin-bottom:12px; font-family:'Space Mono',monospace;">Pick ONE resource at a time. Don&#39;t access the next until milestone is cleared.</p>
+<p style="font-size: 12px; color:var(--muted); margin-bottom:12px; font-family:'Space Mono',monospace;">Pick ONE resource at a time. Don&#39;t access the next until milestone is cleared.</p>
 
-<p style="font-size:10px; color:var(--accent); font-family:'Space Mono',monospace; margin:10px 0 6px; text-transform:uppercase; letter-spacing:1px;">// Priority 1: High-Frequency Vocabulary &amp; Core Input</p>
+<p style="font-size: 12px; color:var(--accent); font-family:'Space Mono',monospace; margin:10px 0 6px; text-transform:uppercase; letter-spacing:1px;">// Priority 1: High-Frequency Vocabulary &amp; Core Input</p>
 
 <div class="course-row">
 <div class="course-priority p1">ACTIVE</div>
@@ -611,7 +611,7 @@
 <div class="course-name"><strong>Spanish After Hours</strong> (Comprehensible Input) &mdash; Excellent natural context baseline</div>
 </div>
 
-<p style="font-size:10px; color:var(--accent4); font-family:'Space Mono',monospace; margin:10px 0 6px; text-transform:uppercase; letter-spacing:1px;">// Priority 2: AI Conversation &amp; Grammar Infrastructure</p>
+<p style="font-size: 12px; color:var(--accent4); font-family:'Space Mono',monospace; margin:10px 0 6px; text-transform:uppercase; letter-spacing:1px;">// Priority 2: AI Conversation &amp; Grammar Infrastructure</p>
 
 <div class="course-row">
 <div class="course-priority p2">UNLOCKED</div>
@@ -619,16 +619,16 @@
 <div class="course-name"><strong>Butterfly Spanish</strong> (Grammar Explanations) &mdash; Clean up logic hurdles as they appear</div>
 </div>
 
-<div class="course-row" style="opacity:0.5;">
+<div class="course-row" style="opacity: 0.7;">
 <div class="course-priority p2">LOCKED</div>
 
 <div class="course-name">Tutor Lily / Talkwise &mdash; Real-time conversational sandboxing (Unlock at 500 words)</div>
 </div>
 
-<p style="font-size:10px; color:var(--muted); font-family:'Space Mono',monospace; margin:10px 0 6px; text-transform:uppercase; letter-spacing:1px;">// Priority 3: Native Context Realization</p>
+<p style="font-size: 12px; color:var(--muted); font-family:'Space Mono',monospace; margin:10px 0 6px; text-transform:uppercase; letter-spacing:1px;">// Priority 3: Native Context Realization</p>
 
-<div class="course-row" style="opacity:0.3; text-decoration:line-through;">
-<div class="course-priority" style="background:#1a1a1a; color:#3a3e4a; font-family:'Space Mono',monospace; font-size:9px; padding:2px 6px; border-radius:2px; flex-shrink:0; min-width:36px; text-align:center;">SKIP</div>
+<div class="course-row" style="opacity: 0.65; text-decoration:line-through;">
+<div class="course-priority" style="background:#1a1a1a; color:#94a3b8; font-family:'Space Mono',monospace; font-size: 12px; padding:2px 6px; border-radius:2px; flex-shrink:0; min-width:36px; text-align:center;">SKIP</div>
 
 <div class="course-name">Traditional textbooks, syntax workbooks, heavy conjugation drilling engines</div>
 </div>
@@ -645,7 +645,7 @@
 <div class="card">
 <div class="card-title">Weekly Rhythm (Action Edition)</div>
 
-<p style="font-size:11px; color:var(--muted); margin-bottom:12px; font-family:'Space Mono',monospace;">Don&#39;t plan hours. Plan ACTIONS. One explicit execution slot per day.</p>
+<p style="font-size: 12px; color:var(--muted); margin-bottom:12px; font-family:'Space Mono',monospace;">Don&#39;t plan hours. Plan ACTIONS. One explicit execution slot per day.</p>
 
 <div class="day-row">
 <div class="day-name">MON</div>
@@ -707,7 +707,7 @@
 <div class="card">
 <div class="card-title">Anti-Procrastination Rules</div>
 
-<p style="font-size:11px; color:var(--muted); margin-bottom:12px; font-family:'Space Mono',monospace;">These override motivation. Always.</p>
+<p style="font-size: 12px; color:var(--muted); margin-bottom:12px; font-family:'Space Mono',monospace;">These override motivation. Always.</p>
 
 <div class="rule-item">
 <div class="rule-num">01</div>
@@ -739,7 +739,7 @@
 <div class="card">
 <div class="card-title">Parking Lot &mdash; Legitimate But Not Now</div>
 
-<p style="font-size:11px; color:var(--muted); margin-bottom:12px; font-family:'Space Mono',monospace;">These are accurate targets. They are simply not for this phase. Remove the cognitive guilt.</p>
+<p style="font-size: 12px; color:var(--muted); margin-bottom:12px; font-family:'Space Mono',monospace;">These are accurate targets. They are simply not for this phase. Remove the cognitive guilt.</p>
 
 <div class="parked-item">Advanced Subjunctive mood conjugations <span>&rarr; after 1,500 words</span></div>
 
@@ -753,7 +753,7 @@
 <div class="card">
 <div class="card-title">Streak Tracker &mdash; Complete Daily Loop?</div>
 
-<p style="font-size:11px; color:var(--muted); margin-bottom:16px; font-family:'Space Mono',monospace;">Click a day to mark it. Aim for 5/7 consistency profiles.</p>
+<p style="font-size: 12px; color:var(--muted); margin-bottom:16px; font-family:'Space Mono',monospace;">Click a day to mark it. Aim for 5/7 consistency profiles.</p>
 
 <div style="display:flex; gap:12px; align-items:center; margin-bottom:16px;">
 <div>
@@ -765,7 +765,7 @@
 <div style="flex:1; color:var(--muted); font-size:12px; line-height:1.6;">Each yellow node indicates a completed input cycle. One card stack, one sandbox dialogue, or one routine execution loop logs a check.</div>
 </div>
 
-<p style="font-size:10px; color:var(--muted); font-family:'Space Mono',monospace; margin-bottom:8px;">Last 4 weeks &rarr;</p>
+<p style="font-size: 12px; color:var(--muted); font-family:'Space Mono',monospace; margin-bottom:8px;">Last 4 weeks &rarr;</p>
 
 <div class="streak-days" id="streakDays">&nbsp;</div>
 
@@ -788,7 +788,7 @@
 <div class="portfolio-badge">0 / 3 Cleared</div>
 </div>
 
-<div class="card-title" style="margin-bottom:12px;"><span class="dot green">挑戰 Pipeline Structure</span></div>
+<div class="card-title" style="margin-bottom:12px;"><span class="dot green"></span> Pipeline Structure</div>
 
 <div class="portfolio-grid">
 <div class="page-card">
@@ -862,7 +862,7 @@
           <div class="task-text">
             <strong style="color: var(--accent2);">Glider Working From Abroad Request — Formally Approved (5 Nov 2026):</strong>
             Formal remote working approval granted in accordance with <em>Glider Working From Abroad – Guidance & Process (v3, Oct 2026)</em>.
-            <div style="margin-top: 6px; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 4px; font-size: 11px; line-height: 1.5;">
+            <div style="margin-top: 6px; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 4px; font-size: 12px; line-height: 1.5;">
               <div><strong>To:</strong> <code style="color: var(--accent2);">report@glidertech.com</code> (Business Support: HR, IT & Compliance) &bull; <strong>CC:</strong> <code style="color: var(--accent4);">david.townsend@glidertech.com</code></div>
               <div><strong>Subject:</strong> <code>Formal Request to Work Abroad – Spain (Barcelona) – John Aiyenuro [5 Dec 2026 – 20 Dec 2026]</code></div>
               <div style="margin-top: 4px;"><strong>Trip Duration:</strong> 15 nights / 16 days (&lt;28-day threshold for extended vetting scrutiny; &gt;4 weeks advance notice provided vs 2-week requirement).</div>
@@ -896,7 +896,7 @@
           <div class="task-text">
             <strong style="color: var(--accent2);">Confirmed Flights: easyJet U28063 / U28060 (Trip.com #1653718940285437):</strong>
             Round-trip flights locked for London Gatwick (LGW) &harr; Josep Tarradellas Barcelona-El Prat (BCN). Total paid: £143.10. Seat 7A and 15kg checked luggage confirmed.
-            <div style="margin-top: 6px; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 4px; font-size: 11px; line-height: 1.5;">
+            <div style="margin-top: 6px; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 4px; font-size: 12px; line-height: 1.5;">
               <div>✈️ <strong>Outbound (Sat 5 Dec 2026):</strong> easyJet <code>U28063</code> &bull; <strong>Depart:</strong> 09:25 LGW (North Terminal) &bull; <strong>Arrive:</strong> 12:30 CET BCN (Terminal 2) &bull; <strong>PNR:</strong> <code style="color: var(--accent);">KDNHCMQ</code> &bull; <strong>Seat:</strong> <code style="color: var(--accent2);">7A (Window)</code></div>
               <div style="margin-top: 4px;">✈️ <strong>Return (Sun 20 Dec 2026):</strong> easyJet <code>U28060</code> &bull; <strong>Depart:</strong> 21:45 CET BCN (Terminal 2) &bull; <strong>Arrive:</strong> 23:10 GMT LGW (North Terminal) &bull; <strong>PNR:</strong> <code style="color: var(--accent);">KDNHC4X</code> &bull; Duration: 2h 25m</div>
               <div style="margin-top: 4px; color: var(--accent4);">🧳 <strong>Baggage:</strong> 1&times; 15kg Checked Bag + 1&times; Under-seat Personal Item (45&times;36&times;20cm) + Checked Baggage Protection included.</div>
@@ -919,7 +919,7 @@
           <div class="task-text">
             <strong style="color: var(--accent2);">Booked Housing Base: Casa MEYO (Terrassa Downtown):</strong>
             Confirmed 15-night accommodation officially booked (Sat 5 Dec – Sun 20 Dec 2026). Quiet private room with dedicated workspace, desk, door lock, and high-speed Wi-Fi &mdash; ideal for remote Glider delivery management.
-            <div style="margin-top: 6px; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 4px; font-size: 11px; line-height: 1.5;">
+            <div style="margin-top: 6px; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 4px; font-size: 12px; line-height: 1.5;">
               <div>🏠 <strong>Listing:</strong> <a href="https://www.airbnb.co.uk/rooms/53323765" target="_blank" style="color: var(--accent);">Casa MEYO. Nice room downtown - Terrassa (Airbnb #53323765)</a></div>
               <div style="margin-top: 4px;">📍 <strong>Location:</strong> Carrer de la Rasa, Terrassa (<strong>Zone 3</strong> &mdash; 5 min walk to Terrassa Estació del Nord).</div>
               <div style="margin-top: 4px; color: var(--accent2);">🚇 <strong>Commute to Ágora Base (~35 mins direct):</strong> Walk 5 mins to Terrassa Estació del Nord, take <strong>Renfe Rodalies R4 direct to Sant Andreu Arenal</strong> with zero line changes! Walk 10 mins down Fabra i Puig to Rambla de l'Onze de Setembre 54.</div>
@@ -1034,13 +1034,13 @@
       </div>
     </summary>
     <div class="card-body">
-      <div style="font-size: 11px; color: var(--muted); font-family: 'Space Mono', monospace; margin-top: 4px; margin-bottom: 14px;">
+      <div style="font-size: 12px; color: var(--muted); font-family: 'Space Mono', monospace; margin-top: 4px; margin-bottom: 14px;">
         // Complete transit timetable &bull; UK Rail (Reading ➔ LGW) &bull; easyJet U28063 (Seat 7A) &bull; Rodalies R2 Nord &bull; Sants transfer &bull; Rodalies R4 to Terrassa Estació del Nord
       </div>
 
       <!-- Outbound Journey Timeline Table -->
       <div style="margin-bottom: 20px;">
-        <div style="font-family: 'Space Mono', monospace; font-size: 11px; color: var(--accent2); text-transform: uppercase; margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent2); text-transform: uppercase; margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
           🛫 Outbound Journey: Saturday 5 December 2026 (Reading ➔ Casa MEYO)
         </div>
         <table class="cost-table">
@@ -1137,7 +1137,7 @@
 
       <!-- Return Journey Breakdown -->
       <div>
-        <div style="font-family: 'Space Mono', monospace; font-size: 11px; color: var(--accent4); text-transform: uppercase; margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent4); text-transform: uppercase; margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
           🛬 Return Journey: Sunday 20 December 2026 (Casa MEYO ➔ Reading)
         </div>
         <table class="cost-table">
@@ -1206,13 +1206,13 @@
       </div>
     </summary>
     <div class="card-body">
-      <div style="font-size: 11px; color: var(--muted); font-family: 'Space Mono', monospace; margin-top: 4px; margin-bottom: 14px;">
+      <div style="font-size: 12px; color: var(--muted); font-family: 'Space Mono', monospace; margin-top: 4px; margin-bottom: 14px;">
         // Categorized gear manifest &bull; EasyJet cabin allowance (Under-seat 45&times;36&times;20cm) + 15kg checked luggage &bull; Glider compliance verified
       </div>
 
       <!-- Section 1: Cabin Backpack / Glider Work Tech Stack -->
       <div style="margin-bottom: 18px;">
-        <div style="font-family: 'Space Mono', monospace; font-size: 11px; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
           💻 Cabin Backpack: Work Tech & Compliance (Must Stay in Personal Item)
         </div>
         <div class="task-item" onclick="toggle(this)" data-task-id="pack_tech_laptop">
@@ -1254,7 +1254,7 @@
 
       <!-- Section 2: Critical Travel Documents & Banking -->
       <div style="margin-bottom: 18px;">
-        <div style="font-family: 'Space Mono', monospace; font-size: 11px; color: var(--accent2); text-transform: uppercase; margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent2); text-transform: uppercase; margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
           🛂 Critical Documents, ID & Zero-FX Banking
         </div>
         <div class="task-item" onclick="toggle(this)" data-task-id="pack_doc_passport">
@@ -1296,7 +1296,7 @@
 
       <!-- Section 3: Checked Luggage (15kg Suitcase) - Clothing & Layering -->
       <div style="margin-bottom: 18px;">
-        <div style="font-family: 'Space Mono', monospace; font-size: 11px; color: var(--accent4); text-transform: uppercase; margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent4); text-transform: uppercase; margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
           🧥 15kg Checked Suitcase: Clothing & Catalonia Winter Layering (7°C–16°C)
         </div>
         <div class="task-item" onclick="toggle(this)" data-task-id="pack_cloth_outerwear">
@@ -1345,7 +1345,7 @@
 
       <!-- Section 4: Toiletries, Health & Field Scouting Kit -->
       <div>
-        <div style="font-family: 'Space Mono', monospace; font-size: 11px; color: var(--accent3); text-transform: uppercase; margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent3); text-transform: uppercase; margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; gap: 6px;">
           🧴 Toiletries, First-Aid & Reconnaissance Kit
         </div>
         <div class="task-item" onclick="toggle(this)" data-task-id="pack_toil_washbag">

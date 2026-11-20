@@ -81,16 +81,19 @@
 
     /* Ambient Terminal Grid Background */
     .bg-grid-pattern {
-      background-size: 36px 36px;
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background: transparent;
     }
 
     input[type="checkbox"]:checked {
       background-color: #10b981;
       border-color: #10b981;
     }
+
+    h1 { font-size: 2.25rem !important; line-height: 1.2 !important; font-weight: 800; }
+    h2 { font-size: 1.75rem !important; line-height: 1.25 !important; font-weight: 800; }
+    h3 { font-size: 1.35rem !important; line-height: 1.3 !important; font-weight: 700; }
+    h4 { font-size: 1.05rem !important; line-height: 1.35 !important; font-weight: 700; }
+    body, p { font-size: 0.875rem; }
   </style>
   <script src="./live-roles.js"></script>
 </head>
@@ -104,7 +107,7 @@
         
         <!-- Engine Brand / Version Identifier -->
         <div class="flex items-center gap-3">
-          <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></div>
+          <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
           <div class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
             <i data-lucide="crosshair" class="w-4 h-4"></i>
           </div>
@@ -269,15 +272,15 @@
             Mercor utilizes <span class="text-rose-300 font-semibold">vector semantic embeddings and strict keyword matching</span>, not manual human screening.
           </p>
           <div class="mt-4 space-y-2 text-xs font-mono">
-            <div class="p-2.5 rounded-lg bg-rose-950/30 border border-rose-900/30 text-rose-200/90 flex items-start gap-2">
+            <div class="py-2.5 px-2 text-rose-200/90 flex items-start gap-2 border-b border-rose-900/30">
               <i data-lucide="x-circle" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
               <span>Scrubbing high-density keywords (Revit, CAD, ISO 19650) lowered semantic proximity.</span>
             </div>
-            <div class="p-2.5 rounded-lg bg-rose-950/30 border border-rose-900/30 text-rose-200/90 flex items-start gap-2">
+            <div class="py-2.5 px-2 text-rose-200/90 flex items-start gap-2 border-b border-rose-900/30">
               <i data-lucide="x-circle" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
               <span>Keeping broad soft skills diluted applicant domain rank in saturated generalist queues.</span>
             </div>
-            <div class="p-2.5 rounded-lg bg-rose-950/30 border border-rose-900/30 text-rose-200/90 flex items-start gap-2">
+            <div class="py-2.5 px-2 text-rose-200/90 flex items-start gap-2">
               <i data-lucide="x-circle" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
               <span>Listing evening-only schedule disclaimers triggered instant automated gating drops.</span>
             </div>
@@ -294,15 +297,15 @@
             Ingest domain-dense AEC/CAD taxonomy, strip restrictive schedule disclaimers, and capture high-intent pipelines.
           </p>
           <div class="mt-4 space-y-2 text-xs font-mono">
-            <div class="p-2.5 rounded-lg bg-emerald-950/30 border border-emerald-900/30 text-emerald-200/90 flex items-start gap-2">
+            <div class="py-2.5 px-2 text-emerald-200/90 flex items-start gap-2 border-b border-emerald-900/30">
               <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
               <span><b class="text-white">Architecture &amp; CAD Expert:</b> Revit, ISO 19650, 3D Laser Scanning, Tender Packs.</span>
             </div>
-            <div class="p-2.5 rounded-lg bg-emerald-950/30 border border-emerald-900/30 text-emerald-200/90 flex items-start gap-2">
+            <div class="py-2.5 px-2 text-emerald-200/90 flex items-start gap-2 border-b border-emerald-900/30">
               <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
               <span><b class="text-white">CAD UI & ScreenSpot:</b> Technical drafting, WCS coordinate systems, spatial QA.</span>
             </div>
-            <div class="p-2.5 rounded-lg bg-emerald-950/30 border border-emerald-900/30 text-emerald-200/90 flex items-start gap-2">
+            <div class="py-2.5 px-2 text-emerald-200/90 flex items-start gap-2">
               <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
               <span><b class="text-white">Glider Tech Expansion:</b> Unlocked CDE &amp; Asset Information Model Lead post-probation.</span>
             </div>
@@ -321,7 +324,7 @@
             <h3 class="text-lg font-bold text-white tracking-tight mt-0.5">Revenue & Rate Trajectory Engine</h3>
           </div>
           <!-- Chart controls -->
-          <div class="flex items-center gap-2 bg-slate-950/80 p-1 rounded-lg border border-slate-800 font-mono text-xs">
+          <div class="flex items-center gap-2 font-mono text-xs">
             <button onclick="updateTrajectoryMode('yield')" id="btn-mode-yield" class="px-2.5 py-1 rounded bg-cyan-500/20 text-cyan-300 font-semibold border border-cyan-500/30 transition">
               Monthly Yield ($)
             </button>
@@ -338,27 +341,27 @@
 
         <!-- Milestones Summary Pill Row -->
         <div class="grid grid-cols-2 md:grid-cols-5 gap-2.5 mt-5 pt-4 border-t border-slate-800/80 font-mono text-xs">
-          <div class="p-2.5 rounded-lg bg-slate-950/70 border border-slate-800">
+          <div class="p-2.5 rounded bg-slate-950/70">
             <div class="text-rose-400 font-semibold">Day 0 (Audit)</div>
             <div class="text-slate-300 text-[11px] mt-0.5">$0 · Mass Reject</div>
             <div class="text-[10px] text-slate-500">Generic terms</div>
           </div>
-          <div class="p-2.5 rounded-lg bg-slate-950/70 border border-slate-800">
+          <div class="p-2.5 rounded bg-slate-950/70">
             <div class="text-amber-400 font-semibold">Day 1 (CV Overhaul)</div>
             <div class="text-slate-300 text-[11px] mt-0.5">Profile Gate Pass</div>
             <div class="text-[10px] text-slate-500">Toolkit &amp; ISO 19650</div>
           </div>
-          <div class="p-2.5 rounded-lg bg-slate-950/70 border border-slate-800">
+          <div class="p-2.5 rounded bg-slate-950/70">
             <div class="text-cyan-400 font-semibold">Week 1 (AI Interview)</div>
             <div class="text-slate-300 text-[11px] mt-0.5">$65–$75/hr Tier</div>
             <div class="text-[10px] text-slate-500">STAR CAD/BIM Depth</div>
           </div>
-          <div class="p-2.5 rounded-lg bg-slate-950/70 border border-slate-800">
+          <div class="p-2.5 rounded bg-slate-950/70">
             <div class="text-emerald-400 font-semibold">Week 3 (Sprint)</div>
             <div class="text-slate-300 text-[11px] mt-0.5">$2.6k–$3.6k/mo</div>
             <div class="text-[10px] text-slate-500">CAD &amp; Architecture Lead</div>
           </div>
-          <div class="p-2.5 rounded-lg bg-slate-950/70 border border-emerald-900/50 bg-emerald-950/20 col-span-2 md:col-span-1">
+          <div class="p-2.5 rounded bg-emerald-950/20 col-span-2 md:col-span-1">
             <div class="text-emerald-300 font-bold">Month-End (Glider)</div>
             <div class="text-white text-[11px] mt-0.5">$90–$140/hr</div>
             <div class="text-[10px] text-emerald-400">CDE &amp; Enterprise AIM</div>
@@ -378,7 +381,7 @@
           </div>
 
           <!-- Tab Filter Buttons -->
-          <div class="flex items-center gap-2 font-mono text-xs bg-slate-950 p-1 rounded-lg border border-slate-800">
+          <div class="flex items-center gap-2 font-mono text-xs">
             <button onclick="filterRoles('all')" id="tab-all" class="px-3 py-1 rounded bg-slate-800 text-white font-medium">All Roles</button>
             <button onclick="filterRoles('tier1')" id="tab-tier1" class="px-3 py-1 rounded text-slate-400 hover:text-emerald-300">Tier 1 Target</button>
             <button onclick="filterRoles('expansion')" id="tab-expansion" class="px-3 py-1 rounded text-slate-400 hover:text-cyan-300">Expansion (Glider)</button>
@@ -565,12 +568,12 @@
 
 
       <!-- Multi-Platform Frontier Expansion // Micro1 AI Engine -->
-      <section id="micro1ExpansionSection" class="bg-brand-slate-900 border border-purple-500/30 rounded-xl p-5 sm:p-6 scroll-mt-20 transition-all duration-300 shadow-glow-cyan/20">
-        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-slate-800">
+      <section id="micro1ExpansionSection" class="scroll-mt-20 transition-all duration-300 space-y-6">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-2">
           <div>
             <div class="flex items-center gap-2 font-mono text-xs text-purple-400">
               <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-purple-950/80 text-purple-400 border border-purple-500/40 text-[10px] font-bold">
-                <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+                <span class="w-2 h-2 rounded-full bg-purple-400"></span>
                 DUAL-CHANNEL PIPELINE EXPANSION
               </span>
               <span>FRONTIER AI TALENT NETWORK</span>
@@ -650,7 +653,7 @@
                   <span>Copy</span>
                 </button>
               </div>
-              <p id="snippet-micro1-bio" class="text-xs text-slate-200 font-mono bg-slate-900/90 p-3 rounded-lg border border-slate-800 leading-relaxed text-purple-200 select-all">Digital Delivery Manager &amp; ConTech Domain Data Specialist bridging ISO 19650 CDE governance (Aconex/GliderBIM), Solibri IFC model validation, and automated tabular data pipelines (Power Query/Excel) for frontier AI evaluation.</p>
+              <p id="snippet-micro1-bio" class="text-xs text-slate-200 font-mono pt-2 leading-relaxed text-purple-200 select-all border-l-2 border-purple-500/40 pl-3">Digital Delivery Manager &amp; ConTech Domain Data Specialist bridging ISO 19650 CDE governance (Aconex/GliderBIM), Solibri IFC model validation, and automated tabular data pipelines (Power Query/Excel) for frontier AI evaluation.</p>
             </div>
 
             <!-- Zara Verbal Triggers -->
@@ -662,20 +665,20 @@
                   <span>Copy</span>
                 </button>
               </div>
-              <p id="snippet-zara-triggers" class="text-xs text-slate-200 font-mono bg-slate-900/90 p-3 rounded-lg border border-slate-800 leading-relaxed text-indigo-200 select-all">Key anchors to verbalize: ISO 19650 CDE status codes (S0, S1, A1), Solibri IFC rule validation (SOL/203, SOL/222), Power Query tabular data transformation, Aconex transmittal workflows, and clash detection tolerances.</p>
+              <p id="snippet-zara-triggers" class="text-xs text-slate-200 font-mono pt-2 leading-relaxed text-indigo-200 select-all border-l-2 border-indigo-500/40 pl-3">Key anchors to verbalize: ISO 19650 CDE status codes (S0, S1, A1), Solibri IFC rule validation (SOL/203, SOL/222), Power Query tabular data transformation, Aconex transmittal workflows, and clash detection tolerances.</p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Monday 10 AM Pipeline Drop Scanner Section -->
-      <section id="pipelineDropScannerSection" class="bg-brand-slate-900 border border-slate-800 rounded-xl p-5 sm:p-6 scroll-mt-20 transition-all duration-300">
+      <section id="pipelineDropScannerSection" class="scroll-mt-20 transition-all duration-300 space-y-6">
         <!-- Section Header & Live Telemetry -->
-        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-2">
           <div>
             <div class="flex items-center gap-2 font-mono text-xs text-cyan-400">
               <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-500/40 text-[10px] font-bold">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                 LIVE MERCOR AWS SYNC
               </span>
               <span>AUTOMATED CAD / AEC INGESTION</span>
@@ -743,7 +746,7 @@
                 <div id="activePitchTitle" class="text-xs font-bold text-white mb-1">
                   Select a live listing on the left
                 </div>
-                <div id="activePitchText" class="bg-slate-900 border border-slate-800 p-3 rounded text-slate-300 text-xs font-sans leading-relaxed min-h-[90px] select-all">
+                <div id="activePitchText" class="text-slate-300 text-xs font-sans leading-relaxed min-h-[90px] select-all pt-2 border-t border-slate-800">
                   Click "View Pitch" on any active Mercor listing on the left to generate and copy a zero-rework submission response for the Monday 10 AM window.
                 </div>
               </div>
@@ -757,7 +760,7 @@
                   <span>AUTOMATION SYNC ENGINE</span>
                 </span>
                 <span id="syncServiceBadge" class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-950 text-emerald-400 border border-emerald-500/30">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                   ONLINE // 4884
                 </span>
               </div>
@@ -824,7 +827,7 @@
       </section>
 
       <!-- Execution Queue Section -->
-      <section id="executionQueueSection" class="bg-brand-slate-900 border border-slate-800 rounded-xl p-5 sm:p-6 scroll-mt-20 transition-all">
+      <section id="executionQueueSection" class="scroll-mt-20 transition-all space-y-4">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 cursor-pointer select-none" onclick="toggleSectionCollapse('executionQueueContent', 'executionQueueChevron')">
           <div class="flex flex-wrap items-center gap-3">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
@@ -1009,7 +1012,7 @@
                 </label>
 
                 <!-- Informational Tip Box -->
-                <div class="mt-4 p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-300/90 text-xs">
+                <div class="mt-4 pt-3 border-t border-slate-800 text-emerald-300/90 text-xs">
                   <div class="font-mono font-semibold flex items-center gap-1.5 mb-1 text-emerald-400">
                     <i data-lucide="check-check" class="w-3.5 h-3.5"></i> PROFILE FULLY CALIBRATED
                   </div>
@@ -1028,7 +1031,7 @@
       </section>
 
       <!-- Ingestion Snippets Section -->
-      <section id="ingestionSnippetsSection" class="bg-brand-slate-900 border border-slate-800 rounded-xl p-5 sm:p-6 transition-all">
+      <section id="ingestionSnippetsSection" class="transition-all space-y-4">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 cursor-pointer select-none" onclick="toggleSectionCollapse('ingestionSnippetsContent', 'ingestionSnippetsChevron')">
           <div class="flex flex-wrap items-center gap-3">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
@@ -1062,7 +1065,7 @@
                 <span>Copy 15-Word Pitch</span>
               </button>
             </div>
-            <p id="snippet-summary-15" class="text-xs sm:text-sm text-slate-200 font-mono bg-slate-900/90 p-3.5 rounded-lg border border-slate-800 leading-relaxed font-semibold text-cyan-300">Architectural Designer &amp; BIM Specialist delivering error-free technical packages, 3D modeling, and ISO 19650 coordination.</p>
+            <p id="snippet-summary-15" class="text-xs sm:text-sm text-slate-200 font-mono pt-3 leading-relaxed font-semibold text-cyan-300 border-t border-slate-800">Architectural Designer &amp; BIM Specialist delivering error-free technical packages, 3D modeling, and ISO 19650 coordination.</p>
           </div>
 
           <!-- Snippet 2: Skills Field -->
@@ -1080,7 +1083,7 @@
             <div id="snippet-skills" class="hidden">Revit, AutoCAD, BIM, CAD Drafting, 3D Modeling, Technical Drawing, Architectural Detailing, Construction Documentation, Point Cloud / 3D Laser Scanning, Clash Detection, Quality Assurance (QA/QC), Visual Document Inspection, Technical Auditing, RFI Resolution, Building Regulations, ISO 19650, Common Data Environment (CDE), Redline Review, Visual Reasoning, Spatial Annotation, Bounding Boxes, Ground Truth Verification, Rubric Assessment</div>
             
             <!-- Visual Chip representation -->
-            <div class="bg-slate-900/90 p-3.5 rounded-lg border border-slate-800 flex flex-wrap gap-1.5">
+            <div class="pt-3 border-t border-slate-800 flex flex-wrap gap-1.5">
               <span class="px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-800/40 text-[11px] font-mono">Revit</span>
               <span class="px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-800/40 text-[11px] font-mono">AutoCAD</span>
               <span class="px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-800/40 text-[11px] font-mono">BIM</span>
@@ -1110,7 +1113,7 @@
                 <span>Copy Script Anchors</span>
               </button>
             </div>
-            <div id="snippet-interview-script" class="bg-slate-900/90 p-3.5 rounded-lg border border-slate-800 font-mono text-xs text-slate-300 space-y-2">
+            <div id="snippet-interview-script" class="pt-3 border-t border-slate-800 font-mono text-xs text-slate-300 space-y-2">
               <div><span class="text-cyan-400 font-bold">&bull; Coordinate Alignment:</span> "In AutoCAD and Revit, I unified all consultant links using shared coordinates locked to the project base point and verified against the Ordnance Survey World Coordinate System (WCS)."</div>
               <div><span class="text-emerald-400 font-bold">&bull; Standards Compliance:</span> "I implemented strict ISO 19650 naming conventions and Common Data Environment (CDE) status codes (S0, S1, A1), running weekly automated clash detection runs."</div>
               <div><span class="text-amber-400 font-bold">&bull; Reality Capture QA:</span> "Reconciled raw 3D laser scan surveys and point clouds setting a &plusmn;2mm tolerance threshold to eliminate site-fit variations."</div>
@@ -1135,7 +1138,7 @@
                 </button>
               </div>
             </div>
-            <div id="snippet-glider" class="bg-slate-900/90 p-3.5 rounded-lg border border-slate-800 font-mono text-xs text-slate-300 space-y-1.5">
+            <div id="snippet-glider" class="pt-3 border-t border-slate-800 font-mono text-xs text-slate-300 space-y-1.5">
               <div class="text-white font-bold">Information Manager / BIM &amp; Technical Specialist &mdash; Glider Technology</div>
               <div class="text-slate-400 text-[11px]">Remote / UK | 2026 &ndash; Present</div>
               <div class="mt-2 text-slate-300 leading-relaxed">&bull; Implemented and managed ISO 19650-compliant Common Data Environment (CDE) protocols, configuring data workflows and metadata status codes for client assets.</div>
@@ -1151,7 +1154,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
 
         <!-- Weekly Mercor Cadence Grid (7 cols) -->
-        <div class="lg:col-span-7 bg-brand-slate-900 border border-slate-800 rounded-xl p-5">
+        <div class="lg:col-span-7 space-y-3">
           <div class="flex items-center gap-2 font-mono text-xs text-cyan-400 mb-1">
             <i data-lucide="calendar" class="w-4 h-4"></i>
             <span>ASYNC OPERATIONAL CALENDAR</span>
@@ -1216,7 +1219,7 @@
         </div>
 
         <!-- Platform Operating Rules (5 cols) -->
-        <div class="lg:col-span-5 bg-brand-slate-900 border border-slate-800 rounded-xl p-5">
+        <div class="lg:col-span-5 space-y-3">
           <div class="flex items-center gap-2 font-mono text-xs text-amber-400 mb-1">
             <i data-lucide="shield" class="w-4 h-4"></i>
             <span>PLATFORM PROTOCOLS</span>
@@ -1265,7 +1268,7 @@
       </div>
 
       <!-- Deprioritized Roles Matrix -->
-      <section class="bg-brand-slate-900/60 border border-slate-800/80 rounded-xl p-5">
+      <section class="space-y-3">
         <div class="flex items-center gap-2 font-mono text-xs text-rose-400 mb-3">
           <i data-lucide="ban" class="w-4 h-4"></i>
           <span>DEPRIORITIZED ROLES // EXPLICIT SKIP LIST</span>
@@ -1716,7 +1719,7 @@
           renderAppliedRolesCard();
           showToast(`Synced ${json.data.matchingCount} live roles directly from Mercor!`);
           if (serviceBadge) {
-            serviceBadge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> ONLINE // 4884';
+            serviceBadge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> ONLINE // 4884';
             serviceBadge.className = 'inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-950 text-emerald-400 border border-emerald-500/30';
           }
           if (countBadge) {
