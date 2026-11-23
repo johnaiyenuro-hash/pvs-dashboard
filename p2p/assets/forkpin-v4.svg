@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <defs>
+    <linearGradient id="v4Gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="v4Red" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF385C"/>
+      <stop offset="100%" stop-color="#9F1239"/>
+    </linearGradient>
+    <filter id="v4Glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#F59E0B" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <!-- Base Serving Platter -->
+  <ellipse cx="256" cy="380" rx="190" ry="46" fill="#0E1626" stroke="url(#v4Gold)" stroke-width="6"/>
+  <ellipse cx="256" cy="374" rx="150" ry="32" fill="#070B12" stroke="#334155" stroke-width="3"/>
+  <!-- Cloche Dome Lifted -->
+  <g filter="url(#v4Glow)">
+    <!-- Steam Swirls in Negative Reveal -->
+    <path d="M 220,330 Q 210,290 230,260 T 225,220" stroke="#FDE68A" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M 280,330 Q 295,290 275,260 T 285,220" stroke="#FDE68A" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <!-- Dome Shell -->
+    <path d="M 120,310 C 120,180 392,180 392,310 Z" fill="url(#v4Red)" stroke="url(#v4Gold)" stroke-width="5"/>
+    <path d="M 112,310 L 400,310 L 396,322 L 116,322 Z" fill="url(#v4Gold)"/>
+    <!-- Pushpin Handle atop Dome -->
+    <circle cx="256" cy="148" r="38" fill="url(#v4Gold)"/>
+    <circle cx="256" cy="148" r="14" fill="#FFFFFF"/>
+    <path d="M 246,186 L 266,186 L 262,208 L 250,208 Z" fill="url(#v4Gold)"/>
+    <!-- Fork Tines Revealed Beneath Platter -->
+    <path d="M 236,334 L 236,370" stroke="url(#v4Gold)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 256,330 L 256,376" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 276,334 L 276,370" stroke="url(#v4Gold)" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>
