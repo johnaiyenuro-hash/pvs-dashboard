@@ -1049,7 +1049,10 @@
       }
     };
 
-    let activeLogoKey = localStorage.getItem('p2p_active_logo') || 'forkpin_v3';
+    let activeLogoKey = localStorage.getItem('p2p_active_logo') || 'forkpin_v1';
+    if (!LOGO_CONCEPTS[activeLogoKey]) {
+      activeLogoKey = 'forkpin_v1';
+    }
     let activeNameKey = localStorage.getItem('p2p_active_name') || 'pin2plate';
     let activeRenderMode = 'vector';
 
@@ -1146,17 +1149,12 @@
       lucide.createIcons();
     }
 
-    const LOGO_KEYS = Object.keys(LOGO_CONCEPTS);
+        const LOGO_KEYS = Object.keys(LOGO_CONCEPTS);
     if (btnToggleRevision) {
       btnToggleRevision.onclick = () => {
         const currIdx = LOGO_KEYS.indexOf(activeLogoKey);
         const nextIdx = (currIdx + 1) % LOGO_KEYS.length;
         activeLogoKey = LOGO_KEYS[nextIdx];
-        localStorage.setItem('p2p_active_logo', activeLogoKey);
-        updateLogoTabsUi(activeLogoKey);
-        renderLogoConcept(activeLogoKey);
-      };
-    }
         localStorage.setItem('p2p_active_logo', activeLogoKey);
         updateLogoTabsUi(activeLogoKey);
         renderLogoConcept(activeLogoKey);
