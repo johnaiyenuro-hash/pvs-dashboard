@@ -477,54 +477,18 @@
       <!-- THE FORKPIN BRAND STUDIO (v1 Original vs v2 Revised) -->
       <div class="space-y-8">
         
-        <!-- Header Selector Tabs -->
+        <!-- Header: Official Champion Identity -->
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
           <div>
             <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Official Mark Studio</span>
-            <h3 class="text-xl font-syne font-extrabold text-white mt-0.5">The ForkPin: Original vs Revised</h3>
+            <h3 class="text-xl font-syne font-extrabold text-white mt-0.5">The ForkPin (v1 Original)</h3>
           </div>
           
-                    <div class="flex items-center gap-2 p-1.5 rounded-xl bg-slate-900 border border-slate-800 flex-wrap" id="logo-tabs">
-            <button class="logo-tab active px-2.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-red-600 text-white shadow-glow-red flex items-center gap-1.5" data-logo="forkpin_v1">
-              <span class="text-[10px] opacity-70">01</span>
-              <span>v1 Original</span>
-            </button>
-            <button class="logo-tab  px-2.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5" data-logo="forkpin_v2">
-              <span class="text-[10px] opacity-70">02</span>
-              <span>v2 Apex</span>
-            </button>
-            <button class="logo-tab  px-2.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5" data-logo="forkpin_v3">
-              <span class="text-[10px] opacity-70">03</span>
-              <span>v3 Geometric Crest</span>
-            </button>
-            <button class="logo-tab  px-2.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5" data-logo="forkpin_v4">
-              <span class="text-[10px] opacity-70">04</span>
-              <span>v4 Gourmet Reveal</span>
-            </button>
-            <button class="logo-tab  px-2.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5" data-logo="forkpin_v5">
-              <span class="text-[10px] opacity-70">05</span>
-              <span>v5 Continuous Monogram</span>
-            </button>
-            <button class="logo-tab  px-2.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5" data-logo="forkpin_v6">
-              <span class="text-[10px] opacity-70">06</span>
-              <span>v6 Hex Tech Badge</span>
-            </button>
-            <button class="logo-tab  px-2.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5" data-logo="forkpin_v7">
-              <span class="text-[10px] opacity-70">07</span>
-              <span>v7 Kinetic Cart Delivery</span>
-            </button>
-            <button class="logo-tab  px-2.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5" data-logo="forkpin_v8">
-              <span class="text-[10px] opacity-70">08</span>
-              <span>v8 Cutlery Cross</span>
-            </button>
-            <button class="logo-tab  px-2.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5" data-logo="forkpin_v9">
-              <span class="text-[10px] opacity-70">09</span>
-              <span>v9 Culinary Torch Induction</span>
-            </button>
-            <button class="logo-tab  px-2.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5" data-logo="forkpin_v10">
-              <span class="text-[10px] opacity-70">10</span>
-              <span>v10 P2P Apex Shield</span>
-            </button>
+          <div class="flex items-center gap-2">
+            <span class="px-3 py-1.5 rounded-xl bg-red-600/15 text-rose-300 border border-red-500/30 text-xs font-mono font-bold flex items-center gap-1.5 shadow-glow-red">
+              <i data-lucide="crown" class="w-4 h-4 text-amber-400"></i>
+              <span>Official Champion Mark</span>
+            </span>
           </div>
         </div>
 
@@ -565,10 +529,7 @@
               </div>
 
               <!-- Quick Revision Switcher Button -->
-              <button id="btn-toggle-revision" class="mt-4 px-4 py-2 rounded-xl bg-red-600 hover:bg-red-500 text-xs font-mono font-bold text-white flex items-center gap-2 transition-all shadow-glow-red z-10">
-                <i data-lucide="sparkles" class="w-4 h-4"></i>
-                <span id="toggle-revision-text">Switch to Revised ForkPin (v2)</span>
-              </button>
+              <a href="#svg-converter-section" class="mt-4 px-4 py-2 rounded-xl bg-red-600 hover:bg-red-500 text-xs font-mono font-bold text-white flex items-center gap-2 transition-all shadow-glow-red z-10"><i data-lucide="file-output" class="w-4 h-4"></i><span>SVG to PNG Exporter &darr;</span></a>
             </div>
 
             <!-- Real-World Asset Mockups Grid -->
@@ -648,82 +609,118 @@
               </button>
             </div>
 
-            <!-- Figma & Icon Asset Downloads -->
+            <!-- Interactive SVG to PNG Converter Suite -->
+            <div id="svg-converter-section" class="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded-lg bg-red-600/20 border border-red-500/30 flex items-center justify-center text-rose-400">
+                    <i data-lucide="file-output" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-syne font-bold text-white">SVG to PNG Converter</h4>
+                    <p class="text-[11px] font-mono text-slate-400">Client-side instant vector rasterizer</p>
+                  </div>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">Retina Crisp</span>
+              </div>
+
+              <!-- Source Selection (Active ForkPin vs Custom Upload) -->
+              <div class="space-y-1.5 font-mono text-xs">
+                <label class="text-slate-400 text-[11px] font-bold uppercase">SVG Source</label>
+                <div class="flex items-center gap-2">
+                  <select id="conv-source-select" class="flex-1 bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-200 text-xs focus:outline-none focus:border-red-500">
+                    <option value="active" selected>Active Logo (The ForkPin v1 Original)</option>
+                    <option value="custom">Upload Custom SVG File...</option>
+                  </select>
+                  <label id="conv-upload-label" class="hidden cursor-pointer px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-xs font-bold transition-colors">
+                    <span>Browse</span>
+                    <input type="file" id="conv-file-input" accept=".svg" class="hidden">
+                  </label>
+                </div>
+              </div>
+
+              <!-- Output Resolution Presets & Custom Size -->
+              <div class="space-y-1.5 font-mono text-xs">
+                <label class="text-slate-400 text-[11px] font-bold uppercase">Target Size (px)</label>
+                <div class="grid grid-cols-4 gap-2">
+                  <button type="button" class="conv-size-btn active py-2 rounded-lg bg-red-600 text-white font-bold text-xs" data-size="512">512</button>
+                  <button type="button" class="conv-size-btn py-2 rounded-lg bg-slate-950 hover:bg-slate-800 text-slate-300 font-bold text-xs transition-colors" data-size="1024">1024</button>
+                  <button type="button" class="conv-size-btn py-2 rounded-lg bg-slate-950 hover:bg-slate-800 text-slate-300 font-bold text-xs transition-colors" data-size="2048">2048</button>
+                  <div class="flex items-center">
+                    <input type="number" id="conv-custom-size" placeholder="Custom" min="16" max="4096" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-2 py-1.5 text-slate-200 text-center text-xs focus:outline-none focus:border-red-500">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Background Transparency Toggle -->
+              <div class="space-y-1.5 font-mono text-xs">
+                <label class="text-slate-400 text-[11px] font-bold uppercase">Background</label>
+                <div class="grid grid-cols-2 gap-2">
+                  <button type="button" class="conv-bg-btn active py-1.5 rounded-lg bg-slate-800 text-slate-200 text-xs font-bold" data-bg="transparent">
+                    Transparent
+                  </button>
+                  <button type="button" class="conv-bg-btn py-1.5 rounded-lg bg-slate-950 text-slate-400 text-xs font-bold hover:text-white" data-bg="#0D1321">
+                    Dark Obsidian
+                  </button>
+                </div>
+              </div>
+
+              <!-- Convert & Download Button -->
+              <button type="button" id="btn-convert-download" class="w-full py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-mono text-xs font-bold transition-all shadow-glow-red flex items-center justify-center gap-2">
+                <i data-lucide="download" class="w-4 h-4"></i>
+                <span id="btn-convert-label">Export 512×512 PNG Now</span>
+              </button>
+              <canvas id="conv-canvas" class="hidden"></canvas>
+            </div>
+
+            <!-- Figma & Official Icon Asset Suite -->
             <div class="pt-4 border-t border-slate-800 space-y-2">
               <span class="text-xs font-mono text-slate-400 uppercase font-bold flex items-center gap-1.5">
                 <i data-lucide="layers" class="w-3.5 h-3.5 text-indigo-400"></i>
-                Figma Vector Master & Generated Icon Pack
+                Official ForkPin (v1) Master Assets
               </span>
-                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 text-[11px] font-mono">
-                <a href="assets/forkpin-v1.svg" download class="p-2 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-[11px] font-mono">
+                <a href="assets/forkpin.svg" download class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
                   <span class="flex items-center gap-1.5 truncate">
                     <span class="text-rose-400">❖</span>
-                    <span class="truncate">forkpin-v1.svg</span>
+                    <span>forkpin.svg</span>
                   </span>
-                  <span class="text-[10px] text-slate-400 font-bold ml-1">v1</span>
+                  <span class="text-[10px] text-amber-400 font-bold">Figma Master</span>
                 </a>
-                <a href="assets/forkpin-v2.svg" download class="p-2 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
+                <a href="assets/forkpin-transparent-512.png" download class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
                   <span class="flex items-center gap-1.5 truncate">
-                    <span class="text-rose-400">❖</span>
-                    <span class="truncate">forkpin-v2.svg</span>
+                    <span class="text-sky-400">🖼️</span>
+                    <span>Transparent</span>
                   </span>
-                  <span class="text-[10px] text-slate-400 font-bold ml-1">v2</span>
+                  <span class="text-[10px] text-slate-400">512×512</span>
                 </a>
-                <a href="assets/forkpin-v3.svg" download class="p-2 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
+                <a href="assets/app-store-1024x1024.png" download class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
                   <span class="flex items-center gap-1.5 truncate">
-                    <span class="text-rose-400">❖</span>
-                    <span class="truncate">forkpin-v3.svg</span>
+                    <span class="text-emerald-400">📱</span>
+                    <span>App Store</span>
                   </span>
-                  <span class="text-[10px] text-slate-400 font-bold ml-1">v3</span>
+                  <span class="text-[10px] text-slate-400">1024×1024</span>
                 </a>
-                <a href="assets/forkpin-v4.svg" download class="p-2 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
+                <a href="assets/apple-touch-icon.png" download class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
                   <span class="flex items-center gap-1.5 truncate">
-                    <span class="text-rose-400">❖</span>
-                    <span class="truncate">forkpin-v4.svg</span>
+                    <span class="text-indigo-400">🍎</span>
+                    <span>iOS Touch</span>
                   </span>
-                  <span class="text-[10px] text-slate-400 font-bold ml-1">v4</span>
+                  <span class="text-[10px] text-slate-400">180×180</span>
                 </a>
-                <a href="assets/forkpin-v5.svg" download class="p-2 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
+                <a href="assets/android-chrome-512x512.png" download class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
                   <span class="flex items-center gap-1.5 truncate">
-                    <span class="text-rose-400">❖</span>
-                    <span class="truncate">forkpin-v5.svg</span>
+                    <span class="text-amber-400">🤖</span>
+                    <span>Android</span>
                   </span>
-                  <span class="text-[10px] text-slate-400 font-bold ml-1">v5</span>
+                  <span class="text-[10px] text-slate-400">512×512</span>
                 </a>
-                <a href="assets/forkpin-v6.svg" download class="p-2 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
+                <a href="assets/favicon-32x32.png" download class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
                   <span class="flex items-center gap-1.5 truncate">
-                    <span class="text-rose-400">❖</span>
-                    <span class="truncate">forkpin-v6.svg</span>
+                    <span class="text-purple-400">🌐</span>
+                    <span>Favicon</span>
                   </span>
-                  <span class="text-[10px] text-slate-400 font-bold ml-1">v6</span>
-                </a>
-                <a href="assets/forkpin-v7.svg" download class="p-2 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
-                  <span class="flex items-center gap-1.5 truncate">
-                    <span class="text-rose-400">❖</span>
-                    <span class="truncate">forkpin-v7.svg</span>
-                  </span>
-                  <span class="text-[10px] text-slate-400 font-bold ml-1">v7</span>
-                </a>
-                <a href="assets/forkpin-v8.svg" download class="p-2 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
-                  <span class="flex items-center gap-1.5 truncate">
-                    <span class="text-rose-400">❖</span>
-                    <span class="truncate">forkpin-v8.svg</span>
-                  </span>
-                  <span class="text-[10px] text-slate-400 font-bold ml-1">v8</span>
-                </a>
-                <a href="assets/forkpin-v9.svg" download class="p-2 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
-                  <span class="flex items-center gap-1.5 truncate">
-                    <span class="text-rose-400">❖</span>
-                    <span class="truncate">forkpin-v9.svg</span>
-                  </span>
-                  <span class="text-[10px] text-slate-400 font-bold ml-1">v9</span>
-                </a>
-                <a href="assets/forkpin-v10.svg" download class="p-2 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
-                  <span class="flex items-center gap-1.5 truncate">
-                    <span class="text-rose-400">❖</span>
-                    <span class="truncate">forkpin-v10.svg</span>
-                  </span>
-                  <span class="text-[10px] text-slate-400 font-bold ml-1">v10</span>
+                  <span class="text-[10px] text-slate-400">32×32</span>
                 </a>
               </div>
             </div>
@@ -903,159 +900,37 @@
     const LOGO_CONCEPTS = {
       forkpin_v1: {
         name: "The ForkPin (v1 Original)",
-        label: "v01 // Classic Ceramic",
-        desc: "The original breakthrough concept: a pushpin top with 3 fork tines piercing downward through a concentric dark ceramic dinner plate.",
-        bestFor: "Classic culinary D2C brand, recipe card watermarks, recognizable tangible storytelling.",
-        imageSrc: "assets/forkpin-v1-512.png",
-        svgFile: "assets/forkpin-v1.svg",
-        palette: [{"name":"Pin Red","hex":"#E60023","text":"#fff"},{"name":"Ceramic Obsidian","hex":"#0D1321","text":"#fff"},{"name":"Steel Gleam","hex":"#E2E8F0","text":"#000"}],
-        badgeHtml: "<span class=\"w-2 h-2 rounded-full bg-red-400\"></span><span class=\"font-bold\">v1 Original</span>",
+        label: "v01 // Classic Ceramic Champion",
+        desc: "The original breakthrough concept: a pushpin top with 3 fork tines piercing downward through a concentric dark ceramic dinner plate. Direct, unforgettable, and grounded.",
+        bestFor: "Official brand identity, App Store recognition, culinary D2C marketing, physical merchandise.",
+        imageSrc: "assets/logo1_forkpin.jpg",
+        svgFile: "assets/forkpin.svg",
+        palette: [
+          { name: "Pin Red", hex: "#E60023", text: "#fff" },
+          { name: "Ceramic Obsidian", hex: "#0D1321", text: "#fff" },
+          { name: "Steel Gleam", hex: "#E2E8F0", text: "#000" }
+        ],
+        badgeHtml: `<span class="w-2 h-2 rounded-full bg-red-500"></span><span class="font-bold">Official ForkPin v1</span>`,
         badgeClass: "border-red-500/40 bg-red-950/40 text-red-300",
         squircleClass: "bg-gradient-to-tr from-red-600 to-rose-700 shadow-glow-red",
-        svg: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" width=\"512\" height=\"512\" fill=\"none\">\n  <defs>\n    <!-- Brand Gradients -->\n    <linearGradient id=\"pinRed\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"#FF2A55\"/>\n      <stop offset=\"50%\" stop-color=\"#E60023\"/>\n      <stop offset=\"100%\" stop-color=\"#B30018\"/>\n    </linearGradient>\n    <linearGradient id=\"plateDark\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"#141C2E\"/>\n      <stop offset=\"100%\" stop-color=\"#070B14\"/>\n    </linearGradient>\n    <linearGradient id=\"steelGleam\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"#FFFFFF\"/>\n      <stop offset=\"50%\" stop-color=\"#E2E8F0\"/>\n      <stop offset=\"100%\" stop-color=\"#94A3B8\"/>\n    </linearGradient>\n    <filter id=\"glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"12\" stdDeviation=\"16\" flood-color=\"#E60023\" flood-opacity=\"0.4\"/>\n    </filter>\n  </defs>\n\n  <!-- Concentric Ceramic Plate -->\n  <circle cx=\"256\" cy=\"256\" r=\"226\" stroke=\"#E60023\" stroke-width=\"6\" stroke-dasharray=\"14 10\" opacity=\"0.35\"/>\n  <circle cx=\"256\" cy=\"256\" r=\"198\" fill=\"url(#plateDark)\" stroke=\"#1E293B\" stroke-width=\"8\"/>\n  <circle cx=\"256\" cy=\"256\" r=\"144\" fill=\"#0D1321\" stroke=\"#334155\" stroke-width=\"4\" opacity=\"0.8\"/>\n\n  <!-- The ForkPin Core Symbol -->\n  <g filter=\"url(#glow)\">\n    <!-- Pushpin Rounded Cap -->\n    <circle cx=\"256\" cy=\"128\" r=\"64\" fill=\"url(#pinRed)\"/>\n    <circle cx=\"256\" cy=\"128\" r=\"24\" fill=\"#FFFFFF\"/>\n    \n    <!-- Pin Neck Transition -->\n    <path d=\"M 234,188 L 278,188 L 272,232 L 240,232 Z\" fill=\"url(#steelGleam)\"/>\n\n    <!-- Culinary Fork Base Collar -->\n    <path d=\"M 220,232 C 220,268 292,268 292,232 Z\" fill=\"#FFFFFF\"/>\n\n    <!-- Fork 3 Tines Piercing Downward -->\n    <!-- Left Tine -->\n    <path d=\"M 224,244 L 224,354 C 224,374 234,390 240,400\" stroke=\"#FFFFFF\" stroke-width=\"12\" stroke-linecap=\"round\" fill=\"none\"/>\n    \n    <!-- Center Tine (Long Needle Piercing Plate) -->\n    <path d=\"M 256,236 L 256,426\" stroke=\"url(#pinRed)\" stroke-width=\"14\" stroke-linecap=\"round\"/>\n    \n    <!-- Right Tine -->\n    <path d=\"M 288,244 L 288,354 C 288,374 278,390 272,400\" stroke=\"#FFFFFF\" stroke-width=\"12\" stroke-linecap=\"round\" fill=\"none\"/>\n\n    <!-- Needle Point Ceramic Impact Spark -->\n    <circle cx=\"256\" cy=\"426\" r=\"7\" fill=\"#FFFFFF\"/>\n  </g>\n</svg>",
-        faviconSvg: "<svg viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" rx=\"24\" fill=\"#0A0B10\"/><circle cx=\"50\" cy=\"50\" r=\"44\" stroke=\"#E60023\" stroke-width=\"4\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"50\" cy=\"30\" r=\"14\" fill=\"#E60023\"/><path d=\"M 50,44 L 50,86 M 42,54 L 42,76 M 58,54 L 58,76\" stroke=\"#fff\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg>"
-      },
-
-      forkpin_v2: {
-        name: "The ForkPin (v2 Apex)",
-        label: "v02 // Speed Arc & Flame",
-        desc: "Aerodynamic bevel with golden-ratio curved outer tines and an active velocity orbital ring signifying rapid 1-click cart transfer.",
-        bestFor: "Modern tech scale-up, high-contrast dark interfaces, speed-oriented pitch decks.",
-        imageSrc: "assets/forkpin-v2-512.png",
-        svgFile: "assets/forkpin-v2.svg",
-        palette: [{"name":"Hyper Scarlet","hex":"#FF2A55","text":"#fff"},{"name":"Sunset Flame","hex":"#FF5722","text":"#fff"},{"name":"Platinum Ice","hex":"#F8FAFC","text":"#000"}],
-        badgeHtml: "<span class=\"w-2 h-2 rounded-full bg-red-400\"></span><span class=\"font-bold\">v2 Apex</span>",
-        badgeClass: "border-amber-500/40 bg-amber-950/40 text-amber-300",
-        squircleClass: "bg-gradient-to-tr from-red-600 via-rose-600 to-amber-500 shadow-glow-red",
-        svg: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" width=\"512\" height=\"512\" fill=\"none\">\n  <defs>\n    <!-- Brand Gradients v2 -->\n    <linearGradient id=\"v2PlateRim512\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"#FF2A55\"/>\n      <stop offset=\"60%\" stop-color=\"#E60023\"/>\n      <stop offset=\"100%\" stop-color=\"#FF5722\"/>\n    </linearGradient>\n    <linearGradient id=\"v2Head512\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"#FF3B69\"/>\n      <stop offset=\"100%\" stop-color=\"#B30018\"/>\n    </linearGradient>\n    <linearGradient id=\"v2Steel512\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"#FFFFFF\"/>\n      <stop offset=\"60%\" stop-color=\"#E2E8F0\"/>\n      <stop offset=\"100%\" stop-color=\"#94A3B8\"/>\n    </linearGradient>\n    <filter id=\"v2Glow512\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"16\" stdDeviation=\"20\" flood-color=\"#E60023\" flood-opacity=\"0.45\"/>\n    </filter>\n  </defs>\n\n  <!-- Concentric Ceramic Plate -->\n  <circle cx=\"256\" cy=\"256\" r=\"226\" stroke=\"url(#v2PlateRim512)\" stroke-width=\"6\" stroke-dasharray=\"16 10\" opacity=\"0.4\"/>\n  <circle cx=\"256\" cy=\"256\" r=\"198\" fill=\"#070B14\" stroke=\"#1E293B\" stroke-width=\"8\"/>\n  <circle cx=\"256\" cy=\"256\" r=\"142\" fill=\"#0D1424\" stroke=\"#334155\" stroke-width=\"4\" opacity=\"0.7\"/>\n\n  <!-- Dynamic Velocity Speed Arc (1-Click Cart Flow) -->\n  <path d=\"M 82,256 A 174,174 0 0,1 398,124\" stroke=\"#FF5722\" stroke-width=\"8\" stroke-linecap=\"round\" fill=\"none\" opacity=\"0.6\"/>\n\n  <!-- The ForkPin Core Symbol v2 -->\n  <g filter=\"url(#v2Glow512)\">\n    <!-- Aerodynamic Pushpin Cap -->\n    <circle cx=\"256\" cy=\"120\" r=\"66\" fill=\"url(#v2Head512)\"/>\n    <circle cx=\"256\" cy=\"120\" r=\"26\" fill=\"#FFFFFF\"/>\n    <circle cx=\"256\" cy=\"120\" r=\"12\" fill=\"#E60023\"/>\n    \n    <!-- Precision Tapered Neck -->\n    <path d=\"M 232,182 L 280,182 L 274,228 L 238,228 Z\" fill=\"url(#v2Steel512)\"/>\n\n    <!-- Sculpted Culinary Fork Collar -->\n    <path d=\"M 218,228 C 218,266 294,266 294,228 Z\" fill=\"#FFFFFF\"/>\n\n    <!-- Fork 3 Tines (Golden-Ratio Curvature) -->\n    <!-- Left Tine: Ergonomic Inward Curve -->\n    <path d=\"M 222,240 L 222,342 C 222,368 238,386 248,396\" stroke=\"#FFFFFF\" stroke-width=\"12\" stroke-linecap=\"round\" fill=\"none\"/>\n    \n    <!-- Center Tine: Needle Piercing Plate Target with Accent Color -->\n    <path d=\"M 256,232 L 256,430\" stroke=\"url(#v2PlateRim512)\" stroke-width=\"15\" stroke-linecap=\"round\"/>\n    \n    <!-- Right Tine: Mirror Inward Curve -->\n    <path d=\"M 290,240 L 290,342 C 290,368 274,386 264,396\" stroke=\"#FFFFFF\" stroke-width=\"12\" stroke-linecap=\"round\" fill=\"none\"/>\n\n    <!-- Plate Target Impact Shockwave -->\n    <circle cx=\"256\" cy=\"430\" r=\"8\" fill=\"#FFFFFF\"/>\n    <circle cx=\"256\" cy=\"430\" r=\"16\" stroke=\"#FF5722\" stroke-width=\"3\" fill=\"none\" opacity=\"0.6\"/>\n  </g>\n</svg>",
-        faviconSvg: "<svg viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" rx=\"24\" fill=\"#0A0B10\"/><circle cx=\"50\" cy=\"50\" r=\"44\" stroke=\"#E60023\" stroke-width=\"4\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"50\" cy=\"30\" r=\"14\" fill=\"#E60023\"/><path d=\"M 50,44 L 50,86 M 42,54 L 42,76 M 58,54 L 58,76\" stroke=\"#fff\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg>"
-      },
-
-      forkpin_v3: {
-        name: "The ForkPin (v3 Geometric Crest)",
-        label: "v03 // Teardrop Precision",
-        desc: "Minimalist teardrop map pin with precision cutlery carved directly into the negative space ceramic core plate.",
-        bestFor: "Next-gen tech brand, mobile home screens, minimalist merchandise, global trademarking.",
-        imageSrc: "assets/forkpin-v3-512.png",
-        svgFile: "assets/forkpin-v3.svg",
-        palette: [{"name":"Electric Crimson","hex":"#FF1E56","text":"#fff"},{"name":"Sunset Tangerine","hex":"#FF8008","text":"#fff"},{"name":"Pure Titanium","hex":"#FFFFFF","text":"#000"}],
-        badgeHtml: "<span class=\"w-2 h-2 rounded-full bg-red-400\"></span><span class=\"font-bold\">v3 Crest</span>",
-        badgeClass: "border-orange-500/40 bg-orange-950/40 text-orange-300",
-        squircleClass: "bg-gradient-to-tr from-rose-600 via-orange-500 to-amber-400 shadow-glow-orange",
-        svg: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" width=\"512\" height=\"512\" fill=\"none\">\n  <defs>\n    <!-- Brand Gradients v3 -->\n    <linearGradient id=\"v3GlowGrad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"#FF1E56\"/>\n      <stop offset=\"50%\" stop-color=\"#FF4B2B\"/>\n      <stop offset=\"100%\" stop-color=\"#FF8008\"/>\n    </linearGradient>\n    <linearGradient id=\"v3PlateGrad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"#182030\"/>\n      <stop offset=\"100%\" stop-color=\"#080C14\"/>\n    </linearGradient>\n    <linearGradient id=\"v3SteelGrad\" x1=\"0%\" y1=\"0%\" x2=\"0%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"#FFFFFF\"/>\n      <stop offset=\"50%\" stop-color=\"#F1F5F9\"/>\n      <stop offset=\"100%\" stop-color=\"#94A3B8\"/>\n    </linearGradient>\n    <filter id=\"v3Shadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"14\" stdDeviation=\"18\" flood-color=\"#FF1E56\" flood-opacity=\"0.5\"/>\n    </filter>\n    <filter id=\"v3SoftGlow\" x=\"-30%\" y=\"-30%\" width=\"160%\" height=\"160%\">\n      <feGaussianBlur stdDeviation=\"24\" result=\"blur\"/>\n    </filter>\n  </defs>\n\n  <!-- Ambient Plate Ambient Halo -->\n  <circle cx=\"256\" cy=\"256\" r=\"220\" fill=\"url(#v3GlowGrad)\" opacity=\"0.08\" filter=\"url(#v3SoftGlow)\"/>\n  \n  <!-- Outer Modern Ceramic Rim -->\n  <circle cx=\"256\" cy=\"256\" r=\"224\" stroke=\"url(#v3GlowGrad)\" stroke-width=\"4\" opacity=\"0.3\" stroke-dasharray=\"12 8\"/>\n  <circle cx=\"256\" cy=\"256\" r=\"202\" fill=\"url(#v3PlateGrad)\" stroke=\"#1E293B\" stroke-width=\"6\"/>\n  <circle cx=\"256\" cy=\"256\" r=\"150\" fill=\"#0A0F1D\" stroke=\"#334155\" stroke-width=\"3\" opacity=\"0.6\"/>\n\n  <!-- Geometric Teardrop MapPin & Fork Fusion (v3 Crest) -->\n  <g filter=\"url(#v3Shadow)\">\n    <!-- Sleek Outer Map Pin Shell -->\n    <path d=\"M 256,72 C 182,72 122,132 122,206 C 122,286 230,396 256,432 C 282,396 390,286 390,206 C 390,132 330,72 256,72 Z\" \n          fill=\"url(#v3GlowGrad)\"/>\n\n    <!-- Negative Space Cutout: Pure Ceramic Core Plate -->\n    <circle cx=\"256\" cy=\"204\" r=\"76\" fill=\"#0A0F1D\"/>\n    \n    <!-- Inner Fine Plate Rim -->\n    <circle cx=\"256\" cy=\"204\" r=\"62\" stroke=\"#334155\" stroke-width=\"2\" fill=\"none\" opacity=\"0.8\"/>\n\n    <!-- Integrated Minimalist Fork Cutlery in Negative Space -->\n    <!-- Fork Neck & Handle -->\n    <path d=\"M 250,140 L 262,140 L 260,204 L 252,204 Z\" fill=\"url(#v3SteelGrad)\"/>\n\n    <!-- Fork Base Arc -->\n    <path d=\"M 230,204 C 230,234 282,234 282,204\" stroke=\"url(#v3SteelGrad)\" stroke-width=\"8\" stroke-linecap=\"round\" fill=\"none\"/>\n\n    <!-- 3 Precision Tines -->\n    <!-- Left Tine -->\n    <path d=\"M 230,198 L 230,154\" stroke=\"url(#v3SteelGrad)\" stroke-width=\"7\" stroke-linecap=\"round\"/>\n    <!-- Center Tine (Focal Alignment) -->\n    <path d=\"M 256,198 L 256,146\" stroke=\"#FF8008\" stroke-width=\"7\" stroke-linecap=\"round\"/>\n    <!-- Right Tine -->\n    <path d=\"M 282,198 L 282,154\" stroke=\"url(#v3SteelGrad)\" stroke-width=\"7\" stroke-linecap=\"round\"/>\n\n    <!-- Bottom Pin Point Impact Dot (Gourmet Destination) -->\n    <circle cx=\"256\" cy=\"432\" r=\"6\" fill=\"#FFFFFF\"/>\n    <circle cx=\"256\" cy=\"432\" r=\"14\" stroke=\"#FF8008\" stroke-width=\"3\" fill=\"none\" opacity=\"0.7\"/>\n  </g>\n</svg>",
-        faviconSvg: "<svg viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" rx=\"24\" fill=\"#0A0B10\"/><circle cx=\"50\" cy=\"50\" r=\"44\" stroke=\"#E60023\" stroke-width=\"4\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"50\" cy=\"30\" r=\"14\" fill=\"#E60023\"/><path d=\"M 50,44 L 50,86 M 42,54 L 42,76 M 58,54 L 58,76\" stroke=\"#fff\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg>"
-      },
-
-      forkpin_v4: {
-        name: "The ClochePin (v4 Gourmet Reveal)",
-        label: "v04 // Gourmet Cloche Reveal",
-        desc: "A luxury fine-dining cloche dome whose handle is a map pushpin, lifting slightly to reveal golden culinary steam and fork tines beneath.",
-        bestFor: "Premium meal kits, Michelin-level curation, high-ticket subscriber tier branding.",
-        imageSrc: "assets/forkpin-v4-512.png",
-        svgFile: "assets/forkpin-v4.svg",
-        palette: [{"name":"Gourmet Gold","hex":"#F59E0B","text":"#000"},{"name":"Royal Crimson","hex":"#E11D48","text":"#fff"},{"name":"Caviar Black","hex":"#0B0F17","text":"#fff"}],
-        badgeHtml: "<span class=\"w-2 h-2 rounded-full bg-red-400\"></span><span class=\"font-bold\">v4 Cloche</span>",
-        badgeClass: "border-amber-500/40 bg-amber-950/40 text-amber-300",
-        squircleClass: "bg-gradient-to-tr from-amber-500 via-rose-600 to-purple-900 shadow-glow-amber",
-        svg: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" width=\"512\" height=\"512\" fill=\"none\">\n  <defs>\n    <linearGradient id=\"v4Gold\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"#FDE68A\"/>\n      <stop offset=\"50%\" stop-color=\"#F59E0B\"/>\n      <stop offset=\"100%\" stop-color=\"#B45309\"/>\n    </linearGradient>\n    <linearGradient id=\"v4Red\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"#FF385C\"/>\n      <stop offset=\"100%\" stop-color=\"#9F1239\"/>\n    </linearGradient>\n    <filter id=\"v4Glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"12\" stdDeviation=\"16\" flood-color=\"#F59E0B\" flood-opacity=\"0.4\"/>\n    </filter>\n  </defs>\n  <!-- Base Serving Platter -->\n  <ellipse cx=\"256\" cy=\"380\" rx=\"190\" ry=\"46\" fill=\"#0E1626\" stroke=\"url(#v4Gold)\" stroke-width=\"6\"/>\n  <ellipse cx=\"256\" cy=\"374\" rx=\"150\" ry=\"32\" fill=\"#070B12\" stroke=\"#334155\" stroke-width=\"3\"/>\n  <!-- Cloche Dome Lifted -->\n  <g filter=\"url(#v4Glow)\">\n    <!-- Steam Swirls in Negative Reveal -->\n    <path d=\"M 220,330 Q 210,290 230,260 T 225,220\" stroke=\"#FDE68A\" stroke-width=\"4\" stroke-linecap=\"round\" fill=\"none\" opacity=\"0.6\"/>\n    <path d=\"M 280,330 Q 295,290 275,260 T 285,220\" stroke=\"#FDE68A\" stroke-width=\"4\" stroke-linecap=\"round\" fill=\"none\" opacity=\"0.6\"/>\n    <!-- Dome Shell -->\n    <path d=\"M 120,310 C 120,180 392,180 392,310 Z\" fill=\"url(#v4Red)\" stroke=\"url(#v4Gold)\" stroke-width=\"5\"/>\n    <path d=\"M 112,310 L 400,310 L 396,322 L 116,322 Z\" fill=\"url(#v4Gold)\"/>\n    <!-- Pushpin Handle atop Dome -->\n    <circle cx=\"256\" cy=\"148\" r=\"38\" fill=\"url(#v4Gold)\"/>\n    <circle cx=\"256\" cy=\"148\" r=\"14\" fill=\"#FFFFFF\"/>\n    <path d=\"M 246,186 L 266,186 L 262,208 L 250,208 Z\" fill=\"url(#v4Gold)\"/>\n    <!-- Fork Tines Revealed Beneath Platter -->\n    <path d=\"M 236,334 L 236,370\" stroke=\"url(#v4Gold)\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n    <path d=\"M 256,330 L 256,376\" stroke=\"#FFFFFF\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n    <path d=\"M 276,334 L 276,370\" stroke=\"url(#v4Gold)\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n  </g>\n</svg>",
-        faviconSvg: "<svg viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" rx=\"24\" fill=\"#0A0B10\"/><circle cx=\"50\" cy=\"50\" r=\"44\" stroke=\"#E60023\" stroke-width=\"4\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"50\" cy=\"30\" r=\"14\" fill=\"#E60023\"/><path d=\"M 50,44 L 50,86 M 42,54 L 42,76 M 58,54 L 58,76\" stroke=\"#fff\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg>"
-      },
-
-      forkpin_v5: {
-        name: "The Neon Bistro (v5 Continuous Monogram)",
-        label: "v05 // Neon Monogram Loop",
-        desc: "An unbroken, continuous fluid vector loop seamlessly linking the letter P, a location map pin, and an elegant 3-tine fork into a single glowing stroke.",
-        bestFor: "Modern lifestyle apps, hip urban delivery, neon signage, animated launch intros.",
-        imageSrc: "assets/forkpin-v5-512.png",
-        svgFile: "assets/forkpin-v5.svg",
-        palette: [{"name":"Neon Coral","hex":"#FF3366","text":"#fff"},{"name":"Electric Violet","hex":"#8B5CF6","text":"#fff"},{"name":"Glow White","hex":"#FFFFFF","text":"#000"}],
-        badgeHtml: "<span class=\"w-2 h-2 rounded-full bg-red-400\"></span><span class=\"font-bold\">v5 Neon Loop</span>",
-        badgeClass: "border-pink-500/40 bg-pink-950/40 text-pink-300",
-        squircleClass: "bg-gradient-to-tr from-pink-600 via-purple-600 to-indigo-700 shadow-glow-pink",
-        svg: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" width=\"512\" height=\"512\" fill=\"none\">\n  <defs>\n    <linearGradient id=\"v5Neon\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"#FF3366\"/>\n      <stop offset=\"50%\" stop-color=\"#F43F5E\"/>\n      <stop offset=\"100%\" stop-color=\"#8B5CF6\"/>\n    </linearGradient>\n    <filter id=\"v5Glow\" x=\"-30%\" y=\"-30%\" width=\"160%\" height=\"160%\">\n      <feDropShadow dx=\"0\" dy=\"0\" stdDeviation=\"16\" flood-color=\"#FF3366\" flood-opacity=\"0.7\"/>\n    </filter>\n  </defs>\n  <!-- Dark Vignette Canvas -->\n  <circle cx=\"256\" cy=\"256\" r=\"210\" fill=\"#0A0B10\" stroke=\"#1E1E2E\" stroke-width=\"6\"/>\n  <!-- Continuous Fluid Monogram Neon Stroke -->\n  <g filter=\"url(#v5Glow)\">\n    <!-- Outer Plate Ambient Arc -->\n    <path d=\"M 120,256 A 136,136 0 1,1 392,256\" stroke=\"url(#v5Neon)\" stroke-width=\"12\" stroke-linecap=\"round\" fill=\"none\" opacity=\"0.4\"/>\n    <!-- The Monogram P Loop that morphs into a MapPin head -->\n    <path d=\"M 210,380 L 210,170 C 210,110 320,110 320,180 C 320,240 210,240 210,240\" \n          stroke=\"url(#v5Neon)\" stroke-width=\"22\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/>\n    <!-- Center Cutlery Tines branching from pin spine -->\n    <path d=\"M 210,230 L 260,230 C 290,230 290,270 260,270 L 210,270\" stroke=\"#FFFFFF\" stroke-width=\"14\" stroke-linecap=\"round\" fill=\"none\"/>\n    <path d=\"M 256,230 L 256,270\" stroke=\"url(#v5Neon)\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n    <!-- Pin Focal Anchor -->\n    <circle cx=\"210\" cy=\"390\" r=\"12\" fill=\"#FFFFFF\"/>\n    <circle cx=\"210\" cy=\"390\" r=\"24\" stroke=\"#8B5CF6\" stroke-width=\"4\" fill=\"none\" opacity=\"0.8\"/>\n  </g>\n</svg>",
-        faviconSvg: "<svg viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" rx=\"24\" fill=\"#0A0B10\"/><circle cx=\"50\" cy=\"50\" r=\"44\" stroke=\"#E60023\" stroke-width=\"4\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"50\" cy=\"30\" r=\"14\" fill=\"#E60023\"/><path d=\"M 50,44 L 50,86 M 42,54 L 42,76 M 58,54 L 58,76\" stroke=\"#fff\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg>"
-      },
-
-      forkpin_v6: {
-        name: "CyberCutlery (v6 Hex Tech Badge)",
-        label: "v06 // Hexagonal Cyber Matrix",
-        desc: "High-tech algorithmic precision badge: a cybernetic hexagon housing crossed fork-and-knife laser vectors locked onto a grocery data nexus.",
-        bestFor: "AI-first grocery automation, tech-forward developer audience, automated pricing pipelines.",
-        imageSrc: "assets/forkpin-v6-512.png",
-        svgFile: "assets/forkpin-v6.svg",
-        palette: [{"name":"Cyber Cyan","hex":"#06B6D4","text":"#000"},{"name":"Laser Rose","hex":"#F43F5E","text":"#fff"},{"name":"Dark Matrix","hex":"#030712","text":"#fff"}],
-        badgeHtml: "<span class=\"w-2 h-2 rounded-full bg-red-400\"></span><span class=\"font-bold\">v6 Cyber Hex</span>",
-        badgeClass: "border-cyan-500/40 bg-cyan-950/40 text-cyan-300",
-        squircleClass: "bg-gradient-to-tr from-cyan-600 via-blue-600 to-rose-600 shadow-glow-cyan",
-        svg: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" width=\"512\" height=\"512\" fill=\"none\">\n  <defs>\n    <linearGradient id=\"v6CyanRose\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"#06B6D4\"/>\n      <stop offset=\"100%\" stop-color=\"#F43F5E\"/>\n    </linearGradient>\n    <filter id=\"v6Glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"8\" stdDeviation=\"14\" flood-color=\"#06B6D4\" flood-opacity=\"0.5\"/>\n    </filter>\n  </defs>\n  <!-- Cyber Hexagon Outer Border -->\n  <polygon points=\"256,40 430,140 430,372 256,472 82,372 82,140\" fill=\"#050B14\" stroke=\"url(#v6CyanRose)\" stroke-width=\"6\"/>\n  <polygon points=\"256,66 406,152 406,360 256,446 106,360 106,152\" fill=\"#08101E\" stroke=\"#1E293B\" stroke-width=\"3\"/>\n  <g filter=\"url(#v6Glow)\">\n    <!-- Map Pin Apex Cap -->\n    <circle cx=\"256\" cy=\"160\" r=\"48\" fill=\"#F43F5E\"/>\n    <circle cx=\"256\" cy=\"160\" r=\"20\" fill=\"#050B14\"/>\n    <circle cx=\"256\" cy=\"160\" r=\"8\" fill=\"#06B6D4\"/>\n    <!-- Cybernetic Fork Stem -->\n    <path d=\"M 256,208 L 256,360\" stroke=\"#06B6D4\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n    <!-- Angled Cross Tines -->\n    <path d=\"M 216,240 L 216,330 Q 216,350 236,360\" stroke=\"#FFFFFF\" stroke-width=\"8\" stroke-linecap=\"round\" fill=\"none\"/>\n    <path d=\"M 296,240 L 296,330 Q 296,350 276,360\" stroke=\"#FFFFFF\" stroke-width=\"8\" stroke-linecap=\"round\" fill=\"none\"/>\n    <!-- Hex Data Nodes -->\n    <circle cx=\"256\" cy=\"380\" r=\"10\" fill=\"#F43F5E\"/>\n    <line x1=\"216\" y1=\"240\" x2=\"296\" y2=\"240\" stroke=\"#06B6D4\" stroke-width=\"4\"/>\n  </g>\n</svg>",
-        faviconSvg: "<svg viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" rx=\"24\" fill=\"#0A0B10\"/><circle cx=\"50\" cy=\"50\" r=\"44\" stroke=\"#E60023\" stroke-width=\"4\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"50\" cy=\"30\" r=\"14\" fill=\"#E60023\"/><path d=\"M 50,44 L 50,86 M 42,54 L 42,76 M 58,54 L 58,76\" stroke=\"#fff\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg>"
-      },
-
-      forkpin_v7: {
-        name: "The Orbit Plate (v7 Kinetic Cart Delivery)",
-        label: "v07 // Orbital Cart Flow",
-        desc: "Dynamic 3D-perspective tilted plate encircled by a fast supermarket-cart orbit ring, with the culinary fork-needle locking into the exact recipe coordinates.",
-        bestFor: "Delivery focus, instant supermarket synchronization, high-momentum branding.",
-        imageSrc: "assets/forkpin-v7-512.png",
-        svgFile: "assets/forkpin-v7.svg",
-        palette: [{"name":"Velocity Orange","hex":"#FF6B00","text":"#fff"},{"name":"Fresh Lime","hex":"#10B981","text":"#000"},{"name":"Deep Cosmic","hex":"#090D16","text":"#fff"}],
-        badgeHtml: "<span class=\"w-2 h-2 rounded-full bg-red-400\"></span><span class=\"font-bold\">v7 Orbit Flow</span>",
-        badgeClass: "border-orange-500/40 bg-orange-950/40 text-orange-300",
-        squircleClass: "bg-gradient-to-tr from-orange-500 via-emerald-600 to-slate-900 shadow-glow-orange",
-        svg: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" width=\"512\" height=\"512\" fill=\"none\">\n  <defs>\n    <linearGradient id=\"v7Grad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"#FF6B00\"/>\n      <stop offset=\"100%\" stop-color=\"#10B981\"/>\n    </linearGradient>\n    <filter id=\"v7Glow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"10\" stdDeviation=\"16\" flood-color=\"#FF6B00\" flood-opacity=\"0.45\"/>\n    </filter>\n  </defs>\n  <!-- Tilted Isometric Perspective Plate -->\n  <ellipse cx=\"256\" cy=\"270\" rx=\"190\" ry=\"110\" fill=\"#0C121E\" stroke=\"#1E293B\" stroke-width=\"8\"/>\n  <ellipse cx=\"256\" cy=\"270\" rx=\"145\" ry=\"80\" fill=\"#070A10\" stroke=\"url(#v7Grad)\" stroke-width=\"4\" opacity=\"0.7\"/>\n  <!-- Kinetic 3D Orbital Velocity Ring -->\n  <ellipse cx=\"256\" cy=\"270\" rx=\"220\" ry=\"60\" stroke=\"url(#v7Grad)\" stroke-width=\"8\" stroke-dasharray=\"24 14\" transform=\"rotate(-20 256 270)\"/>\n  <!-- Vertical MapPin Fork Locking In -->\n  <g filter=\"url(#v7Glow)\">\n    <circle cx=\"256\" cy=\"116\" r=\"46\" fill=\"#FF6B00\"/>\n    <circle cx=\"256\" cy=\"116\" r=\"18\" fill=\"#FFFFFF\"/>\n    <!-- Fork Body -->\n    <path d=\"M 234,162 L 278,162 L 274,220 L 238,220 Z\" fill=\"#E2E8F0\"/>\n    <!-- 3 Tines Anchoring into Dish Nexus -->\n    <path d=\"M 226,220 L 226,300 C 226,325 240,335 248,340\" stroke=\"#FFFFFF\" stroke-width=\"9\" stroke-linecap=\"round\" fill=\"none\"/>\n    <path d=\"M 256,220 L 256,365\" stroke=\"url(#v7Grad)\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n    <path d=\"M 286,220 L 286,300 C 286,325 272,335 264,340\" stroke=\"#FFFFFF\" stroke-width=\"9\" stroke-linecap=\"round\" fill=\"none\"/>\n    <!-- Nexus Target Pulse -->\n    <circle cx=\"256\" cy=\"365\" r=\"8\" fill=\"#10B981\"/>\n  </g>\n</svg>",
-        faviconSvg: "<svg viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" rx=\"24\" fill=\"#0A0B10\"/><circle cx=\"50\" cy=\"50\" r=\"44\" stroke=\"#E60023\" stroke-width=\"4\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"50\" cy=\"30\" r=\"14\" fill=\"#E60023\"/><path d=\"M 50,44 L 50,86 M 42,54 L 42,76 M 58,54 L 58,76\" stroke=\"#fff\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg>"
-      },
-
-      forkpin_v8: {
-        name: "Minimalist Dual-Pin (v8 Cutlery Cross)",
-        label: "v08 // Nordic Minimalist Cross",
-        desc: "Understated Scandinavian geometric elegance: an ultra-clean circular plate framing a 45-degree crossed fork and spoon whose handles form dual map pinpoints.",
-        bestFor: "Sophisticated lifestyle editorial, organic gourmet groceries, elegant packaging.",
-        imageSrc: "assets/forkpin-v8-512.png",
-        svgFile: "assets/forkpin-v8.svg",
-        palette: [{"name":"Warm Cream","hex":"#FEF3C7","text":"#000"},{"name":"Terracotta","hex":"#C2410C","text":"#fff"},{"name":"Slate Charcoal","hex":"#1E293B","text":"#fff"}],
-        badgeHtml: "<span class=\"w-2 h-2 rounded-full bg-red-400\"></span><span class=\"font-bold\">v8 Nordic Minimal</span>",
-        badgeClass: "border-amber-500/40 bg-amber-950/40 text-amber-300",
-        squircleClass: "bg-gradient-to-tr from-amber-200 via-orange-600 to-slate-900 shadow-glow-amber",
-        svg: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" width=\"512\" height=\"512\" fill=\"none\">\n  <defs>\n    <filter id=\"v8Soft\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"8\" stdDeviation=\"12\" flood-color=\"#C2410C\" flood-opacity=\"0.35\"/>\n    </filter>\n  </defs>\n  <!-- Pure Ceramic Disc -->\n  <circle cx=\"256\" cy=\"256\" r=\"216\" fill=\"#0F172A\" stroke=\"#334155\" stroke-width=\"6\"/>\n  <circle cx=\"256\" cy=\"256\" r=\"176\" fill=\"#0A0F1D\" stroke=\"#C2410C\" stroke-width=\"3\" stroke-dasharray=\"8 6\" opacity=\"0.6\"/>\n  <!-- Crossed Fork & Spoon Vectors with Pin Head Tips -->\n  <g filter=\"url(#v8Soft)\" transform=\"translate(0, 0)\">\n    <!-- Fork Diagonal Line (Left-Top to Right-Bottom) -->\n    <line x1=\"160\" y1=\"160\" x2=\"352\" y2=\"352\" stroke=\"#FEF3C7\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n    <!-- Fork 3 Minimalist Prongs -->\n    <line x1=\"145\" y1=\"175\" x2=\"175\" y2=\"145\" stroke=\"#FEF3C7\" stroke-width=\"8\" stroke-linecap=\"round\"/>\n    <line x1=\"135\" y1=\"150\" x2=\"155\" y2=\"130\" stroke=\"#FEF3C7\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n    <line x1=\"165\" y1=\"180\" x2=\"185\" y2=\"160\" stroke=\"#FEF3C7\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n    <circle cx=\"352\" cy=\"352\" r=\"16\" fill=\"#C2410C\"/>\n    <!-- Spoon Diagonal Line (Right-Top to Left-Bottom) -->\n    <line x1=\"352\" y1=\"160\" x2=\"160\" y2=\"352\" stroke=\"#FEF3C7\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n    <!-- Spoon Oval Bowl -->\n    <ellipse cx=\"340\" cy=\"172\" rx=\"26\" ry=\"16\" fill=\"#FEF3C7\" transform=\"rotate(-45 340 172)\"/>\n    <circle cx=\"160\" cy=\"352\" r=\"16\" fill=\"#C2410C\"/>\n    <!-- Center Target Intersection Point -->\n    <circle cx=\"256\" cy=\"256\" r=\"18\" fill=\"#C2410C\"/>\n    <circle cx=\"256\" cy=\"256\" r=\"7\" fill=\"#FEF3C7\"/>\n  </g>\n</svg>",
-        faviconSvg: "<svg viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" rx=\"24\" fill=\"#0A0B10\"/><circle cx=\"50\" cy=\"50\" r=\"44\" stroke=\"#E60023\" stroke-width=\"4\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"50\" cy=\"30\" r=\"14\" fill=\"#E60023\"/><path d=\"M 50,44 L 50,86 M 42,54 L 42,76 M 58,54 L 58,76\" stroke=\"#fff\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg>"
-      },
-
-      forkpin_v9: {
-        name: "The FlamePin (v9 Culinary Torch Induction)",
-        label: "v09 // Ember Flame & Fork",
-        desc: "Passionate culinary energy: a dynamic kitchen fire flame forming an organic teardrop pushpin silhouette, with fork tines rising like glowing embers.",
-        bestFor: "Hot trending recipes, spice-loving audiences, bold energetic brand campaigns.",
-        imageSrc: "assets/forkpin-v9-512.png",
-        svgFile: "assets/forkpin-v9.svg",
-        palette: [{"name":"Fire Ruby","hex":"#EF4444","text":"#fff"},{"name":"Ember Yellow","hex":"#FACC15","text":"#000"},{"name":"Charcoal Dark","hex":"#111827","text":"#fff"}],
-        badgeHtml: "<span class=\"w-2 h-2 rounded-full bg-red-400\"></span><span class=\"font-bold\">v9 Flame Core</span>",
-        badgeClass: "border-red-500/40 bg-red-950/40 text-red-300",
-        squircleClass: "bg-gradient-to-tr from-red-600 via-amber-500 to-yellow-400 shadow-glow-red",
-        svg: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" width=\"512\" height=\"512\" fill=\"none\">\n  <defs>\n    <linearGradient id=\"v9Flame\" x1=\"0%\" y1=\"0%\" x2=\"0%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"#FACC15\"/>\n      <stop offset=\"50%\" stop-color=\"#F97316\"/>\n      <stop offset=\"100%\" stop-color=\"#DC2626\"/>\n    </linearGradient>\n    <filter id=\"v9FireGlow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"12\" stdDeviation=\"20\" flood-color=\"#DC2626\" flood-opacity=\"0.6\"/>\n    </filter>\n  </defs>\n  <!-- Flame Plate Base Rim -->\n  <circle cx=\"256\" cy=\"256\" r=\"214\" fill=\"#0C0F17\" stroke=\"#1F2937\" stroke-width=\"6\"/>\n  <circle cx=\"256\" cy=\"256\" r=\"172\" stroke=\"url(#v9Flame)\" stroke-width=\"3\" opacity=\"0.4\" stroke-dasharray=\"10 6\"/>\n  <!-- The Flame-Pin Dynamic Vector -->\n  <g filter=\"url(#v9FireGlow)\">\n    <!-- Organic Rising Flame Contour forming Pin Silhouette -->\n    <path d=\"M 256,64 C 200,140 140,210 140,290 C 140,365 192,426 256,426 C 320,426 372,365 372,290 C 372,210 312,140 256,64 Z\" \n          fill=\"url(#v9Flame)\"/>\n    <!-- Inner Heat Core (White-Yellow Fire Negative) -->\n    <path d=\"M 256,150 C 224,204 186,250 186,306 C 186,350 218,386 256,386 C 294,386 326,350 326,306 C 326,250 288,204 256,150 Z\" \n          fill=\"#111827\"/>\n    <!-- Fork Prongs Emerging as Clean Sparks from Ember -->\n    <path d=\"M 230,240 L 230,320 M 256,210 L 256,336 M 282,240 L 282,320\" stroke=\"#FACC15\" stroke-width=\"8\" stroke-linecap=\"round\"/>\n    <circle cx=\"256\" cy=\"358\" r=\"8\" fill=\"#FFFFFF\"/>\n  </g>\n</svg>",
-        faviconSvg: "<svg viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" rx=\"24\" fill=\"#0A0B10\"/><circle cx=\"50\" cy=\"50\" r=\"44\" stroke=\"#E60023\" stroke-width=\"4\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"50\" cy=\"30\" r=\"14\" fill=\"#E60023\"/><path d=\"M 50,44 L 50,86 M 42,54 L 42,76 M 58,54 L 58,76\" stroke=\"#fff\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg>"
-      },
-
-      forkpin_v10: {
-        name: "Golden Ratio Monogram (v10 P2P Apex Shield)",
-        label: "v10 // Luxury Monogram Shield",
-        desc: "Ultra-prestigious crest geometry: a golden interlocking P and 2 monogram forming an impenetrable luxury dining shield with embedded cutlery balance.",
-        bestFor: "High-end venture capital backing, enterprise food partnerships, global consumer trust.",
-        imageSrc: "assets/forkpin-v10-512.png",
-        svgFile: "assets/forkpin-v10.svg",
-        palette: [{"name":"Imperial Gold","hex":"#D97706","text":"#fff"},{"name":"Champagne Glow","hex":"#FDE68A","text":"#000"},{"name":"Obsidian Velvet","hex":"#050508","text":"#fff"}],
-        badgeHtml: "<span class=\"w-2 h-2 rounded-full bg-red-400\"></span><span class=\"font-bold\">v10 Apex Shield</span>",
-        badgeClass: "border-yellow-500/40 bg-yellow-950/40 text-yellow-300",
-        squircleClass: "bg-gradient-to-tr from-yellow-600 via-amber-600 to-stone-900 shadow-glow-yellow",
-        svg: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" width=\"512\" height=\"512\" fill=\"none\">\n  <defs>\n    <linearGradient id=\"v10Gold\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"#FDE68A\"/>\n      <stop offset=\"50%\" stop-color=\"#D97706\"/>\n      <stop offset=\"100%\" stop-color=\"#78350F\"/>\n    </linearGradient>\n    <filter id=\"v10ShieldGlow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"0\" dy=\"14\" stdDeviation=\"18\" flood-color=\"#D97706\" flood-opacity=\"0.45\"/>\n    </filter>\n  </defs>\n  <!-- Luxury Shield Contour -->\n  <path d=\"M 256,44 L 416,110 L 416,270 C 416,366 256,464 256,464 C 256,464 96,366 96,270 L 96,110 Z\" \n        fill=\"#08080E\" stroke=\"url(#v10Gold)\" stroke-width=\"8\"/>\n  <path d=\"M 256,76 L 388,132 L 388,266 C 388,344 256,426 256,426 C 256,426 124,344 124,266 L 124,132 Z\" \n        fill=\"#040406\" stroke=\"#27272A\" stroke-width=\"3\"/>\n  <g filter=\"url(#v10ShieldGlow)\">\n    <!-- Central Monogram P2P Lockup with Fork Spine -->\n    <!-- The Golden Plate Ring inside Shield -->\n    <circle cx=\"256\" cy=\"220\" r=\"86\" stroke=\"url(#v10Gold)\" stroke-width=\"6\" fill=\"#0A0A12\"/>\n    <circle cx=\"256\" cy=\"220\" r=\"70\" stroke=\"#3F3F46\" stroke-width=\"2\" fill=\"none\" opacity=\"0.6\"/>\n    <!-- The Pin Point piercing down into the shield tip -->\n    <path d=\"M 256,220 L 256,380\" stroke=\"url(#v10Gold)\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n    <!-- Fork Prongs Cresting within the Gold Circle -->\n    <path d=\"M 226,170 L 226,240 C 226,260 242,268 256,268 C 270,268 286,260 286,240 L 286,170\" \n          stroke=\"#FDE68A\" stroke-width=\"8\" stroke-linecap=\"round\" fill=\"none\"/>\n    <path d=\"M 256,150 L 256,240\" stroke=\"url(#v10Gold)\" stroke-width=\"8\" stroke-linecap=\"round\"/>\n    <!-- Shield Anchor Diamond -->\n    <polygon points=\"256,370 266,384 256,398 246,384\" fill=\"#FDE68A\"/>\n  </g>\n</svg>",
-        faviconSvg: "<svg viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" rx=\"24\" fill=\"#0A0B10\"/><circle cx=\"50\" cy=\"50\" r=\"44\" stroke=\"#E60023\" stroke-width=\"4\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"50\" cy=\"30\" r=\"14\" fill=\"#E60023\"/><path d=\"M 50,44 L 50,86 M 42,54 L 42,76 M 58,54 L 58,76\" stroke=\"#fff\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg>"
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full filter drop-shadow-[0_12px_24px_rgba(230,0,35,0.4)]">
+          <circle cx="50" cy="50" r="44" stroke="#e60023" stroke-width="2" fill="none" opacity="0.35" stroke-dasharray="3 2"/>
+          <circle cx="50" cy="50" r="38" fill="#070b14" stroke="#1e293b" stroke-width="2"/>
+          <circle cx="50" cy="50" r="28" fill="#131a29" stroke="#334155" stroke-width="1.5" opacity="0.6"/>
+          <circle cx="50" cy="24" r="12" fill="#e60023"/>
+          <circle cx="50" cy="24" r="4.5" fill="#ffffff"/>
+          <path d="M 46,35 L 54,35 L 53,44 L 47,44 Z" fill="#cbd5e1"/>
+          <path d="M 43,44 C 43,51 57,51 57,44 Z" fill="#ffffff"/>
+          <path d="M 44,46 L 44,68 C 44,72 46,75 47,77" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          <path d="M 50,44 L 50,82" stroke="#e60023" stroke-width="2.8" stroke-linecap="round"/>
+          <path d="M 56,46 L 56,68 C 56,72 54,75 53,77" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          <circle cx="50" cy="82" r="1.5" fill="#ffffff"/>
+        </svg>`,
+        faviconSvg: `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#e60023"/><circle cx="50" cy="28" r="13" fill="#fff"/><circle cx="50" cy="28" r="5" fill="#e60023"/><path d="M 50,42 L 50,82 M 42,54 L 42,76 M 58,54 L 58,76" stroke="#fff" stroke-width="6" stroke-linecap="round"/></svg>`
       }
     };
 
-    let activeLogoKey = localStorage.getItem('p2p_active_logo') || 'forkpin_v1';
-    if (!LOGO_CONCEPTS[activeLogoKey]) {
-      activeLogoKey = 'forkpin_v1';
-    }
+    let activeLogoKey = 'forkpin_v1';
     let activeNameKey = localStorage.getItem('p2p_active_name') || 'pin2plate';
     let activeRenderMode = 'vector';
 
@@ -1073,31 +948,18 @@
     const conceptBestForEl = document.getElementById('concept-best-for');
     const btnSelectBrand = document.getElementById('btn-select-brand');
     const btnCopySvg = document.getElementById('btn-copy-svg');
-    const btnToggleRevision = document.getElementById('btn-toggle-revision');
-    const toggleRevisionText = document.getElementById('toggle-revision-text');
-    const logoTabs = document.querySelectorAll('.logo-tab');
     const nameTabs = document.querySelectorAll('.name-tab');
     const modeTabs = document.querySelectorAll('.mode-tab');
 
-    function updateLogoTabsUi(key) {
-      logoTabs.forEach(t => {
-        if (t.dataset.logo === key) {
-          t.className = "logo-tab active px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-red-600 text-white shadow-glow-red flex items-center gap-1.5";
-        } else {
-          t.className = "logo-tab px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5";
-        }
-      });
-    }
-
     function renderLogoConcept(key) {
-      const concept = LOGO_CONCEPTS[key] || LOGO_CONCEPTS.forkpin_v3;
+      const concept = LOGO_CONCEPTS.forkpin_v1;
       const nameObj = NAME_OPTIONS[activeNameKey] || NAME_OPTIONS.pin2plate;
 
       if (activeRenderMode === 'ai') {
         if (concept.imageSrc) {
           heroSvgEl.innerHTML = `<img src="${concept.imageSrc}" alt="${concept.name}" class="w-full h-full object-cover rounded-2xl shadow-glow-red border border-red-500/40">`;
         } else {
-          heroSvgEl.innerHTML = `<div class="p-4 rounded-xl bg-slate-900 text-center space-y-1.5"><div class="text-2xl">⏳</div><div class="text-xs font-mono font-bold text-white">Gemini Render Queued</div><p class="text-[11px] text-slate-400">Quota resets in ~4h. Clean vector SVG available in Vector Mode.</p></div>`;
+          heroSvgEl.innerHTML = `<div class="p-4 rounded-xl bg-slate-900 text-center space-y-1.5"><div class="text-2xl">⏳</div><div class="text-xs font-mono font-bold text-white">Gemini Render Queued</div></div>`;
         }
       } else {
         heroSvgEl.innerHTML = concept.svg;
@@ -1112,7 +974,6 @@
 
       mockupSquircleEl.className = `w-14 h-14 rounded-2xl flex items-center justify-center p-2.5 transition-transform hover:scale-110 ${concept.squircleClass}`;
       mockupSquircleEl.innerHTML = concept.svg;
-
       mockupFaviconEl.innerHTML = concept.faviconSvg;
       
       mockupBadgeEl.className = `px-2.5 py-1 rounded-full text-[10px] font-bold flex items-center gap-1.5 ${concept.badgeClass}`;
@@ -1123,16 +984,6 @@
       conceptDescEl.innerText = concept.desc;
       conceptBestForEl.innerText = concept.bestFor;
 
-      // Dynamic 10-logo cycling prompt
-      const LOGO_KEYS = Object.keys(LOGO_CONCEPTS);
-      const currIdx = LOGO_KEYS.indexOf(key);
-      const nextIdx = (currIdx + 1) % LOGO_KEYS.length;
-      const nextConcept = LOGO_CONCEPTS[LOGO_KEYS[nextIdx]];
-      if (toggleRevisionText) {
-        toggleRevisionText.innerHTML = `Cycle Next (${nextConcept.label.split('//')[1].trim()}) ✨ [${currIdx + 1}/10]`;
-      }
-
-      // Render Palette Swatches
       conceptPaletteEl.innerHTML = concept.palette.map(p => `
         <div class="p-2 rounded-lg border border-slate-800 flex flex-col justify-between h-14 cursor-pointer hover:border-slate-600 transition-colors" 
              style="background: ${p.hex}" onclick="navigator.clipboard.writeText('${p.hex}'); alert('Copied hex ${p.hex} to clipboard!');">
@@ -1141,79 +992,144 @@
         </div>
       `).join('');
 
-      // Update button state
-      if (activeLogoKey === key) {
-        btnSelectBrand.innerHTML = `<i data-lucide="check-check" class="w-4 h-4"></i><span>Active Brand Selected</span>`;
-        btnSelectBrand.className = "flex-1 py-3 rounded-xl bg-emerald-600 text-white font-mono text-xs font-bold transition-all shadow-glow-emerald flex items-center justify-center gap-2";
-      } else {
-        btnSelectBrand.innerHTML = `<i data-lucide="check" class="w-4 h-4"></i><span>Set As Active Brand</span>`;
-        btnSelectBrand.className = "flex-1 py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-mono text-xs font-bold transition-all shadow-glow-red flex items-center justify-center gap-2";
-      }
+      btnSelectBrand.innerHTML = `<i data-lucide="check-check" class="w-4 h-4"></i><span>Official Brand Confirmed</span>`;
+      btnSelectBrand.className = "flex-1 py-3 rounded-xl bg-emerald-600 text-white font-mono text-xs font-bold transition-all shadow-glow-emerald flex items-center justify-center gap-2";
       lucide.createIcons();
     }
 
-        const LOGO_KEYS = Object.keys(LOGO_CONCEPTS);
-    if (btnToggleRevision) {
-      btnToggleRevision.onclick = () => {
-        const currIdx = LOGO_KEYS.indexOf(activeLogoKey);
-        const nextIdx = (currIdx + 1) % LOGO_KEYS.length;
-        activeLogoKey = LOGO_KEYS[nextIdx];
-        localStorage.setItem('p2p_active_logo', activeLogoKey);
-        updateLogoTabsUi(activeLogoKey);
-        renderLogoConcept(activeLogoKey);
+    // ==========================================
+    // SVG TO PNG CLIENT-SIDE CONVERTER ENGINE
+    // ==========================================
+    let convSelectedSize = 512;
+    let convSelectedBg = 'transparent';
+    let customSvgContent = null;
+
+    const convSizeBtns = document.querySelectorAll('.conv-size-btn');
+    const convBgBtns = document.querySelectorAll('.conv-bg-btn');
+    const convCustomInput = document.getElementById('conv-custom-size');
+    const convSourceSelect = document.getElementById('conv-source-select');
+    const convUploadLabel = document.getElementById('conv-upload-label');
+    const convFileInput = document.getElementById('conv-file-input');
+    const btnConvertDownload = document.getElementById('btn-convert-download');
+    const btnConvertLabel = document.getElementById('btn-convert-label');
+
+    convSizeBtns.forEach(btn => {
+      btn.onclick = () => {
+        convSizeBtns.forEach(b => {
+          b.className = "conv-size-btn py-2 rounded-lg bg-slate-950 hover:bg-slate-800 text-slate-300 font-bold text-xs transition-colors";
+        });
+        btn.className = "conv-size-btn active py-2 rounded-lg bg-red-600 text-white font-bold text-xs";
+        convSelectedSize = parseInt(btn.dataset.size, 10);
+        if (convCustomInput) convCustomInput.value = '';
+        updateConvertButtonLabel();
+      };
+    });
+
+    if (convCustomInput) {
+      convCustomInput.oninput = () => {
+        const val = parseInt(convCustomInput.value, 10);
+        if (val && val >= 16 && val <= 4096) {
+          convSizeBtns.forEach(b => {
+            b.className = "conv-size-btn py-2 rounded-lg bg-slate-950 hover:bg-slate-800 text-slate-300 font-bold text-xs transition-colors";
+          });
+          convSelectedSize = val;
+          updateConvertButtonLabel();
+        }
       };
     }
 
-    logoTabs.forEach(tab => {
-      tab.onclick = () => {
-        activeLogoKey = tab.dataset.logo;
-        localStorage.setItem('p2p_active_logo', activeLogoKey);
-        updateLogoTabsUi(activeLogoKey);
-        renderLogoConcept(activeLogoKey);
-      };
-    });
-
-    nameTabs.forEach(tab => {
-      tab.onclick = () => {
-        nameTabs.forEach(t => {
-          t.className = "name-tab px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white";
+    convBgBtns.forEach(btn => {
+      btn.onclick = () => {
+        convBgBtns.forEach(b => {
+          b.className = "conv-bg-btn py-1.5 rounded-lg bg-slate-950 text-slate-400 text-xs font-bold hover:text-white";
         });
-        tab.className = "name-tab active px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all bg-red-600 text-white";
-
-        activeNameKey = tab.dataset.name;
-        localStorage.setItem('p2p_active_name', activeNameKey);
-        renderLogoConcept(activeLogoKey);
+        btn.className = "conv-bg-btn active py-1.5 rounded-lg bg-slate-800 text-slate-200 text-xs font-bold";
+        convSelectedBg = btn.dataset.bg;
       };
     });
 
-    modeTabs.forEach(tab => {
-      tab.onclick = () => {
-        modeTabs.forEach(t => {
-          t.className = "mode-tab px-2.5 py-1 rounded-lg text-slate-400 hover:text-white font-bold flex items-center gap-1";
-        });
-        tab.className = "mode-tab active px-2.5 py-1 rounded-lg text-white font-bold bg-red-600 flex items-center gap-1";
-
-        activeRenderMode = tab.dataset.mode;
-        renderLogoConcept(activeLogoKey);
+    if (convSourceSelect) {
+      convSourceSelect.onchange = () => {
+        if (convSourceSelect.value === 'custom') {
+          convUploadLabel.classList.remove('hidden');
+        } else {
+          convUploadLabel.classList.add('hidden');
+          customSvgContent = null;
+        }
       };
-    });
+    }
 
-    btnSelectBrand.onclick = () => {
-      localStorage.setItem('p2p_active_logo', activeLogoKey);
-      renderLogoConcept(activeLogoKey);
-      alert(`🎉 Set "${LOGO_CONCEPTS[activeLogoKey].name}" with name "${NAME_OPTIONS[activeNameKey].plain}" as active brand!`);
-    };
+    if (convFileInput) {
+      convFileInput.onchange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (evt) => {
+            customSvgContent = evt.target.result;
+            convUploadLabel.innerHTML = `<span class="text-emerald-400">✓ ${file.name.slice(0, 10)}...</span>`;
+          };
+          reader.readAsText(file);
+        }
+      };
+    }
 
-    btnCopySvg.onclick = async () => {
-      const rawSvg = LOGO_CONCEPTS[activeLogoKey].svg;
-      try {
-        await navigator.clipboard.writeText(rawSvg);
-        btnCopySvg.innerText = "✅ SVG Copied!";
-        setTimeout(() => { btnCopySvg.innerText = "Copy SVG"; }, 2000);
-      } catch (e) {
-        prompt("Copy raw vector SVG below:", rawSvg);
+    function updateConvertButtonLabel() {
+      if (btnConvertLabel) {
+        btnConvertLabel.textContent = `Export ${convSelectedSize}×${convSelectedSize} PNG Now`;
       }
-    };
+    }
+
+    if (btnConvertDownload) {
+      btnConvertDownload.onclick = async () => {
+        try {
+          btnConvertLabel.textContent = "Rasterizing...";
+          let svgData = customSvgContent;
+          if (!svgData) {
+            const res = await fetch('assets/forkpin.svg?v=' + Date.now());
+            svgData = await res.text();
+          }
+
+          const canvas = document.getElementById('conv-canvas');
+          canvas.width = convSelectedSize;
+          canvas.height = convSelectedSize;
+          const ctx = canvas.getContext('2d');
+          ctx.clearRect(0, 0, convSelectedSize, convSelectedSize);
+
+          if (convSelectedBg !== 'transparent') {
+            ctx.fillStyle = convSelectedBg;
+            ctx.fillRect(0, 0, convSelectedSize, convSelectedSize);
+          }
+
+          const img = new Image();
+          const svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+          const url = URL.createObjectURL(svgBlob);
+
+          img.onload = () => {
+            ctx.drawImage(img, 0, 0, convSelectedSize, convSelectedSize);
+            URL.revokeObjectURL(url);
+            canvas.toBlob((blob) => {
+              const downloadUrl = URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = downloadUrl;
+              a.download = `pin2plate-forkpin-${convSelectedSize}x${convSelectedSize}.png`;
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+              URL.revokeObjectURL(downloadUrl);
+              updateConvertButtonLabel();
+            }, 'image/png');
+          };
+          img.onerror = () => {
+            alert('Failed to render SVG. Please check vector syntax.');
+            updateConvertButtonLabel();
+          };
+          img.src = url;
+        } catch(err) {
+          alert('Conversion failed: ' + err.message);
+          updateConvertButtonLabel();
+        }
+      };
+    }
 
     // Initial logo render
     updateLogoTabsUi(activeLogoKey);

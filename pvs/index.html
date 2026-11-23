@@ -675,7 +675,7 @@
       <p>PVS // PERSONAL VISION SYSTEM v28 &mdash; SOLUTIONS ARCHITECTURE ENGINE</p>
     </div>
     <div class="header-actions">
-      <a href="../p2p/index.html" class="back-btn" style="border-color: rgba(244, 63, 94, 0.6); color: #fb7185; background: rgba(244, 63, 94, 0.1); display: inline-flex; align-items: center; gap: 6px;"><img id="nav-p2p-logo" src="../p2p/assets/forkpin-v1.svg" alt="P2P" style="width: 14px; height: 14px; vertical-align: middle;">PIN2PLATE OS &rarr;</a>
+      <a href="../p2p/index.html" class="back-btn" style="border-color: rgba(244, 63, 94, 0.6); color: #fb7185; background: rgba(244, 63, 94, 0.1); display: inline-flex; align-items: center; gap: 6px;"><img id="nav-p2p-logo" src="../p2p/assets/forkpin.svg?v=20261123" alt="P2P" style="width: 14px; height: 14px; vertical-align: middle;">PIN2PLATE OS &rarr;</a>
       <a href="#linkedin_sprint" class="back-btn" style="border-color: #4a9fff; color: #4a9fff;">&darr; LinkedIn Sprint</a>
       <a href="../index.html" class="back-btn">&larr; Launchpad</a>
       <div class="target-badge">DDM &rarr; SOLUTIONS ARCHITECT</div>
@@ -828,7 +828,7 @@
     <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 14px;">
       <div style="display: flex; align-items: center; gap: 14px;">
         <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(225, 29, 72, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-          <img id="pvs-forkpin-logo" src="../p2p/assets/forkpin-v1.svg" alt="Pin2Plate ForkPin Logo" style="width: 44px; height: 44px; object-fit: contain;">
+          <img id="pvs-forkpin-logo" src="../p2p/assets/forkpin.svg?v=20261123" alt="Pin2Plate ForkPin Logo" style="width: 44px; height: 44px; object-fit: contain;">
         </div>
         <div>
           <div class="card-title" style="color: #fb7185; margin-bottom: 4px;">
@@ -840,7 +840,9 @@
         </div>
       </div>
       <div style="display: flex; align-items: center; gap: 8px;">
-        <button type="button" onclick="togglePvsLogo()" id="pvs-logo-toggle-btn" class="back-btn" style="border-color: rgba(244, 63, 94, 0.5); color: #fb7185; background: rgba(244, 63, 94, 0.12); cursor: pointer; font-size: 11px;">Cycle Next (Apex Flame) &rarr; [1/10]</button>
+        <a href="../p2p/index.html#svg-converter-section" class="back-btn" style="border-color: rgba(244, 63, 94, 0.5); color: #fb7185; background: rgba(244, 63, 94, 0.12); font-size: 11px;">
+          Export PNG &rarr;
+        </a>
         <span style="font-family: 'Space Mono', monospace; font-size: 12px; padding: 4px 10px; border-radius: 2px; background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.4); font-weight: 700;">
           TARGET: &pound;12.5K MRR
         </span>
@@ -852,7 +854,7 @@
 
     <div style="display: flex; gap: 8px; flex-wrap: wrap; font-family: 'Space Mono', monospace; font-size: 12px; margin-top: 10px;">
       <span style="padding: 4px 10px; background: var(--surface2); border: 1px solid var(--border); color: #e8eaf0; border-radius: 2px;">BRAND: PIN2PLATE (P2P)</span>
-      <span id="pvs-logo-ver-badge" style="padding: 4px 10px; background: rgba(244, 63, 94, 0.15); border: 1px solid rgba(244, 63, 94, 0.35); color: #fb7185; border-radius: 2px; font-weight: 700;">FORKPIN V01 // CLASSIC CERAMIC</span>
+      <span id="pvs-logo-ver-badge" style="padding: 4px 10px; background: rgba(244, 63, 94, 0.15); border: 1px solid rgba(244, 63, 94, 0.35); color: #fb7185; border-radius: 2px; font-weight: 700;">CHAMPION LOGO: FORKPIN (V1 ORIGINAL)</span>
       <span style="padding: 4px 10px; background: rgba(74, 255, 180, 0.1); border: 1px solid rgba(74, 255, 180, 0.3); color: #4affb4; border-radius: 2px;">STATUS: PROTOTYPE LIVE</span>
       <span style="padding: 4px 10px; background: rgba(74, 159, 255, 0.1); border: 1px solid rgba(74, 159, 255, 0.3); color: #4a9fff; border-radius: 2px;">SUPERMARKETS: 5 UK CHAINS</span>
       <a href="https://pinterest-to-plate.vercel.app" target="_blank" style="padding: 4px 10px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; border-radius: 2px; text-decoration: none; font-weight: 700;">VERCEL LIVE ↗</a>
@@ -1260,79 +1262,6 @@
           localStorage.setItem('pvs_pillar_now_pvs', JSON.stringify(payload));
         } catch (e) {}
       }
-    }
-
-    const PVS_LOGOS = [
-      {
-            "id": "v1",
-            "name": "v1 Original",
-            "badge": "V01 // CLASSIC CERAMIC"
-      },
-      {
-            "id": "v2",
-            "name": "v2 Apex",
-            "badge": "V02 // SPEED ARC & FLAME"
-      },
-      {
-            "id": "v3",
-            "name": "v3 Geometric Crest",
-            "badge": "V03 // TEARDROP PRECISION"
-      },
-      {
-            "id": "v4",
-            "name": "v4 Gourmet Reveal",
-            "badge": "V04 // GOURMET CLOCHE REVEAL"
-      },
-      {
-            "id": "v5",
-            "name": "v5 Continuous Monogram",
-            "badge": "V05 // NEON MONOGRAM LOOP"
-      },
-      {
-            "id": "v6",
-            "name": "v6 Hex Tech Badge",
-            "badge": "V06 // HEXAGONAL CYBER MATRIX"
-      },
-      {
-            "id": "v7",
-            "name": "v7 Kinetic Cart Delivery",
-            "badge": "V07 // ORBITAL CART FLOW"
-      },
-      {
-            "id": "v8",
-            "name": "v8 Cutlery Cross",
-            "badge": "V08 // NORDIC MINIMALIST CROSS"
-      },
-      {
-            "id": "v9",
-            "name": "v9 Culinary Torch Induction",
-            "badge": "V09 // EMBER FLAME & FORK"
-      },
-      {
-            "id": "v10",
-            "name": "v10 P2P Apex Shield",
-            "badge": "V10 // LUXURY MONOGRAM SHIELD"
-      }
-];
-
-    function togglePvsLogo() {
-      const img = document.getElementById('pvs-forkpin-logo');
-      const navImg = document.getElementById('nav-p2p-logo');
-      const btn = document.getElementById('pvs-logo-toggle-btn');
-      const label = document.getElementById('pvs-logo-ver-badge');
-      if (!img) return;
-      let currIdx = PVS_LOGOS.findIndex(l => img.src.includes('forkpin-' + l.id + '.svg') || img.src.includes('forkpin-' + l.id + '-512.png'));
-      if (currIdx === -1) currIdx = 0;
-      const nextIdx = (currIdx + 1) % PVS_LOGOS.length;
-      const nextLogo = PVS_LOGOS[nextIdx];
-      const afterNextIdx = (nextIdx + 1) % PVS_LOGOS.length;
-      const afterNextLogo = PVS_LOGOS[afterNextIdx];
-
-      img.src = '../p2p/assets/forkpin-' + nextLogo.id + '.svg?v=' + Date.now();
-      if (navImg) navImg.src = '../p2p/assets/forkpin-' + nextLogo.id + '.svg?v=' + Date.now();
-      if (label) label.textContent = 'FORKPIN ' + nextLogo.badge;
-      if (btn) btn.innerHTML = 'Cycle Next (' + afterNextLogo.name + ') &rarr; [' + (nextIdx + 1) + '/10]';
-      try { localStorage.setItem('pvs_active_logo_id', nextLogo.id); } catch(e){}
     }
 
     function initOS() {
