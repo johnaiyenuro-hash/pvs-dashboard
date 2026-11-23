@@ -78,6 +78,36 @@
     h3 { font-size: 1.35rem !important; line-height: 1.3 !important; font-weight: 700; text-wrap: balance; }
     h4 { font-size: 1.05rem !important; line-height: 1.35 !important; font-weight: 700; text-wrap: balance; }
     body, p { font-size: 0.875rem; }
+    input[type="range"].p2p-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 9999px;
+      background: #1e293b;
+      outline: none;
+      cursor: pointer;
+    }
+    input[type="range"].p2p-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 9999px;
+      background: #10b981;
+      border: 2px solid #070b14;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+      cursor: pointer;
+    }
+    input[type="range"].p2p-slider::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 9999px;
+      background: #10b981;
+      border: 2px solid #070b14;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+      cursor: pointer;
+    }
   </style>
 </head>
 <body class="bg-p2p-slate-950 text-slate-100 font-sans min-h-screen antialiased flex flex-col items-center">
@@ -159,24 +189,24 @@
       <!-- Financial Metric Targets Grid -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-6 border-t border-slate-800">
         <div class="space-y-1">
-          <div class="text-[11px] font-mono text-slate-400 uppercase">Target 12M MRR</div>
+          <div class="text-[11px] font-mono text-slate-400 uppercase">Target 12M Revenue</div>
           <div class="text-2xl font-mono font-bold text-emerald-400">£12,500/mo</div>
-          <div class="text-[10px] text-slate-500 font-mono">Bounties + Pro SaaS</div>
+          <div class="text-[10px] text-slate-500 font-mono">~£8.8k–£9.3k real profit</div>
         </div>
         <div class="space-y-1">
-          <div class="text-[11px] font-mono text-slate-400 uppercase">Avg Basket Value</div>
-          <div class="text-2xl font-mono font-bold text-white">£78.50</div>
-          <div class="text-[10px] text-slate-500 font-mono">UK Online Grocery Avg</div>
+          <div class="text-[11px] font-mono text-slate-400 uppercase">Net per £3.99 Pro Sub</div>
+          <div class="text-2xl font-mono font-bold text-white">~£2.72/mo</div>
+          <div class="text-[10px] text-slate-500 font-mono">After VAT, Stripe &amp; AI cost</div>
         </div>
         <div class="space-y-1">
-          <div class="text-[11px] font-mono text-slate-400 uppercase">Affiliate / Bounty</div>
-          <div class="text-2xl font-mono font-bold text-amber-400">£3.50 – £8.00</div>
-          <div class="text-[10px] text-slate-500 font-mono">Per converted basket</div>
+          <div class="text-[11px] font-mono text-slate-400 uppercase">New-Shopper Bounties</div>
+          <div class="text-2xl font-mono font-bold text-amber-400">£5 – £15+</div>
+          <div class="text-[10px] text-slate-500 font-mono">1-time switch / meal-kit CPA</div>
         </div>
         <div class="space-y-1">
-          <div class="text-[11px] font-mono text-slate-400 uppercase">Target Cookers</div>
-          <div class="text-2xl font-mono font-bold text-cyan-400">2,500 WAC</div>
-          <div class="text-[10px] text-slate-500 font-mono">Weekly Active Cookers</div>
+          <div class="text-[11px] font-mono text-slate-400 uppercase">Target Free Audience</div>
+          <div class="text-2xl font-mono font-bold text-cyan-400">35,000 MAU</div>
+          <div class="text-[10px] text-slate-500 font-mono">Fuels ~1,500 Pro subs (4%+)</div>
         </div>
       </div>
     </div>
@@ -207,23 +237,23 @@
             </span>
             <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-red-950/80 text-rose-300 border border-red-800/60 font-bold">LIVE STAGE</span>
           </div>
-          <h3 class="text-sm font-syne font-bold text-white">Production Vercel Launch & Organic Viral Hook</h3>
+          <h3 class="text-sm font-syne font-bold text-white">Safe Brand Launch &amp; Organic Viral Hook</h3>
           <ul class="space-y-2 text-xs font-mono text-slate-300">
             <li class="flex items-start gap-2">
               <span class="text-emerald-400 font-bold">✔</span>
-              <span><strong>Vercel App Live:</strong> Web app deployed and operational at <a href="https://pinterest-to-plate.vercel.app" target="_blank" class="text-red-400 underline hover:text-red-300">pinterest-to-plate.vercel.app</a>.</span>
+              <span><strong>Vercel App Live:</strong> Prototype operational at <a href="https://pinterest-to-plate.vercel.app" target="_blank" class="text-red-400 underline hover:text-red-300">pinterest-to-plate.vercel.app</a>.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-400 font-bold">!</span>
+              <span><strong>Trademark-Safe Rebrand First:</strong> Pick an independent brand &amp; social handle <em>without</em> "Pin" or "Pinterest" (e.g. <em>Save2Plate</em> / <em>Board2Basket</em>) to avoid account bans.</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-emerald-400 font-bold">✔</span>
-              <span><strong>TikTok & IG Handles:</strong> Claim @pinteresttoplate handles and launch visual brand presence.</span>
+              <span><strong>First 3 Viral Recordings:</strong> Publish 15-second demos: <em>"POV: You have 600 dead Pinterest recipe saves... watch this compare Tesco vs Asda prices in 10s."</em></span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-emerald-400 font-bold">✔</span>
-              <span><strong>First 3 Viral Recordings:</strong> Publish 15-second screen capture demos: <em>"POV: You have 600 dead Pinterest pins... watch this fill my Tesco basket in 10s."</em></span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-emerald-400 font-bold">✔</span>
-              <span><strong>Seed Audience:</strong> Onboard 50 beta cookers from recipe hoarders on Reddit (r/EatCheapAndHealthy, r/UK_Food).</span>
+              <span><strong>Seed Audience:</strong> Onboard 50 beta cookers from Reddit (r/EatCheapAndHealthy, r/UK_Food) and test on mobile phones first.</span>
             </li>
           </ul>
         </div>
@@ -237,23 +267,23 @@
             </span>
             <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950/80 text-amber-300 border border-amber-800/60 font-bold">INTEGRATION</span>
           </div>
-          <h3 class="text-sm font-syne font-bold text-white">Cart Injection & Supermarket Bounty Hookup</h3>
+          <h3 class="text-sm font-syne font-bold text-white">Mobile Basket Flow, Cost Guards &amp; Billing</h3>
           <ul class="space-y-2 text-xs font-mono text-slate-300">
             <li class="flex items-start gap-2">
               <span class="text-amber-400 font-bold">✔</span>
-              <span><strong>Awin Affiliate Integration:</strong> Register publisher account and activate affiliate tracking links for Tesco, Sainsbury's, and Asda.</span>
+              <span><strong>Shared Recipe Cache &amp; Caps:</strong> Save every scanned pin URL in Postgres so popular viral recipes are only processed by Gemini <em>once</em> (protects AI margins).</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-amber-400 font-bold">✔</span>
-              <span><strong>1-Click Cart Injection:</strong> Deploy browser bookmarklet / lightweight Chrome extension to auto-populate online supermarket baskets.</span>
+              <span><strong>Mobile-First Basket Handoff:</strong> 85%+ of social traffic is on mobile (where Chrome extensions don't run). Build mobile deep-links + desktop extension as a bonus.</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-amber-400 font-bold">✔</span>
-              <span><strong>Stripe Billing Setup:</strong> Configure Stripe checkout portal for "Plate Pro" (£3.99/month, £34.99/year).</span>
+              <span><strong>Multi-Network Affiliates:</strong> Apply to <strong>Awin + CJ Affiliate</strong> (Sainsbury's is on CJ) plus high-paying UK meal-kit &amp; Ocado/Amazon programs.</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-amber-400 font-bold">✔</span>
-              <span><strong>Whisk / Samsung Food API:</strong> Submit developer integration application for automated grocery SKU mapping.</span>
+              <span><strong>Stripe Billing &amp; Disclaimers:</strong> Set up "Plate Pro" (£3.99/mo, £34.99/yr) + allergen/nutrition disclaimers (skip Whisk API — closed to new devs).</span>
             </li>
           </ul>
         </div>
@@ -265,25 +295,25 @@
               <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
               <span>[A] ANALYSE: MONTHS 2–3</span>
             </span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-300 border border-emerald-800/60 font-bold">SCALE & METRICS</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-300 border border-emerald-800/60 font-bold">SCALE &amp; METRICS</span>
           </div>
-          <h3 class="text-sm font-syne font-bold text-white">Unit Economics & Retention Optimization</h3>
+          <h3 class="text-sm font-syne font-bold text-white">Real Profit, Retention &amp; Cost Health</h3>
           <ul class="space-y-2 text-xs font-mono text-slate-300">
             <li class="flex items-start gap-2">
               <span class="text-emerald-400 font-bold">✔</span>
-              <span><strong>Basket Conversion Funnel:</strong> Track % of users who click from recipe scan through to completed supermarket checkout (target: &gt;18%).</span>
+              <span><strong>AI Cost Per Active User:</strong> Track exact Gemini API spend per user/month (target: under <strong>£0.35/user</strong> so subscriptions stay ~70% profitable).</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-emerald-400 font-bold">✔</span>
-              <span><strong>Bounty Economics:</strong> Verify £3.50–£8.00 bounty payout per converted new supermarket user.</span>
+              <span><strong>Monthly Cancellations (Churn):</strong> Track % of Pro members who cancel each month (target: under <strong>8%/mo</strong> — use price comparison to keep them).</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-emerald-400 font-bold">✔</span>
-              <span><strong>Pro Upgrade Rate:</strong> Measure free-to-paid conversion at the 3-recipe weekly cap (target: 3–5% of cookers).</span>
+              <span><strong>Pro Upgrade Rate:</strong> Measure free-to-paid upgrades (target: <strong>4–5%</strong>) without starving free basket volume.</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-emerald-400 font-bold">✔</span>
-              <span><strong>Deduplication Accuracy:</strong> Audit user feedback on ingredient combining to eliminate edge-case ordering errors.</span>
+              <span><strong>Net Cash Tracker:</strong> Separate <strong>20% VAT</strong> (once approaching £90k/yr) and Stripe fees so you only count money you actually keep.</span>
             </li>
           </ul>
         </div>
@@ -399,161 +429,507 @@
       </div>
     </section>
 
-    <!-- 3. STRATEGIC PROFITABILITY ENGINE (EXECUTION STEPS) -->
+    <!-- 3. STRATEGIC PROFITABILITY ENGINE (REVISED 4-STREAM ROADMAP) -->
     <section class="space-y-4">
       <div class="flex items-center justify-between pb-3 border-b border-slate-800">
         <div class="flex items-center gap-2">
           <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
           <div>
-            <h2 class="text-lg font-syne font-bold uppercase tracking-wider text-white">3. Profitability Engine (The 4 Execution Steps)</h2>
-            <p class="text-xs font-mono text-slate-400">Step-by-step roadmap from zero-capital launch to £12,500+ recurring monthly revenue</p>
+            <h2 class="text-lg font-syne font-bold uppercase tracking-wider text-white">3. Profitability Engine (Revised 4-Step Monetization)</h2>
+            <p class="text-xs font-mono text-slate-400">Realistic path from £0 launch to £12,500/mo gross (~£9,000/mo profit) without relying on broken affiliate myths</p>
           </div>
         </div>
-        <span class="text-xs font-mono text-emerald-400">Target: £12,500/mo MRR</span>
+        <span class="text-xs font-mono text-emerald-400">Target: £12,500/mo Gross</span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        <!-- Step 1: Zero-Capital Launch & Viral Hook -->
-        <div class="glass-panel rounded-xl p-6 space-y-4 border-l-4 border-l-cyan-500">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold uppercase text-cyan-400">EXECUTION STEP 1 // WEEKS 1–4</span>
-            <span class="text-[10px] font-mono text-slate-300 bg-slate-800 px-2.5 py-0.5 rounded font-bold">BOOTSTRAP</span>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold text-white">Zero-Capital Launch & Organic Viral Wedge</h3>
-            <p class="text-xs text-slate-400 font-mono mt-0.5">Objective: 500 Weekly Active Cookers (WAC) at £0 Customer Acquisition Cost</p>
-          </div>
-          <p class="text-xs text-slate-300 leading-relaxed font-sans">
-            Validate user love without spending a penny on paid ads. Tap into massive online communities of recipe hoarders who complain about having hundreds of bookmarked recipes they never actually cook.
-          </p>
-          <div class="space-y-2 pt-2 border-t border-slate-800/80 font-mono text-xs">
-            <div class="text-[11px] font-bold text-slate-400 uppercase">Concrete Execution Steps:</div>
-            <div class="space-y-1.5 text-slate-300 text-[11px]">
-              <div class="flex items-start gap-2">
-                <span class="text-cyan-400 font-bold">1.</span>
-                <span>Deploy public web app on Vercel at <a href="https://pinterest-to-plate.vercel.app" target="_blank" class="text-cyan-400 underline">pinterest-to-plate.vercel.app</a> with friction-free board ingest.</span>
-              </div>
-              <div class="flex items-start gap-2">
-                <span class="text-cyan-400 font-bold">2.</span>
-                <span>Post 15s TikTok & Reels screen recordings: <em>"POV: You have 600 saved pins on Pinterest... watch this tool put them in my Tesco cart in 10s."</em></span>
-              </div>
-              <div class="flex items-start gap-2">
-                <span class="text-cyan-400 font-bold">3.</span>
-                <span>Partner with micro food creators to turn their recipe videos into 1-click shopping links.</span>
-              </div>
-            </div>
-            <div class="pt-2 text-[11px] text-cyan-300">
-              <strong>Milestone Target:</strong> 500 weekly active users cooking at least 2 meals/week.
-            </div>
-          </div>
-        </div>
-
-        <!-- Step 2: Supermarket Affiliate & Bounty Network -->
-        <div class="glass-panel rounded-xl p-6 space-y-4 border-l-4 border-l-amber-500">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold uppercase text-amber-400">EXECUTION STEP 2 // MONTHS 2–4</span>
-            <span class="text-[10px] font-mono text-slate-300 bg-slate-800 px-2.5 py-0.5 rounded font-bold">COMMERCIAL WEDGE</span>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold text-white">Supermarket Affiliate & Bounty Network</h3>
-            <p class="text-xs text-slate-400 font-mono mt-0.5">Objective: £2,500/month recurring affiliate commission & acquisition bounties</p>
-          </div>
-          <p class="text-xs text-slate-300 leading-relaxed font-sans">
-            UK supermarkets spend millions acquiring online delivery shoppers through affiliate networks like Awin. Pin2Plate captures high-margin bounties every time a user completes an online basket.
-          </p>
-          <div class="space-y-2 pt-2 border-t border-slate-800/80 font-mono text-xs">
-            <div class="text-[11px] font-bold text-slate-400 uppercase">Concrete Execution Steps:</div>
-            <div class="space-y-1.5 text-slate-300 text-[11px]">
-              <div class="flex items-start gap-2">
-                <span class="text-amber-400 font-bold">1.</span>
-                <span>Sign up publisher account on <strong>Awin</strong> (hosts Sainsbury's, Asda, and Morrisons grocery programs).</span>
-              </div>
-              <div class="flex items-start gap-2">
-                <span class="text-amber-400 font-bold">2.</span>
-                <span>Attach referral affiliate tracking IDs to all supermarket checkout redirects.</span>
-              </div>
-              <div class="flex items-start gap-2">
-                <span class="text-amber-400 font-bold">3.</span>
-                <span><strong>Unit Economics:</strong> £3.50–£8.00 bounty per new online grocery customer; 2%–3% commission on existing shopper basket totals.</span>
-              </div>
-            </div>
-            <div class="pt-2 text-[11px] text-amber-300">
-              <strong>Milestone Target:</strong> 400 weekly completed orders = <strong>£2,500/month affiliate revenue</strong>.
-            </div>
-          </div>
-        </div>
-
-        <!-- Step 3: "Plate Pro" Consumer Subscription -->
+        <!-- Step 1: Plate Pro Subscription + Switch & Save -->
         <div class="glass-panel rounded-xl p-6 space-y-4 border-l-4 border-l-emerald-500">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold uppercase text-emerald-400">EXECUTION STEP 3 // MONTHS 4–6</span>
-            <span class="text-[10px] font-mono text-slate-300 bg-slate-800 px-2.5 py-0.5 rounded font-bold">RECURRING SAAS</span>
+            <span class="text-xs font-mono font-bold uppercase text-emerald-400">STREAM 1 // MONTHS 1–6 (CORE INCOME)</span>
+            <span class="text-[10px] font-mono text-slate-300 bg-slate-800 px-2.5 py-0.5 rounded font-bold">CONSUMER SUBS</span>
           </div>
           <div>
-            <h3 class="text-lg font-bold text-white">"Plate Pro" Consumer Subscription (£3.99/mo)</h3>
-            <p class="text-xs text-slate-400 font-mono mt-0.5">Objective: £4,788/month predictable subscription MRR</p>
+            <h3 class="text-lg font-bold text-white">"Plate Pro" (£3.99/mo) + Basket Price Compare</h3>
+            <p class="text-xs text-slate-400 font-mono mt-0.5">Objective: 1,500 paying households ≈ £5,500/mo gross (from ~35k free users)</p>
           </div>
           <p class="text-xs text-slate-300 leading-relaxed font-sans">
-            The free tier allows 3 recipes converted per week. Passionate home cooks and busy families who want unlimited monthly recipe syncing, full macro tracking, and portion scaling upgrade to Pro.
+            People cancel £3.99/mo recipe apps unless they <strong>clearly save money</strong>. Adding a <strong>"Cheapest Supermarket Basket"</strong> comparison (e.g. <em>"£36 at Asda vs £44 at Sainsbury's"</em>) means Pro pays for itself on their very first weekly shop.
           </p>
           <div class="space-y-2 pt-2 border-t border-slate-800/80 font-mono text-xs">
             <div class="text-[11px] font-bold text-slate-400 uppercase">Concrete Execution Steps:</div>
             <div class="space-y-1.5 text-slate-300 text-[11px]">
               <div class="flex items-start gap-2">
                 <span class="text-emerald-400 font-bold">1.</span>
-                <span>Integrate Stripe Billing with 1-click checkout for <strong>£3.99/month</strong> or <strong>£34.99/year</strong>.</span>
+                <span>Keep basic recipe-to-basket generous so people actually build a weekly habit (don't strangle free users too early).</span>
               </div>
               <div class="flex items-start gap-2">
                 <span class="text-emerald-400 font-bold">2.</span>
-                <span>Gate premium features: unlimited board imports, portion scaling (2, 4, 6+ people), full calories/protein macro breakdown, and multi-user household sync.</span>
+                <span>Charge £3.99/mo (or £34.99/yr) for <strong>Supermarket Price Compare</strong>, bulk board rescue (up to fair-use cap), portion scaling, macros, &amp; family sync.</span>
               </div>
               <div class="flex items-start gap-2">
                 <span class="text-emerald-400 font-bold">3.</span>
-                <span>Trigger contextual upgrade prompts right when a free user attempts their 4th recipe of the week.</span>
+                <span><strong>Honest Math:</strong> At a 4–5% upgrade rate, you need <strong>~30,000–35,000 free monthly users</strong> to reach 1,500 paid subscribers.</span>
               </div>
             </div>
             <div class="pt-2 text-[11px] text-emerald-300">
-              <strong>Milestone Target:</strong> 1,200 paying subscribers = <strong>£4,788/month pure MRR</strong>.
+              <strong>12M Target:</strong> 1,500 paying users (mix of monthly &amp; annual) = <strong>£5,500/month gross</strong>.
             </div>
           </div>
         </div>
 
-        <!-- Step 4: Retail Media & FMCG Brand Sponsorships -->
-        <div class="glass-panel rounded-xl p-6 space-y-4 border-l-4 border-l-purple-500">
+        <!-- Step 2: B2B2C Creator Pro -->
+        <div class="glass-panel rounded-xl p-6 space-y-4 border-l-4 border-l-cyan-500">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold uppercase text-purple-400">EXECUTION STEP 4 // MONTHS 6–12</span>
-            <span class="text-[10px] font-mono text-slate-300 bg-slate-800 px-2.5 py-0.5 rounded font-bold">SCALE & VALUATION</span>
+            <span class="text-xs font-mono font-bold uppercase text-cyan-400">STREAM 2 // MONTHS 2–6 (GROWTH ENGINE)</span>
+            <span class="text-[10px] font-mono text-slate-300 bg-slate-800 px-2.5 py-0.5 rounded font-bold">CREATOR SAAS</span>
           </div>
           <div>
-            <h3 class="text-lg font-bold text-white">FMCG Retail Media & Sponsored Ingredients</h3>
-            <p class="text-xs text-slate-400 font-mono mt-0.5">Objective: £12,500 – £20,000/month combined run rate</p>
+            <h3 class="text-lg font-bold text-white">"Creator Pro" (£29/mo) — Shoppable Recipe Links</h3>
+            <p class="text-xs text-slate-400 font-mono mt-0.5">Objective: 100 UK food creators = £2,900/mo + free viral traffic</p>
           </div>
           <p class="text-xs text-slate-300 leading-relaxed font-sans">
-            This is how meal planning and grocery platforms like Jow reach $10M+ valuations. Major food brands pay premium retail media fees to be pre-selected as the default ingredient in the supermarket cart.
+            Instead of hoping food bloggers &amp; Pinterest creators promote you for free, give them a tool they actually want: a <strong>"1-Click Shop My Recipe"</strong> link for their pins, blogs &amp; newsletters (like Linktree for UK recipes). They pay you <em>and</em> send thousands of free cookers to your app!
+          </p>
+          <div class="space-y-2 pt-2 border-t border-slate-800/80 font-mono text-xs">
+            <div class="text-[11px] font-bold text-slate-400 uppercase">Concrete Execution Steps:</div>
+            <div class="space-y-1.5 text-slate-300 text-[11px]">
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold">1.</span>
+                <span>Give the first 25 UK micro food creators (10k–100k followers) free embeddable shoppable links to prove clicks.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold">2.</span>
+                <span>Charge £29/mo for branded recipe hubs, click analytics, email-capture popups, and affiliate rev-share.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold">3.</span>
+                <span><strong>Why this beats ads:</strong> Selling to 100 creators is far easier than finding 1,000 extra consumers—and avoids creator copyright anger.</span>
+              </div>
+            </div>
+            <div class="pt-2 text-[11px] text-cyan-300">
+              <strong>12M Target:</strong> 100 paying UK food creators = <strong>£2,900/month recurring</strong>.
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: High-CPA Affiliates & Supermarket Switches -->
+        <div class="glass-panel rounded-xl p-6 space-y-4 border-l-4 border-l-amber-500">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold uppercase text-amber-400">STREAM 3 // MONTHS 3–9 (SMART AFFILIATES)</span>
+            <span class="text-[10px] font-mono text-slate-300 bg-slate-800 px-2.5 py-0.5 rounded font-bold">SWITCH &amp; HIGH-CPA</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white">New-Shopper Switches &amp; High-CPA Food Partners</h3>
+            <p class="text-xs text-slate-400 font-mono mt-0.5">Objective: £2,600/mo from genuine new-customer bounties &amp; adjacent offers</p>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            <strong>Reality check:</strong> Supermarkets pay almost £0 for repeat shoppers. The real affiliate money comes when your price-comparison tool convinces someone to try a <strong>new supermarket</strong> (Ocado/Waitrose/Asda) for the first time, or buy meal kits &amp; kitchen gear.
+          </p>
+          <div class="space-y-2 pt-2 border-t border-slate-800/80 font-mono text-xs">
+            <div class="text-[11px] font-bold text-slate-400 uppercase">Concrete Execution Steps:</div>
+            <div class="space-y-1.5 text-slate-300 text-[11px]">
+              <div class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">1.</span>
+                <span>Join <strong>Awin + CJ Affiliate</strong> (Sainsbury's is on CJ) and target <em>new-customer</em> switch bounties (£5–£15 one-time).</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">2.</span>
+                <span>Add high-paying UK food offers: <strong>HelloFresh, Gousto, Mindful Chef</strong> (£10–£30 per new box) for busy nights when users don't want to shop.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">3.</span>
+                <span>Link recipe equipment (air fryers, Dutch ovens, spice blends) via <strong>Amazon Associates</strong> (3–8% commission).</span>
+              </div>
+            </div>
+            <div class="pt-2 text-[11px] text-amber-300">
+              <strong>12M Target:</strong> ~220 monthly switches &amp; partner conversions @ ~£12 avg = <strong>£2,600/month</strong>.
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Challenger Brand Sponsors -> Big FMCG in Year 2 -->
+        <div class="glass-panel rounded-xl p-6 space-y-4 border-l-4 border-l-purple-500">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold uppercase text-purple-400">STREAM 4 // MONTHS 9–18 (UPSIDE BONUS)</span>
+            <span class="text-[10px] font-mono text-slate-300 bg-slate-800 px-2.5 py-0.5 rounded font-bold">BRAND SPONSORS</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white">Challenger UK Food Brands (Then Big FMCG in Yr 2)</h3>
+            <p class="text-xs text-slate-400 font-mono mt-0.5">Objective: £1,500/mo by Month 12 → £10k+/mo once past 50k+ users</p>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            Giants like Unilever (Hellmann's) take 9–12 months to sign contracts and demand huge audiences. Start with agile <strong>UK challenger brands</strong> (e.g., Bold Bean Co, Mutti, Oatly, specialty spice/sauce brands) who happily pay £500–£1,500/mo for sponsored recipe collections.
           </p>
           <div class="space-y-2 pt-2 border-t border-slate-800/80 font-mono text-xs">
             <div class="text-[11px] font-bold text-slate-400 uppercase">Concrete Execution Steps:</div>
             <div class="space-y-1.5 text-slate-300 text-[11px]">
               <div class="flex items-start gap-2">
                 <span class="text-purple-400 font-bold">1.</span>
-                <span>Partner with FMCG brands (Hellmann's, Heinz, Knorr, Lurpak, Philadelphia).</span>
+                <span>Sell simple £500/mo "Featured Recipe Pack" sponsorships to 3 UK indie/challenger food brands first (fast founder-to-founder deals).</span>
               </div>
               <div class="flex items-start gap-2">
                 <span class="text-purple-400 font-bold">2.</span>
-                <span>When a recipe calls for "mayonnaise", Hellmann's pays £0.15–£0.25 to be the default selected SKU in the Tesco/Sainsbury's cart.</span>
+                <span>Always badge paid ingredient swaps clearly as <strong>"Sponsored"</strong> (required by UK ASA law &amp; keeps shopper trust).</span>
               </div>
               <div class="flex items-start gap-2">
                 <span class="text-purple-400 font-bold">3.</span>
-                <span>Provide FMCG brands with anonymous basket analytics proving direct purchase lift.</span>
+                <span>Once past 50,000+ monthly baskets in Year 2, pitch big FMCG media agencies (Hellmann's, Heinz, Lurpak).</span>
               </div>
             </div>
             <div class="pt-2 text-[11px] text-purple-300">
-              <strong>Milestone Target:</strong> Total Venture Run Rate exceeds <strong>£12,500 to £20,000 / month</strong>.
+              <strong>12M Target:</strong> 3 challenger brand packages = <strong>£1,500/month</strong> (scales big in Year 2).
             </div>
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- 4. MONEY MADE SIMPLE: UNIT ECONOMICS & REAL PROFIT (NOVICE-FRIENDLY) -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+          <div>
+            <h2 class="text-lg font-syne font-bold uppercase tracking-wider text-white">4. Money Made Simple: Costs, Taxes &amp; Real Profit</h2>
+            <p class="text-xs font-mono text-slate-400">Plain-English guide to what you actually keep (Revenue ≠ Profit)</p>
+          </div>
+        </div>
+        <span class="text-xs font-mono text-amber-400 bg-amber-950/60 px-2.5 py-1 rounded border border-amber-800/40">No-Jargon Finance Check</span>
+      </div>
+
+      <!-- Row 1: The £3.99 Receipt + The 12-Month Mini P&L -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Where every £3.99 goes -->
+        <div class="glass-panel rounded-xl p-6 space-y-4 border-t-2 border-t-emerald-500">
+          <div class="flex items-center justify-between">
+            <h3 class="text-base font-syne font-bold text-white flex items-center gap-2">
+              <i data-lucide="receipt" class="w-4 h-4 text-emerald-400"></i>
+              <span>Where Every £3.99 Subscription Actually Goes</span>
+            </h3>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800/60">1 USER / MONTH</span>
+          </div>
+          <p class="text-xs text-slate-300 font-sans leading-relaxed">
+            When a customer pays you <strong>£3.99</strong>, you don't keep £3.99. Here is the honest breakdown once the business grows past the UK's £90,000/year VAT registration limit:
+          </p>
+          <div class="space-y-2.5 font-mono text-xs pt-1">
+            <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/90 border border-slate-800">
+              <span class="text-white font-bold">Customer pays for Plate Pro</span>
+              <span class="text-white font-bold">£3.99</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/50 border border-slate-800/60">
+              <span class="text-slate-300">− UK VAT (20% tax collected for HMRC once over £90k/yr)</span>
+              <span class="text-rose-400">−£0.66</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/50 border border-slate-800/60">
+              <span class="text-slate-300">− Stripe Card Fee (1.5% + 20p per UK card payment)</span>
+              <span class="text-rose-400">−£0.26</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/50 border border-slate-800/60">
+              <span class="text-slate-300">− AI Vision &amp; Server Cost (Gemini API + hosting share)</span>
+              <span class="text-amber-400">−£0.35</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg bg-emerald-950/50 border border-emerald-500/40">
+              <span class="text-emerald-300 font-bold">= Real Profit You Keep (68% Healthy Margin)</span>
+              <span class="text-emerald-400 font-bold text-sm">£2.72 / mo</span>
+            </div>
+          </div>
+          <p class="text-[11px] font-mono text-slate-400">
+            💡 <strong>Tip:</strong> Before your sales hit £90,000 in a 12-month period, you don't pay VAT — so you keep <strong>~£3.38</strong> per £3.99 subscriber early on!
+          </p>
+        </div>
+
+        <!-- Monthly Mini P&L at £12,500 Target -->
+        <div class="glass-panel rounded-xl p-6 space-y-4 border-t-2 border-t-cyan-500">
+          <div class="flex items-center justify-between">
+            <h3 class="text-base font-syne font-bold text-white flex items-center gap-2">
+              <i data-lucide="calculator" class="w-4 h-4 text-cyan-400"></i>
+              <span>Month-12 Money In vs. Money Out (Simple P&amp;L)</span>
+            </h3>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800/60">AT FULL TARGET</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
+            <div class="space-y-2 p-3 rounded-lg bg-slate-900/70 border border-slate-800">
+              <div class="text-[11px] font-bold text-emerald-400 uppercase pb-1 border-b border-slate-800">Money In (Revenue)</div>
+              <div class="flex justify-between"><span class="text-slate-300">Plate Pro (1,500 subs)</span><span class="text-white">£5,500</span></div>
+              <div class="flex justify-between"><span class="text-slate-300">Creator Pro (100 creators)</span><span class="text-white">£2,900</span></div>
+              <div class="flex justify-between"><span class="text-slate-300">Switches &amp; High-CPA</span><span class="text-white">£2,600</span></div>
+              <div class="flex justify-between"><span class="text-slate-300">3 Challenger Brands</span><span class="text-white">£1,500</span></div>
+              <div class="flex justify-between pt-2 border-t border-slate-700 font-bold text-emerald-400">
+                <span>Total In</span><span>£12,500</span>
+              </div>
+            </div>
+            <div class="space-y-2 p-3 rounded-lg bg-slate-900/70 border border-slate-800">
+              <div class="text-[11px] font-bold text-rose-400 uppercase pb-1 border-b border-slate-800">Money Out (Monthly Bills)</div>
+              <div class="flex justify-between"><span class="text-slate-300">UK VAT Set-Aside (20%)</span><span class="text-rose-300">−£2,080</span></div>
+              <div class="flex justify-between"><span class="text-slate-300">Gemini AI Scans (Cached)</span><span class="text-rose-300">−£650</span></div>
+              <div class="flex justify-between"><span class="text-slate-300">Stripe Payment Fees</span><span class="text-rose-300">−£450</span></div>
+              <div class="flex justify-between"><span class="text-slate-300">Vercel, DB &amp; Proxies</span><span class="text-rose-300">−£320</span></div>
+              <div class="flex justify-between pt-2 border-t border-slate-700 font-bold text-rose-400">
+                <span>Total Bills</span><span>−£3,500</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-3 rounded-lg bg-cyan-950/40 border border-cyan-500/40 flex items-center justify-between font-mono text-xs">
+            <span class="text-cyan-200 font-bold">Estimated Operating Profit (Before UK Corp Tax):</span>
+            <span class="text-cyan-300 font-bold text-sm">~£9,000 / mo</span>
+          </div>
+          <p class="text-[11px] font-mono text-slate-400">
+            ⏳ <strong>Cash Timing Note:</strong> Affiliate networks hold payouts for <strong>30–90 days</strong>, whereas AI &amp; server bills are due monthly. Keep 2 months of server costs in reserve.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Row 1.5: Interactive Profit & Unit Economics Simulator -->
+      <div class="glass-panel rounded-xl p-6 space-y-5 border border-emerald-500/30 shadow-glow-emerald">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800">
+          <div>
+            <h3 class="text-base font-syne font-bold text-white flex items-center gap-2">
+              <i data-lucide="sliders" class="w-4 h-4 text-emerald-400"></i>
+              <span>Interactive Profit Simulator (Drag the Sliders!)</span>
+            </h3>
+            <p class="text-xs font-mono text-slate-400 mt-0.5">Test any scenario — see your real take-home profit, VAT trigger &amp; AI costs update live</p>
+          </div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <button type="button" onclick="applyPreset('starter')" class="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-[11px] font-mono text-slate-300 transition-colors cursor-pointer">
+              Month 3 Starter
+            </button>
+            <button type="button" onclick="applyPreset('growing')" class="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-[11px] font-mono text-slate-300 transition-colors cursor-pointer">
+              Month 6 Growing
+            </button>
+            <button type="button" onclick="applyPreset('target')" class="px-2.5 py-1 rounded-lg bg-emerald-950/80 hover:bg-emerald-900/80 border border-emerald-600/60 text-[11px] font-mono text-emerald-300 font-bold transition-colors cursor-pointer">
+              Month 12 Target (£12.5k)
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <!-- Left: Novice-Friendly Sliders -->
+          <div class="lg:col-span-7 space-y-4">
+            
+            <!-- Slider 1: Free Monthly Users -->
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between text-xs font-mono">
+                <label for="sim-mau" class="text-slate-200 font-bold">1. Monthly Free Users (using the app)</label>
+                <span id="val-mau" class="text-cyan-400 font-bold">35,000 users</span>
+              </div>
+              <input id="sim-mau" type="range" min="500" max="100000" step="500" value="35000" class="p2p-slider">
+              <div class="flex justify-between text-[10px] font-mono text-slate-500">
+                <span>500 (Launch)</span><span>50,000</span><span>100,000 (Viral)</span>
+              </div>
+            </div>
+
+            <!-- Slider 2: Upgrade % to Plate Pro -->
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between text-xs font-mono">
+                <label for="sim-conv" class="text-slate-200 font-bold">2. % Who Upgrade to Plate Pro (£3.99/mo)</label>
+                <span id="val-conv" class="text-emerald-400 font-bold">4.3% (1,505 payers)</span>
+              </div>
+              <input id="sim-conv" type="range" min="1" max="10" step="0.1" value="4.3" class="p2p-slider">
+              <div class="flex justify-between text-[10px] font-mono text-slate-500">
+                <span>1% (Weak)</span><span>4–5% (Healthy)</span><span>10% (Amazing)</span>
+              </div>
+            </div>
+
+            <!-- Slider 3: Paying Food Creators -->
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between text-xs font-mono">
+                <label for="sim-creators" class="text-slate-200 font-bold">3. Food Creators on Creator Pro (£29/mo)</label>
+                <span id="val-creators" class="text-cyan-300 font-bold">100 creators</span>
+              </div>
+              <input id="sim-creators" type="range" min="0" max="300" step="5" value="100" class="p2p-slider">
+              <div class="flex justify-between text-[10px] font-mono text-slate-500">
+                <span>0</span><span>150</span><span>300 creators</span>
+              </div>
+            </div>
+
+            <!-- Slider 4: Monthly Switch / Meal-Kit Affiliates -->
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between text-xs font-mono">
+                <label for="sim-aff" class="text-slate-200 font-bold">4. Monthly New-Shopper Switches / Meal Kits (~£12 avg)</label>
+                <span id="val-aff" class="text-amber-400 font-bold">220 deals/mo</span>
+              </div>
+              <input id="sim-aff" type="range" min="0" max="600" step="10" value="220" class="p2p-slider">
+              <div class="flex justify-between text-[10px] font-mono text-slate-500">
+                <span>0</span><span>300</span><span>600 deals/mo</span>
+              </div>
+            </div>
+
+            <!-- Slider 5: Challenger Brand Sponsors -->
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between text-xs font-mono">
+                <label for="sim-brands" class="text-slate-200 font-bold">5. UK Challenger Brand Sponsors (£500/mo each)</label>
+                <span id="val-brands" class="text-purple-400 font-bold">3 brands</span>
+              </div>
+              <input id="sim-brands" type="range" min="0" max="15" step="1" value="3" class="p2p-slider">
+              <div class="flex justify-between text-[10px] font-mono text-slate-500">
+                <span>0</span><span>7</span><span>15 brands</span>
+              </div>
+            </div>
+
+            <!-- Toggle: Shared Recipe Cache -->
+            <div class="pt-2 flex items-center justify-between p-3 rounded-lg bg-slate-900/80 border border-slate-800">
+              <div class="space-y-0.5 pr-3">
+                <label for="sim-cache" class="text-xs font-mono font-bold text-white cursor-pointer">Shared Recipe Cache ON (Scan each viral pin once)</label>
+                <p class="text-[11px] font-sans text-slate-400">Try turning this OFF to see how fast Gemini AI bills explode without caching!</p>
+              </div>
+              <input id="sim-cache" type="checkbox" checked class="w-5 h-5 accent-emerald-500 cursor-pointer shrink-0">
+            </div>
+
+          </div>
+
+          <!-- Right: Live Money In / Money Out / Real Profit Receipt -->
+          <div class="lg:col-span-5 space-y-3 p-4 rounded-xl bg-slate-950/90 border border-slate-800 font-mono text-xs">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-800">
+              <span class="text-slate-400 uppercase text-[11px] font-bold">Live Monthly Receipt</span>
+              <span id="sim-vat-badge" class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-950/80 text-amber-300 border border-amber-700/60">UK VAT ACTIVE (&gt;£90k/yr)</span>
+            </div>
+
+            <!-- Revenue Breakdown -->
+            <div class="space-y-1.5">
+              <div class="flex justify-between"><span class="text-slate-400">Plate Pro (mix mo/yr ~£3.65)</span><span id="out-pro" class="text-white">£5,493</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">Creator Pro (£29/mo)</span><span id="out-creators" class="text-white">£2,900</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">Switches &amp; Meal-Kit Affiliates</span><span id="out-aff" class="text-white">£2,640</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">Challenger Brand Sponsors</span><span id="out-brands" class="text-white">£1,500</span></div>
+              <div class="flex justify-between pt-1.5 border-t border-slate-800 font-bold text-emerald-400">
+                <span>Total Money In (Gross Sales)</span>
+                <span id="out-gross">£12,533</span>
+              </div>
+            </div>
+
+            <!-- Cost Breakdown -->
+            <div class="space-y-1.5 pt-2 border-t border-slate-800">
+              <div class="flex justify-between"><span class="text-slate-400">− UK VAT Set-Aside (20%)</span><span id="out-vat" class="text-rose-300">−£2,089</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">− Stripe Card Fees</span><span id="out-stripe" class="text-rose-300">−£455</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">− Gemini AI API Scans</span><span id="out-ai" class="text-amber-300">−£645</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">− Vercel, DB &amp; Proxies</span><span id="out-infra" class="text-rose-300">−£315</span></div>
+              <div class="flex justify-between pt-1.5 border-t border-slate-800 font-bold text-rose-400">
+                <span>Total Monthly Bills</span>
+                <span id="out-costs">−£3,504</span>
+              </div>
+            </div>
+
+            <!-- Bottom Line Profit Box -->
+            <div id="sim-profit-box" class="p-3.5 rounded-lg bg-emerald-950/60 border border-emerald-500/50 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="text-emerald-200 font-bold">Real Monthly Profit:</span>
+                <span id="out-profit" class="text-emerald-400 font-extrabold text-lg">£9,029</span>
+              </div>
+              <div class="flex items-center justify-between text-[11px] text-slate-300">
+                <span id="out-margin">72% Profit Margin</span>
+                <span id="out-annual">~£108,348/yr (pre-Corp Tax)</span>
+              </div>
+            </div>
+
+            <!-- Plain-English Health Check -->
+            <div id="sim-health-note" class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-[11px] text-slate-300 leading-relaxed font-sans">
+              🔁 <strong>Leaky Bucket Check:</strong> At ~8% monthly cancellations, you'll need ~<strong>120 new Pro sign-ups/month</strong> just to keep subscriber count steady.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Row 2: 3 Beginner Money Traps Explained Simply -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="glass-panel rounded-xl p-5 space-y-2.5 border-l-4 border-l-rose-500">
+          <div class="text-[11px] font-mono font-bold text-rose-400 uppercase">Money Trap #1 // AI Bill Spike</div>
+          <h4 class="text-sm font-syne font-bold text-white">The "600-Pin Video" Cost Bomb</h4>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            Video &amp; image AI costs real pennies every time it runs. If a free user pastes a board of 600 cooking videos and never pays you, your Gemini API bill can explode overnight.
+          </p>
+          <p class="text-[11px] font-mono text-emerald-300 pt-1">
+            <strong>Fix:</strong> Cache every scanned URL in your database (scan once, reuse for everyone) + set fair-use caps (e.g. 20 scans/mo free, 150/mo Pro).
+          </p>
+        </div>
+
+        <div class="glass-panel rounded-xl p-5 space-y-2.5 border-l-4 border-l-amber-500">
+          <div class="text-[11px] font-mono font-bold text-amber-400 uppercase">Money Trap #2 // Churn ("Leaky Bucket")</div>
+          <h4 class="text-sm font-syne font-bold text-white">People Cancel Once Pins Are Saved</h4>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            In consumer food apps, ~10–15% of subscribers cancel each month. At 10% churn, keeping 1,500 subscribers means finding <strong>150 brand-new payers every single month</strong> just to stay flat.
+          </p>
+          <p class="text-[11px] font-mono text-emerald-300 pt-1">
+            <strong>Fix:</strong> Give a weekly reason to stay: live supermarket price-drop comparison + "What's left in my fridge" meal suggestions.
+          </p>
+        </div>
+
+        <div class="glass-panel rounded-xl p-5 space-y-2.5 border-l-4 border-l-purple-500">
+          <div class="text-[11px] font-mono font-bold text-purple-400 uppercase">Money Trap #3 // Affiliate Myth</div>
+          <h4 class="text-sm font-syne font-bold text-white">Bounties Only Pay Once Per Shopper</h4>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            Supermarkets make tiny profits (~3%), so they only pay £5–£10 bounties for a <strong>first-time online shopper</strong>—not every week when the same person re-orders.
+          </p>
+          <p class="text-[11px] font-mono text-emerald-300 pt-1">
+            <strong>Fix:</strong> Treat subscriptions (Consumer + Creator) as your steady paycheck, and use "Switch &amp; Save" + meal kits for bonus affiliate cash.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. COMMERCIAL RISK RADAR & UK COMPETITIVE EDGE -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-rose-500"></div>
+          <div>
+            <h2 class="text-lg font-syne font-bold uppercase tracking-wider text-white">5. Commercial Risk Radar &amp; Competitive Edge</h2>
+            <p class="text-xs font-mono text-slate-400">Real-world UK market blockers to fix early so growth doesn't get derailed</p>
+          </div>
+        </div>
+        <span class="text-xs font-mono text-rose-400 bg-rose-950/60 px-2.5 py-1 rounded border border-rose-800/40">5 Critical Checks</span>
+      </div>
+
+      <div class="glass-panel rounded-xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-slate-800 font-mono text-[11px] text-slate-400 uppercase">
+                <th class="py-3 px-4">Risk / Blind Spot</th>
+                <th class="py-3 px-4">Level</th>
+                <th class="py-3 px-4">Why It Matters (Plain English)</th>
+                <th class="py-3 px-4">Simple Action Plan</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/70 text-xs">
+              <tr class="hover:bg-slate-900/40">
+                <td class="py-3.5 px-4 font-bold text-white font-syne">1. Pinterest Trademark &amp; Handle Ban</td>
+                <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-rose-950 text-rose-300 border border-rose-700/60 font-mono text-[10px] font-bold">HIGH</span></td>
+                <td class="py-3.5 px-4 text-slate-300">Pinterest's legal rules forbid using "Pin", "Pinterest", or their brand red in third-party app names, URLs, or social handles. They can shut down your account right after you go viral.</td>
+                <td class="py-3.5 px-4 text-emerald-300 font-mono text-[11px]">Pick a clean ownable name (e.g. <em>Save2Plate</em> or <em>Board2Basket</em>) before launching socials. Say <em>"Works with Pinterest"</em> instead.</td>
+              </tr>
+              <tr class="hover:bg-slate-900/40">
+                <td class="py-3.5 px-4 font-bold text-white font-syne">2. Mobile-to-Desktop Checkout Drop-Off</td>
+                <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-rose-950 text-rose-300 border border-rose-700/60 font-mono text-[10px] font-bold">HIGH</span></td>
+                <td class="py-3.5 px-4 text-slate-300">85%+ of people clicking from Pinterest/TikTok/IG are on phones. Chrome extensions <strong>don't work on mobile phones</strong> or inside supermarket apps, causing huge drop-offs.</td>
+                <td class="py-3.5 px-4 text-emerald-300 font-mono text-[11px]">Make the mobile web checklist + 1-tap supermarket search/deep-link super smooth first; treat the Chrome extension as a desktop bonus.</td>
+              </tr>
+              <tr class="hover:bg-slate-900/40">
+                <td class="py-3.5 px-4 font-bold text-white font-syne">3. Crowded UK Competitors</td>
+                <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-700/60 font-mono text-[10px] font-bold">MED-HIGH</span></td>
+                <td class="py-3.5 px-4 text-slate-300"><strong>Remy, Cherrypick, Lollipop, ReciMe</strong> &amp; <strong>Samsung Food</strong> (free) already turn recipes into UK Tesco/Sainsbury's/Asda baskets.</td>
+                <td class="py-3.5 px-4 text-emerald-300 font-mono text-[11px]">Win on 3 gaps they miss: (1) <strong>Bulk rescue</strong> of entire Pinterest boards, (2) <strong>Cheapest UK basket</strong> comparison, (3) <strong>Creator shoppable links</strong>.</td>
+              </tr>
+              <tr class="hover:bg-slate-900/40">
+                <td class="py-3.5 px-4 font-bold text-white font-syne">4. Closed Whisk API &amp; Extension Affiliate Rules</td>
+                <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-700/60 font-mono text-[10px] font-bold">MED-HIGH</span></td>
+                <td class="py-3.5 px-4 text-slate-300">Whisk/Samsung Food stopped accepting new developer API apps, and Awin/CJ often reject browser extensions for cookie-tracking rules.</td>
+                <td class="py-3.5 px-4 text-emerald-300 font-mono text-[11px]">Keep affiliate links on your <strong>website</strong> (not inside the extension) and rely on your own clean ingredient-to-search mapper.</td>
+              </tr>
+              <tr class="hover:bg-slate-900/40">
+                <td class="py-3.5 px-4 font-bold text-white font-syne">5. UK Law: Allergens, Ads &amp; Company Shield</td>
+                <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-700/60 font-mono text-[10px] font-bold">MEDIUM</span></td>
+                <td class="py-3.5 px-4 text-slate-300">AI can misread allergens or calories; hiding paid brand swaps breaks UK ASA ad rules; taking payments in your personal name risks personal liability.</td>
+                <td class="py-3.5 px-4 text-emerald-300 font-mono text-[11px]">Add clear allergen/macro disclaimers, badge paid brands as <strong>"Sponsored"</strong>, and register a UK Ltd company before scaling paid plans.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
@@ -566,6 +942,133 @@
 
   <script>
     lucide.createIcons();
+
+    (function initProfitSimulator() {
+      const elMau = document.getElementById('sim-mau');
+      const elConv = document.getElementById('sim-conv');
+      const elCreators = document.getElementById('sim-creators');
+      const elAff = document.getElementById('sim-aff');
+      const elBrands = document.getElementById('sim-brands');
+      const elCache = document.getElementById('sim-cache');
+      if (!elMau) return;
+
+      const fmt = (n) => '£' + Math.round(Math.abs(n)).toLocaleString('en-GB');
+
+      function updateSimulator() {
+        const mau = Number(elMau.value);
+        const convPct = Number(elConv.value);
+        const creators = Number(elCreators.value);
+        const affDeals = Number(elAff.value);
+        const brands = Number(elBrands.value);
+        const cacheOn = elCache.checked;
+
+        const proSubs = Math.round(mau * (convPct / 100));
+
+        // Revenue (Pro blended monthly £3.99 + annual £2.92/mo ≈ £3.65/sub)
+        const revPro = proSubs * 3.65;
+        const revCreators = creators * 29;
+        const revAff = affDeals * 12;
+        const revBrands = brands * 500;
+        const gross = revPro + revCreators + revAff + revBrands;
+        const annualGross = gross * 12;
+
+        // UK VAT applies once turnover exceeds £90,000/yr (£7,500/mo)
+        const vatActive = annualGross > 90000;
+        const vat = vatActive ? gross / 6 : 0; // 20% VAT inclusive = 1/6 of gross
+
+        // Stripe UK card fees (~1.5% + 20p per monthly charge)
+        const stripe = (proSubs * 0.26) + (creators * 0.64);
+
+        // Gemini AI API scans (caching cuts duplicate scans ~4x)
+        const aiCost = cacheOn
+          ? (mau * 0.015) + (proSubs * 0.08)
+          : (mau * 0.065) + (proSubs * 0.35);
+
+        // Hosting, Postgres DB & scraping proxies
+        const infra = 35 + (mau / 1000) * 8;
+
+        const totalCosts = vat + stripe + aiCost + infra;
+        const profit = gross - totalCosts;
+        const marginPct = gross > 0 ? Math.round((profit / gross) * 100) : 0;
+        const monthlyChurnNeeded = Math.max(1, Math.round(proSubs * 0.08));
+
+        // Update Slider Labels
+        document.getElementById('val-mau').textContent = mau.toLocaleString('en-GB') + ' users';
+        document.getElementById('val-conv').textContent = convPct.toFixed(1) + '% (' + proSubs.toLocaleString('en-GB') + ' payers)';
+        document.getElementById('val-creators').textContent = creators + ' creators';
+        document.getElementById('val-aff').textContent = affDeals + ' deals/mo';
+        document.getElementById('val-brands').textContent = brands + (brands === 1 ? ' brand' : ' brands');
+
+        // Update Receipt Outputs
+        document.getElementById('out-pro').textContent = fmt(revPro);
+        document.getElementById('out-creators').textContent = fmt(revCreators);
+        document.getElementById('out-aff').textContent = fmt(revAff);
+        document.getElementById('out-brands').textContent = fmt(revBrands);
+        document.getElementById('out-gross').textContent = fmt(gross);
+
+        document.getElementById('out-vat').textContent = vat > 0 ? '−' + fmt(vat) : '£0 (Under £90k)';
+        document.getElementById('out-stripe').textContent = '−' + fmt(stripe);
+        document.getElementById('out-ai').textContent = '−' + fmt(aiCost);
+        document.getElementById('out-infra').textContent = '−' + fmt(infra);
+        document.getElementById('out-costs').textContent = '−' + fmt(totalCosts);
+
+        const profitEl = document.getElementById('out-profit');
+        const profitBox = document.getElementById('sim-profit-box');
+        profitEl.textContent = (profit < 0 ? '−' : '') + fmt(profit);
+        document.getElementById('out-margin').textContent = marginPct + '% Profit Margin';
+        document.getElementById('out-annual').textContent = '~' + (profit < 0 ? '−' : '') + fmt(profit * 12) + '/yr (pre-Corp Tax)';
+
+        // VAT Badge State
+        const vatBadge = document.getElementById('sim-vat-badge');
+        if (vatActive) {
+          vatBadge.textContent = 'UK VAT ACTIVE (>£90k/yr)';
+          vatBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-amber-950/80 text-amber-300 border border-amber-700/60';
+        } else {
+          vatBadge.textContent = 'NO UK VAT YET (<£90k/yr)';
+          vatBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-700/60';
+        }
+
+        // Profit Box Warning State
+        if (profit <= 0) {
+          profitBox.className = 'p-3.5 rounded-lg bg-rose-950/60 border border-rose-500/50 space-y-1';
+          profitEl.className = 'text-rose-400 font-extrabold text-lg';
+        } else if (marginPct < 45) {
+          profitBox.className = 'p-3.5 rounded-lg bg-amber-950/60 border border-amber-500/50 space-y-1';
+          profitEl.className = 'text-amber-400 font-extrabold text-lg';
+        } else {
+          profitBox.className = 'p-3.5 rounded-lg bg-emerald-950/60 border border-emerald-500/50 space-y-1';
+          profitEl.className = 'text-emerald-400 font-extrabold text-lg';
+        }
+
+        // Plain-English Health Note
+        const healthNote = document.getElementById('sim-health-note');
+        if (!cacheOn && aiCost > gross * 0.25) {
+          healthNote.innerHTML = '🚨 <strong>AI Cost Warning:</strong> Without recipe caching, Gemini API bills eat <strong>' + Math.round((aiCost / Math.max(gross, 1)) * 100) + '%</strong> of your sales! Turn Shared Recipe Cache back ON to protect profit.';
+        } else if (profit <= 0) {
+          healthNote.innerHTML = '⚠️ <strong>Losing Money Here:</strong> Your AI &amp; server costs exceed sales. Either increase upgrade rate, add Creator Pro accounts, or turn on recipe caching.';
+        } else {
+          healthNote.innerHTML = '🔁 <strong>Leaky Bucket Check:</strong> At ~8% monthly cancellations, you need ~<strong>' + monthlyChurnNeeded.toLocaleString('en-GB') + ' new Pro sign-ups/month</strong> just to stay steady (plus more to grow).';
+        }
+      }
+
+      window.applyPreset = function(mode) {
+        if (mode === 'starter') {
+          elMau.value = 3000; elConv.value = 3.5; elCreators.value = 10; elAff.value = 20; elBrands.value = 0; elCache.checked = true;
+        } else if (mode === 'growing') {
+          elMau.value = 15000; elConv.value = 4.0; elCreators.value = 45; elAff.value = 90; elBrands.value = 1; elCache.checked = true;
+        } else {
+          elMau.value = 35000; elConv.value = 4.3; elCreators.value = 100; elAff.value = 220; elBrands.value = 3; elCache.checked = true;
+        }
+        updateSimulator();
+      };
+
+      [elMau, elConv, elCreators, elAff, elBrands, elCache].forEach((el) => {
+        el.addEventListener('input', updateSimulator);
+        el.addEventListener('change', updateSimulator);
+      });
+
+      updateSimulator();
+    })();
   </script>
 </body>
 </html>
