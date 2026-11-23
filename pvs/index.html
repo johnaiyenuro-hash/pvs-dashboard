@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>HABAKUK TWO TWO // Operational OS v28</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1325,8 +1328,8 @@
       const afterNextIdx = (nextIdx + 1) % PVS_LOGOS.length;
       const afterNextLogo = PVS_LOGOS[afterNextIdx];
 
-      img.src = '../p2p/assets/forkpin-' + nextLogo.id + '.svg';
-      if (navImg) navImg.src = '../p2p/assets/forkpin-' + nextLogo.id + '.svg';
+      img.src = '../p2p/assets/forkpin-' + nextLogo.id + '.svg?v=' + Date.now();
+      if (navImg) navImg.src = '../p2p/assets/forkpin-' + nextLogo.id + '.svg?v=' + Date.now();
       if (label) label.textContent = 'FORKPIN ' + nextLogo.badge;
       if (btn) btn.innerHTML = 'Cycle Next (' + afterNextLogo.name + ') &rarr; [' + (nextIdx + 1) + '/10]';
       try { localStorage.setItem('pvs_active_logo_id', nextLogo.id); } catch(e){}
@@ -1337,6 +1340,26 @@
       renderStreak();
       syncActiveLever();
       updateLinkedInSprintProgress();
+
+      // Restore saved logo state
+      try {
+        const savedLogoId = localStorage.getItem('pvs_active_logo_id');
+        if (savedLogoId) {
+          const found = PVS_LOGOS.find(l => l.id === savedLogoId);
+          if (found) {
+            const img = document.getElementById('pvs-forkpin-logo');
+            const navImg = document.getElementById('nav-p2p-logo');
+            const btn = document.getElementById('pvs-logo-toggle-btn');
+            const label = document.getElementById('pvs-logo-ver-badge');
+            const idx = PVS_LOGOS.indexOf(found);
+            const nextLogo = PVS_LOGOS[(idx + 1) % PVS_LOGOS.length];
+            if (img) img.src = '../p2p/assets/forkpin-' + found.id + '.svg?v=' + Date.now();
+            if (navImg) navImg.src = '../p2p/assets/forkpin-' + found.id + '.svg?v=' + Date.now();
+            if (label) label.textContent = 'FORKPIN ' + found.badge;
+            if (btn) btn.innerHTML = 'Cycle Next (' + nextLogo.name + ') &rarr; [' + (idx + 1) + '/10]';
+          }
+        }
+      } catch(e) {}
     }
 
     window.onload = function() {
