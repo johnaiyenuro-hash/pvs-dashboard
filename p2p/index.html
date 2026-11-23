@@ -10,47 +10,41 @@
   
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Google Fonts: Inter & JetBrains Mono & Syne -->
+
+  <!-- Google Fonts: Syne & Space Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
   
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-            syne: ['Syne', 'sans-serif'],
-          },
           colors: {
-            p2p: {
-              red: '#E60023',
-              crimson: '#f43f5e',
-              neon: '#10b981',
-              amber: '#f59e0b',
-              slate: {
-                950: '#030712',
-                900: '#090d16',
-                850: '#0d1321',
-                800: '#141c2e',
-                750: '#1b253b',
-                700: '#26344f',
-              }
+            'p2p-red': '#E60023', // Official Pinterest/ForkPin Red
+            'p2p-slate': {
+              950: '#070b14',
+              900: '#0d1321',
+              850: '#131a29',
+              800: '#1e293b',
+              700: '#334155',
             }
+          },
+          fontFamily: {
+            'syne': ['Syne', 'sans-serif'],
+            'mono': ['"Space Mono"', 'monospace'],
+            'sans': ['"DM Sans"', 'sans-serif'],
           },
           boxShadow: {
             'glow-red': '0 0 25px -5px rgba(230, 0, 35, 0.4)',
             'glow-emerald': '0 0 25px -5px rgba(16, 185, 129, 0.35)',
+            'glow-cyan': '0 0 25px -5px rgba(6, 182, 212, 0.35)',
           }
         }
       }
@@ -109,17 +103,17 @@
       </div>
 
       <div class="flex items-center gap-3">
-        <a href="/p2p/app/" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-mono text-xs font-bold transition-all shadow-glow-red">
-          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-          <span>Launch Pin2Plate</span>
-        </a>
-        <a href="https://pinterest-to-plate.vercel.app" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 hover:bg-slate-800 text-slate-300 font-mono text-xs font-bold transition-all">
-          <i data-lucide="globe" class="w-3.5 h-3.5 text-sky-400"></i>
+        <a href="https://pinterest-to-plate.vercel.app" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-mono text-xs font-bold transition-all shadow-glow-red">
+          <i data-lucide="globe" class="w-3.5 h-3.5 text-white"></i>
           <span>Vercel App (Live) ↗</span>
+        </a>
+        <a href="../pvs/index.html" class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 hover:bg-slate-800 text-slate-300 font-mono text-xs font-bold transition-all">
+          <i data-lucide="layers" class="w-3.5 h-3.5 text-rose-400"></i>
+          <span>Professional Vision OS &rarr;</span>
         </a>
         <span class="px-2.5 py-1 rounded bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 font-mono text-xs font-bold flex items-center gap-1.5">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-          v1.0 BETA LIVE
+          VERCEL LIVE
         </span>
       </div>
     </div>
@@ -132,19 +126,34 @@
     <div class="glass-panel rounded-2xl p-6 sm:p-8 relative overflow-hidden border border-red-500/20 shadow-glow-red">
       <div class="absolute -right-12 -bottom-12 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
       
-      <div class="max-w-3xl space-y-3 relative z-10">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/60 text-red-400 font-mono text-xs font-bold uppercase tracking-wider">
-          <i data-lucide="target" class="w-3.5 h-3.5"></i>
-          The Core Commercial Thesis
+      <div class="max-w-4xl space-y-4 relative z-10">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-950/60 text-red-400 font-mono text-xs font-bold uppercase tracking-wider border border-red-500/30">
+            <i data-lucide="target" class="w-3.5 h-3.5"></i>
+            The Core Commercial Thesis
+          </span>
+          <a href="https://pinterest-to-plate.vercel.app" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/60 text-emerald-400 font-mono text-xs font-bold border border-emerald-500/40 hover:bg-emerald-900/60 transition-colors">
+            <i data-lucide="external-link" class="w-3 h-3"></i>
+            Live Vercel App Ready: pinterest-to-plate.vercel.app ↗
+          </a>
         </div>
+        
         <h1 class="text-3xl sm:text-4xl font-syne font-extrabold text-white tracking-tight">
           Turning 600+ Dead Recipe Pins into <span class="text-red-500">1-Click UK Supermarket Baskets</span>
         </h1>
+        
         <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-          Millions of people hoard recipes across Pinterest, TikTok, and Instagram without ever making them due to decision fatigue and manual grocery ordering hassle. 
-          <strong>PIN2PLATE (P2P)</strong> eliminates the friction by ingesting personal saved boards, deduplicating ingredients across weekly meals, and populating automated carts at 
+          Millions of people hoard recipes across Pinterest, TikTok, and Instagram without ever cooking them because of decision fatigue and the hassle of manual grocery ordering. 
+          <strong>PIN2PLATE (P2P)</strong> eliminates every step of friction: paste any recipe link or screenshot, deduplicate shared ingredients across your weekly meals, and automatically populate your delivery cart at 
           <span class="text-white font-semibold">Tesco, Sainsbury's, and Asda</span>.
         </p>
+
+        <div class="pt-2">
+          <a href="https://pinterest-to-plate.vercel.app" target="_blank" class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-mono text-xs font-bold transition-all shadow-glow-red">
+            <i data-lucide="chef-hat" class="w-4 h-4"></i>
+            <span>Open & Test Live Vercel App ↗</span>
+          </a>
+        </div>
       </div>
 
       <!-- Financial Metric Targets Grid -->
@@ -172,617 +181,379 @@
       </div>
     </div>
 
-    <!-- 1. LIVE AI VISION SYSTEM ARCHITECTURE & DEMO -->
+    <!-- 1. OPERATIONAL EXECUTION CHECKLIST (HABAKUK CADENCE) -->
     <section class="space-y-4">
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
         <div class="flex items-center gap-2">
-          <div class="w-2.5 h-2.5 rounded-full bg-cyan-400"></div>
-          <h2 class="text-lg font-syne font-bold uppercase tracking-wider text-white">1. Multi-Modal AI Vision System Architecture</h2>
+          <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+          <div>
+            <h2 class="text-lg font-syne font-bold uppercase tracking-wider text-white">1. Operational Execution Checklist</h2>
+            <p class="text-xs font-mono text-slate-400">Immediate shipping cadence, distribution milestones & monetization actions</p>
+          </div>
         </div>
-        <span class="text-xs font-mono text-slate-400">Gemini 1.5 Flash Vision Pipeline</span>
+        <a href="https://pinterest-to-plate.vercel.app" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700 flex items-center gap-1.5 transition-colors">
+          <i data-lucide="globe" class="w-3.5 h-3.5 text-sky-400"></i>
+          <span>Vercel App Ready ↗</span>
+        </a>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <!-- Interactive Vision Simulator -->
-        <div class="lg:col-span-7 space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- PLAN -->
+        <div class="glass-panel rounded-xl p-5 space-y-3 border-t-4 border-t-red-500">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold uppercase text-slate-400">Vision Ingestion Simulator</span>
-            <span class="text-[11px] font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40">Multi-Format Parser</span>
+            <span class="font-mono text-xs font-bold text-red-400 uppercase tracking-wider flex items-center gap-1.5">
+              <i data-lucide="compass" class="w-4 h-4"></i>
+              <span>[P] PLAN: WEEKS 1–2</span>
+            </span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-red-950/80 text-rose-300 border border-red-800/60 font-bold">LIVE STAGE</span>
           </div>
-
-          <!-- Drag and drop preview -->
-          <div class="border-2 border-dashed border-slate-700 hover:border-red-500/60 rounded-xl p-6 text-center transition-colors bg-slate-900/50 cursor-pointer" id="drop-zone">
-            <i data-lucide="image-plus" class="w-8 h-8 text-slate-400 mx-auto mb-2"></i>
-            <p class="text-xs font-semibold text-slate-200">Drag & drop any recipe screenshot, infographic, or TikTok freeze-frame</p>
-            <p class="text-[11px] text-slate-500 mt-1">Or test with recent board pins below:</p>
-            
-            <div class="flex items-center justify-center gap-2 mt-4 flex-wrap">
-              <button class="sample-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-[11px] font-mono text-slate-300 border border-slate-700" data-sample="sliders">
-                🍗 Honey Chipotle Sliders
-              </button>
-              <button class="sample-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-[11px] font-mono text-slate-300 border border-slate-700" data-sample="leeks">
-                🧈 Melting Leeks
-              </button>
-              <button class="sample-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-[11px] font-mono text-slate-300 border border-slate-700" data-sample="wontons">
-                🥟 Grandma's Wontons
-              </button>
-            </div>
-          </div>
-
-          <!-- Output parsed display -->
-          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs space-y-2">
-            <div class="flex items-center justify-between text-slate-400 pb-2 border-b border-slate-900 text-[11px]">
-              <span>VISION OCR & EXTRACTION LOG</span>
-              <span id="vision-status" class="text-emerald-400">● READY</span>
-            </div>
-            <pre id="vision-output" class="text-slate-300 text-[11px] overflow-x-auto custom-scroll leading-relaxed h-48 custom-scroll">// Click a sample recipe above to simulate the Vision extraction pipeline...
-{
-  "status": "awaiting_input",
-  "pipeline": "OCR → Unit Normalization → Supermarket Aisle Mapping → Cart Link"
-}</pre>
-          </div>
+          <h3 class="text-sm font-syne font-bold text-white">Production Vercel Launch & Organic Viral Hook</h3>
+          <ul class="space-y-2 text-xs font-mono text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✔</span>
+              <span><strong>Vercel App Live:</strong> Web app deployed and operational at <a href="https://pinterest-to-plate.vercel.app" target="_blank" class="text-red-400 underline hover:text-red-300">pinterest-to-plate.vercel.app</a>.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✔</span>
+              <span><strong>TikTok & IG Handles:</strong> Claim @pinteresttoplate handles and launch visual brand presence.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✔</span>
+              <span><strong>First 3 Viral Recordings:</strong> Publish 15-second screen capture demos: <em>"POV: You have 600 dead Pinterest pins... watch this fill my Tesco basket in 10s."</em></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✔</span>
+              <span><strong>Seed Audience:</strong> Onboard 50 beta cookers from recipe hoarders on Reddit (r/EatCheapAndHealthy, r/UK_Food).</span>
+            </li>
+          </ul>
         </div>
 
-        <!-- System Flow Pipeline Diagram -->
-        <div class="lg:col-span-5 space-y-4 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-mono font-bold uppercase text-slate-400">5-Stage Vision Engine Pipeline</span>
-            <div class="mt-4 space-y-3 font-mono text-xs">
-              
-              <div class="flex items-start gap-3 p-2.5 rounded-lg bg-slate-900 border border-slate-800">
-                <div class="w-6 h-6 rounded bg-red-950 text-red-400 flex items-center justify-center font-bold text-xs shrink-0">01</div>
-                <div>
-                  <div class="font-bold text-white">Visual Ingestion</div>
-                  <div class="text-[11px] text-slate-400">OCR scans infographic text, handwriting & TikTok/Reels captions.</div>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3 p-2.5 rounded-lg bg-slate-900 border border-slate-800">
-                <div class="w-6 h-6 rounded bg-amber-950 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0">02</div>
-                <div>
-                  <div class="font-bold text-white">Semantic Normalization</div>
-                  <div class="text-[11px] text-slate-400">Converts "3 dollops" or "a handful" into standard metric units (grams, packs, whole).</div>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3 p-2.5 rounded-lg bg-slate-900 border border-slate-800">
-                <div class="w-6 h-6 rounded bg-emerald-950 text-emerald-400 flex items-center justify-center font-bold text-xs shrink-0">03</div>
-                <div>
-                  <div class="font-bold text-white">Multi-Recipe Deduplication</div>
-                  <div class="text-[11px] text-slate-400">Merges overlapping items across 3 meals (e.g. 8 cloves garlic → 1 fresh head).</div>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3 p-2.5 rounded-lg bg-slate-900 border border-slate-800">
-                <div class="w-6 h-6 rounded bg-cyan-950 text-cyan-400 flex items-center justify-center font-bold text-xs shrink-0">04</div>
-                <div>
-                  <div class="font-bold text-white">Pantry Staple Filter</div>
-                  <div class="text-[11px] text-slate-400">Detects kitchen staples (salt, oil, flour) and remembers user cupboard inventory.</div>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3 p-2.5 rounded-lg bg-slate-900 border border-slate-800">
-                <div class="w-6 h-6 rounded bg-purple-950 text-purple-400 flex items-center justify-center font-bold text-xs shrink-0">05</div>
-                <div>
-                  <div class="font-bold text-white">Supermarket Cart Injection</div>
-                  <div class="text-[11px] text-slate-400">Maps each item to real SKUs in Tesco, Sainsbury's, and Asda with affiliate tracking.</div>
-                </div>
-              </div>
-
-            </div>
+        <!-- BUILD -->
+        <div class="glass-panel rounded-xl p-5 space-y-3 border-t-4 border-t-amber-500">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
+              <i data-lucide="code" class="w-4 h-4"></i>
+              <span>[B] BUILD: WEEKS 3–4</span>
+            </span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950/80 text-amber-300 border border-amber-800/60 font-bold">INTEGRATION</span>
           </div>
+          <h3 class="text-sm font-syne font-bold text-white">Cart Injection & Supermarket Bounty Hookup</h3>
+          <ul class="space-y-2 text-xs font-mono text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 font-bold">✔</span>
+              <span><strong>Awin Affiliate Integration:</strong> Register publisher account and activate affiliate tracking links for Tesco, Sainsbury's, and Asda.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 font-bold">✔</span>
+              <span><strong>1-Click Cart Injection:</strong> Deploy browser bookmarklet / lightweight Chrome extension to auto-populate online supermarket baskets.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 font-bold">✔</span>
+              <span><strong>Stripe Billing Setup:</strong> Configure Stripe checkout portal for "Plate Pro" (£3.99/month, £34.99/year).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 font-bold">✔</span>
+              <span><strong>Whisk / Samsung Food API:</strong> Submit developer integration application for automated grocery SKU mapping.</span>
+            </li>
+          </ul>
+        </div>
 
-          <div class="pt-3 border-t border-slate-800/80 text-[11px] font-mono text-slate-500">
-            Average Vision Processing Time: <span class="text-emerald-400 font-bold">1.2 seconds</span> / recipe
+        <!-- ANALYSE -->
+        <div class="glass-panel rounded-xl p-5 space-y-3 border-t-4 border-t-emerald-500">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+              <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
+              <span>[A] ANALYSE: MONTHS 2–3</span>
+            </span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-300 border border-emerald-800/60 font-bold">SCALE & METRICS</span>
           </div>
+          <h3 class="text-sm font-syne font-bold text-white">Unit Economics & Retention Optimization</h3>
+          <ul class="space-y-2 text-xs font-mono text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✔</span>
+              <span><strong>Basket Conversion Funnel:</strong> Track % of users who click from recipe scan through to completed supermarket checkout (target: &gt;18%).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✔</span>
+              <span><strong>Bounty Economics:</strong> Verify £3.50–£8.00 bounty payout per converted new supermarket user.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✔</span>
+              <span><strong>Pro Upgrade Rate:</strong> Measure free-to-paid conversion at the 3-recipe weekly cap (target: 3–5% of cookers).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✔</span>
+              <span><strong>Deduplication Accuracy:</strong> Audit user feedback on ingredient combining to eliminate edge-case ordering errors.</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- 2. THE COMPLETE STEP-BY-STEP BLUEPRINT TO PROFITABILITY -->
+    <!-- 2. MULTI-MODAL VISION INGESTION PIPELINE (PLAIN LANGUAGE & FULL WIDTH) -->
     <section class="space-y-4">
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-cyan-400"></div>
+          <div>
+            <h2 class="text-lg font-syne font-bold uppercase tracking-wider text-white">2. Vision Ingestion Pipeline (How It Works)</h2>
+            <p class="text-xs font-mono text-slate-400">From messy recipe image or link into ready-to-buy UK supermarket baskets in 1.2 seconds</p>
+          </div>
+        </div>
+        <span class="text-xs font-mono text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded border border-cyan-800/40">5-Stage Automated Engine</span>
+      </div>
+
+      <!-- Full-Width Plain Language 5-Stage Pipeline -->
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+        
+        <!-- Step 1 -->
+        <div class="glass-panel rounded-xl p-5 space-y-3 relative overflow-hidden border-t-2 border-t-red-500">
+          <div class="flex items-center justify-between">
+            <span class="w-7 h-7 rounded-lg bg-red-950 text-red-400 border border-red-800/60 flex items-center justify-center font-mono font-bold text-xs">01</span>
+            <i data-lucide="scan-line" class="w-4 h-4 text-red-400"></i>
+          </div>
+          <div>
+            <h3 class="text-sm font-syne font-bold text-white">Scan Any Recipe</h3>
+            <span class="text-[11px] font-mono text-red-400 uppercase">Image to Text</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            Paste a Pinterest link, drop a screenshot, upload a TikTok freeze-frame, or take a picture of a handwritten recipe card. The vision model instantly reads every ingredient and amount without any manual typing.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="glass-panel rounded-xl p-5 space-y-3 relative overflow-hidden border-t-2 border-t-amber-500">
+          <div class="flex items-center justify-between">
+            <span class="w-7 h-7 rounded-lg bg-amber-950 text-amber-400 border border-amber-800/60 flex items-center justify-center font-mono font-bold text-xs">02</span>
+            <i data-lucide="scale" class="w-4 h-4 text-amber-400"></i>
+          </div>
+          <div>
+            <h3 class="text-sm font-syne font-bold text-white">Standardize Amounts</h3>
+            <span class="text-[11px] font-mono text-amber-400 uppercase">Supermarket Measures</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            Recipes use fuzzy words like "a handful of coriander", "2 dollops of yogurt", or "3 medium onions". The engine automatically translates these into real grocery units, grams, and standard UK supermarket pack sizes.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="glass-panel rounded-xl p-5 space-y-3 relative overflow-hidden border-t-2 border-t-emerald-500">
+          <div class="flex items-center justify-between">
+            <span class="w-7 h-7 rounded-lg bg-emerald-950 text-emerald-400 border border-emerald-800/60 flex items-center justify-center font-mono font-bold text-xs">03</span>
+            <i data-lucide="layers" class="w-4 h-4 text-emerald-400"></i>
+          </div>
+          <div>
+            <h3 class="text-sm font-syne font-bold text-white">Smart Deduplication</h3>
+            <span class="text-[11px] font-mono text-emerald-400 uppercase">Combine Overlap</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            When you pick 3 or 4 recipes for the week, they often share ingredients like garlic, olive oil, and onions. The engine combines them into a single consolidated grocery list so you never buy duplicates or waste money.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="glass-panel rounded-xl p-5 space-y-3 relative overflow-hidden border-t-2 border-t-cyan-500">
+          <div class="flex items-center justify-between">
+            <span class="w-7 h-7 rounded-lg bg-cyan-950 text-cyan-400 border border-cyan-800/60 flex items-center justify-center font-mono font-bold text-xs">04</span>
+            <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400"></i>
+          </div>
+          <div>
+            <h3 class="text-sm font-syne font-bold text-white">Cupboard Filter</h3>
+            <span class="text-[11px] font-mono text-cyan-400 uppercase">Pantry Staples</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            Nobody wants to buy salt, black pepper, cooking oil, or flour every time they cook. The system automatically identifies common household pantry staples and keeps them off your bill unless you explicitly ask for them.
+          </p>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="glass-panel rounded-xl p-5 space-y-3 relative overflow-hidden border-t-2 border-t-purple-500">
+          <div class="flex items-center justify-between">
+            <span class="w-7 h-7 rounded-lg bg-purple-950 text-purple-400 border border-purple-800/60 flex items-center justify-center font-mono font-bold text-xs">05</span>
+            <i data-lucide="shopping-cart" class="w-4 h-4 text-purple-400"></i>
+          </div>
+          <div>
+            <h3 class="text-sm font-syne font-bold text-white">1-Click Cart Injection</h3>
+            <span class="text-[11px] font-mono text-purple-400 uppercase">Tesco • Sainsbury's • Asda</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            Every item is matched directly to in-stock supermarket products. With one click, your weekly shopping basket is filled and ready for checkout on your chosen supermarket's site, earning affiliate bounties per basket.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Pipeline Performance Specs Bar -->
+      <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs">
+        <div class="flex items-center gap-2">
+          <i data-lucide="zap" class="w-4 h-4 text-emerald-400"></i>
+          <span class="text-slate-300">End-to-End Processing Speed: <strong class="text-emerald-400">1.2 Seconds</strong> per complex visual recipe</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-slate-400">Supported Formats:</span>
+          <span class="px-2 py-0.5 rounded bg-slate-950 text-slate-300 border border-slate-800">Pinterest Pins</span>
+          <span class="px-2 py-0.5 rounded bg-slate-950 text-slate-300 border border-slate-800">TikTok / IG</span>
+          <span class="px-2 py-0.5 rounded bg-slate-950 text-slate-300 border border-slate-800">Blog URLs</span>
+          <span class="px-2 py-0.5 rounded bg-slate-950 text-slate-300 border border-slate-800">Screenshots</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. STRATEGIC PROFITABILITY ENGINE (EXECUTION STEPS) -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
         <div class="flex items-center gap-2">
           <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
-          <h2 class="text-lg font-syne font-bold uppercase tracking-wider text-white">2. Strategic Profitability Engine (The 4 Phases)</h2>
+          <div>
+            <h2 class="text-lg font-syne font-bold uppercase tracking-wider text-white">3. Profitability Engine (The 4 Execution Steps)</h2>
+            <p class="text-xs font-mono text-slate-400">Step-by-step roadmap from zero-capital launch to £12,500+ recurring monthly revenue</p>
+          </div>
         </div>
-        <span class="text-xs font-mono text-emerald-400">Path to £10,000+ MRR</span>
+        <span class="text-xs font-mono text-emerald-400">Target: £12,500/mo MRR</span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        <!-- Phase 1: Zero-Capital Launch & Viral Hook -->
+        <!-- Step 1: Zero-Capital Launch & Viral Hook -->
         <div class="glass-panel rounded-xl p-6 space-y-4 border-l-4 border-l-cyan-500">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold uppercase text-cyan-400">PHASE 1 // WEEKS 1–4</span>
-            <span class="text-[10px] font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded">BOOTSTRAP</span>
+            <span class="text-xs font-mono font-bold uppercase text-cyan-400">EXECUTION STEP 1 // WEEKS 1–4</span>
+            <span class="text-[10px] font-mono text-slate-300 bg-slate-800 px-2.5 py-0.5 rounded font-bold">BOOTSTRAP</span>
           </div>
-          <h3 class="text-lg font-bold text-white">Zero-Capital Launch & Organic Viral Wedge</h3>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Validate demand without spending a penny on advertising. Tap into existing TikTok & Pinterest food communities where users complain about having hundreds of bookmarks they never cook.
+          <div>
+            <h3 class="text-lg font-bold text-white">Zero-Capital Launch & Organic Viral Wedge</h3>
+            <p class="text-xs text-slate-400 font-mono mt-0.5">Objective: 500 Weekly Active Cookers (WAC) at £0 Customer Acquisition Cost</p>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            Validate user love without spending a penny on paid ads. Tap into massive online communities of recipe hoarders who complain about having hundreds of bookmarked recipes they never actually cook.
           </p>
-          <ul class="space-y-2 text-xs font-mono text-slate-300">
-            <li class="flex items-start gap-2">
-              <span class="text-cyan-400 font-bold">✔</span>
-              <span>Deploy Vercel web app with instant Pinterest board ingest.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-cyan-400 font-bold">✔</span>
-              <span><strong>The Viral TikTok Hook:</strong> Post 15s screen recordings showing: <em>"POV: You have 600 saved recipes on Pinterest... watch this tool put them in my Tesco cart in 10 seconds."</em></span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-cyan-400 font-bold">✔</span>
-              <span><strong>Milestone:</strong> 500 initial active weekly cookers.</span>
-            </li>
-          </ul>
+          <div class="space-y-2 pt-2 border-t border-slate-800/80 font-mono text-xs">
+            <div class="text-[11px] font-bold text-slate-400 uppercase">Concrete Execution Steps:</div>
+            <div class="space-y-1.5 text-slate-300 text-[11px]">
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold">1.</span>
+                <span>Deploy public web app on Vercel at <a href="https://pinterest-to-plate.vercel.app" target="_blank" class="text-cyan-400 underline">pinterest-to-plate.vercel.app</a> with friction-free board ingest.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold">2.</span>
+                <span>Post 15s TikTok & Reels screen recordings: <em>"POV: You have 600 saved pins on Pinterest... watch this tool put them in my Tesco cart in 10s."</em></span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold">3.</span>
+                <span>Partner with micro food creators to turn their recipe videos into 1-click shopping links.</span>
+              </div>
+            </div>
+            <div class="pt-2 text-[11px] text-cyan-300">
+              <strong>Milestone Target:</strong> 500 weekly active users cooking at least 2 meals/week.
+            </div>
+          </div>
         </div>
 
-        <!-- Phase 2: Supermarket Affiliate & Bounty Network -->
+        <!-- Step 2: Supermarket Affiliate & Bounty Network -->
         <div class="glass-panel rounded-xl p-6 space-y-4 border-l-4 border-l-amber-500">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold uppercase text-amber-400">PHASE 2 // MONTHS 2–4</span>
-            <span class="text-[10px] font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded">MONETIZATION 1</span>
+            <span class="text-xs font-mono font-bold uppercase text-amber-400">EXECUTION STEP 2 // MONTHS 2–4</span>
+            <span class="text-[10px] font-mono text-slate-300 bg-slate-800 px-2.5 py-0.5 rounded font-bold">COMMERCIAL WEDGE</span>
           </div>
-          <h3 class="text-lg font-bold text-white">Supermarket Affiliate & Bounty Network</h3>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Supermarkets operate massive affiliate bounty programs through networks like Awin. You earn every time a user checks out an online delivery basket.
+          <div>
+            <h3 class="text-lg font-bold text-white">Supermarket Affiliate & Bounty Network</h3>
+            <p class="text-xs text-slate-400 font-mono mt-0.5">Objective: £2,500/month recurring affiliate commission & acquisition bounties</p>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            UK supermarkets spend millions acquiring online delivery shoppers through affiliate networks like Awin. Pin2Plate captures high-margin bounties every time a user completes an online basket.
           </p>
-          <ul class="space-y-2 text-xs font-mono text-slate-300">
-            <li class="flex items-start gap-2">
-              <span class="text-amber-400 font-bold">✔</span>
-              <span>Sign up to <strong>Awin</strong> (hosts Sainsbury's, Asda, and Morrisons grocery affiliate programs in the UK).</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-400 font-bold">✔</span>
-              <span><strong>Unit Economics:</strong> £3.50–£8.00 bounty per new online grocery customer; 2%–3% commission on existing shopper basket totals.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-400 font-bold">✔</span>
-              <span><strong>Milestone:</strong> £2,500/month recurring affiliate revenue from 400 weekly supermarket orders.</span>
-            </li>
-          </ul>
+          <div class="space-y-2 pt-2 border-t border-slate-800/80 font-mono text-xs">
+            <div class="text-[11px] font-bold text-slate-400 uppercase">Concrete Execution Steps:</div>
+            <div class="space-y-1.5 text-slate-300 text-[11px]">
+              <div class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">1.</span>
+                <span>Sign up publisher account on <strong>Awin</strong> (hosts Sainsbury's, Asda, and Morrisons grocery programs).</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">2.</span>
+                <span>Attach referral affiliate tracking IDs to all supermarket checkout redirects.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">3.</span>
+                <span><strong>Unit Economics:</strong> £3.50–£8.00 bounty per new online grocery customer; 2%–3% commission on existing shopper basket totals.</span>
+              </div>
+            </div>
+            <div class="pt-2 text-[11px] text-amber-300">
+              <strong>Milestone Target:</strong> 400 weekly completed orders = <strong>£2,500/month affiliate revenue</strong>.
+            </div>
+          </div>
         </div>
 
-        <!-- Phase 3: "Plate Pro" Consumer SaaS -->
+        <!-- Step 3: "Plate Pro" Consumer Subscription -->
         <div class="glass-panel rounded-xl p-6 space-y-4 border-l-4 border-l-emerald-500">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold uppercase text-emerald-400">PHASE 3 // MONTHS 4–6</span>
-            <span class="text-[10px] font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded">MONETIZATION 2</span>
+            <span class="text-xs font-mono font-bold uppercase text-emerald-400">EXECUTION STEP 3 // MONTHS 4–6</span>
+            <span class="text-[10px] font-mono text-slate-300 bg-slate-800 px-2.5 py-0.5 rounded font-bold">RECURRING SAAS</span>
           </div>
-          <h3 class="text-lg font-bold text-white">"Plate Pro" Consumer Subscription (£3.99/mo)</h3>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Free tier allows 3 recipes/week. Power cooks who want unlimited pin syncing, macro/calorie counts, and automated cart injection subscribe to Pro.
+          <div>
+            <h3 class="text-lg font-bold text-white">"Plate Pro" Consumer Subscription (£3.99/mo)</h3>
+            <p class="text-xs text-slate-400 font-mono mt-0.5">Objective: £4,788/month predictable subscription MRR</p>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            The free tier allows 3 recipes converted per week. Passionate home cooks and busy families who want unlimited monthly recipe syncing, full macro tracking, and portion scaling upgrade to Pro.
           </p>
-          <ul class="space-y-2 text-xs font-mono text-slate-300">
-            <li class="flex items-start gap-2">
-              <span class="text-emerald-400 font-bold">✔</span>
-              <span>Stripe checkout integration for <strong>£3.99/month</strong> or <strong>£34.99/year</strong>.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-emerald-400 font-bold">✔</span>
-              <span>Pro features: Unlimited board sync, automatic portion scaling for 2, 4, or 6 people, full nutritional macro totals, and shared family baskets.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-emerald-400 font-bold">✔</span>
-              <span><strong>Milestone:</strong> 1,200 paying subscribers = <strong>£4,788/month pure MRR</strong>.</span>
-            </li>
-          </ul>
+          <div class="space-y-2 pt-2 border-t border-slate-800/80 font-mono text-xs">
+            <div class="text-[11px] font-bold text-slate-400 uppercase">Concrete Execution Steps:</div>
+            <div class="space-y-1.5 text-slate-300 text-[11px]">
+              <div class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">1.</span>
+                <span>Integrate Stripe Billing with 1-click checkout for <strong>£3.99/month</strong> or <strong>£34.99/year</strong>.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">2.</span>
+                <span>Gate premium features: unlimited board imports, portion scaling (2, 4, 6+ people), full calories/protein macro breakdown, and multi-user household sync.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">3.</span>
+                <span>Trigger contextual upgrade prompts right when a free user attempts their 4th recipe of the week.</span>
+              </div>
+            </div>
+            <div class="pt-2 text-[11px] text-emerald-300">
+              <strong>Milestone Target:</strong> 1,200 paying subscribers = <strong>£4,788/month pure MRR</strong>.
+            </div>
+          </div>
         </div>
 
-        <!-- Phase 4: Retail Media & FMCG Brand Sponsorships -->
+        <!-- Step 4: Retail Media & FMCG Brand Sponsorships -->
         <div class="glass-panel rounded-xl p-6 space-y-4 border-l-4 border-l-purple-500">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold uppercase text-purple-400">PHASE 4 // MONTHS 6–12</span>
-            <span class="text-[10px] font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded">ENTERPRISE SCALE</span>
+            <span class="text-xs font-mono font-bold uppercase text-purple-400">EXECUTION STEP 4 // MONTHS 6–12</span>
+            <span class="text-[10px] font-mono text-slate-300 bg-slate-800 px-2.5 py-0.5 rounded font-bold">SCALE & VALUATION</span>
           </div>
-          <h3 class="text-lg font-bold text-white">FMCG Retail Media & Sponsored Ingredients</h3>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            This is how food apps like Jow reach $10M+ valuations. Major brands pay to have their branded product pre-selected as the default ingredient.
-          </p>
-          <ul class="space-y-2 text-xs font-mono text-slate-300">
-            <li class="flex items-start gap-2">
-              <span class="text-purple-400 font-bold">✔</span>
-              <span>Partner with FMCG brands (Knorr, Hellmann's, Lurpak, Philadelphia, Heinz).</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-purple-400 font-bold">✔</span>
-              <span>When a recipe calls for "mayo", Hellmann's pays £0.15 to be the default selected SKU in the Tesco/Sainsbury's basket.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-purple-400 font-bold">✔</span>
-              <span><strong>Milestone:</strong> Total Venture Run Rate exceeds <strong>£15,000 to £20,000 / month</strong>.</span>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 2.5 BRAND IDENTITY & LOGO STUDIO -->
-    <section class="space-y-6" id="brand-identity">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-        <div class="flex items-center gap-2">
-          <div class="w-2.5 h-2.5 rounded-full bg-rose-500"></div>
-          <h2 class="text-lg font-syne font-bold uppercase tracking-wider text-white">3. Brand Strategy, Naming & Champion Cutlery-Pin Mark</h2>
-        </div>
-        <span class="text-xs font-mono text-rose-400">Official Identity: The ForkPin</span>
-      </div>
-
-      <!-- STRATEGIC NAMING EVALUATION MATRIX -->
-      <div class="space-y-4">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Strategic Brand Identity</span>
-            <h3 class="text-xl font-syne font-extrabold text-white mt-0.5">Brand Identity: Pin2Plate & P2P</h3>
+            <h3 class="text-lg font-bold text-white">FMCG Retail Media & Sponsored Ingredients</h3>
+            <p class="text-xs text-slate-400 font-mono mt-0.5">Objective: £12,500 – £20,000/month combined run rate</p>
           </div>
-          <div class="flex items-center gap-1.5 p-1 rounded-xl bg-slate-900 border border-slate-800 flex-wrap" id="name-switch-tabs">
-            <span class="text-[10px] font-mono text-slate-400 uppercase px-2 font-bold">Lockup:</span>
-            <button class="name-tab active px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all bg-red-600 text-white" data-name="pin2plate">
-              PIN2PLATE ★
-            </button>
-            <button class="name-tab px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white" data-name="p2p">
-              P2P (Short)
-            </button>
-          </div>
-        </div>
-
-        <!-- 2-Option Strategic Scorecard Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-xs">
-          
-          <!-- Master Brand: PIN2PLATE -->
-          <div class="p-5 rounded-xl bg-slate-950 border-2 border-emerald-500/60 flex flex-col justify-between space-y-3 relative overflow-hidden">
-            <div class="space-y-2">
-              <div class="flex items-center justify-between">
-                <span class="px-2.5 py-0.5 rounded bg-emerald-950 text-emerald-400 text-[10px] font-bold border border-emerald-500/40">OFFICIAL MASTER BRAND</span>
-                <span class="text-emerald-400 font-bold">9.8 / 10</span>
-              </div>
-              <h4 class="text-lg font-syne font-extrabold text-white">PIN2PLATE</h4>
-              <p class="text-xs font-sans text-slate-300 leading-relaxed">
-                <strong>The Velocity Champion.</strong> The numeric '2' conveys high-speed conversion (from saved recipe pin directly into a hot dinner plate). Crisp, digital-native consumer brand with zero trademark or phonetic confusion.
-              </p>
-            </div>
-            <div class="pt-3 border-t border-slate-800 text-[11px] text-emerald-400 flex items-center gap-2">
-              <span>✔ App Store Ready</span>
-              <span>•</span>
-              <span>Modern SaaS</span>
-              <span>•</span>
-              <span>High Conversion</span>
-            </div>
-          </div>
-
-          <!-- Shorthand Monogram: P2P -->
-          <div class="p-5 rounded-xl bg-slate-950 border border-slate-800 flex flex-col justify-between space-y-3">
-            <div class="space-y-2">
-              <div class="flex items-center justify-between">
-                <span class="px-2.5 py-0.5 rounded bg-indigo-950 text-indigo-400 text-[10px] font-bold border border-indigo-500/40">MONOGRAM & SHORTHAND</span>
-                <span class="text-indigo-400 font-bold">9.5 / 10</span>
-              </div>
-              <h4 class="text-lg font-syne font-extrabold text-white">P2P (For Short)</h4>
-              <p class="text-xs font-sans text-slate-300 leading-relaxed">
-                <strong>The Tech Shorthand.</strong> Subverts traditional "Peer-to-Peer" into "Pin-to-Plate". Powers the 16×16 browser tab favicon, iOS app squircle icon, internal code repositories, and CLI tools.
-              </p>
-            </div>
-            <div class="pt-3 border-t border-slate-800 text-[11px] text-indigo-400 flex items-center gap-2">
-              <span>✔ 16px Favicon Utility</span>
-              <span>•</span>
-              <span>Mobile Monogram</span>
-              <span>•</span>
-              <span>Developer Native</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- THE FORKPIN BRAND STUDIO (v1 Original vs v2 Revised) -->
-      <div class="space-y-8">
-        
-        <!-- Header: Official Champion Identity -->
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
-          <div>
-            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Official Mark Studio</span>
-            <h3 class="text-xl font-syne font-extrabold text-white mt-0.5">The ForkPin (v1 Original)</h3>
-          </div>
-          
-          <div class="flex items-center gap-2">
-            <span class="px-3 py-1.5 rounded-xl bg-red-600/15 text-rose-300 border border-red-500/30 text-xs font-mono font-bold flex items-center gap-1.5 shadow-glow-red">
-              <i data-lucide="crown" class="w-4 h-4 text-amber-400"></i>
-              <span>Official Champion Mark</span>
-            </span>
-          </div>
-        </div>
-
-        <!-- Dynamic Brand Showcase Display -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center" id="logo-showcase-container">
-          
-          <!-- LEFT: Large Vector Logo Display & Mockups (7 cols) -->
-          <div class="lg:col-span-7 space-y-6">
-            
-            <!-- Primary Hero Lockup Card -->
-            <div class="p-8 sm:p-10 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center text-center relative overflow-hidden group shadow-2xl">
-              <div class="absolute inset-0 bg-gradient-to-b from-red-600/5 via-transparent to-transparent opacity-50"></div>
-              
-              <!-- Mode Switcher (Vector vs Gemini AI Render) -->
-              <div class="flex items-center gap-1.5 p-1 rounded-xl bg-slate-900 text-[11px] font-mono mb-5 z-10" id="render-mode-tabs">
-                <button class="mode-tab active px-2.5 py-1 rounded-lg text-white font-bold bg-red-600" data-mode="vector">
-                  Vector SVG
-                </button>
-                <button class="mode-tab px-2.5 py-1 rounded-lg text-slate-400 hover:text-white font-bold flex items-center gap-1" data-mode="ai">
-                  <span>✨ Gemini AI Render</span>
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                </button>
-              </div>
-
-              <!-- Vector Graphic / Image Container -->
-              <div id="hero-logo-svg" class="w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 z-10">
-                <img src="assets/forkpin.svg?v=20261123b" alt="The ForkPin" class="w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(230,0,35,0.4)]">
-              </div>
-
-              <!-- Full Wordmark Lockup -->
-              <div class="mt-6 space-y-1 z-10">
-                <div id="hero-logo-title" class="text-2xl sm:text-3xl font-syne font-black tracking-tight text-white">
-                  PIN<span class="text-red-500">2</span>PLATE
-                </div>
-                <div id="hero-logo-tagline" class="text-xs font-mono text-slate-400">
-                  Stop Collecting. Start Cooking.
-                </div>
-              </div>
-
-              <!-- Quick Revision Switcher Button -->
-              <a href="#svg-converter-section" class="mt-4 px-4 py-2 rounded-xl bg-red-600 hover:bg-red-500 text-xs font-mono font-bold text-white flex items-center gap-2 transition-all shadow-glow-red z-10"><i data-lucide="file-output" class="w-4 h-4"></i><span>SVG to PNG Exporter &darr;</span></a>
-            </div>
-
-            <!-- Real-World Asset Mockups Grid -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 font-mono text-xs">
-              
-              <!-- iOS App Icon Squircle Mockup -->
-              <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center text-center space-y-2">
-                <span class="text-[10px] text-slate-400 uppercase font-bold">App Store Icon</span>
-                <div id="mockup-squircle" class="w-14 h-14 rounded-2xl flex items-center justify-center p-2.5 shadow-lg transition-transform hover:scale-110">
-                  <img src="assets/forkpin.svg?v=20261123b" alt="P2P" class="w-full h-full object-contain">
-                </div>
-                <span class="text-[10px] text-slate-400">iOS / Android</span>
-              </div>
-
-              <!-- Browser Favicon Preview -->
-              <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center text-center space-y-2">
-                <span class="text-[10px] text-slate-400 uppercase font-bold">Browser Tab</span>
-                <div class="w-full py-1.5 px-2 rounded-lg bg-slate-950 flex items-center gap-2">
-                  <div id="mockup-favicon" class="w-4 h-4 shrink-0">
-                    <img src="assets/favicon-32x32.png" alt="Favicon" class="w-full h-full object-contain">
-                  </div>
-                  <span id="mockup-favicon-label" class="text-[9px] text-slate-300 truncate font-sans">PIN2PLATE</span>
-                </div>
-                <span class="text-[10px] text-slate-400">16x16 / 32x32</span>
-              </div>
-
-              <!-- Supermarket Cart Badge Mockup -->
-              <div class="col-span-2 sm:col-span-1 p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center text-center space-y-2">
-                <span class="text-[10px] text-slate-400 uppercase font-bold">Cart Tag Badge</span>
-                <div id="mockup-badge" class="px-2.5 py-1 rounded-full text-[10px] font-bold flex items-center gap-1.5 text-red-300">
-                  <span class="w-2 h-2 rounded-full bg-red-500"></span><span class="font-bold">Official ForkPin v1</span>
-                </div>
-                <span class="text-[10px] text-slate-400">Checkout Widget</span>
-              </div>
-
-            </div>
-
-          </div>
-
-          <!-- RIGHT: Design Rationale, Palette & Action Controls (5 cols) -->
-          <div class="lg:col-span-5 space-y-6">
-            
-            <!-- Strategic Concept Rationale -->
-            <div class="space-y-3">
-              <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono text-rose-400 font-bold uppercase">
-                <i data-lucide="compass" class="w-3.5 h-3.5"></i>
-                <span id="concept-label">Variation 1 Strategy</span>
-              </div>
-              <h4 id="concept-name" class="text-xl font-syne font-extrabold text-white">The ForkPin (Tine-Needle)</h4>
-              <p id="concept-desc" class="text-xs text-slate-300 leading-relaxed font-sans">
-                The pushpin needle is replaced by a 3-prong culinary fork, piercing through to a concentric ceramic dinner plate. Tells the direct 'pin into meal' story in 0.2 seconds.
-              </p>
-            </div>
-
-            <!-- Brand Color Palette -->
-            <div class="space-y-2 pt-4 border-t border-slate-800">
-              <span class="text-xs font-mono text-slate-400 uppercase font-bold">Official Colorway</span>
-              <div id="concept-palette" class="grid grid-cols-3 gap-2 font-mono text-[10px]">
-                <!-- Palette swatches injected via JS -->
-              </div>
-            </div>
-
-            <!-- Brand Personality & Strengths -->
-            <div class="space-y-2 pt-4 border-t border-slate-800 text-xs font-mono">
-              <span class="text-slate-400 uppercase font-bold">Best For:</span>
-              <div id="concept-best-for" class="text-slate-300 bg-slate-900/60 p-3 rounded-xl border border-slate-800 leading-relaxed">
-                App Store icon recognition, consumer merchandise, viral TikTok watermarking.
-              </div>
-            </div>
-
-            <!-- Action Buttons -->
-            <div class="pt-4 flex items-center gap-3">
-              <button id="btn-select-brand" class="flex-1 py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-mono text-xs font-bold transition-all shadow-glow-red flex items-center justify-center gap-2">
-                <i data-lucide="check" class="w-4 h-4"></i>
-                <span>Set As Active Brand</span>
-              </button>
-              <button id="btn-copy-svg" class="px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 font-mono text-xs font-semibold transition-colors" title="Copy raw SVG code">
-                Copy SVG
-              </button>
-            </div>
-
-            <!-- Interactive SVG to PNG Converter Suite -->
-            <div id="svg-converter-section" class="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <div class="w-8 h-8 rounded-lg bg-red-600/20 border border-red-500/30 flex items-center justify-center text-rose-400">
-                    <i data-lucide="file-output" class="w-4 h-4"></i>
-                  </div>
-                  <div>
-                    <h4 class="text-sm font-syne font-bold text-white">SVG to PNG Converter</h4>
-                    <p class="text-[11px] font-mono text-slate-400">Client-side instant vector rasterizer</p>
-                  </div>
-                </div>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">Retina Crisp</span>
-              </div>
-
-              <!-- Source Selection (Active ForkPin vs Custom Upload) -->
-              <div class="space-y-1.5 font-mono text-xs">
-                <label class="text-slate-400 text-[11px] font-bold uppercase">SVG Source</label>
-                <div class="flex items-center gap-2">
-                  <select id="conv-source-select" class="flex-1 bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-200 text-xs focus:outline-none focus:border-red-500">
-                    <option value="active" selected>Active Logo (The ForkPin v1 Original)</option>
-                    <option value="custom">Upload Custom SVG File...</option>
-                  </select>
-                  <label id="conv-upload-label" class="hidden cursor-pointer px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-xs font-bold transition-colors">
-                    <span>Browse</span>
-                    <input type="file" id="conv-file-input" accept=".svg" class="hidden">
-                  </label>
-                </div>
-              </div>
-
-              <!-- Output Resolution Presets & Custom Size -->
-              <div class="space-y-1.5 font-mono text-xs">
-                <label class="text-slate-400 text-[11px] font-bold uppercase">Target Size (px)</label>
-                <div class="grid grid-cols-4 gap-2">
-                  <button type="button" class="conv-size-btn active py-2 rounded-lg bg-red-600 text-white font-bold text-xs" data-size="512">512</button>
-                  <button type="button" class="conv-size-btn py-2 rounded-lg bg-slate-950 hover:bg-slate-800 text-slate-300 font-bold text-xs transition-colors" data-size="1024">1024</button>
-                  <button type="button" class="conv-size-btn py-2 rounded-lg bg-slate-950 hover:bg-slate-800 text-slate-300 font-bold text-xs transition-colors" data-size="2048">2048</button>
-                  <div class="flex items-center">
-                    <input type="number" id="conv-custom-size" placeholder="Custom" min="16" max="4096" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-2 py-1.5 text-slate-200 text-center text-xs focus:outline-none focus:border-red-500">
-                  </div>
-                </div>
-              </div>
-
-              <!-- Background Transparency Toggle -->
-              <div class="space-y-1.5 font-mono text-xs">
-                <label class="text-slate-400 text-[11px] font-bold uppercase">Background</label>
-                <div class="grid grid-cols-2 gap-2">
-                  <button type="button" class="conv-bg-btn active py-1.5 rounded-lg bg-slate-800 text-slate-200 text-xs font-bold" data-bg="transparent">
-                    Transparent
-                  </button>
-                  <button type="button" class="conv-bg-btn py-1.5 rounded-lg bg-slate-950 text-slate-400 text-xs font-bold hover:text-white" data-bg="#0D1321">
-                    Dark Obsidian
-                  </button>
-                </div>
-              </div>
-
-              <!-- Convert & Download Button -->
-              <button type="button" id="btn-convert-download" class="w-full py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-mono text-xs font-bold transition-all shadow-glow-red flex items-center justify-center gap-2">
-                <i data-lucide="download" class="w-4 h-4"></i>
-                <span id="btn-convert-label">Export 512×512 PNG Now</span>
-              </button>
-              <canvas id="conv-canvas" class="hidden"></canvas>
-            </div>
-
-            <!-- Figma & Official Icon Asset Suite -->
-            <div class="pt-4 border-t border-slate-800 space-y-2">
-              <span class="text-xs font-mono text-slate-400 uppercase font-bold flex items-center gap-1.5">
-                <i data-lucide="layers" class="w-3.5 h-3.5 text-indigo-400"></i>
-                Official ForkPin (v1) Master Assets
-              </span>
-              <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-[11px] font-mono">
-                <a href="assets/forkpin.svg" download class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
-                  <span class="flex items-center gap-1.5 truncate">
-                    <span class="text-rose-400">❖</span>
-                    <span>forkpin.svg</span>
-                  </span>
-                  <span class="text-[10px] text-amber-400 font-bold">Figma Master</span>
-                </a>
-                <a href="assets/forkpin-transparent-512.png" download class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
-                  <span class="flex items-center gap-1.5 truncate">
-                    <span class="text-sky-400">🖼️</span>
-                    <span>Transparent</span>
-                  </span>
-                  <span class="text-[10px] text-slate-400">512×512</span>
-                </a>
-                <a href="assets/app-store-1024x1024.png" download class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
-                  <span class="flex items-center gap-1.5 truncate">
-                    <span class="text-emerald-400">📱</span>
-                    <span>App Store</span>
-                  </span>
-                  <span class="text-[10px] text-slate-400">1024×1024</span>
-                </a>
-                <a href="assets/apple-touch-icon.png" download class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
-                  <span class="flex items-center gap-1.5 truncate">
-                    <span class="text-indigo-400">🍎</span>
-                    <span>iOS Touch</span>
-                  </span>
-                  <span class="text-[10px] text-slate-400">180×180</span>
-                </a>
-                <a href="assets/android-chrome-512x512.png" download class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
-                  <span class="flex items-center gap-1.5 truncate">
-                    <span class="text-amber-400">🤖</span>
-                    <span>Android</span>
-                  </span>
-                  <span class="text-[10px] text-slate-400">512×512</span>
-                </a>
-                <a href="assets/favicon-32x32.png" download class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
-                  <span class="flex items-center gap-1.5 truncate">
-                    <span class="text-purple-400">🌐</span>
-                    <span>Favicon</span>
-                  </span>
-                  <span class="text-[10px] text-slate-400">32×32</span>
-                </a>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 3. ACTIONABLE ROADMAP & HABAKUK PBA CADENCE -->
-    <section class="space-y-4">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-        <div>
-          <h3 class="text-base font-syne font-bold text-white uppercase">Operational Execution Checklist</h3>
-          <p class="text-xs font-mono text-slate-400">Next immediate engineering & commercial actions</p>
-        </div>
-        <a href="https://pinterest-to-plate.vercel.app" target="_blank" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-300 border border-slate-700 flex items-center gap-1.5">
-          <i data-lucide="globe" class="w-3.5 h-3.5 text-sky-400"></i>
-          <span>Open Vercel App ↗</span>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
-        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
-          <div class="font-bold text-red-400 uppercase tracking-wider flex items-center gap-1.5">
-            <i data-lucide="compass" class="w-4 h-4"></i>
-            <span>[P] PLAN: WEEKS 1–2</span>
-          </div>
-          <p class="text-slate-300 text-[11px] leading-relaxed">
-            • Package current prototype into Vercel-ready Next.js / Node app.<br>
-            • Create TikTok & Instagram handle (@pinteresttoplate).<br>
-            • Record first 3 demo videos of decoded board recipes.
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            This is how meal planning and grocery platforms like Jow reach $10M+ valuations. Major food brands pay premium retail media fees to be pre-selected as the default ingredient in the supermarket cart.
           </p>
+          <div class="space-y-2 pt-2 border-t border-slate-800/80 font-mono text-xs">
+            <div class="text-[11px] font-bold text-slate-400 uppercase">Concrete Execution Steps:</div>
+            <div class="space-y-1.5 text-slate-300 text-[11px]">
+              <div class="flex items-start gap-2">
+                <span class="text-purple-400 font-bold">1.</span>
+                <span>Partner with FMCG brands (Hellmann's, Heinz, Knorr, Lurpak, Philadelphia).</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-purple-400 font-bold">2.</span>
+                <span>When a recipe calls for "mayonnaise", Hellmann's pays £0.15–£0.25 to be the default selected SKU in the Tesco/Sainsbury's cart.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-purple-400 font-bold">3.</span>
+                <span>Provide FMCG brands with anonymous basket analytics proving direct purchase lift.</span>
+              </div>
+            </div>
+            <div class="pt-2 text-[11px] text-purple-300">
+              <strong>Milestone Target:</strong> Total Venture Run Rate exceeds <strong>£12,500 to £20,000 / month</strong>.
+            </div>
+          </div>
         </div>
 
-        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
-          <div class="font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
-            <i data-lucide="code" class="w-4 h-4"></i>
-            <span>[B] BUILD: WEEKS 3–4</span>
-          </div>
-          <p class="text-slate-300 text-[11px] leading-relaxed">
-            • Publish Chrome / Edge companion extension for 1-click cart insertion.<br>
-            • Submit developer application for Samsung Food (Whisk) API.<br>
-            • Hook up Stripe Billing for Pro subscriptions (£3.99/mo).
-          </p>
-        </div>
-
-        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
-          <div class="font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
-            <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
-            <span>[A] ANALYSE: MONTHS 2–3</span>
-          </div>
-          <p class="text-slate-300 text-[11px] leading-relaxed">
-            • Track Supermarket click-through rate & basket conversion.<br>
-            • Optimize Awin affiliate commissions for Tesco/Sainsbury's.<br>
-            • Measure Pro upgrade conversion rate (target: 3–5%).
-          </p>
-        </div>
       </div>
     </section>
 
@@ -790,402 +561,11 @@
 
   <!-- Footer -->
   <footer class="w-full border-t border-slate-800 py-6 text-center text-xs font-mono text-slate-500">
-    HABAKUK 2:2 MASTER LAUNCHPAD &bull; PINTEREST TO PLATE VISION SYSTEM &bull; DEPLOYED ON VERCEL
+    HABAKUK 2:2 MASTER LAUNCHPAD &bull; PIN2PLATE VENTURE OS &bull; LIVE ON VERCEL &bull; HABAKUK SOLUTIONS ARCHITECTURE
   </footer>
 
   <script>
     lucide.createIcons();
-
-    // Sample data for vision simulator
-    const SAMPLES = {
-      sliders: {
-        title: "Honey Chipotle Garlic Chicken Sliders",
-        prep: "25 mins",
-        servings: 4,
-        category: "Comfort Food",
-        aisles: {
-          "Meat & Poultry": ["600g Chicken breast fillets"],
-          "Bakery": ["1 pack Brioche slider buns (8-12)"],
-          "Produce": ["4 cloves Fresh garlic", "Fresh parsley"],
-          "Dairy": ["125g Unsalted butter"],
-          "Food Cupboard": ["Chipotle in adobo (can)", "Honey", "Pickle slices", "Ranch dressing", "Cornflour", "Flour"]
-        },
-        pantryDetected: ["Garlic", "Honey", "Flour", "Cornflour", "Vegetable oil"],
-        storeUrls: {
-          Tesco: "https://www.tesco.com/groceries/en-GB/search?query=chicken+breast+fillets",
-          Sainsburys: "https://www.sainsburys.co.uk/gol-ui/SearchResults/chicken%20breast%20fillets",
-          Asda: "https://groceries.asda.com/search/chicken%20breast%20fillets"
-        }
-      },
-      leeks: {
-        title: "Fondant 'Melting' Leeks with Herb Butter",
-        prep: "30 mins",
-        servings: 4,
-        category: "Healthy & Veggie",
-        aisles: {
-          "Produce": ["3-4 large Fresh leeks", "5 whole cloves Garlic", "Fresh rosemary & thyme pack"],
-          "Dairy": ["60g Unsalted butter"],
-          "Food Cupboard": ["500ml Beef broth / stock cubes", "Olive oil", "Flaky sea salt"]
-        },
-        pantryDetected: ["Garlic", "Olive oil", "Beef stock cubes", "Sea salt"],
-        storeUrls: {
-          Tesco: "https://www.tesco.com/groceries/en-GB/search?query=fresh+leeks",
-          Sainsburys: "https://www.sainsburys.co.uk/gol-ui/SearchResults/fresh%20leeks"
-        }
-      },
-      wontons: {
-        title: "Grandma's Pork & Shiitake Wontons with Chili Dip",
-        prep: "35 mins",
-        servings: 4,
-        category: "Appetizers & Bites",
-        aisles: {
-          "Meat & Poultry": ["450g Pork mince"],
-          "Chilled": ["2 packs Wonton wrappers", "1 Large egg"],
-          "Produce": ["100g Shiitake mushrooms", "Fresh ginger root", "1 bunch Spring onions"],
-          "Food Cupboard": ["Canned water chestnuts", "Soy sauce", "Toasted sesame oil", "Rice vinegar", "Chili oil", "Sesame seeds"]
-        },
-        pantryDetected: ["Egg", "Soy sauce", "Sesame oil", "Rice vinegar", "Sesame seeds"],
-        storeUrls: {
-          Tesco: "https://www.tesco.com/groceries/en-GB/search?query=pork+mince+500g",
-          Sainsburys: "https://www.sainsburys.co.uk/gol-ui/SearchResults/pork%20mince"
-        }
-      }
-    };
-
-    const outputEl = document.getElementById('vision-output');
-    const statusEl = document.getElementById('vision-status');
-
-    document.querySelectorAll('.sample-btn').forEach(btn => {
-      btn.onclick = () => {
-        const sampleKey = btn.dataset.sample;
-        const data = SAMPLES[sampleKey];
-        if (!data) return;
-
-        statusEl.innerText = '⚡ SCANNING IMAGE...';
-        statusEl.className = 'text-amber-400 animate-pulse';
-
-        setTimeout(() => {
-          statusEl.innerText = '● PARSED SUCCESSFULLY';
-          statusEl.className = 'text-emerald-400';
-
-          outputEl.innerText = JSON.stringify({
-            extractedRecipe: {
-              title: data.title,
-              prepTime: data.prep,
-              servings: data.servings,
-              category: data.category,
-              supermarketAisles: data.aisles,
-              pantryStaplesAutoDetected: data.pantryDetected,
-              directSupermarketCartLinks: data.storeUrls
-            }
-          }, null, 2);
-        }, 400);
-      };
-    });
-
-    // ==========================================
-    // BRAND STRATEGY & LOGO STUDIO CONTROLLER
-    // ==========================================
-    const NAME_OPTIONS = {
-      pin2plate: {
-        html: `PIN<span class="text-red-500">2</span>PLATE`,
-        plain: "PIN2PLATE",
-        tagline: "Stop Collecting. Start Cooking."
-      },
-      p2p: {
-        html: `P<span class="text-red-500">2</span>P`,
-        plain: "P2P",
-        tagline: "Pin to Plate • 1-Click Grocery Engine"
-      }
-    };
-
-    const LOGO_CONCEPTS = {
-      forkpin_v1: {
-        name: "The ForkPin (v1 Original)",
-        label: "v01 // Classic Ceramic Champion",
-        desc: "The original breakthrough concept: a pushpin top with 3 fork tines piercing downward through a concentric dark ceramic dinner plate. Direct, unforgettable, and grounded.",
-        bestFor: "Official brand identity, App Store recognition, culinary D2C marketing, physical merchandise.",
-        imageSrc: "assets/logo1_forkpin.jpg",
-        svgFile: "assets/forkpin.svg",
-        palette: [
-          { name: "Pin Red", hex: "#E60023", text: "#fff" },
-          { name: "Ceramic Obsidian", hex: "#0D1321", text: "#fff" },
-          { name: "Steel Gleam", hex: "#E2E8F0", text: "#000" }
-        ],
-        badgeHtml: `<span class="w-2 h-2 rounded-full bg-red-500"></span><span class="font-bold">Official ForkPin v1</span>`,
-        badgeClass: "border-red-500/40 bg-red-950/40 text-red-300",
-        squircleClass: "bg-gradient-to-tr from-red-600 to-rose-700 shadow-glow-red",
-        svg: `<svg viewBox="0 0 100 100" class="w-full h-full filter drop-shadow-[0_12px_24px_rgba(230,0,35,0.4)]">
-          <circle cx="50" cy="50" r="44" stroke="#e60023" stroke-width="2" fill="none" opacity="0.35" stroke-dasharray="3 2"/>
-          <circle cx="50" cy="50" r="38" fill="#070b14" stroke="#1e293b" stroke-width="2"/>
-          <circle cx="50" cy="50" r="28" fill="#131a29" stroke="#334155" stroke-width="1.5" opacity="0.6"/>
-          <circle cx="50" cy="24" r="12" fill="#e60023"/>
-          <circle cx="50" cy="24" r="4.5" fill="#ffffff"/>
-          <path d="M 46,35 L 54,35 L 53,44 L 47,44 Z" fill="#cbd5e1"/>
-          <path d="M 43,44 C 43,51 57,51 57,44 Z" fill="#ffffff"/>
-          <path d="M 44,46 L 44,68 C 44,72 46,75 47,77" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-          <path d="M 50,44 L 50,82" stroke="#e60023" stroke-width="2.8" stroke-linecap="round"/>
-          <path d="M 56,46 L 56,68 C 56,72 54,75 53,77" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-          <circle cx="50" cy="82" r="1.5" fill="#ffffff"/>
-        </svg>`,
-        faviconSvg: `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#e60023"/><circle cx="50" cy="28" r="13" fill="#fff"/><circle cx="50" cy="28" r="5" fill="#e60023"/><path d="M 50,42 L 50,82 M 42,54 L 42,76 M 58,54 L 58,76" stroke="#fff" stroke-width="6" stroke-linecap="round"/></svg>`
-      }
-    };
-
-    let activeLogoKey = 'forkpin_v1';
-    let activeNameKey = localStorage.getItem('p2p_active_name') || 'pin2plate';
-    let activeRenderMode = 'vector';
-
-    const heroSvgEl = document.getElementById('hero-logo-svg');
-    const heroTitleEl = document.getElementById('hero-logo-title');
-    const heroTaglineEl = document.getElementById('hero-logo-tagline');
-    const mockupSquircleEl = document.getElementById('mockup-squircle');
-    const mockupFaviconEl = document.getElementById('mockup-favicon');
-    const mockupFaviconLabelEl = document.getElementById('mockup-favicon-label');
-    const mockupBadgeEl = document.getElementById('mockup-badge');
-    const conceptLabelEl = document.getElementById('concept-label');
-    const conceptNameEl = document.getElementById('concept-name');
-    const conceptDescEl = document.getElementById('concept-desc');
-    const conceptPaletteEl = document.getElementById('concept-palette');
-    const conceptBestForEl = document.getElementById('concept-best-for');
-    const btnSelectBrand = document.getElementById('btn-select-brand');
-    const btnCopySvg = document.getElementById('btn-copy-svg');
-    const nameTabs = document.querySelectorAll('.name-tab');
-    const modeTabs = document.querySelectorAll('.mode-tab');
-
-    function renderLogoConcept(key) {
-      const concept = LOGO_CONCEPTS.forkpin_v1;
-      const nameObj = NAME_OPTIONS[activeNameKey] || NAME_OPTIONS.pin2plate;
-
-      if (activeRenderMode === 'ai') {
-        if (concept.imageSrc) {
-          heroSvgEl.innerHTML = `<img src="${concept.imageSrc}" alt="${concept.name}" class="w-full h-full object-cover rounded-2xl shadow-glow-red border border-red-500/40">`;
-        } else {
-          heroSvgEl.innerHTML = `<div class="p-4 rounded-xl bg-slate-900 text-center space-y-1.5"><div class="text-2xl">⏳</div><div class="text-xs font-mono font-bold text-white">Gemini Render Queued</div></div>`;
-        }
-      } else {
-        heroSvgEl.innerHTML = concept.svg;
-      }
-
-      heroTitleEl.innerHTML = nameObj.html;
-      heroTaglineEl.innerText = nameObj.tagline;
-
-      if (mockupFaviconLabelEl) {
-        mockupFaviconLabelEl.innerText = nameObj.plain;
-      }
-
-      mockupSquircleEl.className = `w-14 h-14 rounded-2xl flex items-center justify-center p-2.5 transition-transform hover:scale-110 ${concept.squircleClass}`;
-      mockupSquircleEl.innerHTML = concept.svg;
-      mockupFaviconEl.innerHTML = concept.faviconSvg;
-      
-      mockupBadgeEl.className = `px-2.5 py-1 rounded-full text-[10px] font-bold flex items-center gap-1.5 ${concept.badgeClass}`;
-      mockupBadgeEl.innerHTML = concept.badgeHtml;
-
-      conceptLabelEl.innerText = concept.label;
-      conceptNameEl.innerText = concept.name;
-      conceptDescEl.innerText = concept.desc;
-      conceptBestForEl.innerText = concept.bestFor;
-
-      conceptPaletteEl.innerHTML = concept.palette.map(p => `
-        <div class="p-2 rounded-lg border border-slate-800 flex flex-col justify-between h-14 cursor-pointer hover:border-slate-600 transition-colors" 
-             style="background: ${p.hex}" onclick="navigator.clipboard.writeText('${p.hex}'); alert('Copied hex ${p.hex} to clipboard!');">
-          <span class="text-[9px] font-bold" style="color: ${p.text}">${p.name}</span>
-          <span class="text-[9px] font-mono opacity-80" style="color: ${p.text}">${p.hex}</span>
-        </div>
-      `).join('');
-
-      btnSelectBrand.innerHTML = `<i data-lucide="check-check" class="w-4 h-4"></i><span>Official Brand Confirmed</span>`;
-      btnSelectBrand.className = "flex-1 py-3 rounded-xl bg-emerald-600 text-white font-mono text-xs font-bold transition-all shadow-glow-emerald flex items-center justify-center gap-2";
-      lucide.createIcons();
-    }
-
-    // Naming options toggle listeners
-    nameTabs.forEach(tab => {
-      if (tab.dataset.name === activeNameKey) {
-        tab.className = "name-tab active px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all bg-red-600 text-white";
-      } else {
-        tab.className = "name-tab px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white";
-      }
-      tab.onclick = () => {
-        nameTabs.forEach(t => {
-          t.className = "name-tab px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white";
-        });
-        tab.className = "name-tab active px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all bg-red-600 text-white";
-        activeNameKey = tab.dataset.name;
-        localStorage.setItem('p2p_active_name', activeNameKey);
-        renderLogoConcept(activeLogoKey);
-      };
-    });
-
-    // Render mode toggle listeners (Vector SVG vs Gemini AI Render)
-    modeTabs.forEach(tab => {
-      tab.onclick = () => {
-        modeTabs.forEach(t => {
-          t.className = "mode-tab px-2.5 py-1 rounded-lg text-slate-400 hover:text-white font-bold flex items-center gap-1";
-        });
-        tab.className = "mode-tab active px-2.5 py-1 rounded-lg text-white font-bold bg-red-600 flex items-center gap-1";
-        activeRenderMode = tab.dataset.mode;
-        renderLogoConcept(activeLogoKey);
-      };
-    });
-
-    // Copy SVG button listener
-    if (btnCopySvg) {
-      btnCopySvg.onclick = () => {
-        const concept = LOGO_CONCEPTS.forkpin_v1;
-        navigator.clipboard.writeText(concept.svg).then(() => {
-          const original = btnCopySvg.innerHTML;
-          btnCopySvg.textContent = "Copied SVG!";
-          setTimeout(() => { btnCopySvg.innerHTML = original; }, 2000);
-        }).catch(err => {
-          alert('Could not copy SVG: ' + err);
-        });
-      };
-    }
-
-    // Set Brand button listener
-    if (btnSelectBrand) {
-      btnSelectBrand.onclick = () => {
-        alert("The ForkPin (v1 Original) is confirmed as the official brand champion!");
-      };
-    }
-
-    // ==========================================
-    // SVG TO PNG CLIENT-SIDE CONVERTER ENGINE
-    // ==========================================
-    let convSelectedSize = 512;
-    let convSelectedBg = 'transparent';
-    let customSvgContent = null;
-
-    const convSizeBtns = document.querySelectorAll('.conv-size-btn');
-    const convBgBtns = document.querySelectorAll('.conv-bg-btn');
-    const convCustomInput = document.getElementById('conv-custom-size');
-    const convSourceSelect = document.getElementById('conv-source-select');
-    const convUploadLabel = document.getElementById('conv-upload-label');
-    const convFileInput = document.getElementById('conv-file-input');
-    const btnConvertDownload = document.getElementById('btn-convert-download');
-    const btnConvertLabel = document.getElementById('btn-convert-label');
-
-    convSizeBtns.forEach(btn => {
-      btn.onclick = () => {
-        convSizeBtns.forEach(b => {
-          b.className = "conv-size-btn py-2 rounded-lg bg-slate-950 hover:bg-slate-800 text-slate-300 font-bold text-xs transition-colors";
-        });
-        btn.className = "conv-size-btn active py-2 rounded-lg bg-red-600 text-white font-bold text-xs";
-        convSelectedSize = parseInt(btn.dataset.size, 10);
-        if (convCustomInput) convCustomInput.value = '';
-        updateConvertButtonLabel();
-      };
-    });
-
-    if (convCustomInput) {
-      convCustomInput.oninput = () => {
-        const val = parseInt(convCustomInput.value, 10);
-        if (val && val >= 16 && val <= 4096) {
-          convSizeBtns.forEach(b => {
-            b.className = "conv-size-btn py-2 rounded-lg bg-slate-950 hover:bg-slate-800 text-slate-300 font-bold text-xs transition-colors";
-          });
-          convSelectedSize = val;
-          updateConvertButtonLabel();
-        }
-      };
-    }
-
-    convBgBtns.forEach(btn => {
-      btn.onclick = () => {
-        convBgBtns.forEach(b => {
-          b.className = "conv-bg-btn py-1.5 rounded-lg bg-slate-950 text-slate-400 text-xs font-bold hover:text-white";
-        });
-        btn.className = "conv-bg-btn active py-1.5 rounded-lg bg-slate-800 text-slate-200 text-xs font-bold";
-        convSelectedBg = btn.dataset.bg;
-      };
-    });
-
-    if (convSourceSelect) {
-      convSourceSelect.onchange = () => {
-        if (convSourceSelect.value === 'custom') {
-          convUploadLabel.classList.remove('hidden');
-        } else {
-          convUploadLabel.classList.add('hidden');
-          customSvgContent = null;
-        }
-      };
-    }
-
-    if (convFileInput) {
-      convFileInput.onchange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-          const reader = new FileReader();
-          reader.onload = (evt) => {
-            customSvgContent = evt.target.result;
-            convUploadLabel.innerHTML = `<span class="text-emerald-400">✓ ${file.name.slice(0, 10)}...</span>`;
-          };
-          reader.readAsText(file);
-        }
-      };
-    }
-
-    function updateConvertButtonLabel() {
-      if (btnConvertLabel) {
-        btnConvertLabel.textContent = `Export ${convSelectedSize}×${convSelectedSize} PNG Now`;
-      }
-    }
-
-    if (btnConvertDownload) {
-      btnConvertDownload.onclick = async () => {
-        try {
-          btnConvertLabel.textContent = "Rasterizing...";
-          let svgData = customSvgContent;
-          if (!svgData) {
-            const res = await fetch('assets/forkpin.svg?v=' + Date.now());
-            svgData = await res.text();
-          }
-
-          const canvas = document.getElementById('conv-canvas');
-          canvas.width = convSelectedSize;
-          canvas.height = convSelectedSize;
-          const ctx = canvas.getContext('2d');
-          ctx.clearRect(0, 0, convSelectedSize, convSelectedSize);
-
-          if (convSelectedBg !== 'transparent') {
-            ctx.fillStyle = convSelectedBg;
-            ctx.fillRect(0, 0, convSelectedSize, convSelectedSize);
-          }
-
-          const img = new Image();
-          const svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
-          const url = URL.createObjectURL(svgBlob);
-
-          img.onload = () => {
-            ctx.drawImage(img, 0, 0, convSelectedSize, convSelectedSize);
-            URL.revokeObjectURL(url);
-            canvas.toBlob((blob) => {
-              const downloadUrl = URL.createObjectURL(blob);
-              const a = document.createElement('a');
-              a.href = downloadUrl;
-              a.download = `pin2plate-forkpin-${convSelectedSize}x${convSelectedSize}.png`;
-              document.body.appendChild(a);
-              a.click();
-              document.body.removeChild(a);
-              URL.revokeObjectURL(downloadUrl);
-              updateConvertButtonLabel();
-            }, 'image/png');
-          };
-          img.onerror = () => {
-            alert('Failed to render SVG. Please check vector syntax.');
-            updateConvertButtonLabel();
-          };
-          img.src = url;
-        } catch(err) {
-          alert('Conversion failed: ' + err.message);
-          updateConvertButtonLabel();
-        }
-      };
-    }
-
-    // Initial logo render
-    renderLogoConcept(activeLogoKey);
   </script>
 </body>
 </html>
