@@ -536,8 +536,19 @@
             <div class="p-8 sm:p-10 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center text-center relative overflow-hidden group shadow-2xl">
               <div class="absolute inset-0 bg-gradient-to-b from-red-600/5 via-transparent to-transparent opacity-50"></div>
               
-              <!-- Vector Graphic Container -->
-              <div id="hero-logo-svg" class="w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <!-- Mode Switcher (Vector vs Gemini AI Render) -->
+              <div class="flex items-center gap-1.5 p-1 rounded-xl bg-slate-900 text-[11px] font-mono mb-5 z-10" id="render-mode-tabs">
+                <button class="mode-tab active px-2.5 py-1 rounded-lg text-white font-bold bg-red-600" data-mode="vector">
+                  Vector SVG
+                </button>
+                <button class="mode-tab px-2.5 py-1 rounded-lg text-slate-400 hover:text-white font-bold flex items-center gap-1" data-mode="ai">
+                  <span>✨ Gemini AI Render</span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                </button>
+              </div>
+
+              <!-- Vector Graphic / Image Container -->
+              <div id="hero-logo-svg" class="w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 z-10">
                 <!-- Injected via JS -->
               </div>
 
@@ -817,6 +828,7 @@
         label: "Variation 1: Fork Needle Replacement",
         desc: "The pushpin needle is replaced by a 3-prong culinary fork, piercing through to a concentric ceramic dinner plate. Direct, tactile, and immediately communicates 'pin into meal' in 0.2 seconds.",
         bestFor: "Mobile App Store icon, favicon, social media avatar, viral TikTok watermark.",
+        imageSrc: "assets/logo1_forkpin.jpg",
         palette: [
           { name: "Plate Scarlet", hex: "#E60023", text: "#fff" },
           { name: "Porcelain White", hex: "#FFFFFF", text: "#000" },
@@ -945,6 +957,7 @@
 
     let activeLogoKey = localStorage.getItem('p2p_active_logo') || 'forkpin';
     let activeNameKey = localStorage.getItem('p2p_active_name') || 'pin2plate';
+    let activeRenderMode = 'vector';
 
     const heroSvgEl = document.getElementById('hero-logo-svg');
     const heroTitleEl = document.getElementById('hero-logo-title');
@@ -962,12 +975,22 @@
     const btnCopySvg = document.getElementById('btn-copy-svg');
     const logoTabs = document.querySelectorAll('.logo-tab');
     const nameTabs = document.querySelectorAll('.name-tab');
+    const modeTabs = document.querySelectorAll('.mode-tab');
 
     function renderLogoConcept(key) {
       const concept = LOGO_CONCEPTS[key] || LOGO_CONCEPTS.forkpin;
       const nameObj = NAME_OPTIONS[activeNameKey] || NAME_OPTIONS.pin2plate;
 
-      heroSvgEl.innerHTML = concept.svg;
+      if (activeRenderMode === 'ai') {
+        if (concept.imageSrc) {
+          heroSvgEl.innerHTML = `<img src="${concept.imageSrc}" alt="${concept.name}" class="w-full h-full object-cover rounded-2xl shadow-glow-red border border-red-500/40">`;
+        } else {
+          heroSvgEl.innerHTML = `<div class="p-4 rounded-xl bg-slate-900 text-center space-y-1.5"><div class="text-2xl">⏳</div><div class="text-xs font-mono font-bold text-white">Gemini Render Queued</div><p class="text-[11px] text-slate-400">Quota resets in ~4h. Clean vector SVG available in Vector Mode.</p></div>`;
+        }
+      } else {
+        heroSvgEl.innerHTML = concept.svg;
+      }
+
       heroTitleEl.innerHTML = nameObj.html;
       heroTaglineEl.innerText = nameObj.tagline;
 
@@ -1028,6 +1051,18 @@
 
         activeNameKey = tab.dataset.name;
         localStorage.setItem('p2p_active_name', activeNameKey);
+        renderLogoConcept(document.querySelector('.logo-tab.active')?.dataset.logo || activeLogoKey);
+      };
+    });
+
+    modeTabs.forEach(tab => {
+      tab.onclick = () => {
+        modeTabs.forEach(t => {
+          t.className = "mode-tab px-2.5 py-1 rounded-lg text-slate-400 hover:text-white font-bold flex items-center gap-1";
+        });
+        tab.className = "mode-tab active px-2.5 py-1 rounded-lg text-white font-bold bg-red-600 flex items-center gap-1";
+
+        activeRenderMode = tab.dataset.mode;
         renderLogoConcept(document.querySelector('.logo-tab.active')?.dataset.logo || activeLogoKey);
       };
     });
