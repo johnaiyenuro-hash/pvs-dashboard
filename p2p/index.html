@@ -482,13 +482,18 @@
           </div>
           
           <div class="flex items-center gap-2 p-1.5 rounded-xl bg-slate-900 border border-slate-800 flex-wrap" id="logo-tabs">
-            <button class="logo-tab active px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-red-600 text-white shadow-glow-red" data-logo="forkpin_v1">
-              The ForkPin (v1 Original)
+            <button class="logo-tab active px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-red-600 text-white shadow-glow-red flex items-center gap-1.5" data-logo="forkpin_v1">
+              <span>The ForkPin (v1 Original)</span>
             </button>
             <button class="logo-tab px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5" data-logo="forkpin_v2">
               <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i>
               <span>Revised ForkPin (v2)</span>
-              <span class="px-1.5 py-0.5 rounded text-[9px] bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold">NEW</span>
+              <span class="px-1.5 py-0.5 rounded text-[9px] bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold">V2 APEX</span>
+            </button>
+            <button class="logo-tab px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5" data-logo="forkpin_v3">
+              <i data-lucide="zap" class="w-3.5 h-3.5 text-orange-400"></i>
+              <span>Geometric Crest (v3)</span>
+              <span class="px-1.5 py-0.5 rounded text-[9px] bg-orange-500/20 text-orange-300 border border-orange-500/40 font-bold">V3 NEW</span>
             </button>
           </div>
         </div>
@@ -620,12 +625,19 @@
                 Figma Vector Master & Generated Icon Pack
               </span>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-[11px] font-mono">
+                <a href="assets/forkpin-v3.svg" download class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
+                  <span class="flex items-center gap-1.5">
+                    <span class="text-orange-400">❖</span>
+                    <span>forkpin-v3.svg</span>
+                  </span>
+                  <span class="text-[10px] text-orange-400 font-bold">Crest v3</span>
+                </a>
                 <a href="assets/forkpin-v2.svg" download class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
                   <span class="flex items-center gap-1.5">
                     <span class="text-amber-400">❖</span>
                     <span>forkpin-v2.svg</span>
                   </span>
-                  <span class="text-[10px] text-amber-400 font-bold">Revised v2</span>
+                  <span class="text-[10px] text-amber-400 font-bold">Apex v2</span>
                 </a>
                 <a href="assets/forkpin.svg" download class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/60 flex items-center justify-between transition-colors">
                   <span class="flex items-center gap-1.5">
@@ -923,10 +935,58 @@
           <circle cx="50" cy="83" r="2" fill="#ffffff"/>
         </svg>`,
         faviconSvg: `<svg viewBox="0 0 100 100"><rect width="100" height="100" rx="24" fill="#070b14"/><circle cx="50" cy="50" r="44" stroke="#e60023" stroke-width="4" fill="none" opacity="0.4"/><circle cx="50" cy="26" r="14" fill="#ff2a55"/><circle cx="50" cy="26" r="5" fill="#fff"/><path d="M 50,38 L 50,84" stroke="#ff2a55" stroke-width="7" stroke-linecap="round"/><path d="M 41,50 L 41,74 M 59,50 L 59,74" stroke="#fff" stroke-width="6" stroke-linecap="round"/></svg>`
+      },
+
+      forkpin_v3: {
+        name: "The ForkPin (v3 Geometric Crest)",
+        label: "Version 3: Teardrop Precision & Negative Space",
+        desc: "A bold modern minimalist design fusing an iconic teardrop map pin silhouette with a precision-sculpted cutlery fork carved directly into the negative space ceramic core. Designed for maximum instant recognition across mobile app icons, favicons, and global branding.",
+        bestFor: "Next-gen tech scale-up, mobile app home screens, minimalist merchandise, global trademark registration.",
+        imageSrc: "assets/forkpin-v3-512.png",
+        svgFile: "assets/forkpin-v3.svg",
+        palette: [
+          { name: "Electric Crimson", hex: "#FF1E56", text: "#fff" },
+          { name: "Vibrant Tangerine", hex: "#FF8008", text: "#fff" },
+          { name: "Pure Titanium", hex: "#FFFFFF", text: "#000" }
+        ],
+        badgeHtml: `<span class="w-2 h-2 rounded-full bg-orange-400"></span><span class="text-orange-300 font-bold">ForkPin v3 Crest</span>`,
+        badgeClass: "border-orange-500/40 bg-orange-950/40 text-orange-300",
+        squircleClass: "bg-gradient-to-tr from-rose-600 via-orange-500 to-amber-400 shadow-glow-orange",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full filter drop-shadow-[0_12px_24px_rgba(255,30,86,0.5)]">
+          <defs>
+            <linearGradient id="v3GlowGradMini" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FF1E56"/>
+              <stop offset="50%" stop-color="#FF4B2B"/>
+              <stop offset="100%" stop-color="#FF8008"/>
+            </linearGradient>
+            <linearGradient id="v3SteelMini" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="100%" stop-color="#CBD5E1"/>
+            </linearGradient>
+          </defs>
+          <!-- Modern Ceramic Rim -->
+          <circle cx="50" cy="50" r="44" stroke="url(#v3GlowGradMini)" stroke-width="1.2" opacity="0.3" stroke-dasharray="4 2"/>
+          <circle cx="50" cy="50" r="39" fill="#080C14" stroke="#1E293B" stroke-width="1.5"/>
+          <circle cx="50" cy="50" r="29" fill="#0A0F1D" stroke="#334155" stroke-width="1" opacity="0.6"/>
+          <!-- Teardrop Pin Silhouette -->
+          <path d="M 50,14 C 36,14 24,26 24,40 C 24,56 45,77 50,84 C 55,77 76,56 76,40 C 76,26 64,14 50,14 Z" fill="url(#v3GlowGradMini)"/>
+          <!-- Negative Space Plate Core -->
+          <circle cx="50" cy="40" r="15" fill="#0A0F1D"/>
+          <circle cx="50" cy="40" r="12" stroke="#334155" stroke-width="0.8" fill="none" opacity="0.8"/>
+          <!-- Integrated Negative Space Fork -->
+          <path d="M 49,27 L 51,27 L 51,40 L 49,40 Z" fill="url(#v3SteelMini)"/>
+          <path d="M 45,40 C 45,46 55,46 55,40" stroke="url(#v3SteelMini)" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+          <path d="M 45,39 L 45,30" stroke="url(#v3SteelMini)" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M 50,39 L 50,28" stroke="#FF8008" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M 55,39 L 55,30" stroke="url(#v3SteelMini)" stroke-width="1.4" stroke-linecap="round"/>
+          <!-- Impact Target Dot -->
+          <circle cx="50" cy="84" r="1.5" fill="#FFFFFF"/>
+        </svg>`,
+        faviconSvg: `<svg viewBox="0 0 100 100"><rect width="100" height="100" rx="24" fill="#080C14"/><path d="M 50,12 C 34,12 20,26 20,42 C 20,60 45,84 50,90 C 55,84 80,60 80,42 C 80,26 66,12 50,12 Z" fill="#FF1E56"/><circle cx="50" cy="42" r="17" fill="#080C14"/><path d="M 50,29 L 50,42 M 43,42 C 43,48 57,48 57,42 M 44,42 L 44,32 M 56,42 L 56,32" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/></svg>`
       }
     };
 
-    let activeLogoKey = localStorage.getItem('p2p_active_logo') || 'forkpin_v2';
+    let activeLogoKey = localStorage.getItem('p2p_active_logo') || 'forkpin_v3';
     let activeNameKey = localStorage.getItem('p2p_active_name') || 'pin2plate';
     let activeRenderMode = 'vector';
 
@@ -961,7 +1021,7 @@
     }
 
     function renderLogoConcept(key) {
-      const concept = LOGO_CONCEPTS[key] || LOGO_CONCEPTS.forkpin_v2;
+      const concept = LOGO_CONCEPTS[key] || LOGO_CONCEPTS.forkpin_v3;
       const nameObj = NAME_OPTIONS[activeNameKey] || NAME_OPTIONS.pin2plate;
 
       if (activeRenderMode === 'ai') {
@@ -994,10 +1054,12 @@
       conceptDescEl.innerText = concept.desc;
       conceptBestForEl.innerText = concept.bestFor;
 
-      // Update toggle button text
+      // Update toggle button text (Cycling: v1 -> v2 -> v3 -> v1)
       if (toggleRevisionText) {
         if (key === 'forkpin_v1') {
           toggleRevisionText.innerHTML = `Switch to Revised ForkPin (v2) ✨`;
+        } else if (key === 'forkpin_v2') {
+          toggleRevisionText.innerHTML = `Switch to Geometric Crest (v3) ⚡`;
         } else {
           toggleRevisionText.innerHTML = `Switch to Original ForkPin (v1) ↩`;
         }
@@ -1027,9 +1089,16 @@
       btnToggleRevision.onclick = () => {
         if (activeLogoKey === 'forkpin_v1') {
           activeLogoKey = 'forkpin_v2';
+        } else if (activeLogoKey === 'forkpin_v2') {
+          activeLogoKey = 'forkpin_v3';
         } else {
           activeLogoKey = 'forkpin_v1';
         }
+        localStorage.setItem('p2p_active_logo', activeLogoKey);
+        updateLogoTabsUi(activeLogoKey);
+        renderLogoConcept(activeLogoKey);
+      };
+    }
         localStorage.setItem('p2p_active_logo', activeLogoKey);
         updateLogoTabsUi(activeLogoKey);
         renderLogoConcept(activeLogoKey);

@@ -1267,8 +1267,12 @@
       const btn = document.getElementById('pvs-logo-toggle-btn');
       const label = document.getElementById('pvs-logo-ver-badge');
       if (!img) return;
-      const isV2 = img.src.includes('forkpin-v2.svg');
-      if (isV2) {
+      if (img.src.includes('forkpin-v2.svg')) {
+        img.src = '../p2p/assets/forkpin-v3.svg';
+        if (navImg) navImg.src = '../p2p/assets/forkpin-v3.svg';
+        if (btn) btn.innerHTML = 'Switch to Original (v1) &larr;';
+        if (label) label.textContent = 'FORKPIN V3 CREST';
+      } else if (img.src.includes('forkpin-v3.svg')) {
         img.src = '../p2p/assets/forkpin.svg';
         if (navImg) navImg.src = '../p2p/assets/forkpin.svg';
         if (btn) btn.innerHTML = 'Switch to Revised (v2) ✨';
@@ -1276,8 +1280,8 @@
       } else {
         img.src = '../p2p/assets/forkpin-v2.svg';
         if (navImg) navImg.src = '../p2p/assets/forkpin-v2.svg';
-        if (btn) btn.innerHTML = 'Switch to Original (v1) &larr;';
-        if (label) label.textContent = 'FORKPIN V2 REVISED';
+        if (btn) btn.innerHTML = 'Switch to Geometric (v3) ⚡';
+        if (label) label.textContent = 'FORKPIN V2 APEX';
       }
     }
 
