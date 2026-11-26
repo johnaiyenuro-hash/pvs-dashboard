@@ -4,38 +4,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HABAKUK TODAY // Core Levers Execution OS</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="daily-rhythm.css?v=20261112b">
+  
+  <!-- Apple System Typography & Design System -->
+  <link rel="stylesheet" href="daily-rhythm.css?v=20261126_ios">
+  
   <style>
     :root {
-      --bg: #0d0f14;
-      --surface: #13161e;
-      --surface2: #1a1e2a;
-      --border: #252a38;
-      --accent: #e8ff4a;       /* Lime primary */
-      --accent2: #4affb4;      /* Mint / Done */
-      --accent3: #ff6b4a;      /* Coral / Health */
-      --accent4: #4a9fff;      /* Sky blue / Language */
-      --accent5: #c084fc;      /* Purple / AI Mercor */
-      --text: #e8eaf0;
-      --muted: #94a3b8;
+      --ios-bg: #000000;
+      --ios-surface: rgba(28, 28, 30, 0.76);
+      --ios-surface-card: rgba(36, 36, 38, 0.65);
+      --ios-surface-elevated: rgba(44, 44, 46, 0.72);
+      --ios-glass-border: rgba(255, 255, 255, 0.12);
+      --ios-glass-highlight: rgba(255, 255, 255, 0.18);
+      --ios-separator: rgba(84, 84, 88, 0.36);
+
+      --ios-blue: #0A84FF;
+      --ios-green: #30D158;
+      --ios-yellow: #FFD60A;
+      --ios-purple: #BF5AF2;
+      --ios-orange: #FF9F0A;
+      --ios-pink: #FF375F;
+      --ios-label: #FFFFFF;
+      --ios-label-secondary: rgba(235, 235, 245, 0.68);
+      --ios-label-tertiary: rgba(235, 235, 245, 0.38);
+
+      --accent: var(--ios-yellow);
+      --accent2: var(--ios-green);
+      --accent3: var(--ios-orange);
+      --accent4: var(--ios-blue);
+      --accent5: var(--ios-purple);
+      --text: var(--ios-label);
+      --muted: var(--ios-label-secondary);
+      --border: var(--ios-glass-border);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Syne', sans-serif;
+      background: #000000;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(10, 132, 255, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 80% 30%, rgba(255, 214, 10, 0.06) 0%, transparent 50%);
+      background-attachment: fixed;
+      color: var(--ios-label);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", -system-ui, sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 32px 20px;
+      padding: 24px 20px 48px 20px;
+      -webkit-font-smoothing: antialiased;
     }
 
+    /* iOS DYNAMIC ISLAND */
+    .dynamic-island {
+      background: rgba(22, 22, 24, 0.85);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border: 0.5px solid rgba(255, 255, 255, 0.16);
+      border-radius: 9999px;
+      padding: 6px 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
+
+    .island-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ios-yellow);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .island-badge .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--ios-green);
+      box-shadow: 0 0 8px var(--ios-green);
+    }
+
+    .island-divider {
+      width: 1px;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .island-metric {
+      font-size: 11px;
+      color: var(--ios-label-secondary);
+      font-weight: 500;
+    }
+
+    .island-metric strong {
+      color: var(--ios-label);
+    }
+
+    /* NAV BAR */
     .today-nav {
       width: 100%;
       max-width: 1100px;
@@ -43,78 +112,96 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 24px;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 0.5px solid var(--ios-separator);
       padding-bottom: 16px;
     }
 
     .today-nav-title {
-      font-size: 18px;
+      font-size: 22px;
       font-weight: 800;
-      color: var(--accent);
+      color: var(--ios-label);
       letter-spacing: -0.5px;
     }
 
     .back-btn {
-      background: var(--surface);
-      color: var(--text);
-      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--ios-label);
+      border: 0.5px solid var(--ios-glass-border);
       font-size: 12px;
-      font-weight: 700;
-      padding: 6px 12px;
-      border-radius: 2px;
-      font-family: 'Space Mono', monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      font-weight: 600;
+      padding: 7px 16px;
+      border-radius: 9999px;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .back-btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: var(--surface2);
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-1px);
     }
 
+    /* QUICK ACCESS CHIPS */
     .quick-links {
       width: 100%;
       max-width: 1100px;
-      margin-top: 24px;
+      margin-top: 28px;
       display: flex;
       justify-content: center;
-      gap: 16px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
     .quick-link-item {
-      font-family: 'Space Mono', monospace;
       font-size: 12px;
-      color: var(--muted);
+      font-weight: 600;
+      color: var(--ios-label-secondary);
       text-decoration: none;
-      padding: 6px 12px;
-      border-radius: 2px;
-      background: var(--surface);
-      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 9999px;
+      background: rgba(36, 36, 38, 0.7);
+      border: 0.5px solid var(--ios-glass-border);
       transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .quick-link-item:hover {
-      color: var(--text);
-      border-color: var(--muted);
+      color: var(--ios-label);
+      background: rgba(44, 44, 46, 0.9);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
     }
 
     .today-footer {
-      margin-top: 36px;
+      margin-top: 40px;
       text-align: center;
-      font-family: 'Space Mono', monospace;
       font-size: 12px;
-      color: var(--muted);
+      color: var(--ios-label-tertiary);
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
 
+  <!-- iOS DYNAMIC ISLAND -->
+  <div class="dynamic-island">
+    <div class="island-badge">
+      <span class="pulse-dot"></span>
+      HABAKUK TODAY
+    </div>
+    <div class="island-divider"></div>
+    <div class="island-metric">Pareto Ratio: <strong>20% Vital Lever Execution</strong></div>
+    <div class="island-divider"></div>
+    <div class="island-metric">Trial Countdown: <strong>22 Days (18 Dec)</strong></div>
+  </div>
+
   <div class="today-nav">
-    <div class="today-nav-title">HABAKUK // CORE LEVERS EXECUTION OS</div>
+    <div class="today-nav-title">Today's High-Leverage Command</div>
     <a href="./index.html" class="back-btn">&larr; Master Launchpad</a>
   </div>
 
@@ -123,18 +210,31 @@
 
   <!-- QUICK ACCESS TO ACTIVE SUBSYSTEMS -->
   <div class="quick-links">
-    <a href="./pvs/index.html#excel_adv" class="quick-link-item" style="border-left: 2px solid var(--accent);">Professional Vision System &rarr;</a>
-    <a href="./spanish/index.html#spanish_vocab_input" class="quick-link-item" style="border-left: 2px solid var(--accent4);">Spanish Vision System &rarr;</a>
-    <a href="./mercor/index.html#pipelineDropScannerSection" class="quick-link-item" style="border-left: 2px solid var(--accent5);">Mercor &amp; Micro1 AI &rarr;</a>
-    <a href="./health/index.html#fit_fasting" class="quick-link-item" style="border-left: 2px solid var(--accent3);">Health &amp; Weight Loss OS &rarr;</a>
-    <a href="./p2p/index.html" class="quick-link-item" style="border-left: 2px solid #fb7185;">PIN2PLATE (P2P OS) &rarr;</a>
+    <a href="./pvs/index.html#excel_adv" class="quick-link-item" style="border-left: 3px solid var(--ios-yellow);">
+      PVS: Solutions Architect &rarr;
+    </a>
+    <a href="./spanish/index.html#spanish_vocab_input" class="quick-link-item" style="border-left: 3px solid var(--ios-blue);">
+      Spanish: DNV Tracker &rarr;
+    </a>
+    <a href="./pvs/index.html#linkedin_sprint" class="quick-link-item" style="border-left: 3px solid var(--ios-blue);">
+      LinkedIn Sprint (22 Days) &rarr;
+    </a>
+    <a href="./p2p/index.html" class="quick-link-item" style="border-left: 3px solid var(--ios-pink);">
+      PIN2PLATE Lab &rarr;
+    </a>
+    <a href="./mercor/index.html#pipelineDropScannerSection" class="quick-link-item" style="border-left: 3px solid var(--ios-purple);">
+      Mercor AI Roles &rarr;
+    </a>
+    <a href="./health/index.html#fit_fasting" class="quick-link-item" style="border-left: 3px solid var(--ios-orange);">
+      Health &amp; Fasting &rarr;
+    </a>
   </div>
 
   <div class="today-footer">
-    ZERO-GIT EXECUTION &bull; AUTO-RESET MIDNIGHT &bull; 2 CORE ACTIVE LEVERS
+    ZERO-GIT EXECUTION &bull; AUTO-RESET MIDNIGHT &bull; 2 VITAL CORE LEVERS
   </div>
 
-  <script src="daily-rhythm.js?v=20261117b"></script>
+  <script src="daily-rhythm.js?v=20261126_ios"></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       DailyRhythm.init('daily-rhythm-container');

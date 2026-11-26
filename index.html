@@ -7,93 +7,347 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>HABAKUK OS // MASTER LAUNCHPAD</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="daily-rhythm.css?v=20261112b">
+  
+  <!-- Apple System Typography & Design System -->
+  <link rel="stylesheet" href="daily-rhythm.css?v=20261126_ios">
+  
   <style>
     :root {
-      --bg: #0d0f14;
-      --surface: #13161e;
-      --surface2: #1a1e2a;
-      --border: #252a38;
-      --accent: #e8ff4a;       /* Lime primary / PVS */
-      --accent2: #4affb4;      /* Mint / Done */
-      --accent3: #ff6b4a;      /* Coral / Health */
-      --accent4: #4a9fff;      /* Sky blue / Spanish */
-      --accent5: #c084fc;      /* Purple / Mercor */
-      --text: #e8eaf0;
-      --muted: #94a3b8;
+      --ios-bg: #000000;
+      --ios-surface: rgba(28, 28, 30, 0.76);
+      --ios-surface-card: rgba(36, 36, 38, 0.65);
+      --ios-surface-elevated: rgba(44, 44, 46, 0.72);
+      --ios-glass-border: rgba(255, 255, 255, 0.12);
+      --ios-glass-highlight: rgba(255, 255, 255, 0.18);
+      --ios-separator: rgba(84, 84, 88, 0.36);
+
+      --ios-blue: #0A84FF;
+      --ios-green: #30D158;
+      --ios-indigo: #5E5CE6;
+      --ios-orange: #FF9F0A;
+      --ios-pink: #FF375F;
+      --ios-purple: #BF5AF2;
+      --ios-teal: #64D2FF;
+      --ios-yellow: #FFD60A;
+      --ios-red: #FF453A;
+
+      --ios-label: #FFFFFF;
+      --ios-label-secondary: rgba(235, 235, 245, 0.68);
+      --ios-label-tertiary: rgba(235, 235, 245, 0.38);
+
+      --accent: var(--ios-yellow);
+      --accent2: var(--ios-green);
+      --accent3: var(--ios-orange);
+      --accent4: var(--ios-blue);
+      --accent5: var(--ios-purple);
+      --text: var(--ios-label);
+      --muted: var(--ios-label-secondary);
+      --border: var(--ios-glass-border);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Syne', sans-serif;
+      background: #000000;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(10, 132, 255, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 90% 20%, rgba(191, 90, 242, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 10% 40%, rgba(255, 214, 10, 0.05) 0%, transparent 50%);
+      background-attachment: fixed;
+      color: var(--ios-label);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", -system-ui, sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 32px 20px;
+      padding: 24px 20px 48px 20px;
+      -webkit-font-smoothing: antialiased;
     }
 
+    /* iOS DYNAMIC ISLAND / TOP STATUS PILL */
+    .dynamic-island {
+      background: rgba(22, 22, 24, 0.85);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border: 0.5px solid rgba(255, 255, 255, 0.16);
+      border-radius: 9999px;
+      padding: 6px 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .island-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ios-yellow);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .island-badge .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--ios-green);
+      box-shadow: 0 0 8px var(--ios-green);
+    }
+
+    .island-divider {
+      width: 1px;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .island-metric {
+      font-size: 11px;
+      color: var(--ios-label-secondary);
+      font-weight: 500;
+    }
+
+    .island-metric strong {
+      color: var(--ios-label);
+    }
+
+    /* HUB HEADER */
     .hub-header {
       text-align: center;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
+      width: 100%;
+      max-width: 1100px;
     }
 
     .hub-header h1 {
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 800;
-      letter-spacing: -0.5px;
-      color: var(--accent);
+      letter-spacing: -0.8px;
+      color: var(--ios-label);
       margin-bottom: 6px;
     }
 
     .hub-header p {
-      font-family: 'Space Mono', monospace;
-      font-size: 12px;
-      color: var(--muted);
-      letter-spacing: 0.5px;
+      font-size: 13px;
+      color: var(--ios-label-secondary);
+      letter-spacing: -0.2px;
     }
 
-    .hub-nav {
+    /* iOS SEGMENTED CONTROL BAR */
+    .segmented-control {
+      display: inline-flex;
+      background: rgba(36, 36, 38, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 0.5px solid var(--ios-glass-border);
+      border-radius: 9999px;
+      padding: 3px;
+      margin-top: 16px;
+      gap: 2px;
+    }
+
+    .seg-pill {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ios-label-secondary);
+      text-decoration: none;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+      border: 0.5px solid transparent;
+      cursor: pointer;
+    }
+
+    .seg-pill:hover {
+      color: var(--ios-label);
+    }
+
+    .seg-pill.active {
+      background: rgba(255, 255, 255, 0.16);
+      color: var(--ios-label);
+      border-color: rgba(255, 255, 255, 0.14);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+
+    .seg-pill.accent {
+      color: var(--ios-yellow);
+    }
+
+    .seg-pill.accent:hover {
+      background: rgba(255, 214, 10, 0.12);
+    }
+
+    /* LINKEDIN SPRINT ACCELERATOR WIDGET */
+    .sprint-hero-widget {
+      width: 100%;
+      max-width: 1100px;
+      background: rgba(28, 28, 30, 0.76);
+      backdrop-filter: blur(32px) saturate(190%);
+      -webkit-backdrop-filter: blur(32px) saturate(190%);
+      border: 0.5px solid var(--ios-glass-border);
+      border-radius: 24px;
+      padding: 22px 26px;
+      margin-bottom: 28px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0.5px var(--ios-glass-highlight);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sprint-hero-top {
       display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 14px;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .sprint-tag-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
       flex-wrap: wrap;
     }
 
-    .nav-pill {
-      font-family: 'Space Mono', monospace;
+    .sprint-tag-countdown {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ios-blue);
+      background: rgba(10, 132, 255, 0.14);
+      border: 0.5px solid rgba(10, 132, 255, 0.35);
+      padding: 3px 10px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .sprint-tag-pareto {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ios-yellow);
+      background: rgba(255, 214, 10, 0.14);
+      border: 0.5px solid rgba(255, 214, 10, 0.35);
+      padding: 3px 10px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .sprint-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: var(--ios-label);
+    }
+
+    .sprint-desc {
       font-size: 12px;
+      color: var(--ios-label-secondary);
+      margin-top: 4px;
+      line-height: 1.45;
+    }
+
+    .sprint-action-btn {
+      background: rgba(10, 132, 255, 0.15);
+      color: var(--ios-blue);
+      border: 0.5px solid rgba(10, 132, 255, 0.35);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 9999px;
       text-decoration: none;
-      padding: 5px 12px;
-      border-radius: 2px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--muted);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sprint-action-btn:hover {
+      background: var(--ios-blue);
+      color: #FFFFFF;
+      box-shadow: 0 0 16px rgba(10, 132, 255, 0.4);
+    }
+
+    /* POWER TWO CARDS (THE VITAL 20%) */
+    .power-two-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .power-card {
+      background: rgba(44, 44, 46, 0.65);
+      border: 0.5px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       transition: all 0.2s ease;
     }
 
-    .nav-pill:hover {
-      color: var(--text);
-      border-color: var(--muted);
+    .power-card:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-1px);
     }
 
-    .nav-pill.accent {
-      color: var(--accent);
-      border-color: rgba(232, 255, 74, 0.3);
-      background: rgba(232, 255, 74, 0.05);
+    .power-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
     }
 
-    .subsystems-heading-wrapper {
+    .power-rank {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--ios-yellow);
+      background: rgba(255, 214, 10, 0.12);
+      padding: 2px 7px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .power-duration {
+      font-size: 11px;
+      color: var(--ios-label-secondary);
+      font-weight: 600;
+    }
+
+    .power-course-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ios-label);
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+
+    .power-course-sub {
+      font-size: 11px;
+      color: var(--ios-label-secondary);
+      line-height: 1.4;
+    }
+
+    .power-badge-vital {
+      margin-top: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--ios-green);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* SECTION LABELS */
+    .tier-heading-wrapper {
       width: 100%;
       max-width: 1100px;
-      margin: 12px 0 16px 0;
+      margin: 20px 0 14px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -101,159 +355,78 @@
       gap: 12px;
     }
 
-    .subsystems-heading {
-      font-family: 'Space Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 1.5px;
+    .tier-heading {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--ios-label-secondary);
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .subsystems-heading .dot {
+    .tier-heading .dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--accent4);
     }
 
-    .pillar-visibility-bar {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
+    .tier-heading.vital .dot { background: var(--ios-yellow); box-shadow: 0 0 8px var(--ios-yellow); }
+    .tier-heading.sandboxes .dot { background: var(--ios-purple); box-shadow: 0 0 8px var(--ios-purple); }
 
-    .vis-label {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: 1px;
-      margin-right: 2px;
-    }
-
-    .vis-pill {
-      font-family: 'Space Mono', monospace;
-      font-size: 11px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      padding: 3px 8px;
-      border-radius: 2px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: all 0.2s ease;
-      user-select: none;
-    }
-
-    .vis-pill:hover {
-      border-color: var(--muted);
-      color: var(--text);
-    }
-
-    .vis-pill .vis-status-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--muted);
-      transition: background 0.2s ease;
-    }
-
-    .vis-pill.active {
-      background: var(--surface2);
-      color: var(--text);
-    }
-
-    .vis-pill.vis-prof.active { border-color: rgba(232, 255, 74, 0.4); color: var(--accent); }
-    .vis-pill.vis-prof.active .vis-status-dot { background: var(--accent); box-shadow: 0 0 4px var(--accent); }
-
-    .vis-pill.vis-spanish.active { border-color: rgba(74, 159, 255, 0.4); color: var(--accent4); }
-    .vis-pill.vis-spanish.active .vis-status-dot { background: var(--accent4); box-shadow: 0 0 4px var(--accent4); }
-
-    .vis-pill.vis-mercor.active { border-color: rgba(192, 132, 252, 0.4); color: var(--accent5); }
-    .vis-pill.vis-mercor.active .vis-status-dot { background: var(--accent5); box-shadow: 0 0 4px var(--accent5); }
-
-    .vis-pill.vis-health.active { border-color: rgba(255, 107, 74, 0.4); color: var(--accent3); }
-    .vis-pill.vis-health.active .vis-status-dot { background: var(--accent3); box-shadow: 0 0 4px var(--accent3); }
-
-    .vis-pill.vis-p2p.active { border-color: rgba(251, 113, 133, 0.4); color: #fb7185; }
-    .vis-pill.vis-p2p.active .vis-status-dot { background: #fb7185; box-shadow: 0 0 4px #fb7185; }
-
-    .vis-pill.hidden-pill {
-      opacity: 0.4;
-      text-decoration: line-through;
-      background: transparent;
-      border-style: dashed;
-    }
-
-    .vis-reset-btn {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      background: rgba(232, 255, 74, 0.08);
-      border: 1px solid rgba(232, 255, 74, 0.25);
-      color: var(--accent);
-      padding: 3px 8px;
-      border-radius: 2px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .vis-reset-btn:hover {
-      background: rgba(232, 255, 74, 0.18);
-      border-color: var(--accent);
-    }
-
+    /* WIDGET GRID (iOS APP LIBRARY STYLE) */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
       width: 100%;
       max-width: 1100px;
+      margin-bottom: 24px;
     }
 
     .hub-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 24px;
+      background: var(--ios-surface-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 0.5px solid var(--ios-glass-border);
+      border-radius: 20px;
+      padding: 22px;
       text-decoration: none;
       color: inherit;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 200px;
-      transition: all 0.2s ease;
+      min-height: 190px;
+      transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
       position: relative;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
 
     .hub-card:hover {
-      background: var(--surface2);
-      transform: translateY(-2px);
+      background: var(--ios-surface-elevated);
+      transform: translateY(-2px) scale(1.005);
+      border-color: rgba(255, 255, 255, 0.22);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
     }
 
     .hub-card.pillar-hidden {
       display: none !important;
     }
 
-    /* Card Accent Hovers */
-    .hub-card.prof:hover { border-color: var(--accent); }
-    .hub-card.spanish:hover { border-color: var(--accent4); }
-    .hub-card.mercor:hover { border-color: var(--accent5); }
-    .hub-card.health:hover { border-color: var(--accent3); }
-    .hub-card.p2p:hover { border-color: #fb7185; }
+    /* Card Left Border Accents */
+    .hub-card.prof { border-left: 3px solid var(--ios-yellow); }
+    .hub-card.spanish { border-left: 3px solid var(--ios-blue); }
+    .hub-card.mercor { border-left: 3px solid var(--ios-purple); }
+    .hub-card.health { border-left: 3px solid var(--ios-orange); }
+    .hub-card.p2p { border-left: 3px solid var(--ios-pink); }
+    .hub-card.qtapp { border-left: 3px solid var(--ios-teal); }
 
     .card-meta {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       gap: 8px;
     }
 
@@ -264,41 +437,40 @@
     }
 
     .card-tag {
-      font-family: 'Space Mono', monospace;
       font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 2px;
+      padding: 3px 9px;
+      border-radius: 9999px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.4px;
       font-weight: 700;
     }
 
-    .tag-prof { background: #2a3a1a; color: var(--accent); }
-    .tag-spanish { background: #1a2a3a; color: var(--accent4); }
-    .tag-mercor { background: #2a1a3a; color: var(--accent5); }
-    .tag-health { background: #3a1a1a; color: var(--accent3); }
-    .tag-p2p { background: #3a1a24; color: #fb7185; }
+    .tag-prof { background: rgba(255, 214, 10, 0.15); color: var(--ios-yellow); }
+    .tag-spanish { background: rgba(10, 132, 255, 0.15); color: var(--ios-blue); }
+    .tag-mercor { background: rgba(191, 90, 242, 0.15); color: var(--ios-purple); }
+    .tag-health { background: rgba(255, 159, 10, 0.15); color: var(--ios-orange); }
+    .tag-p2p { background: rgba(255, 55, 95, 0.15); color: var(--ios-pink); }
+    .tag-qtapp { background: rgba(100, 210, 255, 0.15); color: var(--ios-teal); }
 
     .card-version {
-      font-family: 'Space Mono', monospace;
       font-size: 11px;
-      color: var(--muted);
+      color: var(--ios-label-tertiary);
+      font-weight: 500;
     }
 
     .card-hide-btn {
       background: transparent;
-      border: 1px solid transparent;
-      color: var(--muted);
-      padding: 3px 7px;
-      border-radius: 2px;
+      border: none;
+      color: var(--ios-label-tertiary);
+      padding: 2px 6px;
+      border-radius: 9999px;
       cursor: pointer;
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
+      font-size: 11px;
       display: inline-flex;
       align-items: center;
       gap: 4px;
       transition: all 0.15s ease;
-      opacity: 0.55;
+      opacity: 0.5;
     }
 
     .hub-card:hover .card-hide-btn {
@@ -307,146 +479,175 @@
 
     .card-hide-btn:hover {
       opacity: 1 !important;
-      background: rgba(255, 107, 74, 0.12);
-      border-color: rgba(255, 107, 74, 0.35);
-      color: var(--accent3);
+      background: rgba(255, 69, 58, 0.15);
+      color: var(--ios-red);
     }
 
     .hub-title {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
-      color: var(--text);
-      margin-bottom: 8px;
+      color: var(--ios-label);
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
     }
 
     .hub-desc {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.5;
+      font-size: 12px;
+      color: var(--ios-label-secondary);
+      line-height: 1.45;
     }
 
     .card-footer {
-      margin-top: 20px;
+      margin-top: 16px;
+      padding-top: 10px;
+      border-top: 0.5px solid var(--ios-separator);
       display: flex;
       align-items: center;
-      gap: 6px;
-      font-family: 'Space Mono', monospace;
+      justify-content: space-between;
       font-size: 12px;
+      font-weight: 600;
     }
 
-    .hub-card.prof .card-footer { color: var(--accent); }
-    .hub-card.spanish .card-footer { color: var(--accent4); }
-    .hub-card.mercor .card-footer { color: var(--accent5); }
-    .hub-card.health .card-footer { color: var(--accent3); }
-    .hub-card.p2p .card-footer { color: #fb7185; }
+    .hub-card.prof .card-footer { color: var(--ios-yellow); }
+    .hub-card.spanish .card-footer { color: var(--ios-blue); }
+    .hub-card.mercor .card-footer { color: var(--ios-purple); }
+    .hub-card.health .card-footer { color: var(--ios-orange); }
+    .hub-card.p2p .card-footer { color: var(--ios-pink); }
+    .hub-card.qtapp .card-footer { color: var(--ios-teal); }
 
-    .all-hidden-state {
-      width: 100%;
-      max-width: 1100px;
-      background: var(--surface);
-      border: 1px dashed var(--border);
-      border-radius: 4px;
-      padding: 42px 20px;
-      text-align: center;
-      color: var(--muted);
-      margin: 10px 0 20px 0;
-    }
-
-    .all-hidden-icon {
-      font-size: 26px;
-      margin-bottom: 8px;
-      opacity: 0.5;
-    }
-
-    .all-hidden-title {
-      font-family: 'Space Mono', monospace;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--text);
-      margin-bottom: 6px;
-    }
-
-    .all-hidden-desc {
-      font-size: 12px;
-      line-height: 1.5;
-      max-width: 440px;
-      margin: 0 auto;
-    }
-
+    /* FOOTER */
     .system-status {
-      margin-top: 40px;
+      margin-top: 24px;
       text-align: center;
-      font-family: 'Space Mono', monospace;
       font-size: 12px;
-      color: var(--muted);
+      color: var(--ios-label-tertiary);
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .power-two-grid {
+        grid-template-columns: 1fr;
+      }
+      .hub-header h1 {
+        font-size: 26px;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- iOS DYNAMIC ISLAND FLOATING STATUS PILL -->
+  <div class="dynamic-island">
+    <div class="island-badge">
+      <span class="pulse-dot"></span>
+      HABAKUK OS // v29
+    </div>
+    <div class="island-divider"></div>
+    <div class="island-metric">Pareto Ratio: <strong>20% Vital Focus</strong></div>
+    <div class="island-divider"></div>
+    <div class="island-metric">Trial Countdown: <strong>22 Days (18 Dec)</strong></div>
+  </div>
+
+  <!-- MASTER LAUNCHPAD HEADER -->
   <div class="hub-header">
-    <h1>HABAKUK TWO TWO // MASTER LAUNCHPAD</h1>
-    <p>CENTRALIZED OPERATIONAL ENGINE &bull; 2 CORE LEVERS &bull; 5 STRATEGIC VISION SUBSYSTEMS</p>
-    <div class="hub-nav">
-      <a href="#daily" class="nav-pill active">Core Levers HUD</a>
-      <a href="today.html" class="nav-pill accent">Dedicated Today View &rarr;</a>
-      <a href="#subsystems" class="nav-pill">Subsystems Directory</a>
+    <h1>Master Launchpad</h1>
+    <p>Strategic Operating System &bull; 2 Vital Levers (80% Life ROI) &bull; 4 Creative Sandboxes</p>
+    
+    <!-- iOS Segmented Control Bar -->
+    <div class="segmented-control">
+      <a href="#daily" class="seg-pill active">Core Levers HUD</a>
+      <a href="#sprint" class="seg-pill">LinkedIn Sprint (22d)</a>
+      <a href="#core_drivers" class="seg-pill">Core 20% Engines</a>
+      <a href="#sandboxes" class="seg-pill">Creative Sandboxes</a>
+      <a href="today.html" class="seg-pill accent">Today View &rarr;</a>
     </div>
   </div>
 
   <!-- DAILY RHYTHM EXECUTION HUD (STREAMLINED CORE LEVERS) -->
   <div id="daily-rhythm-container" style="width: 100%; max-width: 1100px;"></div>
 
-  <!-- VISION PILLARS DIRECTORY -->
-  <div class="subsystems-heading-wrapper">
-    <div class="subsystems-heading" id="subsystems">
-      <span class="dot"></span>
-      <span id="subsystemsCountLabel">VISION PILLARS DIRECTORY // 5 STRATEGIC SUBSYSTEMS</span>
+  <!-- LINKEDIN LEARNING ACCELERATOR WIDGET (PARETO "POWER TWO") -->
+  <div class="sprint-hero-widget" id="sprint">
+    <div class="sprint-hero-top">
+      <div>
+        <div class="sprint-tag-row">
+          <span class="sprint-tag-countdown">⏱️ 22 Days Left &bull; Ends 18 Dec</span>
+          <span class="sprint-tag-pareto">⚡ Pareto "Power Two" Priority</span>
+        </div>
+        <div class="sprint-title">LinkedIn Learning Acceleration Sprint</div>
+        <p class="sprint-desc">
+          Zero-Waste Protocol: Master the <strong>vital 20%</strong> (~7.5h total // ~20 min/day) to unlock 80% of Solutions Architect capability before trial expiration.
+        </p>
+      </div>
+      <div>
+        <a href="./pvs/index.html#linkedin_sprint" class="sprint-action-btn">
+          Open Sprint Tracker &rarr;
+        </a>
+      </div>
     </div>
-    <div class="pillar-visibility-bar" id="pillarVisibilityBar" aria-label="Toggle visible vision pillars">
-      <span class="vis-label">PILLARS:</span>
-      <button class="vis-pill vis-prof active" data-pillar="pvs" onclick="togglePillarVisibility('pvs')" title="Toggle Professional Vision System">
-        <span class="vis-status-dot"></span> PVS
-      </button>
-      <button class="vis-pill vis-spanish active" data-pillar="spanish" onclick="togglePillarVisibility('spanish')" title="Toggle Spanish Vision System">
-        <span class="vis-status-dot"></span> Spanish
-      </button>
-      <button class="vis-pill vis-mercor active" data-pillar="mercor" onclick="togglePillarVisibility('mercor')" title="Toggle Mercor AI Contracting">
-        <span class="vis-status-dot"></span> Mercor
-      </button>
-      <button class="vis-pill vis-health active" data-pillar="health" onclick="togglePillarVisibility('health')" title="Toggle Health OS">
-        <span class="vis-status-dot"></span> Health
-      </button>
-      <button class="vis-pill vis-p2p active" data-pillar="p2p" onclick="togglePillarVisibility('p2p')" title="Toggle Pin2Plate Venture">
-        <span class="vis-status-dot"></span> P2P
-      </button>
-      <button class="vis-reset-btn" id="visResetBtn" onclick="showAllPillars()" style="display:none;" title="Show all 5 pillars">
-        Show All
-      </button>
+
+    <!-- The Power Two Cards Grid -->
+    <div class="power-two-grid">
+      <!-- Lever 1: Power Query -->
+      <div class="power-card" style="border-left: 3px solid var(--ios-yellow);">
+        <div>
+          <div class="power-card-header">
+            <span class="power-rank">Priority 1 // Active Lever</span>
+            <span class="power-duration">~5.0 Hours</span>
+          </div>
+          <div class="power-course-name">Track 02: Excel Power Query &amp; Relational Models</div>
+          <div class="power-course-sub">Automating CDE export ingests, unpivoting metadata tables, building star schemas &amp; DAX validation measures.</div>
+        </div>
+        <div class="power-badge-vital">✓ 80% Daily Operational Leverage at Glider</div>
+      </div>
+
+      <!-- Lever 2: Postman & APIs -->
+      <div class="power-card" style="border-left: 3px solid var(--ios-blue);">
+        <div>
+          <div class="power-card-header">
+            <span class="power-rank">Priority 2 // Middleware Bridge</span>
+            <span class="power-duration">~2.5 Hours</span>
+          </div>
+          <div class="power-course-name">Track 03: Postman &amp; REST APIs (JSON / BCF)</div>
+          <div class="power-course-sub">HTTP methods, Bearer tokens/OAuth2 authentication, inspecting CDE &amp; BCF API topic JSON payloads.</div>
+        </div>
+        <div class="power-badge-vital">✓ Defining Leap from DDM &rarr; Solutions Architect</div>
+      </div>
     </div>
   </div>
 
-  <div class="grid" id="pillarsGrid">
+  <!-- =========================================================================
+       TIER 1: CORE 20% DRIVERS (HIGH-LEVERAGE CAREER & MOBILITY ENGINES)
+       ========================================================================= -->
+  <div class="tier-heading-wrapper" id="core_drivers">
+    <div class="tier-heading vital">
+      <span class="dot"></span>
+      <span>TIER 1: CORE 20% DRIVERS // 80% CAREER &amp; MOBILITY OUTCOME</span>
+    </div>
+    <span style="font-size: 11px; color: var(--ios-yellow); font-weight: 600;">ACTIVE FOCUS LEVERS</span>
+  </div>
+
+  <div class="grid">
     <!-- 1. PROFESSIONAL -->
     <a href="./pvs/index.html" class="hub-card prof" data-pillar="pvs">
       <div>
         <div class="card-meta">
           <div class="card-meta-left">
-            <span class="card-tag tag-prof">Core Career</span>
+            <span class="card-tag tag-prof">Income Engine</span>
             <span class="card-version">v28 Active</span>
           </div>
-          <button class="card-hide-btn" onclick="hidePillarCard('pvs', event)" title="Hide Professional Vision System" aria-label="Hide Professional Vision System">
+          <button class="card-hide-btn" onclick="hidePillarCard('pvs', event)" title="Hide PVS" aria-label="Hide PVS">
             &times; Hide
           </button>
         </div>
-        <div class="hub-title">Professional Vision System</div>
+        <div class="hub-title">Professional Vision System (PVS)</div>
         <div class="hub-desc">
-          Solutions Architect &amp; Domain Data Engineer roadmap, active data &amp; QA learning queues (Power Query Excel &amp; Solibri ITO), and confirmed post-probation milestones.
+          Glider DDM &rarr; ConTech Solutions Architect (£85k–£110k+). Automated CDE data pipelines (Power Query), Solibri IFC rule validation, and REST API integration middleware.
         </div>
       </div>
       <div class="card-footer">
-        Open System &rarr;
+        <span>Active Mandate &rarr;</span>
+        <span style="font-size: 11px; opacity: 0.8;">Target: £85k–£110k+</span>
       </div>
     </a>
 
@@ -455,106 +656,135 @@
       <div>
         <div class="card-meta">
           <div class="card-meta-left">
-            <span class="card-tag tag-spanish">Language</span>
+            <span class="card-tag tag-spanish">Relocation Engine</span>
             <span class="card-version">2026 Core</span>
           </div>
-          <button class="card-hide-btn" onclick="hidePillarCard('spanish', event)" title="Hide Spanish Vision System" aria-label="Hide Spanish Vision System">
+          <button class="card-hide-btn" onclick="hidePillarCard('spanish', event)" title="Hide Spanish" aria-label="Hide Spanish">
             &times; Hide
           </button>
         </div>
-        <div class="hub-title">Spanish Vision System</div>
+        <div class="hub-title">Spanish Vision System (DNV)</div>
         <div class="hub-desc">
-          Daily language consistency, high-frequency vocabulary tracking (1,000 words deck), and conversational immersion.
+          Daily language consistency and high-frequency vocabulary input (1,000 words deck) backing the Spain Digital Nomad Visa (DNV) international mobility track.
         </div>
       </div>
       <div class="card-footer">
-        Open Tracker &rarr;
+        <span>Open Language Tracker &rarr;</span>
+        <span style="font-size: 11px; opacity: 0.8;">20m Daily Standard</span>
       </div>
     </a>
+  </div>
 
-    <!-- 3. MERCOR & MICRO1 -->
-    <a href="./mercor/index.html" class="hub-card mercor" data-pillar="mercor">
-      <div>
-        <div class="card-meta">
-          <div class="card-meta-left">
-            <span class="card-tag tag-mercor">Capital Engine</span>
-            <span class="card-version">Dual-Channel</span>
-          </div>
-          <button class="card-hide-btn" onclick="hidePillarCard('mercor', event)" title="Hide Mercor &amp; Micro1 AI" aria-label="Hide Mercor &amp; Micro1 AI">
-            &times; Hide
-          </button>
-        </div>
-        <div class="hub-title">Mercor &amp; Micro1 AI Contracting</div>
-        <div class="hub-desc">
-          Dual-channel AI talent network, direct Mercor AWS sync engine, live vetted CAD/AEC roles, Micro1 Zara onboarding pipeline, and tailored pitch generator.
-        </div>
-      </div>
-      <div class="card-footer">
-        Open Pipeline &rarr;
-      </div>
-    </a>
+  <!-- =========================================================================
+       TIER 2: VENTURE & AUXILIARY SANDBOXES (CREATIVE LABS // DE-PRESSURIZED)
+       ========================================================================= -->
+  <div class="tier-heading-wrapper" id="sandboxes">
+    <div class="tier-heading sandboxes">
+      <span class="dot"></span>
+      <span>TIER 2: VENTURE &amp; AUXILIARY SANDBOXES // CREATIVE LABS (ZERO-GUILT)</span>
+    </div>
+    <span style="font-size: 11px; color: var(--ios-label-secondary);">SURPLUS CAPACITY &amp; EXPERIMENTS</span>
+  </div>
 
-    <!-- 4. HEALTH -->
-    <a href="./health/index.html" class="hub-card health" data-pillar="health">
-      <div>
-        <div class="card-meta">
-          <div class="card-meta-left">
-            <span class="card-tag tag-health">Weight Loss</span>
-            <span class="card-version">v27 Core</span>
-          </div>
-          <button class="card-hide-btn" onclick="hidePillarCard('health', event)" title="Hide Health &amp; Weight Loss OS" aria-label="Hide Health &amp; Weight Loss OS">
-            &times; Hide
-          </button>
-        </div>
-        <div class="hub-title">Health &amp; Weight Loss OS</div>
-        <div class="hub-desc">
-          92kg &rarr; 82kg deficit engine (-10kg), 16:8 intermittent fasting protocols, daily scale metric tracking, and muscle-sparing resistance cadence.
-        </div>
-      </div>
-      <div class="card-footer">
-        Open Protocols &rarr;
-      </div>
-    </a>
-
-    <!-- 5. PINTEREST TO PLATE (P2P VENTURE) -->
+  <div class="grid" id="pillarsGrid">
+    <!-- 3. PIN2PLATE (P2P OS) -->
     <a href="./p2p/index.html" class="hub-card p2p" data-pillar="p2p">
       <div>
         <div class="card-meta">
           <div class="card-meta-left">
             <span class="card-tag tag-p2p" style="display: inline-flex; align-items: center; gap: 5px;">
               <img src="./p2p/assets/forkpin.svg?v=20261123b" alt="P2P" style="width: 12px; height: 12px;">
-              Venture Engine
+              Venture Lab
             </span>
-            <span class="card-version">v1.0 Live</span>
+            <span class="card-version">Live App</span>
           </div>
-          <button class="card-hide-btn" onclick="hidePillarCard('p2p', event)" title="Hide PIN2PLATE OS" aria-label="Hide PIN2PLATE OS">
+          <button class="card-hide-btn" onclick="hidePillarCard('p2p', event)" title="Hide P2P" aria-label="Hide P2P">
             &times; Hide
           </button>
         </div>
         <div class="hub-title">PIN2PLATE (P2P OS)</div>
         <div class="hub-desc">
-          AI recipe pin extraction, UK supermarket cart injection (Tesco/Sainsbury's/Asda), anti-fatigue meal curation, and 4-phase monetization roadmap (&pound;10k+ MRR).
+          D2C recipe pin extraction &amp; 1-click UK supermarket cart injection (Tesco, Sainsbury's, Asda). De-pressurized builder sandbox for vibe coding and product design.
         </div>
       </div>
       <div class="card-footer">
-        Open Venture OS &rarr;
+        <span>Open Venture Lab &rarr;</span>
+        <span style="font-size: 11px; opacity: 0.8;">Vercel Ready</span>
+      </div>
+    </a>
+
+    <!-- 4. MERCOR & MICRO1 -->
+    <a href="./mercor/index.html" class="hub-card mercor" data-pillar="mercor">
+      <div>
+        <div class="card-meta">
+          <div class="card-meta-left">
+            <span class="card-tag tag-mercor">Surplus Capital</span>
+            <span class="card-version">$70–$120/hr</span>
+          </div>
+          <button class="card-hide-btn" onclick="hidePillarCard('mercor', event)" title="Hide Mercor" aria-label="Hide Mercor">
+            &times; Hide
+          </button>
+        </div>
+        <div class="hub-title">Mercor &amp; Micro1 AI Contracting</div>
+        <div class="hub-desc">
+          Dual-channel AI talent network, direct Mercor AWS sync engine, vetted CAD/AEC evaluation roles, and tailored pitch generator for surplus capacity monetization.
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Open Roles Hub &rarr;</span>
+        <span style="font-size: 11px; opacity: 0.8;">34 Matching Roles</span>
+      </div>
+    </a>
+
+    <!-- 5. HEALTH -->
+    <a href="./health/index.html" class="hub-card health" data-pillar="health">
+      <div>
+        <div class="card-meta">
+          <div class="card-meta-left">
+            <span class="card-tag tag-health">Physical Baseline</span>
+            <span class="card-version">16:8 Fasting</span>
+          </div>
+          <button class="card-hide-btn" onclick="hidePillarCard('health', event)" title="Hide Health" aria-label="Hide Health">
+            &times; Hide
+          </button>
+        </div>
+        <div class="hub-title">Health &amp; Fasting OS</div>
+        <div class="hub-desc">
+          92kg &rarr; 82kg deficit engine (-10kg), 16:8 intermittent fasting protocols, daily scale metric tracking, and baseline discipline supporting mental endurance.
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Open Health OS &rarr;</span>
+        <span style="font-size: 11px; opacity: 0.8;">-10kg Target</span>
+      </div>
+    </a>
+
+    <!-- 6. SCRIPTURE APP (QTAPP) -->
+    <a href="https://quiet-time-guide.vercel.app" target="_blank" class="hub-card qtapp" data-pillar="qtapp">
+      <div>
+        <div class="card-meta">
+          <div class="card-meta-left">
+            <span class="card-tag tag-qtapp">Spiritual Foundation</span>
+            <span class="card-version">Live Vercel</span>
+          </div>
+        </div>
+        <div class="hub-title">Quiet Time &amp; Revelation Journal</div>
+        <div class="hub-desc">
+          Serene, distraction-free scripture study application based on Bishop Dag Heward-Mills' teachings. 13 Analytical Questions, Six W's topical study, and 7 Steps rhythm.
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Open Live App ↗</span>
+        <span style="font-size: 11px; opacity: 0.8;">Impeccable Design</span>
       </div>
     </a>
   </div>
 
-  <!-- EMPTY STATE WHEN ALL PILLARS HIDDEN -->
-  <div id="allPillarsHiddenMsg" class="all-hidden-state" style="display: none;">
-    <div class="all-hidden-icon">&#128065;</div>
-    <div class="all-hidden-title">ALL VISION PILLAR DIRECTORIES HIDDEN</div>
-    <div class="all-hidden-desc">You have hidden all 5 directory cards. Click any filter pill above or restore all to view.</div>
-    <button class="nav-pill accent" onclick="showAllPillars()" style="margin-top: 14px; cursor: pointer; border: 1px solid var(--accent);">Restore All 5 Pillars</button>
-  </div>
-
   <div class="system-status">
-    ENGINE RUNNING &bull; 2 CORE ACTIVE LEVERS &bull; STREAMLINED HABAKUK ARCHITECTURE
+     HABAKUK OS // iOS VIBRANT GLASS ENGINE &bull; 2 VITAL ACTIVE LEVERS &bull; ZERO-GIT STATE
   </div>
 
-  <script src="daily-rhythm.js?v=20261117b"></script>
+  <script src="daily-rhythm.js?v=20261126_ios"></script>
   <script>
     const PILLARS_MAP = {
       pvs: 'Professional',
@@ -581,53 +811,13 @@
 
     function applyPillarVisibility() {
       const hidden = getHiddenPillars();
-      const total = Object.keys(PILLARS_MAP).length;
-      let visibleCount = 0;
-
       Object.keys(PILLARS_MAP).forEach(id => {
         const isHidden = hidden.includes(id);
         const card = document.querySelector(`.hub-card[data-pillar="${id}"]`);
         if (card) {
           card.classList.toggle('pillar-hidden', isHidden);
         }
-        const pill = document.querySelector(`.vis-pill[data-pillar="${id}"]`);
-        if (pill) {
-          pill.classList.toggle('active', !isHidden);
-          pill.classList.toggle('hidden-pill', isHidden);
-          pill.title = isHidden ? `Show ${PILLARS_MAP[id]} System` : `Hide ${PILLARS_MAP[id]} System`;
-        }
-        if (!isHidden) visibleCount++;
       });
-
-      const countLabel = document.getElementById('subsystemsCountLabel');
-      if (countLabel) {
-        if (visibleCount === total) {
-          countLabel.textContent = `VISION PILLARS DIRECTORY // ${total} STRATEGIC SUBSYSTEMS`;
-        } else {
-          countLabel.textContent = `VISION PILLARS DIRECTORY // ${visibleCount} OF ${total} ACTIVE (${total - visibleCount} HIDDEN)`;
-        }
-      }
-
-      const resetBtn = document.getElementById('visResetBtn');
-      if (resetBtn) {
-        resetBtn.style.display = hidden.length > 0 ? 'inline-flex' : 'none';
-      }
-
-      const allHiddenMsg = document.getElementById('allPillarsHiddenMsg');
-      if (allHiddenMsg) {
-        allHiddenMsg.style.display = visibleCount === 0 ? 'block' : 'none';
-      }
-    }
-
-    function togglePillarVisibility(id) {
-      let hidden = getHiddenPillars();
-      if (hidden.includes(id)) {
-        hidden = hidden.filter(x => x !== id);
-      } else {
-        hidden.push(id);
-      }
-      saveHiddenPillars(hidden);
-      applyPillarVisibility();
     }
 
     function hidePillarCard(id, event) {
@@ -648,7 +838,7 @@
       applyPillarVisibility();
     }
 
-    // Apply visibility immediately before full load to prevent layout flicker
+    // Apply visibility immediately
     applyPillarVisibility();
 
     window.addEventListener('DOMContentLoaded', () => {

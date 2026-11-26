@@ -212,9 +212,9 @@
         <!-- TOP HUD BAR -->
         <div class="rhythm-header">
           <div class="rhythm-header-left">
-            <div class="rhythm-badge">DAILY RHYTHM EXECUTION HUD</div>
-            <h2 class="rhythm-title">Today's Operational Command</h2>
-            <p class="rhythm-subtitle">Laser-Focused Core Levers &bull; PVS &amp; Spanish &bull; Zero-Git Local State</p>
+            <div class="rhythm-badge">PARETO 80/20 // THE VITAL 20%</div>
+            <h2 class="rhythm-title">Today's High-Leverage Focus</h2>
+            <p class="rhythm-subtitle">The 20% Input Yielding 80% Life &amp; Career ROI &bull; Solutions Architect &amp; Spain DNV</p>
           </div>
           <div class="rhythm-header-right">
             <div class="date-pill">${todayStr}</div>
@@ -232,8 +232,8 @@
         <div class="rhythm-section">
           <div class="rhythm-section-header">
             <span class="dot-indicator"></span>
-            <span class="section-heading">PRIMARY LEVERS // TODAY'S ACTIVE BOTTLENECK TARGETS</span>
-            <span class="rule-tag">2 CORE LEVERS ACTIVE</span>
+            <span class="section-heading">VITAL 20% LEVERS // TODAY'S BOTTLENECK ACCELERATORS</span>
+            <span class="rule-tag">2 ACTIVE LEVERS (80% ROI)</span>
           </div>
           <div class="levers-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
     `;
